@@ -1,0 +1,71 @@
+import { LengthOf, TuplifyUnion } from './arrays';
+import { AddString } from './strings';
+
+export type NExtract<T, U extends T> = Extract<T, U>;
+export type NExclude<T, U extends T> = Exclude<T, U>;
+export type NOmit<T, K extends keyof T> = Omit<T, K>;
+
+// #region SubType
+type FilterFlags<Base, Condition> = {
+  [Key in keyof Base]: Condition extends Base[Key] ? Key : never;
+};
+
+type AllowedNames<Base, Condition> = FilterFlags<
+  Base,
+  Condition
+>[keyof Base];
+
+export type SubType<Base, Condition> = Pick<
+  Base,
+  AllowedNames<Base, Condition>
+>;
+// #endregion
+
+// #region NotSubType
+type NotFilterFlags<Base, Condition> = {
+  [Key in keyof Base]: Condition extends Base[Key] ? never : Key;
+};
+
+type NotAllowedNames<Base, Condition> = NotFilterFlags<
+  Base,
+  Condition
+>[keyof Base];
+
+export type NotSubType<Base, Condition> = Pick<
+  Base,
+  NotAllowedNames<Base, Condition>
+>;
+// #endregion
+
+export type OnPropChangedMethods<T, I extends keyof T = keyof T> = T & {
+  [K in Extract<NotAllowedNames<T, (...args: any) => any>, I> &
+    string as AddString<Capitalize<K>, 'on', 'Changed'>]: (
+    cb: (newValue: T[K]) => void,
+  ) => void;
+};
+
+export type Undefiny<T> = NotSubType<T, undefined> &
+  Partial<SubType<T, undefined>>;
+
+export type Nullify<T> = NotSubType<T, null> & Partial<SubType<T, null>>;
+
+type _OmitWithoutPartial<T, O extends string> = {
+  [key in keyof Omit<T, O>]: O extends keyof T[key]
+    ? LengthOf<
+        TuplifyUnion<keyof _OmitWithoutPartial<T[key], O>>
+      > extends 1
+      ? _OmitWithoutPartial<T[key], O>[keyof _OmitWithoutPartial<
+          T[key],
+          O
+        >]
+      : _OmitWithoutPartial<T[key], O>
+    : T[key];
+};
+
+type _OmitWithPartial<T, O extends string> = Undefiny<
+  _OmitWithoutPartial<T, O>
+>;
+
+export type OmitRecursive<T, O extends string> = {
+  [key in keyof _OmitWithPartial<T, O>]: _OmitWithPartial<T[key], O>;
+};
