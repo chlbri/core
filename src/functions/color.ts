@@ -2,6 +2,7 @@ import {
   Color1Digit,
   Color2Digits,
   ColorNumberDigits,
+  RGBA1,
   TransparencyDigits,
 } from '../types';
 
@@ -10,7 +11,7 @@ export function rgba(
   green: ColorNumberDigits,
   blue: ColorNumberDigits,
   alpha: TransparencyDigits,
-) {
+): string {
   return `rgba(${red},${green},${blue},${alpha})`;
 }
 
@@ -19,8 +20,8 @@ export function colorHex1(
   green: Color1Digit,
   blue: Color1Digit,
   alpha?: Color1Digit,
-) {
-  return `#${red}${green}${blue}${alpha ?? ''}` as const;
+): RGBA1 {
+  return `#${red}${green}${blue}${alpha ?? ''}`;
 }
 
 export function colorHex2(
@@ -28,6 +29,6 @@ export function colorHex2(
   green: Color2Digits,
   blue: Color2Digits,
   alpha?: Color2Digits,
-) {
+): string {
   return `#${red}${green}${blue}${alpha ?? ''}`;
 }

@@ -10,8 +10,6 @@ export type Digit = typeof NUMBERS.DIGITS[number];
 
 export type StringLocalLitterals = Letters | Digit;
 
-
-
 export type Email = `${string}@${string}.${string}`;
 
 export type _JoinStringHelper = string | number | boolean | bigint;

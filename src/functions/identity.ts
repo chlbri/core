@@ -1,3 +1,3 @@
-export function identity<T>(arg: T) {
+export function identity<T>(arg: T): T {
   return arg;
 }

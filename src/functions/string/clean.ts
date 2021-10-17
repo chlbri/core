@@ -1,6 +1,6 @@
 import { isStringLocalLitterals } from './isStringLocalLitterals';
 
-export function isClean(value: string) {
+export function isClean(value: string): boolean {
   let out = true;
   for (const iter of value) {
     if (!isStringLocalLitterals(iter)) {
@@ -11,7 +11,7 @@ export function isClean(value: string) {
   return out;
 }
 
-export function clean(value: string) {
+export function clean(value: string): string {
   let out = value;
   for (const iter of value) {
     if (!isStringLocalLitterals(iter)) {

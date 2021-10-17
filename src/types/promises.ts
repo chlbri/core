@@ -6,7 +6,7 @@ export type PromisifyMethod<T> = T extends (...args: infer P) => infer R
     : (...args: P) => Promise<R>
   : never;
 
-export type PromisifyObject<T extends object> = T & {
+export type PromisifyObject<T extends Record<string, unknown>> = T & {
   [P in keyof T as PromisifyMethod<T[P]> extends never
     ? never
     : `${string & P}Async`]: PromisifyMethod<T[P]>;

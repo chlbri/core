@@ -7,3 +7,10 @@ export type TestTable<
   T2 = any,
   N extends number = number,
 > = TupleOf<TestElement<T1, T2>, N>;
+
+export type ReturnTests<N extends number> = TupleOf<void, N>;
+
+export type ReturnGeneratorTests<N extends number> = {
+  tests: ReturnTests<N>;
+  spy: jest.Mock;
+};

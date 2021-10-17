@@ -21,13 +21,7 @@ export type DivideTupleLengthBy<
   T extends readonly any[],
 > = _DivideBy<N, T>['length'];
 
-const arr = [1, 2, 3, 4, 3, 4, ] as const;
-
-type T4 = DivideTupleLengthBy<3, typeof arr>;
-
-export type LengthOf<T> = T extends readonly any[]
-  ? T['length']
-  : never;
+export type LengthOf<T> = T extends readonly any[] ? T['length'] : never;
 
 // #region  TupleOf
 type _TupleOf<
@@ -36,18 +30,13 @@ type _TupleOf<
   R extends unknown[] = [],
 > = R['length'] extends N ? R : _TupleOf<T, N, [...R, T]>;
 
-export type TupleOf<
-  T = any,
-  N extends number = number,
-> = N extends N
+export type TupleOf<T = any, N extends number = number> = N extends N
   ? number extends N
     ? T[]
     : [..._TupleOf<T, N>]
   : never;
 
-export type GetTupleType<T> = T extends TupleOf<infer U, any>
-  ? U
-  : never;
+export type GetTupleType<T> = T extends TupleOf<infer U, any> ? U : never;
 
 export type GetTupleNumber<T> = T extends TupleOf<any, infer U>
   ? U
@@ -67,15 +56,12 @@ type _LastOf<T> = _UnionToIntersection<
 
 type _Push<T extends unknown[], V> = [...T, V];
 
-type _TuplifyUnionBoolean<T> = [T] extends [never]
-  ? true
-  : false;
+type _TuplifyUnionBoolean<T> = [T] extends [never] ? true : false;
 
 // TS4.1+
-export type TuplifyUnion<T> =
-  true extends _TuplifyUnionBoolean<T>
-    ? []
-    : _Push<TuplifyUnion<Exclude<T, _LastOf<T>>>, _LastOf<T>>;
+export type TuplifyUnion<T> = true extends _TuplifyUnionBoolean<T>
+  ? []
+  : _Push<TuplifyUnion<Exclude<T, _LastOf<T>>>, _LastOf<T>>;
 
 // #endregion
 
