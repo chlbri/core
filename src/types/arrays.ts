@@ -25,7 +25,7 @@ const arr = [1, 2, 3, 4, 3, 4, ] as const;
 
 type T4 = DivideTupleLengthBy<3, typeof arr>;
 
-export type LengthOf<T> = T extends any[] | readonly any[]
+export type LengthOf<T> = T extends readonly any[]
   ? T['length']
   : never;
 

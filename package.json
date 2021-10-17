@@ -1,12 +1,12 @@
 {
-  "name": "@core/types",
+  "name": "@core/core",
   "version": "0.0.1",
   "description": "The additional types",
   "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "author": "core_chlbri",
   "license": "MIT",
   "private": false,
-  "typings": "dist/index.d.ts",
   "files": [
     "dist",
     "src"

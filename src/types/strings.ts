@@ -10,20 +10,7 @@ export type Digit = typeof NUMBERS.DIGITS[number];
 
 export type StringLocalLitterals = Letters | Digit;
 
-export function isStringLocalLitterals(
-  val: any,
-): val is StringLocalLitterals {
-  // #region Checkers
-  const all = [
-    ...STRINGS.LETTERS,
-    ...STRINGS.LETTERS.map((val) => val.toUpperCase()),
-    ...NUMBERS.DIGITS.map((val) => '' + val),
-    ...NUMBERS.DIGITS,
-  ];
-  // #endregion
 
-  return all.includes(val);
-}
 
 export type Email = `${string}@${string}.${string}`;
 

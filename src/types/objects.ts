@@ -5,6 +5,14 @@ export type NExtract<T, U extends T> = Extract<T, U>;
 export type NExclude<T, U extends T> = Exclude<T, U>;
 export type NOmit<T, K extends keyof T> = Omit<T, K>;
 
+export type Primitive = string | number | boolean | undefined | null;
+export type DeepReadonly<T> = T extends Primitive
+  ? T
+  : DeepReadonlyObject<T>;
+export type DeepReadonlyObject<T> = {
+  readonly [P in keyof T]: DeepReadonly<T[P]>;
+};
+
 // #region SubType
 type FilterFlags<Base, Condition> = {
   [Key in keyof Base]: Condition extends Base[Key] ? Key : never;
