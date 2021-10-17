@@ -1,4 +1,7 @@
-export const LETTERS = [
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.PERMISSIONS_STRINGS = exports.STATUS_STRINGS = exports.LETTERS = void 0;
+exports.LETTERS = [
     'a',
     'b',
     'c',
@@ -36,7 +39,7 @@ export const LETTERS = [
     'ù',
     'û',
 ];
-export const STATUS_STRINGS = [
+exports.STATUS_STRINGS = [
     'information',
     'success',
     'redirect',
@@ -45,7 +48,7 @@ export const STATUS_STRINGS = [
     'permission-error',
     'timeout-error',
 ];
-export const PERMISSIONS_STRINGS = [
+exports.PERMISSIONS_STRINGS = [
     '_read',
     '_update',
     '_delete',

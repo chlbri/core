@@ -1,6 +1,9 @@
-import { DIGITS } from './numbers';
-export const TRANSPARENCY_DIGITS = [
-    ...DIGITS,
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.COLOR_DIGITS = exports.CSS_COLORS = exports.COLOR_STRING_DIGITS = exports.COLOR_NUMBER_DIGITS = exports.TRANSPARENCY_DIGITS = void 0;
+const numbers_1 = require("./numbers");
+exports.TRANSPARENCY_DIGITS = [
+    ...numbers_1.DIGITS,
     10,
     11,
     12,
@@ -93,8 +96,8 @@ export const TRANSPARENCY_DIGITS = [
     99,
     100,
 ];
-export const COLOR_NUMBER_DIGITS = [
-    ...TRANSPARENCY_DIGITS,
+exports.COLOR_NUMBER_DIGITS = [
+    ...exports.TRANSPARENCY_DIGITS,
     101,
     102,
     103,
@@ -251,8 +254,8 @@ export const COLOR_NUMBER_DIGITS = [
     254,
     255,
 ];
-export const COLOR_STRING_DIGITS = ['a', 'b', 'c', 'd', 'e', 'f'];
-export const CSS_COLORS = [
+exports.COLOR_STRING_DIGITS = ['a', 'b', 'c', 'd', 'e', 'f'];
+exports.CSS_COLORS = [
     'aliceblue',
     'antiquewhite',
     'aqua',
@@ -402,4 +405,4 @@ export const CSS_COLORS = [
     'yellow',
     'yellowgreen',
 ];
-export const COLOR_DIGITS = [...DIGITS, ...COLOR_STRING_DIGITS];
+exports.COLOR_DIGITS = [...numbers_1.DIGITS, ...exports.COLOR_STRING_DIGITS];
