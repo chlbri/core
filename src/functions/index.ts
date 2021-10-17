@@ -5,3 +5,5 @@ export * from './log';
 export * from './nullish';
 export * from './sleep';
 export * from './string';
+export * from './usecase';
+
