@@ -53,5 +53,3 @@ export type DomainUseCaseSchema<
 
 export type Domain<T extends IUseCase[] = IUseCase[]> =
   DomainUseCaseSchema<T, '__name'>;
-
-
