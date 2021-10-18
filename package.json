@@ -15,9 +15,9 @@
     "node": ">=12"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "yarn run tsc && yarn run eslint-fix",
+    "tsc":"tsc",
     "test": "jest",
-    "lint": "yarn run build && yarn run eslint-fix",
     "prepare": "tsc",
     "prettier": "prettier --write \"src/**/*.{ts,tsx}\"",
     "eslint": "eslint \"{src/**/*,App}.{ts,tsx}\"",
