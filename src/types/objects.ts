@@ -6,11 +6,14 @@ export type NExclude<T, U extends T> = Exclude<T, U>;
 export type NOmit<T, K extends keyof T> = Omit<T, K>;
 
 export type Primitive = string | number | boolean | undefined | null;
+
 export type DeepReadonly<T> = T extends Primitive
   ? T
-  : DeepReadonlyObject<T>;
-export type DeepReadonlyObject<T> = {
-  readonly [P in keyof T]: DeepReadonly<T[P]>;
+  : readonly [P in keyof T]: DeepReadonly<T[P]>;
+};
+
+export type DeepPartial<T> = T extends Primitive ? T : {
+  [P in keyof T]?: DeepPartial<T[P]>;
 };
 
 // #region SubType
@@ -71,7 +74,7 @@ type _OmitWithoutPartial<T, O extends string> = {
 };
 
 type _OmitWithPartial<T, O extends string> = Undefiny<
-  _OmitWithoutPartial<T, O>
+  Nullify<_OmitWithoutPartial<T, O>>
 >;
 
 export type OmitRecursive<T, O extends string> = {
