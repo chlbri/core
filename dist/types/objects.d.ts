@@ -4,9 +4,11 @@ export declare type NExtract<T, U extends T> = Extract<T, U>;
 export declare type NExclude<T, U extends T> = Exclude<T, U>;
 export declare type NOmit<T, K extends keyof T> = Omit<T, K>;
 export declare type Primitive = string | number | boolean | undefined | null;
-export declare type DeepReadonly<T> = T extends Primitive ? T : DeepReadonlyObject<T>;
-export declare type DeepReadonlyObject<T> = {
+export declare type DeepReadonly<T> = T extends Primitive ? T : {
     readonly [P in keyof T]: DeepReadonly<T[P]>;
+};
+export declare type DeepPartial<T> = T extends Primitive ? T : {
+    [P in keyof T]?: DeepPartial<T[P]>;
 };
 declare type FilterFlags<Base, Condition> = {
     [Key in keyof Base]: Condition extends Base[Key] ? Key : never;
@@ -26,7 +28,7 @@ export declare type Nullify<T> = NotSubType<T, null> & Partial<SubType<T, null>>
 declare type _OmitWithoutPartial<T, O extends string> = {
     [key in keyof Omit<T, O>]: O extends keyof T[key] ? LengthOf<TuplifyUnion<keyof _OmitWithoutPartial<T[key], O>>> extends 1 ? _OmitWithoutPartial<T[key], O>[keyof _OmitWithoutPartial<T[key], O>] : _OmitWithoutPartial<T[key], O> : T[key];
 };
-declare type _OmitWithPartial<T, O extends string> = Undefiny<_OmitWithoutPartial<T, O>>;
+declare type _OmitWithPartial<T, O extends string> = Undefiny<Nullify<_OmitWithoutPartial<T, O>>>;
 export declare type OmitRecursive<T, O extends string> = {
     [key in keyof _OmitWithPartial<T, O>]: _OmitWithPartial<T[key], O>;
 };
