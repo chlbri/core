@@ -9,12 +9,11 @@ export type Primitive = string | number | boolean | undefined | null;
 
 export type DeepReadonly<T> = T extends Primitive
   ? T
-  : readonly [P in keyof T]: DeepReadonly<T[P]>;
-};
+  : { readonly [P in keyof T]: DeepReadonly<T[P]> };
 
-export type DeepPartial<T> = T extends Primitive ? T : {
-  [P in keyof T]?: DeepPartial<T[P]>;
-};
+export type DeepPartial<T> = T extends Primitive
+  ? T
+  : { [P in keyof T]?: DeepPartial<T[P]> };
 
 // #region SubType
 type FilterFlags<Base, Condition> = {
