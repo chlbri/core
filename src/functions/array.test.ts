@@ -1,4 +1,4 @@
-import { generateTests } from '../test';
+import { generateTests } from '../test/functions';
 import { isArray } from './array';
 
 generateTests(

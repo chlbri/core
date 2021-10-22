@@ -15,18 +15,19 @@
     "node": ">=12"
   },
   "scripts": {
-    "build": "yarn run tsc && yarn run eslint-fix",
+    "build": "yarn run test && yarn run tsc && yarn run eslint-fix",
     "tsc":"tsc",
     "test": "jest",
     "prepare": "tsc",
     "prettier": "prettier --write \"src/**/*.{ts,tsx}\"",
-    "eslint": "eslint \"{src/**/*,App}.{ts,tsx}\"",
+    "eslint": "eslint \"{src/**/*,App}.{ts,tsx,json,yml}\"",
     "eslint-fix": "yarn run prettier && yarn run eslint --fix",
     "rm": "./node_modules/.bin/rimraf -rf node_modules yarn.lock",
     "rinit": "yarn run rm && yarn cache clean && yarn run yarn",
     "publish": "yarn run rm && yarn cache clean && yarn run yarn",
     "yarn": "yarn install",
-    "git-push": "git push --tags"
+    "upgrade": "yarn upgrade",
+    "git-push": "yarn install && yarn build && git push --tags"
   },
   "peerDependencies": {},
   "devDependencies": {

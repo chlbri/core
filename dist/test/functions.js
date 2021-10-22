@@ -20,7 +20,7 @@ function generateAsyncTestTable(func, actuals, expecteds) {
     return out;
 }
 exports.generateAsyncTestTable = generateAsyncTestTable;
-function testNull(...actual) {
+function testNullTest(...actual) {
     const inner = actual == null ||
         actual === [null] ||
         actual === undefined ||
@@ -30,7 +30,7 @@ function testNull(...actual) {
 }
 function mapperTest(spy, uuid = false) {
     return ([actual, expected]) => {
-        const _actualText = testNull(...actual)
+        const _actualText = testNullTest(...actual)
             ? actual[0]
             : actual.join(', ');
         return it(uuid
@@ -44,7 +44,7 @@ function mapperTest(spy, uuid = false) {
 exports.mapperTest = mapperTest;
 function mapperAsyncTest(spy, uuid = false) {
     return ([actual, expected]) => {
-        const _actualText = testNull(...actual)
+        const _actualText = testNullTest(...actual)
             ? actual[0]
             : actual.join(', ');
         return it(uuid
@@ -57,7 +57,6 @@ function mapperAsyncTest(spy, uuid = false) {
     };
 }
 exports.mapperAsyncTest = mapperAsyncTest;
-//#endregion
 function generateTests(func, actuals, expecteds, uuid = false) {
     const table = generateTestTable(func, actuals, expecteds);
     const spy = jest.fn(func);
@@ -82,6 +81,7 @@ function generateAsyncTests(func, actuals, expecteds, uuid = false) {
     return { tests, spy };
 }
 exports.generateAsyncTests = generateAsyncTests;
+// #endregion
 // #region Helper Functions - Sync
 function generate1Test(func, actuals, expecteds, uuid = false) {
     return generateTests(func, actuals, expecteds, uuid);
@@ -99,7 +99,6 @@ function generate4Tests(func, actuals, expecteds, uuid = false) {
     return generateTests(func, actuals, expecteds, uuid);
 }
 exports.generate4Tests = generate4Tests;
-// TODO: Finish typing
 function generate5Tests(func, actuals, expecteds, uuid = false) {
     return generateTests(func, actuals, expecteds, uuid);
 }
