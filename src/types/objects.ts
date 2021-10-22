@@ -80,8 +80,6 @@ export type OmitRecursive<T, O extends string> = {
   [key in keyof _OmitWithPartial<T, O>]: _OmitWithPartial<T[key], O>;
 };
 
-
-
 export type Unionize<T extends Record<string, unknown>> = {
   [P in keyof T]: { [Q in P]: T[P] };
 }[keyof T];
@@ -120,4 +118,3 @@ export type UnionToIntersection<U> = (
 ) extends (k: infer I) => void
   ? I
   : never;
-

@@ -1,4 +1,3 @@
-import { LengthOf, TuplifyUnion } from './arrays';
 import { AddString } from './strings';
 export declare type NExtract<T, U extends T> = Extract<T, U>;
 export declare type NExclude<T, U extends T> = Exclude<T, U>;
@@ -26,10 +25,28 @@ export declare type OnPropChangedMethods<T, I extends keyof T = keyof T> = T & {
 export declare type Undefiny<T> = NotSubType<T, undefined> & Partial<SubType<T, undefined>>;
 export declare type Nullify<T> = NotSubType<T, null> & Partial<SubType<T, null>>;
 declare type _OmitWithoutPartial<T, O extends string> = {
-    [key in keyof Omit<T, O>]: O extends keyof T[key] ? LengthOf<TuplifyUnion<keyof _OmitWithoutPartial<T[key], O>>> extends 1 ? _OmitWithoutPartial<T[key], O>[keyof _OmitWithoutPartial<T[key], O>] : _OmitWithoutPartial<T[key], O> : T[key];
+    [key in keyof Omit<T, O>]: O extends keyof T[key] ? _OmitWithoutPartial<T[key], O> : T[key];
 };
 declare type _OmitWithPartial<T, O extends string> = Undefiny<Nullify<_OmitWithoutPartial<T, O>>>;
 export declare type OmitRecursive<T, O extends string> = {
     [key in keyof _OmitWithPartial<T, O>]: _OmitWithPartial<T[key], O>;
 };
+export declare type Unionize<T extends Record<string, unknown>> = {
+    [P in keyof T]: {
+        [Q in P]: T[P];
+    };
+}[keyof T];
+declare type _StringKeys<T extends Record<string, unknown>> = T extends {
+    [key in infer K]: infer TK;
+} ? TK extends Record<string, unknown> ? `${string & K}.${_StringKeys<TK>}` : K : never;
+export declare type StringKeys<T extends Record<string, unknown>> = _StringKeys<Unionize<T>>;
+declare type _StringKeyAndValues<T extends Record<string, unknown>> = T extends {
+    [key in infer K]: infer TK;
+} ? TK extends Record<string, unknown> ? _StringKeyAndValues<{
+    [key2 in keyof TK as `${string & K}.${string & key2}`]: TK[key2];
+}> : {
+    [key in keyof T as StringKeys<T>]: T[key];
+} : never;
+export declare type StringKeyAndValues<T extends Record<string, unknown>> = _StringKeyAndValues<Unionize<T>>;
+export declare type UnionToIntersection<U> = (U extends any ? (k: U) => void : never) extends (k: infer I) => void ? I : never;
 export {};
