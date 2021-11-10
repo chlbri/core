@@ -16,7 +16,7 @@ export type DeepPartial<T> = T extends Primitive
 
 // #region SubType
 type FilterFlags<Base, Condition> = {
-  [Key in keyof Base]: Condition extends Base[Key] ? Key : never;
+  [Key in keyof Base]: Base[Key] extends Condition ? Key : never;
 };
 
 type AllowedNames<Base, Condition> = FilterFlags<
@@ -32,7 +32,7 @@ export type SubType<Base, Condition> = Pick<
 
 // #region NotSubType
 type NotFilterFlags<Base, Condition> = {
-  [Key in keyof Base]: Condition extends Base[Key] ? never : Key;
+  [Key in keyof Base]: Base[Key] extends Condition ? never : Key;
 };
 
 type NotAllowedNames<Base, Condition> = NotFilterFlags<

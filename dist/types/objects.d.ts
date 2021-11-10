@@ -10,12 +10,12 @@ export declare type DeepPartial<T> = T extends Primitive ? T : {
     [P in keyof T]?: DeepPartial<T[P]>;
 };
 declare type FilterFlags<Base, Condition> = {
-    [Key in keyof Base]: Condition extends Base[Key] ? Key : never;
+    [Key in keyof Base]: Base[Key] extends Condition ? Key : never;
 };
 declare type AllowedNames<Base, Condition> = FilterFlags<Base, Condition>[keyof Base];
 export declare type SubType<Base, Condition> = Pick<Base, AllowedNames<Base, Condition>>;
 declare type NotFilterFlags<Base, Condition> = {
-    [Key in keyof Base]: Condition extends Base[Key] ? never : Key;
+    [Key in keyof Base]: Base[Key] extends Condition ? never : Key;
 };
 declare type NotAllowedNames<Base, Condition> = NotFilterFlags<Base, Condition>[keyof Base];
 export declare type NotSubType<Base, Condition> = Pick<Base, NotAllowedNames<Base, Condition>>;
