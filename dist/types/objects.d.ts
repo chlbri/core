@@ -31,22 +31,22 @@ declare type _OmitWithPartial<T, O extends string> = Undefiny<Nullify<_OmitWitho
 export declare type OmitRecursive<T, O extends string> = {
     [key in keyof _OmitWithPartial<T, O>]: _OmitWithPartial<T[key], O>;
 };
-export declare type Unionize<T extends Record<string, unknown>> = {
+export declare type Unionize<T extends Record<string, any>> = {
     [P in keyof T]: {
         [Q in P]: T[P];
     };
 }[keyof T];
-declare type _StringKeys<T extends Record<string, unknown>> = T extends {
+declare type _StringKeys<T extends Record<string, any>> = T extends {
     [key in infer K]: infer TK;
-} ? TK extends Record<string, unknown> ? `${string & K}.${_StringKeys<TK>}` : K : never;
-export declare type StringKeys<T extends Record<string, unknown>> = _StringKeys<Unionize<T>>;
-declare type _StringKeyAndValues<T extends Record<string, unknown>> = T extends {
+} ? TK extends Record<string, any> ? `${string & K}.${_StringKeys<TK>}` : K : never;
+export declare type StringKeys<T extends Record<string, any>> = _StringKeys<Unionize<T>>;
+declare type _StringKeyAndValues<T extends Record<string, any>> = T extends {
     [key in infer K]: infer TK;
-} ? TK extends Record<string, unknown> ? _StringKeyAndValues<{
+} ? TK extends Record<string, any> ? _StringKeyAndValues<{
     [key2 in keyof TK as `${string & K}.${string & key2}`]: TK[key2];
 }> : {
     [key in keyof T as StringKeys<T>]: T[key];
 } : never;
-export declare type StringKeyAndValues<T extends Record<string, unknown>> = _StringKeyAndValues<Unionize<T>>;
+export declare type StringKeyAndValues<T extends Record<string, any>> = _StringKeyAndValues<Unionize<T>>;
 export declare type UnionToIntersection<U> = (U extends any ? (k: U) => void : never) extends (k: infer I) => void ? I : never;
 export {};
