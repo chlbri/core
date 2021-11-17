@@ -47,6 +47,6 @@ declare type _StringKeyAndValues<T extends Record<string, any>> = T extends {
 }> : {
     [key in keyof T]: T[key];
 } : never;
-export declare type StringKeyAndValues<T extends Record<string, any>> = _StringKeyAndValues<Unionize<T>>;
+export declare type StringKeyAndValues<T extends Record<string, any>> = _StringKeyAndValues<T>;
 export declare type UnionToIntersection<U> = (U extends any ? (k: U) => void : never) extends (k: infer I) => void ? I : never;
 export {};
