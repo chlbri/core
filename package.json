@@ -11,6 +11,9 @@
     "dist",
     "src"
   ],
+  "engines": {
+    "node": ">=12"
+  },
   "scripts": {
     "tsc": "tsc",
     "build": "yarn run test && yarn run tsc && yarn run lint",
