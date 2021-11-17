@@ -79,28 +79,28 @@ export type OmitRecursive<T, O extends string> = {
   [key in keyof _OmitWithPartial<T, O>]: _OmitWithPartial<T[key], O>;
 };
 
-export type Unionize<T extends Record<string, unknown>> = {
+export type Unionize<T extends Record<string, any>> = {
   [P in keyof T]: { [Q in P]: T[P] };
 }[keyof T];
 
 // #region StringKeys
-type _StringKeys<T extends Record<string, unknown>> = T extends {
+type _StringKeys<T extends Record<string, any>> = T extends {
   [key in infer K]: infer TK;
 }
-  ? TK extends Record<string, unknown>
+  ? TK extends Record<string, any>
     ? `${string & K}.${_StringKeys<TK>}`
     : K
   : never;
 
-export type StringKeys<T extends Record<string, unknown>> = _StringKeys<
+export type StringKeys<T extends Record<string, any>> = _StringKeys<
   Unionize<T>
 >;
 // #endregion
 
-type _StringKeyAndValues<T extends Record<string, unknown>> = T extends {
+type _StringKeyAndValues<T extends Record<string, any>> = T extends {
   [key in infer K]: infer TK;
 }
-  ? TK extends Record<string, unknown>
+  ? TK extends Record<string, any>
     ? _StringKeyAndValues<{
         [key2 in keyof TK as `${string & K}.${string & key2}`]: TK[key2];
       }>
@@ -109,7 +109,7 @@ type _StringKeyAndValues<T extends Record<string, unknown>> = T extends {
       }
   : never;
 
-export type StringKeyAndValues<T extends Record<string, unknown>> =
+export type StringKeyAndValues<T extends Record<string, any>> =
   _StringKeyAndValues<Unionize<T>>;
 
 export type UnionToIntersection<U> = (

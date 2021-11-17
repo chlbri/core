@@ -1,3 +1,3 @@
-export type NFunction<I extends unknown[] = any[], O extends any = any> = (
+export type NFunction<I extends any[] = any[], O extends any = any> = (
   ...arg: I
 ) => O;

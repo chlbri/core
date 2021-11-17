@@ -1,1 +1,1 @@
-export declare type NFunction<I extends unknown[] = any[], O extends any = any> = (...arg: I) => O;
+export declare type NFunction<I extends any[] = any[], O extends any = any> = (...arg: I) => O;
