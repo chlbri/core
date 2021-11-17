@@ -110,7 +110,7 @@ type _StringKeyAndValues<T extends Record<string, any>> = T extends {
   : never;
 
 export type StringKeyAndValues<T extends Record<string, any>> =
-  _StringKeyAndValues<T>;
+  _StringKeyAndValues<Unionize<T>>;
 
 export type UnionToIntersection<U> = (
   U extends any ? (k: U) => void : never
