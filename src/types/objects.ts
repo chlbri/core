@@ -105,7 +105,7 @@ type _StringKeyAndValues<T extends Record<string, any>> = T extends {
         [key2 in keyof TK as `${string & K}.${string & key2}`]: TK[key2];
       }>
     : {
-        [key in keyof T as StringKeys<T>]: T[key];
+        [key in keyof T]: T[key];
       }
   : never;
 
