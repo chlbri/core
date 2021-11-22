@@ -1,6 +1,6 @@
 {
   "name": "@core/core",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "description": "The additional types",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -22,7 +22,7 @@
     "prettier": "prettier --write \"src/**/*.{ts,tsx}\"",
     "eslint": "eslint \"{src/**/*,App}.{ts,tsx,yml,json}\"",
     "lint": "pnpm run prettier && pnpm run eslint -- --fix",
-    "rm": "./node_modules/.bin/rimraf -rf node_modules pnpm.lock",
+    "rm": "rimraf -rf node_modules pnpm.lock",
     "rinit": "pnpm run rm && pnpm cache clean && pnpm run pnpm",
     "publish": "pnpm run rm && pnpm run clean && pnpm run pnpm",
     "clean": "pnpm cache clean",
