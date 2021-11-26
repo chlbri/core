@@ -1,4 +1,4 @@
-import { generateTests } from '../src/test/functions';
+import { generateTests } from './config';
 import { isArray } from '../src/functions/array';
 
 generateTests(

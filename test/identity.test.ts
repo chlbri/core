@@ -1,4 +1,4 @@
-import { generateTests } from '../src/test';
+import { generateTests } from './config';
 import { identity } from '../src/functions/identity';
 
 generateTests(

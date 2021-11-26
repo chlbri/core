@@ -1,5 +1,5 @@
-import { generateTests } from '../../test';
-import { toString } from './toString';
+import { generateTests } from '../config';
+import { toString } from '../../src/functions/string/toString';
 
 generateTests(
   toString,

@@ -6,8 +6,8 @@ import {
   generateTestTable,
   mapperAsyncTest,
   mapperTest,
-} from '../src/test/functions';
-import { TestTable } from '../src/test/types';
+  TestTable,
+} from './config';
 
 // #region Sync
 function dumpFunction1(val1: number, val2: number) {

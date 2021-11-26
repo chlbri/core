@@ -1,4 +1,4 @@
-import { generateTests } from '../src/test';
+import { generateTests } from './config';
 import { isNullish } from '../src/functions/nullish';
 
 generateTests(

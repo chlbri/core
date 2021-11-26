@@ -1,4 +1,4 @@
-import { generateTests } from '../src/test';
+import { generateTests } from './config';
 import { colorHex1, colorHex2, rgba } from '../src/functions/color';
 
 describe('Function rgba ======================================>', () => {

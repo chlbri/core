@@ -1,5 +1,5 @@
-import { generateTests } from '../../test';
-import { isClean } from './clean';
+import { generateTests } from '../config';
+import { isClean } from '../../src/functions/string/clean';
 
 generateTests(
   isClean,

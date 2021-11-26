@@ -1,4 +1,4 @@
-import { TupleOf } from '../types';
+import { TupleOf } from '../../src/types';
 
 export type TestElement<T1 = any, T2 = any> = [T1, T2];
 

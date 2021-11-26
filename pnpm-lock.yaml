@@ -20,6 +20,9 @@ specifiers:
   ts-jest: ^27.0.5
   typescript: ^4.4.3
 
+dependencies:
+  nanoid: 3.1.30
+
 devDependencies:
   '@types/faker': 5.5.9
   '@types/jest': 27.0.3
@@ -33,7 +36,6 @@ devDependencies:
   jest: 27.3.1
   jest-cucumber: 3.0.1
   jest-extended: 1.1.0
-  nanoid: 3.1.30
   prettier: 2.4.1
   rimraf: 3.0.2
   shelljs: 0.8.4
@@ -4004,7 +4006,7 @@ packages:
     resolution: {integrity: sha512-zJpuPDwOv8D2zq2WRoMe1HsfZthVewpel9CAvTfc/2mBD1uUT/agc5f7GHGWXlYkFvi1mVxe4IjvP2HNrop7nQ==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
-    dev: true
+    dev: false
 
   /nanomatch/1.2.13:
     resolution: {integrity: sha512-fpoe2T0RbHwBTBUOftAfBPaDEi06ufaUai0mE6Yn1kacc3SnTErfb/h+X94VXzI64rKFHYImXSvdwGGCmwOqCA==}
