@@ -1,5 +1,5 @@
 {
-  "name": "@core/core",
+  "name": "@core_chlbri/core",
   "version": "0.1.0",
   "description": "The additional types",
   "main": "dist/index.js",
