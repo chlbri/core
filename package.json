@@ -1,6 +1,6 @@
 {
   "name": "@core_chlbri/core",
-  "version": "0.1.0",
+  "version": "0.1.1-dc",
   "description": "The additional types",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -32,6 +32,7 @@
     "git-publish": "pnpm run git-build-push && git checkout main && git merge dev && pnpm run git-push && git checkout dev"
   },
   "dependencies": {
+    "dequal": "^2.0.2",
     "nanoid": "^3.1.29"
   },
   "devDependencies": {

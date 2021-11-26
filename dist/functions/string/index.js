@@ -12,8 +12,8 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./capitalize"), exports);
 __exportStar(require("./clean"), exports);
+__exportStar(require("./getIndexes"), exports);
+__exportStar(require("./getReferences"), exports);
 __exportStar(require("./isS"), exports);
 __exportStar(require("./isStatusString"), exports);
 __exportStar(require("./toString"), exports);
-__exportStar(require("./getIndexes"), exports);
-__exportStar(require("./getReferences"), exports);

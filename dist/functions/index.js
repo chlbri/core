@@ -15,6 +15,7 @@ __exportStar(require("./color"), exports);
 __exportStar(require("./identity"), exports);
 __exportStar(require("./log"), exports);
 __exportStar(require("./nullish"), exports);
+__exportStar(require("./object"), exports);
 __exportStar(require("./sleep"), exports);
 __exportStar(require("./string"), exports);
 __exportStar(require("./usecase"), exports);
