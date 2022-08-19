@@ -21,7 +21,7 @@ export type DivideTupleLengthBy<
   T extends readonly any[],
 > = _DivideBy<N, T>['length'];
 
-export type LengthOf<T> = T extends readonly any[] ? T['length'] : never;
+export type LengthOf<T> = T extends readonly any[] ? T['length'] : number;
 
 // #region  TupleOf
 type _TupleOf<
