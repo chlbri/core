@@ -1,3 +1,4 @@
+import { describe, expect, it, vi } from 'vitest';
 import { TupleOf } from '../src/types';
 import {
   generateAsyncTests,
@@ -59,7 +60,7 @@ const expecteds2: TupleOf<boolean, Length2> = [false, false, true];
 
 describe('Synchronous ==>', () => {
   describe('Generate the Table of Tests ==>', () => {
-    const spy = jest.fn(generateTestTable);
+    const spy = vi.fn(generateTestTable);
     it('For 5 elements ==>', () => {
       const actual = spy(dumpFunction1, actuals1f1, expecteds1);
       const expected: TestTable<ForTest1, boolean, Length1> = [
@@ -90,7 +91,7 @@ describe('Synchronous ==>', () => {
   describe('Map all Tests ==>', () => {
     (() =>
       describe(`Function ==> ${dumpFunction1}`, () => {
-        const spy = jest.fn(dumpFunction1);
+        const spy = vi.fn(dumpFunction1);
         const func = mapperTest(spy);
         describe('For 5 elements ==>', () => {
           const table = generateTestTable(
@@ -113,7 +114,7 @@ describe('Synchronous ==>', () => {
 
     (() =>
       describe(`Function ==> ${dumpFunction2}`, () => {
-        const spy = jest.fn(dumpFunction2);
+        const spy = vi.fn(dumpFunction2);
         const func = mapperTest(spy);
         describe('For 5 elements ==>', () => {
           const table = generateTestTable(
@@ -212,7 +213,7 @@ const asyncExpecteds2: TupleOf<boolean, Length2> = [false, false, true];
 
 describe('Asynchronous ==>', () => {
   describe('Generate the Table of Tests ==>', () => {
-    const spy = jest.fn(generateTestTable);
+    const spy = vi.fn(generateTestTable);
     it('For 5 elements', () => {
       const actual = spy(
         dumpAsyncFunction1,
@@ -259,7 +260,7 @@ describe('Asynchronous ==>', () => {
   describe('Map all Tests ==>', () => {
     (() =>
       describe(`Function ==> ${dumpAsyncFunction1}`, () => {
-        const spy = jest.fn(dumpAsyncFunction1);
+        const spy = vi.fn(dumpAsyncFunction1);
         const func = mapperAsyncTest(spy);
         describe('For 5 elements ==>', () => {
           const table = generateAsyncTestTable(
@@ -282,7 +283,7 @@ describe('Asynchronous ==>', () => {
 
     (() =>
       describe(`Function ==> ${dumpAsyncFunction2}`, () => {
-        const spy = jest.fn(dumpAsyncFunction2);
+        const spy = vi.fn(dumpAsyncFunction2);
         const func = mapperAsyncTest(spy);
         describe('For 5 elements ==>', () => {
           const table = generateAsyncTestTable(
@@ -337,8 +338,8 @@ describe('Asynchronous ==>', () => {
         describe('For 3 elements ==>', () => {
           generateAsyncTests(
             dumpAsyncFunction2,
-            asyncActuals2f2,
-            asyncExpecteds2,
+            [[-5], [-15], [24]],
+            [false, false, true],
           );
         });
       }))();

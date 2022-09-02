@@ -1,5 +1,7 @@
+import { dequal } from 'dequal';
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { nanoid } from 'nanoid';
+import { expect, it, Mock, vi } from 'vitest';
 import { LengthOf, ThenArg, TupleOf } from '../../src/types';
 import { TestElement, TestTable } from './types';
 
@@ -12,6 +14,8 @@ export function generateTestTable<
     actuals[index],
     expecteds[index],
   ]);
+  console.log('ddfdd');
+
   return out as TestTable<
     T1[number],
     TupleOf<ReturnType<F>, LengthOf<T1>>[number],
@@ -40,19 +44,22 @@ export function generateAsyncTestTable<
 
 function testNullTest(...actual: any[]) {
   const inner =
-    actual == null ||
-    actual === [null] ||
+    actual === null ||
+    dequal(actual, [null]) ||
     actual === undefined ||
-    actual === [undefined] ||
+    dequal(actual, [undefined]) ||
     actual.every(
       v =>
-        v == null || v === [null] || v === undefined || v === [undefined],
+        v == null ||
+        dequal(v, [null]) ||
+        v === undefined ||
+        dequal(v, [undefined]),
     );
   return inner;
 }
 
-export function mapperTest<P extends any[], R extends any>(
-  spy: jest.Mock<R, P>,
+export function mapperTest<P extends any[], R>(
+  spy: Mock<P, R>,
   uuid = false,
 ) {
   return ([actual, expected]: TestElement<P, R>) => {
@@ -74,8 +81,8 @@ export function mapperTest<P extends any[], R extends any>(
   };
 }
 
-export function mapperAsyncTest<P extends any[], R extends any>(
-  spy: jest.Mock<R, P>,
+export function mapperAsyncTest<P extends any[], R>(
+  spy: Mock<P, R>,
   uuid = false,
 ) {
   return ([actual, expected]: TestElement<P, ThenArg<R>>) => {
@@ -108,14 +115,14 @@ export function generateTests<
   uuid = false,
 ) {
   const table = generateTestTable(func, actuals, expecteds);
-  const spy = jest.fn(func);
+  const spy = vi.fn(func);
   const mapper = mapperTest(spy, uuid);
   const tests = table.map(mapper);
   const len = expecteds.length;
-  (() =>
-    it(`${func.name} should be call ${len} times`, () => {
-      expect(spy).toBeCalledTimes(len);
-    }))();
+
+  it(`${func.name} should be call ${len} times`, () => {
+    expect(spy).toBeCalledTimes(len);
+  });
   return { tests, spy } as const;
 }
 
@@ -125,14 +132,14 @@ export function generateAsyncTests<
   T2 extends TupleOf<ThenArg<ReturnType<F>>, LengthOf<T1>>,
 >(func: F, actuals: T1, expecteds: T2, uuid = false) {
   const table = generateAsyncTestTable(func, actuals, expecteds);
-  const spy = jest.fn(func);
+  const spy = vi.fn(func);
   const mapper = mapperAsyncTest(spy, uuid);
   const tests = table.map(mapper);
   const len = expecteds.length;
-  (() =>
-    it(`${func.name} should be call ${len} times`, () => {
-      expect(spy).toBeCalledTimes(len);
-    }))();
+
+  it(`${func.name} should be call ${len} times`, () => {
+    expect(spy).toBeCalledTimes(len);
+  });
   return { tests, spy } as const;
 }
 

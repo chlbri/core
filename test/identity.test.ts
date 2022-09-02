@@ -1,5 +1,5 @@
-import { generateTests } from './config';
 import { identity } from '../src/functions/identity';
+import { generateTests } from './config';
 
 generateTests(
   identity,

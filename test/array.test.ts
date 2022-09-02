@@ -1,5 +1,5 @@
-import { generateTests } from './config';
 import { isArray } from '../src/functions/array';
+import { generateTests } from './config';
 
 generateTests(
   isArray,
