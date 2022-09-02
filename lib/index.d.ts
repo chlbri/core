@@ -147,7 +147,7 @@ declare type DomainUseCaseSchema<T extends _ReadAU, K extends keyof T[number], B
 };
 declare type Domain<T extends IUseCase[] = IUseCase[]> = DomainUseCaseSchema<T, '__name'>;
 
-declare type NFunction<I extends any[] = any[], O extends any = any> = (...arg: I) => O;
+declare type NFunction<I extends any[] = any[], O = any> = (...arg: I) => O;
 
 declare type Nullish<T = unknown> = T | null | undefined;
 declare type NullishString = Nullish<string>;
@@ -173,7 +173,7 @@ declare function colorHex2(red: Color2Digits, green: Color2Digits, blue: Color2D
 
 declare function identity<T>(arg: T): T;
 
-declare function log<T extends any>(name: string, data: T): void;
+declare function log<T>(name: string, data: T): void;
 
 declare function isNullish(val: unknown): val is undefined | null;
 

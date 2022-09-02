@@ -58,7 +58,7 @@ function testNullTest(...actual: any[]) {
   return inner;
 }
 
-export function mapperTest<P extends any[], R extends any>(
+export function mapperTest<P extends any[], R>(
   spy: Mock<P, R>,
   uuid = false,
 ) {
@@ -81,7 +81,7 @@ export function mapperTest<P extends any[], R extends any>(
   };
 }
 
-export function mapperAsyncTest<P extends any[], R extends any>(
+export function mapperAsyncTest<P extends any[], R>(
   spy: Mock<P, R>,
   uuid = false,
 ) {
