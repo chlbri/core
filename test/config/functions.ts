@@ -5,8 +5,6 @@ import { expect, it, Mock, vi } from 'vitest';
 import { LengthOf, ThenArg, TupleOf } from '../../src/types';
 import { TestElement, TestTable } from './types';
 
-vi.mock;
-
 // #region Configurations
 export function generateTestTable<
   F extends (...args: any[]) => any,
@@ -16,6 +14,8 @@ export function generateTestTable<
     actuals[index],
     expecteds[index],
   ]);
+  console.log('ddfdd');
+
   return out as TestTable<
     T1[number],
     TupleOf<ReturnType<F>, LengthOf<T1>>[number],

@@ -1,7 +1,7 @@
 import { STATUS_STRINGS } from '../../constants/strings';
 import { StatusString } from '../../types';
-import { isS } from './isS';
+import { isOneOf } from './isOneOf';
 
 export function isStatusString(value: string): value is StatusString {
-  return isS(STATUS_STRINGS, value);
+  return isOneOf(STATUS_STRINGS, value);
 }

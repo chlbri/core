@@ -2,56 +2,52 @@
   "name": "@bemedev/core",
   "version": "0.0.1",
   "description": "The additional types",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
   "author": "chlbri",
   "license": "MIT",
   "private": false,
   "files": [
-    "dist",
-    "src"
+    "lib"
   ],
   "engines": {
     "node": ">=12"
   },
   "scripts": {
-    "tsc": "tsc",
-    "build": "pnpm run test && pnpm run tsc && pnpm run lint",
-    "build:-test": "pnpm run tsc && pnpm run lint",
+    "build": "rm -rf lib && rollup -c",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
     "prettier": "prettier --write \"src/**/*.{ts,tsx}\"",
     "eslint": "eslint \"{src/**/*,App}.{ts,tsx,yml,json}\"",
     "lint": "pnpm run prettier && pnpm run eslint -- --fix",
-    "rm": "rimraf -rf ./node_modules",
-    "rinit": "pnpm run rm && pnpm run pnpm",
-    "npm:publish": "pnpm run rinit && pnpm test && publish && git checkout main && pnpm publish --access public",
     "pnpm": "pnpm install",
     "upgrade": "pnpm upgrade",
-    "git-push": "git push --follow-tags",
-    "git-build-push": "pnpm install && pnpm build && pnpm run git-push",
-    "git-publish": "pnpm run git-build-push && git checkout main && git merge dev && pnpm run git-push && git checkout dev",
     "clean": "rm -rf node_modules pnpm-lock.yaml && pnpm i"
   },
   "dependencies": {
-    "dequal": "^2.0.2",
-    "nanoid": "^3.1.29"
+    "dequal": "^2.0.3",
+    "nanoid": "^3.3.4"
   },
   "devDependencies": {
-    "@types/faker": "^5.5.8",
-    "@types/jest": "^27.0.2",
+    "@types/jest": "^27.5.2",
     "@typescript-eslint/parser": "^4.33.0",
-    "dayjs": "^1.10.7",
-    "edit-json-file": "^1.6.0",
+    "dayjs": "^1.11.5",
+    "edit-json-file": "^1.7.0",
+    "esbuild": "^0.15.6",
     "eslint": "^7.32.0",
-    "faker": "^5.5.3",
-    "immer": "^9.0.6",
-    "prettier": "^2.4.1",
+    "immer": "^9.0.15",
+    "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
-    "shelljs": "^0.8.4",
-    "typescript": "^4.4.3",
+    "rollup": "^2.79.0",
+    "rollup-plugin-dts": "^4.2.2",
+    "rollup-plugin-esbuild": "^4.10.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "shelljs": "^0.8.5",
+    "typescript": "^4.8.2",
     "vite": "^3.0.9",
-    "vitest": "^0.22.0"
+    "vitest": "^0.22.1"
   },
   "wallaby": {
     "slowTestThreshold": 200,
