@@ -1,5 +1,5 @@
-import { generateTests } from './config';
 import { isNullish } from '../src/functions/nullish';
+import { generateTests } from './config';
 
 generateTests(
   isNullish,

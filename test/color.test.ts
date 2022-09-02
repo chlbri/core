@@ -1,5 +1,6 @@
 import { generateTests } from './config';
 import { colorHex1, colorHex2, rgba } from '../src/functions/color';
+import {describe} from 'vitest'
 
 describe('Function rgba ======================================>', () => {
   generateTests(
