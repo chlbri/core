@@ -337,8 +337,8 @@ describe('Asynchronous ==>', () => {
         describe('For 3 elements ==>', () => {
           generateAsyncTests(
             dumpAsyncFunction2,
-            asyncActuals2f2,
-            asyncExpecteds2,
+            [[-5], [-15], [24]],
+            [false, false, true],
           );
         });
       }))();

@@ -1,5 +1,7 @@
+import { dequal } from 'dequal';
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { nanoid } from 'nanoid';
+import { log } from '../../src/functions';
 import { LengthOf, ThenArg, TupleOf } from '../../src/types';
 import { TestElement, TestTable } from './types';
 
@@ -40,13 +42,16 @@ export function generateAsyncTestTable<
 
 function testNullTest(...actual: any[]) {
   const inner =
-    actual == null ||
-    actual === [null] ||
+    actual === null ||
+    dequal(actual, [null]) ||
     actual === undefined ||
-    actual === [undefined] ||
+    dequal(actual, [undefined]) ||
     actual.every(
       v =>
-        v == null || v === [null] || v === undefined || v === [undefined],
+        v == null ||
+        dequal(v, [null]) ||
+        v === undefined ||
+        dequal(v, [undefined]),
     );
   return inner;
 }
@@ -65,6 +70,12 @@ export function mapperTest<P extends any[], R extends any>(
         ? `${nanoid()} ===>  `
         : `Arguments : [ ${_actualText} ] shoulds return ${expected} ===>`,
       () => {
+        log(
+          'test',
+          uuid
+            ? `${nanoid()} ===>  `
+            : `Arguments : [ ${_actualText} ] shoulds return ${expected} ===>`,
+        );
         expect(JSON.stringify(spy(...actual))).toStrictEqual(
           JSON.stringify(expected),
         );
@@ -88,6 +99,12 @@ export function mapperAsyncTest<P extends any[], R extends any>(
         ? `${nanoid()} ===>  `
         : `Arguments : [ ${_actualText} ] shoulds return ${expected} ===>`,
       async () => {
+        log(
+          'test',
+          uuid
+            ? `${nanoid()} ===>  `
+            : `Arguments : [ ${_actualText} ] shoulds return ${expected} ===>`,
+        );
         const _processed = await spy(...actual);
         expect(JSON.stringify(_processed)).toStrictEqual(
           JSON.stringify(expected),
@@ -112,10 +129,10 @@ export function generateTests<
   const mapper = mapperTest(spy, uuid);
   const tests = table.map(mapper);
   const len = expecteds.length;
-  (() =>
-    it(`${func.name} should be call ${len} times`, () => {
-      expect(spy).toBeCalledTimes(len);
-    }))();
+
+  it(`${func.name} should be call ${len} times`, () => {
+    expect(spy).toBeCalledTimes(len);
+  });
   return { tests, spy } as const;
 }
 
@@ -129,10 +146,10 @@ export function generateAsyncTests<
   const mapper = mapperAsyncTest(spy, uuid);
   const tests = table.map(mapper);
   const len = expecteds.length;
-  (() =>
-    it(`${func.name} should be call ${len} times`, () => {
-      expect(spy).toBeCalledTimes(len);
-    }))();
+
+  it(`${func.name} should be call ${len} times`, () => {
+    expect(spy).toBeCalledTimes(len);
+  });
   return { tests, spy } as const;
 }
 
