@@ -1,5 +1,6 @@
 # Ignore artifacts:
 node_modules
 publish
+lib
 dist
 publish_npm

@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/node
 # Edit at https://www.toptal.com/developers/gitignore?templates=node
 
+#For Libraries
+lib
+dist
 
 ### Node ###
 # Logs
@@ -91,7 +94,6 @@ yarn.lock
 
 # Nuxt.js build / generate output
 .nuxt
-
 
 # Gatsby files
 .cache/
