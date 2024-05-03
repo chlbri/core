@@ -30,9 +30,9 @@ export type CoreDataBaseSchema<
   ? U1[0] extends undefined
     ? _SetEntityForDatabase<T1, K, Before, After>
     : U1 extends _ReadAU
-    ? _SetEntityForDatabase<T1, K, Before, After> &
-        CoreDataBaseSchema<U1, K, Before, After>
-    : never
+      ? _SetEntityForDatabase<T1, K, Before, After> &
+          CoreDataBaseSchema<U1, K, Before, After>
+      : never
   : never;
 
 export type DomainUseCaseSchema<
@@ -44,9 +44,9 @@ export type DomainUseCaseSchema<
   ? U1[0] extends undefined
     ? _SetEntityForUseCase<T1, K, Before, After>
     : U1 extends _ReadAU
-    ? _SetEntityForUseCase<T1, K, Before, After> &
-        DomainUseCaseSchema<U1, K, Before, After>
-    : never
+      ? _SetEntityForUseCase<T1, K, Before, After> &
+          DomainUseCaseSchema<U1, K, Before, After>
+      : never
   : {
       [key: string]: T[number];
     };

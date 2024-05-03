@@ -1,9 +1,7 @@
 import { NUMBERS, STRINGS } from '../../constants';
-import { StringLocalLitterals } from '../../types/strings';
+import { LocalLitterals } from '../../types/strings';
 
-export function isStringLocalLitterals(
-  val: unknown,
-): val is StringLocalLitterals {
+export function isLocalLitterals(val: unknown): val is LocalLitterals {
   // #region Checkers
   const all = [
     ...STRINGS.LETTERS,

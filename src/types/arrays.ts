@@ -13,8 +13,8 @@ type _DivideBy<
 > = T['length'] extends N
   ? [true]
   : T extends readonly [...TupleOf<T[number], N>, ...infer U]
-  ? [true, ..._DivideBy<N, U>]
-  : never;
+    ? [true, ..._DivideBy<N, U>]
+    : never;
 
 export type DivideTupleLengthBy<
   N extends number,
@@ -38,9 +38,8 @@ export type TupleOf<T = any, N extends number = number> = N extends N
 
 export type GetTupleType<T> = T extends TupleOf<infer U, any> ? U : never;
 
-export type GetTupleNumber<T> = T extends TupleOf<any, infer U>
-  ? U
-  : never;
+export type GetTupleNumber<T> =
+  T extends TupleOf<any, infer U> ? U : never;
 
 type _UnionToIntersection<U> = (
   U extends unknown ? (k: U) => void : never
@@ -48,28 +47,30 @@ type _UnionToIntersection<U> = (
   ? I
   : never;
 
-type _LastOf<T> = _UnionToIntersection<
-  T extends unknown ? () => T : never
-> extends () => infer R
-  ? R
-  : never;
+type _LastOf<T> =
+  _UnionToIntersection<
+    T extends unknown ? () => T : never
+  > extends () => infer R
+    ? R
+    : never;
 
 type _Push<T extends unknown[], V> = [...T, V];
 
 type _TuplifyUnionBoolean<T> = [T] extends [never] ? true : false;
 
 // TS4.1+
-export type TuplifyUnion<T> = true extends _TuplifyUnionBoolean<T>
-  ? []
-  : _Push<TuplifyUnion<Exclude<T, _LastOf<T>>>, _LastOf<T>>;
+export type TuplifyUnion<T> =
+  true extends _TuplifyUnionBoolean<T>
+    ? []
+    : _Push<TuplifyUnion<Exclude<T, _LastOf<T>>>, _LastOf<T>>;
 
 // #endregion
 
 export type Reverse<T> = T extends []
   ? T
   : T extends [infer Head, ...infer Tail]
-  ? [...Reverse<Tail>, Head]
-  : T;
+    ? [...Reverse<Tail>, Head]
+    : T;
 
 export type NArrayOmit<
   T extends any[],

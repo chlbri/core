@@ -1,9 +1,9 @@
-import { isStringLocalLitterals } from './isStringLocalLitterals';
+import { isLocalLitterals } from './isLocalLitterals';
 
 export function isClean(value: string): boolean {
   let out = true;
   for (const iter of value) {
-    if (!isStringLocalLitterals(iter)) {
+    if (!isLocalLitterals(iter)) {
       out = false;
       break;
     }
@@ -14,7 +14,7 @@ export function isClean(value: string): boolean {
 export function clean(value: string): string {
   let out = value;
   for (const iter of value) {
-    if (!isStringLocalLitterals(iter)) {
+    if (!isLocalLitterals(iter)) {
       out = out.replace(iter, '');
     }
   }
