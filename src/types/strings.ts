@@ -1,15 +1,3 @@
-import { NUMBERS, STRINGS } from '../constants';
-
-export type LowerLetters = (typeof STRINGS.LETTERS)[number];
-
-export type UpperLetters = Uppercase<LowerLetters>;
-
-export type Letters = UpperLetters | LowerLetters;
-
-export type Digit = (typeof NUMBERS.DIGITS)[number];
-
-export type LocalLitterals = Letters | Digit;
-
 export type Email = `${string}@${string}.${string}`;
 
 export type _JoinStringHelper = string | number | boolean | bigint;
@@ -30,5 +18,3 @@ export type AddString<
   Before extends string = '',
   After extends string = '',
 > = `${Before}${T & string}${After}`;
-
-export type StatusString = (typeof STRINGS.STATUS_STRINGS)[number];
