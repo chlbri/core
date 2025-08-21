@@ -22,6 +22,12 @@
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "noEmit": true,
-    "declarationMap": true
+    "declarationMap": true,
+    "baseUrl": "./src",
+    "paths": {
+      "#utils/*": ["globals/utils/*"],
+      "#features/*": ["features/*"],
+      "#types": ["_alias/types"]
+    }
   }
 }
