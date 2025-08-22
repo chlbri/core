@@ -23,11 +23,11 @@
     "isolatedModules": true,
     "noEmit": true,
     "declarationMap": true,
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
-      "#utils/*": ["globals/utils/*"],
-      "#features/*": ["features/*"],
-      "#types": ["globals/types"]
+      "#utils/*": ["src/globals/utils/*"],
+      "#features/*": ["src/features/*"],
+      "#types": ["src/globals/types"]
     }
   }
 }
