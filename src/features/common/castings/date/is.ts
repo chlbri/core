@@ -1,4 +1,4 @@
-import { isInstance } from 'globals';
+import { isInstance } from '#utils/is/_default';
 
 const fn = isInstance(Date);
 

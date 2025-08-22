@@ -21,7 +21,7 @@ import undefiny from './undefiny';
 import union from './union';
 import unknown from './unknown';
 
-const typings = expandFn(_index, {
+export const typings = expandFn(_index, {
   partial,
   const: _const,
   identity,
@@ -44,4 +44,3 @@ const typings = expandFn(_index, {
   defaulted,
 });
 
-export default typings;

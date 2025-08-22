@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { expandFn } from '../../globals/utils/expandFn';
+
+import { expandFn } from '#utils/expandFn';
 import {
   CUSTOM,
   PARTIAL,

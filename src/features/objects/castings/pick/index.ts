@@ -1,4 +1,4 @@
-import { partialCall } from '#features/functions';
+import { partialCall } from '#features/functions/functions/partialCall';
 import { pick } from '../../utils/pick';
 
 const fn = partialCall(pick, 'key') as <T extends object, K extends any[]>(

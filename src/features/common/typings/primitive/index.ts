@@ -1,5 +1,5 @@
 import type { Primitive } from '#types';
-import { typeFn } from 'globals';
+import { typeFn } from '#utils/typeFn';
 
 const fn = typeFn<Primitive>()();
 

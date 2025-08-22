@@ -1,7 +1,9 @@
 import { expandFn } from '#utils/expandFn';
+import cast from './cast';
 import _index from './index';
-import object from './object';
 
-const fn = expandFn(_index, { object });
+const fn = expandFn(_index, {
+  cast,
+});
 
 export default fn;

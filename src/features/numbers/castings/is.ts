@@ -1,4 +1,4 @@
-import { isTypeFn } from 'globals';
+import { isTypeFn } from '#utils/is/_default';
 
 const fn = isTypeFn('number');
 

@@ -1,4 +1,4 @@
 export * from './castings';
-export * from './functions';
+export * as functions from './functions';
 export * from './types';
 export * from './typings';

@@ -1,4 +1,4 @@
-import { partialCall } from '#features/functions';
+import { partialCall } from '#features/functions/functions/partialCall';
 import type { SubType } from '#types';
 import { pick } from '../../utils/pick';
 

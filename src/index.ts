@@ -1,2 +1,2 @@
+export * from '#utils/index';
 export * from './features';
-export * from './globals';

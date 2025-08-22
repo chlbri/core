@@ -1,4 +1,4 @@
-import { expandFn } from 'globals';
+import { expandFn } from '#utils/expandFn';
 import { DEFAULT_DELIMITER } from '../constants';
 import add from './add';
 import contains from './contains';

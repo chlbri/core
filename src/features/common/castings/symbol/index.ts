@@ -1,4 +1,4 @@
-import { castFn } from 'globals';
+import { castFn } from '#utils/castFn';
 
 const fn = castFn<symbol>()();
 

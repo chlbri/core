@@ -1,4 +1,4 @@
-import { expandFn } from 'globals';
+import { expandFn } from '#utils/expandFn';
 import _unknown from './_unknown';
 import any from './any';
 import clone from './clone';

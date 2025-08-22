@@ -1,4 +1,4 @@
-import { expandFn } from 'globals';
+import { expandFn } from '#utils/expandFn';
 import byKey from './byKey';
 import entries from './entries';
 import freeze from './freeze/all';
