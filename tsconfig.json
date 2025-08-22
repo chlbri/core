@@ -1,5 +1,5 @@
 {
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "src/scripts"],
   "compilerOptions": {
     "lib": ["dom", "esnext"],
     "importHelpers": true,

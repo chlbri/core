@@ -71,8 +71,8 @@
     "test:coverage": "vitest run",
     "test:watch": "vitest",
     "upgrade": "pnpm upgrade --latest",
-    "manifest": "tsx src/scripts/generate.ts",
-    "manifest:watch": "tsx src/scripts/watch.ts"
+    "manifest": "tsx src/scripts/manifest/generate.ts",
+    "manifest:watch": "tsx src/scripts/manifest/watch.ts"
   },
   "size-limit": [
     {

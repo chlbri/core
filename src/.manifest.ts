@@ -776,10 +776,4 @@ export const MANIFEST = {
     'src/globals/utils/is/primitive.object.ts',
   'globals.utils.typeFn': 'src/globals/utils/typeFn.ts',
   // #endregion
-
-  // #region Scripts
-  'scripts.generate': 'src/scripts/generate.ts',
-  'scripts.helpers': 'src/scripts/helpers.ts',
-  'scripts.watch': 'src/scripts/watch.ts',
-  // #endregion
 };

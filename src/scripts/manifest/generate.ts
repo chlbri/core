@@ -5,15 +5,15 @@ import { globSync } from 'node:fs';
 import { join } from 'node:path';
 import { relative } from 'path';
 import {
-  debounce,
+  addFileToManifest,
   generateManifest,
   MANIFEST_FILE,
+  removeFileFromManifest,
   SRC_DIR,
 } from './helpers';
 
 // Génération initiale
 console.log('🚀 Génération initiale du manifest...');
-generateManifest();
 
 const ignored = [
   ...[
@@ -30,11 +30,16 @@ const ignored = [
   relative(process.cwd(), MANIFEST_FILE), // Ignorer le fichier manifest lui-même
 ];
 
+// Options de génération du manifest
+const manifestOptions = {
+  excludePatterns: ['scripts/**', '**/*.test.ts', '**/*.spec.ts'],
+  verbose: true,
+};
+
 // Configuration du watcher
 const watcher = chokidar.watch(SRC_DIR, {
   ignored,
-  persistent: true,
-  ignoreInitial: true, // On a déjà fait le scan initial
+  persistent: false,
   awaitWriteFinish: {
     stabilityThreshold: 200,
     pollInterval: 100,
@@ -43,26 +48,29 @@ const watcher = chokidar.watch(SRC_DIR, {
 });
 
 // Debouncer la regénération pour éviter les appels trop fréquents
-const debouncedGenerate = debounce(generateManifest, 300);
+// const debouncedGenerate = debounce(
+//   () => generateManifest(manifestOptions),
+//   300,
+// );
 
 // Événements de surveillance
 watcher
   .on('add', (filePath: string) => {
     if (filePath.endsWith('.ts') && !filePath.endsWith('.test.ts')) {
       console.log(`➕ Fichier ajouté: ${relative(SRC_DIR, filePath)}`);
-      return debouncedGenerate();
+      addFileToManifest(filePath, manifestOptions);
     }
   })
   .on('change', (filePath: string) => {
     if (filePath.endsWith('.ts') && !filePath.endsWith('.test.ts')) {
       console.log(`🔄 Fichier modifié: ${relative(SRC_DIR, filePath)}`);
-      return debouncedGenerate();
+      addFileToManifest(filePath, manifestOptions);
     }
   })
   .on('unlink', (filePath: string) => {
     if (filePath.endsWith('.ts') && !filePath.endsWith('.test.ts')) {
       console.log(`🗑️ Fichier supprimé: ${relative(SRC_DIR, filePath)}`);
-      return debouncedGenerate();
+      removeFileFromManifest(filePath, manifestOptions);
     }
   })
   .on('error', (error: unknown) => {
@@ -74,6 +82,7 @@ watcher
       '📝 Le manifest sera automatiquement mis à jour lors des changements',
     );
     console.log('⏹️  Appuyez sur Ctrl+C pour arrêter la surveillance');
+    return generateManifest(manifestOptions);
   });
 
 // Gestion propre de l'arrêt
