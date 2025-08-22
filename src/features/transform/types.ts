@@ -1,4 +1,4 @@
-import type { AnyArray, NOmit, PrimitiveObject, SoRa } from '#types';
+import type { AnyArray, Fn, NOmit, PrimitiveObject, SoRa } from '#types';
 import type {
   CUSTOM,
   PARTIAL,
@@ -45,21 +45,23 @@ export type _ObjectS =
 
 export type ObjectS = SoRa<_ObjectS>;
 
-export type TransformO<T> = T extends PrimitiveS
-  ? TransformS<T>
-  : T extends 'date'
-    ? Date
-    : T extends 'object'
-      ? // eslint-disable-next-line @typescript-eslint/no-empty-object-type
-        {}
-      : T extends 'primitive'
-        ? PrimitiveObject
-        : T extends PartialCustom
-          ? Partial<TransformO<NOmit<T, typeof PARTIAL>>>
-          : T extends AnyArray<any>
-            ? T[number] extends infer TKN extends ObjectS
-              ? TransformO<TKN>[]
-              : never
-            : {
-                [K in keyof T]: TransformO<T[K]>;
-              };
+export type TransformO<T> = T extends 'function'
+  ? Fn
+  : T extends PrimitiveS
+    ? TransformS<T>
+    : T extends 'date'
+      ? Date
+      : T extends 'object'
+        ? // eslint-disable-next-line @typescript-eslint/no-empty-object-type
+          {}
+        : T extends 'primitive'
+          ? PrimitiveObject
+          : T extends PartialCustom
+            ? Partial<TransformO<NOmit<T, typeof PARTIAL>>>
+            : T extends AnyArray<any>
+              ? T[number] extends infer TKN extends ObjectS
+                ? TransformO<TKN>[]
+                : never
+              : {
+                  [K in keyof T]: TransformO<T[K]>;
+                };

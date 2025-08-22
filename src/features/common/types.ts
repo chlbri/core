@@ -1,4 +1,5 @@
-import type { Checker, Fn, RecursiveArrayOf } from '#types';
+import type { TransformO } from '#features/transform';
+import type { Fn, RecursiveArrayOf } from '#types';
 
 export type SingleOrRecursiveArrayOf<T> = T | RecursiveArrayOf<T>;
 
@@ -49,24 +50,36 @@ export type TypeStrings =
   | 'object'
   | 'function';
 
-export type KeyTypes = Record<Keys, TypeStrings | Checker2>;
+export type KeyTypes = {
+  [K in Keys]: TypeStrings | Checker2 | KeyTypes;
+};
 
 export type KeyTypesFrom<T extends KeyTypes> = {
-  [K in keyof T]: T[K] extends TypeStrings
-    ? T[K]
-    : T[K] extends Checker<infer R>
-      ? R
-      : never;
+  [K in keyof T]: T[K] extends KeyTypes
+    ? KeyTypesFrom<T[K]>
+    : T[K] extends TypeStrings
+      ? TransformO<T[K]>
+      : T[K] extends Checker2<infer R>
+        ? R
+        : unknown;
 };
 
 export type NonN<T> = T extends undefined | null ? any : NonNullable<T>;
 
-export type Defaulted<T, U extends NonN<T>> = T extends
-  | undefined
-  | never
-  | null
+export type Defaulted<T, U extends NonN<T>> = undefined extends T
   ? U
-  : T;
+  : null extends T
+    ? U
+    : never extends T
+      ? U
+      : T;
+
+// export type Defaulted<T, U extends NonN<T>> = T extends
+//   | undefined
+//   | never
+//   | null
+//   ? U
+//   : T;
 
 export type UnionKeys<U> = U extends Record<infer K, any> ? K : never;
 

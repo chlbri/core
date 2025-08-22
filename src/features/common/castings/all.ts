@@ -4,7 +4,7 @@ import any from './any';
 import clone from './clone';
 import _const from './const';
 import date from './date/all';
-import defaulted from './defaulted';
+import defaulted from './defaulted/all';
 import identity from './identity';
 import _index from './index';
 import is from './is/all';
