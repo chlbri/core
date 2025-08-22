@@ -27,7 +27,7 @@
     "paths": {
       "#utils/*": ["globals/utils/*"],
       "#features/*": ["features/*"],
-      "#types": ["_alias/types"]
+      "#types": ["globals/types"]
     }
   }
 }

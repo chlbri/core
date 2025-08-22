@@ -6,7 +6,7 @@ export const isFn = <const T>(check: T) => {
   };
 };
 
-export const isTypeFn = <T extends PrimitiveS>(type: T) => {
+export const isTypeFn = <T extends PrimitiveS | 'object'>(type: T) => {
   return (value: unknown): value is TransformO<T> => {
     return typeof value === type;
   };

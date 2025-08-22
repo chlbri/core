@@ -15,11 +15,11 @@ import type {
 import { castFn } from '#utils/castFn';
 import { expandFn } from '#utils/expandFn';
 import { isPlainObject, isPrimitiveObject } from '#utils/is/primitive';
-import { _readonly } from './typings.readonly';
 import { checkEntries } from './utils/entries';
 import { omit, omitIs } from './utils/omit';
 import { omitDeep, omitDeepIs } from './utils/omit.deep';
 import { pick, pickDeep } from './utils/pick';
+import { _readonly } from './utils/readonly';
 import { isRequiredDeep } from './utils/require';
 
 export const castings = castFn<object>()({
@@ -76,9 +76,11 @@ export const castings = castFn<object>()({
             object: object,
             keys: K,
           ): object is KeyTypesFrom<K> => {
-            const check0 = Object.keys(object).every(key =>
-              Object.keys(keys).includes(key),
-            );
+            const check0 =
+              Object.keys(object).every(key =>
+                Object.keys(keys).includes(key),
+              ) && Object.keys(keys).every(key => key in object);
+
             if (!check0) return false;
 
             return checkEntries(keys, object);

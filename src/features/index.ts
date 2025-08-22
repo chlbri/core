@@ -7,3 +7,4 @@ export * as objects from './objects';
 export * as promises from './promises';
 export * as strings from './strings';
 export * as transformers from './transform';
+export * as typescript from './typescript';

@@ -64,6 +64,7 @@
     "rollup": "rollup -c",
     "size": "size-limit",
     "test": "pnpm run test:coverage --no-coverage",
+    "test:only": "pnpm run test:coverage --no-coverage",
     "test:coverage": "vitest run",
     "test:watch": "vitest",
     "upgrade": "pnpm upgrade --latest"
@@ -112,6 +113,7 @@
   "dependencies": {
     "cmd-ts": "^0.13.0",
     "inquirer": "^12.9.3",
+    "ts-morph": "^26.0.0",
     "yoctocolors": "^2.1.2"
   }
 }
