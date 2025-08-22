@@ -43,4 +43,3 @@ export const typings = expandFn(_index, {
   keys,
   defaulted,
 });
-

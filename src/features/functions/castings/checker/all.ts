@@ -11,7 +11,3 @@ const checker = expandFn(_index, {
 });
 
 export default checker;
-
-
-
-
