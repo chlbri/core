@@ -1,4 +1,4 @@
-import type { Checker, RecursiveArrayOf } from '#types';
+import type { Checker, Fn, RecursiveArrayOf } from '#types';
 
 export type SingleOrRecursiveArrayOf<T> = T | RecursiveArrayOf<T>;
 
@@ -114,3 +114,7 @@ export type Equals<T, U> = T extends U
     ? true
     : false
   : false;
+
+export type Classe = {
+  [Symbol.hasInstance]: Fn<any, boolean>;
+};

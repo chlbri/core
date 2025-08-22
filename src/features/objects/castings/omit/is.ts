@@ -1,6 +1,6 @@
 import { partialCall } from '#features/functions';
+import { omitIs } from '#features/objects/utils/omit.is';
 import type { Keys, PrimitiveObjectMap } from '#types';
-import { omitIs } from '../../utils/omit';
 
 const fn = partialCall(omitIs, 'key') as <K extends Keys[]>(
   object: PrimitiveObjectMap,

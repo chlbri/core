@@ -1,6 +1,6 @@
 import { partialCall } from '#features/functions';
+import { omitDeepIs } from '#features/objects/utils/omit.deep.is';
 import type { Keys, PrimitiveObjectMap } from '#types';
-import { omitDeepIs } from '../../../utils/omit.deep';
 
 const fn = partialCall(omitDeepIs, 'key') as (
   object: PrimitiveObjectMap,

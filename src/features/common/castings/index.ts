@@ -1,3 +1,5 @@
-const fn = <T>(value: unknown) => value as T;
+import { castFn } from '#utils/castFn';
+
+const fn = castFn<unknown>()();
 
 export default fn;

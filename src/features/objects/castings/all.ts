@@ -1,10 +1,11 @@
-import { castFn } from '#utils/castFn';
+import { expandFn } from 'globals';
 import byKey from './byKey';
 import entries from './entries';
-import freeze from './freeze';
+import freeze from './freeze/all';
 import hasKeys from './hasKeys/all';
-import is from './is';
-import keysOf from './keysOf';
+import _index from './index';
+import keyTypes from './keyTypes/all';
+import keys from './keysOf';
 import omit from './omit/all';
 import pick from './pick/all';
 import primitive from './primitive';
@@ -17,15 +18,15 @@ import trueObject from './trueObject';
 import type from './type';
 import values from './values';
 
-export const castings = castFn<object>()({
+export const castings = expandFn(_index, {
   trueObject,
-  is,
   type,
-  keysOf,
+  keys,
   values,
   entries,
   byKey,
   hasKeys,
+  keyTypes,
   omit,
   reverse,
   readonly,

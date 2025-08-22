@@ -1,5 +1,5 @@
 import { partialCall } from '#features/functions';
-import { omitIs } from '../../../utils/omit';
+import { omitIs } from '#features/objects/utils/omit.is';
 
 const fn = partialCall(omitIs, 'key') as <
   T extends object,

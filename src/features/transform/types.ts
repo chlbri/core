@@ -1,6 +1,4 @@
-import type { AnyArray } from '../arrays/types';
-import type { PrimitiveObject, SoRa } from '../common/types';
-import type { NOmit } from '../objects/types';
+import type { AnyArray, NOmit, PrimitiveObject, SoRa } from '#types';
 import type {
   CUSTOM,
   PARTIAL,

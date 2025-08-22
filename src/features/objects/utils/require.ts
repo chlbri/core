@@ -1,6 +1,6 @@
 import type { DeepRequired } from '#types';
 import { mergeIs } from '#utils/is/merge';
-import { isPlainObject } from '#utils/is/primitive';
+import { isPlainObject } from '#utils/is/object';
 
 export const isRequiredDeep = (
   object: unknown,

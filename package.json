@@ -1,7 +1,7 @@
 {
-  "name": "@bemedev///TODO",
+  "name": "@bemedev/core",
   "version": "0.0.1",
-  "description": "//TODO",
+  "description": "The core library of @bemedev",
   "author": {
     "email": "bri_lvi@icloud.com",
     "name": "chlbri",
@@ -31,7 +31,10 @@
     }
   ],
   "keywords": [
-    "//TODO"
+    "core",
+    "bemedev",
+    "@bemedev",
+    "cli"
   ],
   "files": [
     "lib",

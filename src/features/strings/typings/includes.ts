@@ -1,4 +1,4 @@
-import { contains } from '../utils/contains';
+import contains from './contains';
 
 const fn = contains;
 
