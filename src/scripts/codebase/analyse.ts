@@ -1,6 +1,7 @@
 import { join, relative } from 'path';
 import { Project } from 'ts-morph';
 import { pathToDotNotation } from '../utils';
+import { addJSDocToSourceText } from './analyse.utils';
 import { SRC_DIR } from './constants';
 import { analyzeExports } from './exports';
 import { analyzeImports } from './imports';
@@ -9,7 +10,7 @@ import type { CodebaseAnalysis } from './types';
 /**
  * Analyse tous les fichiers TypeScript dans src/ (sauf src/scripts/)
  */
-export const analyze = async (): Promise<CodebaseAnalysis> => {
+export const analyze = (): CodebaseAnalysis => {
   console.log('🔍 Analyse du codebase en cours...');
 
   // Initialiser le projet ts-morph
@@ -21,6 +22,7 @@ export const analyze = async (): Promise<CodebaseAnalysis> => {
   const sourceFiles = project.addSourceFilesAtPaths([
     'src/**/*.ts',
     '!src/scripts/**/*', // Exclure le dossier scripts
+    '!src/features/typescript/**/*', // Exclure le dossier typescript
     '!src/**/*.test.ts', // Exclure les fichiers de test
     '!src/**/*.spec.ts', // Exclure les fichiers de spec
   ]);
@@ -31,9 +33,11 @@ export const analyze = async (): Promise<CodebaseAnalysis> => {
   for (const sourceFile of sourceFiles) {
     const filePath = sourceFile.getFilePath();
     const relativePath = relative(SRC_DIR, filePath);
-    const text = sourceFile.getText();
 
-    // Analyser les imports et exports
+    // Générer le texte modifié avec JSDoc pour les exports
+    const modifiedText = addJSDocToSourceText(sourceFile);
+
+    // Analyser les imports et exports (sans modification)
     const imports = analyzeImports(sourceFile);
     const exports = analyzeExports(sourceFile);
 
@@ -41,7 +45,7 @@ export const analyze = async (): Promise<CodebaseAnalysis> => {
       relativePath,
       imports,
       exports,
-      text,
+      text: modifiedText,
     };
 
     processedCount++;

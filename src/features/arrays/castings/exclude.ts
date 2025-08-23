@@ -1,7 +1,7 @@
 import type { ExcludeArray } from '#types';
 import { _unknown } from '#utils/_unknown';
 
-const exclude = <const T extends any[], const Ex extends T[number][]>(
+const fn = <const T extends any[], const Ex extends T[number][]>(
   array: T,
   ...excludes: Ex
 ) => {
@@ -9,4 +9,4 @@ const exclude = <const T extends any[], const Ex extends T[number][]>(
   return _unknown<ExcludeArray<T, Ex[number]>>(out);
 };
 
-export default exclude;
+export default fn;

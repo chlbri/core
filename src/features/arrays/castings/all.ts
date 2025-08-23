@@ -1,6 +1,6 @@
 import { expandFn } from '#utils/expandFn';
 import dynamic from './dynamic';
-import exclude from './exclude';
+import fn from './exclude';
 import extract from './extract';
 import forceCast from './forceCast';
 import freeze from './freeze';
@@ -26,7 +26,7 @@ export const castings = expandFn(_index, {
   reverse,
   freeze,
   extract,
-  exclude,
+  exclude: fn,
   forceCast,
   dynamic,
   type,
