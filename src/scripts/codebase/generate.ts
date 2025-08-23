@@ -4,7 +4,7 @@ import type { CodebaseAnalysis } from './types';
  * Génère le code TypeScript pour l'analyse du codebase
  */
 export const generate = (analysis: CodebaseAnalysis): string => {
-  let code = `// Analyse automatique du codebase généré le ${new Date().toISOString()}\n\n`;
+  let code = `// Analyse automatique de la codebase\n\n`;
 
   code += `export interface ImportInfo {
   moduleSpecifier: string;
