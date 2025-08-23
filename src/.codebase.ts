@@ -1,4 +1,4 @@
-// Analyse automatique du codebase généré le 2025-08-23T02:01:29.549Z
+// Analyse automatique du codebase généré le 2025-08-23T02:05:32.384Z
 
 export interface ImportInfo {
   moduleSpecifier: string;
@@ -13,7 +13,15 @@ export interface ExportInfo {
   kind: 'default' | 'named' | 'namespace';
   text?: string;
   moduleSpecifier?: string;
-  declarationKind?: 'function' | 'class' | 'interface' | 'type' | 'variable' | 'const' | 'let' | 'enum';
+  declarationKind?:
+    | 'function'
+    | 'class'
+    | 'interface'
+    | 'type'
+    | 'variable'
+    | 'const'
+    | 'let'
+    | 'enum';
 }
 
 export interface FileAnalysis {
@@ -312,8 +320,7 @@ export default fn;
   },
   'features.arrays.castings.index': {
     relativePath: 'features/arrays/castings/index.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
@@ -362,8 +369,7 @@ export default fn;
   },
   'features.arrays.castings.is': {
     relativePath: 'features/arrays/castings/is.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
@@ -470,7 +476,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = <T extends RuA>(...array: T) => {\n  const out = array.length;\n  return _unknown<T[\'length\']>(out);\n}',
+        text: "fn = <T extends RuA>(...array: T) => {\n  const out = array.length;\n  return _unknown<T['length']>(out);\n}",
         declarationKind: 'variable',
       },
     ],
@@ -487,8 +493,7 @@ export default fn;
   },
   'features.arrays.castings.low': {
     relativePath: 'features/arrays/castings/low.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
@@ -748,8 +753,7 @@ export default fn;
 
   'features.arrays.castings.type': {
     relativePath: 'features/arrays/castings/type.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
@@ -765,25 +769,24 @@ export default fn;
   },
   'features.arrays.index': {
     relativePath: 'features/arrays/index.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./castings/all\';',
+        text: "export * from './castings/all';",
         moduleSpecifier: './castings/all',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./types\';',
+        text: "export * from './types';",
         moduleSpecifier: './types',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./typings/all\';',
+        text: "export * from './typings/all';",
         moduleSpecifier: './typings/all',
       },
       {
@@ -795,7 +798,7 @@ export default fn;
       {
         name: 'IndexesOfArray',
         kind: 'named',
-        text: 'export type IndexesOfArray<\n  T extends readonly unknown[],\n  S extends number[] = [],\n> = T[\'length\'] extends S[\'length\']\n  ? S[number]\n  : IndexesOfArray<T, [S[\'length\'], ...S]>;',
+        text: "export type IndexesOfArray<\n  T extends readonly unknown[],\n  S extends number[] = [],\n> = T['length'] extends S['length']\n  ? S[number]\n  : IndexesOfArray<T, [S['length'], ...S]>;",
         declarationKind: 'type',
       },
       {
@@ -901,7 +904,7 @@ export * from './typings/all';
       {
         name: 'IndexesOfArray',
         kind: 'named',
-        text: 'export type IndexesOfArray<\n  T extends readonly unknown[],\n  S extends number[] = [],\n> = T[\'length\'] extends S[\'length\']\n  ? S[number]\n  : IndexesOfArray<T, [S[\'length\'], ...S]>;',
+        text: "export type IndexesOfArray<\n  T extends readonly unknown[],\n  S extends number[] = [],\n> = T['length'] extends S['length']\n  ? S[number]\n  : IndexesOfArray<T, [S['length'], ...S]>;",
         declarationKind: 'type',
       },
       {
@@ -1096,7 +1099,7 @@ type _SingleOrRecursiveArrayOf<T> = T | RecursiveArrayOf<T>;
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = <const T extends RuA>(_?: T) => _unknown<T[\'length\']>()',
+        text: "fn = <const T extends RuA>(_?: T) => _unknown<T['length']>()",
         declarationKind: 'variable',
       },
     ],
@@ -1994,13 +1997,12 @@ export default fn;
   },
   'features.booleans.castings.index': {
     relativePath: 'features/booleans/castings/index.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = (data: unknown) => typeof data === \'boolean\'',
+        text: "fn = (data: unknown) => typeof data === 'boolean'",
         declarationKind: 'variable',
       },
     ],
@@ -2045,8 +2047,7 @@ export default fn;
   },
   'features.booleans.castings.type': {
     relativePath: 'features/booleans/castings/type.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
@@ -2062,25 +2063,24 @@ export default fn;
   },
   'features.booleans.index': {
     relativePath: 'features/booleans/index.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./castings/all\';',
+        text: "export * from './castings/all';",
         moduleSpecifier: './castings/all',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./types\';',
+        text: "export * from './types';",
         moduleSpecifier: './types',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./typings/all\';',
+        text: "export * from './typings/all';",
         moduleSpecifier: './typings/all',
       },
       {
@@ -2103,10 +2103,8 @@ export * from './typings/all';
   },
   'features.booleans.types': {
     relativePath: 'features/booleans/types.ts',
-    imports: [
-    ],
-    exports: [
-    ],
+    imports: [],
+    exports: [],
     text: `export {};
 `,
   },
@@ -2556,8 +2554,7 @@ export default fn;
   },
   'features.common.castings.const': {
     relativePath: 'features/common/castings/const.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
@@ -2916,8 +2913,7 @@ export default fn;
   },
   'features.common.castings.is.defined': {
     relativePath: 'features/common/castings/is/defined.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
@@ -2957,8 +2953,7 @@ export default defined;
   },
   'features.common.castings.is.notDefined': {
     relativePath: 'features/common/castings/is/notDefined.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
@@ -2976,8 +2971,7 @@ export default fn;
   },
   'features.common.castings.is.notNull': {
     relativePath: 'features/common/castings/is/notNull.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
@@ -2996,8 +2990,7 @@ export default fn;
 
   'features.common.castings.is.notNullish': {
     relativePath: 'features/common/castings/is/notNullish.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
@@ -3015,8 +3008,7 @@ export default fn;
   },
   'features.common.castings.is.notUndefined': {
     relativePath: 'features/common/castings/is/notUndefined.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
@@ -3034,8 +3026,7 @@ export default fn;
   },
   'features.common.castings.is.null': {
     relativePath: 'features/common/castings/is/null.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
@@ -3053,8 +3044,7 @@ export default fn;
   },
   'features.common.castings.is.nullish': {
     relativePath: 'features/common/castings/is/nullish.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
@@ -3072,13 +3062,12 @@ export default fn;
   },
   'features.common.castings.is.symbol': {
     relativePath: 'features/common/castings/is/symbol.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = (value: unknown): value is symbol => {\n  return typeof value === \'symbol\';\n}',
+        text: "fn = (value: unknown): value is symbol => {\n  return typeof value === 'symbol';\n}",
         declarationKind: 'variable',
       },
     ],
@@ -3091,8 +3080,7 @@ export default fn;
   },
   'features.common.castings.is.undefined': {
     relativePath: 'features/common/castings/is/undefined.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
@@ -3636,8 +3624,7 @@ export default fn;
   },
   'features.common.castings.readonly.index': {
     relativePath: 'features/common/castings/readonly/index.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
@@ -3858,7 +3845,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = isTypeFn(\'symbol\')',
+        text: "fn = isTypeFn('symbol')",
         declarationKind: 'variable',
       },
     ],
@@ -3902,8 +3889,7 @@ export default fn;
   },
   'features.common.castings.undefiny': {
     relativePath: 'features/common/castings/undefiny.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
@@ -3919,25 +3905,24 @@ export default fn;
   },
   'features.common.index': {
     relativePath: 'features/common/index.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./castings/all\';',
+        text: "export * from './castings/all';",
         moduleSpecifier: './castings/all',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./types\';',
+        text: "export * from './types';",
         moduleSpecifier: './types',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./typings/all\';',
+        text: "export * from './typings/all';",
         moduleSpecifier: './typings/all',
       },
       {
@@ -4045,7 +4030,7 @@ export default fn;
       {
         name: 'TypeStrings',
         kind: 'named',
-        text: 'export type TypeStrings =\n  | \'string\'\n  | \'number\'\n  | \'boolean\'\n  | \'bigint\'\n  | \'symbol\'\n  | \'undefined\'\n  | \'object\'\n  | \'function\';',
+        text: "export type TypeStrings =\n  | 'string'\n  | 'number'\n  | 'boolean'\n  | 'bigint'\n  | 'symbol'\n  | 'undefined'\n  | 'object'\n  | 'function';",
         declarationKind: 'type',
       },
       {
@@ -4264,7 +4249,7 @@ export * from './typings/all';
       {
         name: 'TypeStrings',
         kind: 'named',
-        text: 'export type TypeStrings =\n  | \'string\'\n  | \'number\'\n  | \'boolean\'\n  | \'bigint\'\n  | \'symbol\'\n  | \'undefined\'\n  | \'object\'\n  | \'function\';',
+        text: "export type TypeStrings =\n  | 'string'\n  | 'number'\n  | 'boolean'\n  | 'bigint'\n  | 'symbol'\n  | 'undefined'\n  | 'object'\n  | 'function';",
         declarationKind: 'type',
       },
       {
@@ -5965,7 +5950,7 @@ export default fn;
       {
         name: 'castings',
         kind: 'named',
-        text: 'castings = castFn()({\n  is: expandFn(\n    (value: unknown): value is Fn => {\n      return typeof value === \'function\';\n    },\n    {\n      strict: <T extends any[] = any[], R = any>(\n        fn: Checker<Fn<T, R>>,\n      ) => {\n        return (value: unknown): value is Fn<T, R> =>\n          typeof value === \'function\' && fn(value);\n      },\n    },\n  ),\n\n  forceCast: <T extends any[], R = any>(value: unknown) => {\n    return _unknown<Fn<T, R>>(value);\n  },\n\n  dynamic: <T extends any[], R = any>(..._: [...T, R]) =>\n    identity<Fn<T, R>>,\n\n  checker: castFn<Checker>()({\n    /**\n     * Very low\n     * Checks if value is a function with one argument\n     * @param value value to check\n     * @returns true if value is a function with one argument\n     */\n    is: <T = unknown>(value: unknown): value is Checker2<T> => {\n      return (\n        typeof value === \'function\' &&\n        value.length === 1 &&\n        !/^\\s*class\\s+/.test(value.toString())\n      );\n    },\n\n    byType: expandFn(<T>(checker: Checker2<T>) => checker, {\n      forceCast: <T>(value: Checker) => _unknown<Checker2<T>>(value),\n    }),\n  }),\n})',
+        text: "castings = castFn()({\n  is: expandFn(\n    (value: unknown): value is Fn => {\n      return typeof value === 'function';\n    },\n    {\n      strict: <T extends any[] = any[], R = any>(\n        fn: Checker<Fn<T, R>>,\n      ) => {\n        return (value: unknown): value is Fn<T, R> =>\n          typeof value === 'function' && fn(value);\n      },\n    },\n  ),\n\n  forceCast: <T extends any[], R = any>(value: unknown) => {\n    return _unknown<Fn<T, R>>(value);\n  },\n\n  dynamic: <T extends any[], R = any>(..._: [...T, R]) =>\n    identity<Fn<T, R>>,\n\n  checker: castFn<Checker>()({\n    /**\n     * Very low\n     * Checks if value is a function with one argument\n     * @param value value to check\n     * @returns true if value is a function with one argument\n     */\n    is: <T = unknown>(value: unknown): value is Checker2<T> => {\n      return (\n        typeof value === 'function' &&\n        value.length === 1 &&\n        !/^\\s*class\\s+/.test(value.toString())\n      );\n    },\n\n    byType: expandFn(<T>(checker: Checker2<T>) => checker, {\n      forceCast: <T>(value: Checker) => _unknown<Checker2<T>>(value),\n    }),\n  }),\n})",
         declarationKind: 'variable',
       },
     ],
@@ -6302,7 +6287,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'is = <T = unknown>(value: unknown): value is Checker2<T> => {\n  return (\n    typeof value === \'function\' &&\n    value.length === 1 &&\n    !/^\\s*class\\s+/.test(value.toString())\n  );\n}',
+        text: "is = <T = unknown>(value: unknown): value is Checker2<T> => {\n  return (\n    typeof value === 'function' &&\n    value.length === 1 &&\n    !/^\\s*class\\s+/.test(value.toString())\n  );\n}",
         declarationKind: 'variable',
       },
     ],
@@ -6421,7 +6406,7 @@ export default forceCast;
       {
         name: 'default',
         kind: 'default',
-        text: 'castings = castFn()({\n  is: expandFn(\n    (value: unknown): value is Fn => {\n      return typeof value === \'function\';\n    },\n    {\n      strict: <T extends any[] = any[], R = any>(\n        fn: (value: Fn<T, R>) => boolean,\n      ) => {\n        return (value: unknown): value is Fn<T, R> =>\n          typeof value === \'function\' && fn(value as Fn<T, R>);\n      },\n    },\n  ),\n\n  forceCast: <T extends any[], R = any>(value: unknown) => {\n    return _unknown<Fn<T, R>>(value);\n  },\n\n  dynamic: <T extends any[], R = any>(..._: [...T, R]) =>\n    identity<Fn<T, R>>,\n})',
+        text: "castings = castFn()({\n  is: expandFn(\n    (value: unknown): value is Fn => {\n      return typeof value === 'function';\n    },\n    {\n      strict: <T extends any[] = any[], R = any>(\n        fn: (value: Fn<T, R>) => boolean,\n      ) => {\n        return (value: unknown): value is Fn<T, R> =>\n          typeof value === 'function' && fn(value as Fn<T, R>);\n      },\n    },\n  ),\n\n  forceCast: <T extends any[], R = any>(value: unknown) => {\n    return _unknown<Fn<T, R>>(value);\n  },\n\n  dynamic: <T extends any[], R = any>(..._: [...T, R]) =>\n    identity<Fn<T, R>>,\n})",
         declarationKind: 'variable',
       },
     ],
@@ -6509,7 +6494,7 @@ export default is;
       {
         name: 'default',
         kind: 'default',
-        text: 'is = (value: unknown): value is Fn => {\n  return typeof value === \'function\';\n}',
+        text: "is = (value: unknown): value is Fn => {\n  return typeof value === 'function';\n}",
         declarationKind: 'variable',
       },
     ],
@@ -6535,7 +6520,7 @@ export default is;
       {
         name: 'default',
         kind: 'default',
-        text: 'strict = <T extends any[] = any[], R = any>(\n  fn: (value: Fn<T, R>) => boolean,\n) => {\n  return (value: unknown): value is Fn<T, R> =>\n    typeof value === \'function\' && fn(value as Fn<T, R>);\n}',
+        text: "strict = <T extends any[] = any[], R = any>(\n  fn: (value: Fn<T, R>) => boolean,\n) => {\n  return (value: unknown): value is Fn<T, R> =>\n    typeof value === 'function' && fn(value as Fn<T, R>);\n}",
         declarationKind: 'variable',
       },
     ],
@@ -6564,7 +6549,7 @@ export default strict;
       {
         name: 'default',
         kind: 'default',
-        text: 'export default function deepClone<I extends PrimitiveObject>(\n  value: I,\n  refs = new Map<I, I>(),\n): I {\n  const ref = refs.get(value);\n  if (typeof ref !== \'undefined\') return ref;\n\n  if (Array.isArray(value)) {\n    const clone: any = [];\n    refs.set(value, clone);\n\n    for (let i = 0; i < value.length; i++) {\n      clone[i] = deepClone(value[i], refs as any);\n    }\n\n    return clone as I;\n  }\n\n  if (!(value instanceof Object)) return value as unknown as I;\n\n  const clone: Record<string, PrimitiveObject> = {};\n  refs.set(value, clone as I);\n  const keys = Object.keys(value);\n\n  for (let i = 0; i < keys.length; i++) {\n    const key = keys[i];\n    clone[key] = deepClone((value as any)[keys[i]], refs);\n  }\n\n  if (Object.isFrozen(value)) {\n    Object.freeze(clone);\n  }\n\n  if (Object.isSealed(value)) {\n    Object.seal(clone);\n  }\n\n  return clone as I;\n}',
+        text: "export default function deepClone<I extends PrimitiveObject>(\n  value: I,\n  refs = new Map<I, I>(),\n): I {\n  const ref = refs.get(value);\n  if (typeof ref !== 'undefined') return ref;\n\n  if (Array.isArray(value)) {\n    const clone: any = [];\n    refs.set(value, clone);\n\n    for (let i = 0; i < value.length; i++) {\n      clone[i] = deepClone(value[i], refs as any);\n    }\n\n    return clone as I;\n  }\n\n  if (!(value instanceof Object)) return value as unknown as I;\n\n  const clone: Record<string, PrimitiveObject> = {};\n  refs.set(value, clone as I);\n  const keys = Object.keys(value);\n\n  for (let i = 0; i < keys.length; i++) {\n    const key = keys[i];\n    clone[key] = deepClone((value as any)[keys[i]], refs);\n  }\n\n  if (Object.isFrozen(value)) {\n    Object.freeze(clone);\n  }\n\n  if (Object.isSealed(value)) {\n    Object.seal(clone);\n  }\n\n  return clone as I;\n}",
         declarationKind: 'function',
       },
       {
@@ -6634,19 +6619,18 @@ export default function deepClone<I extends PrimitiveObject>(
   },
   'features.functions.functions.index': {
     relativePath: 'features/functions/functions/index.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./clone\';',
+        text: "export * from './clone';",
         moduleSpecifier: './clone',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./partialCall\';',
+        text: "export * from './partialCall';",
         moduleSpecifier: './partialCall',
       },
       {
@@ -6707,42 +6691,41 @@ export const partialCall: PartialCall_F = (f, ...headArgs) => {
   },
   'features.functions.index': {
     relativePath: 'features/functions/index.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./castings\';',
+        text: "export * from './castings';",
         moduleSpecifier: './castings',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * as functions from \'./functions\';',
+        text: "export * as functions from './functions';",
         moduleSpecifier: './functions',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./types\';',
+        text: "export * from './types';",
         moduleSpecifier: './types',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./typings\';',
+        text: "export * from './typings';",
         moduleSpecifier: './typings',
       },
       {
         name: 'functions',
         kind: 'named',
-        text: 'export * from \'./clone\';\nexport * from \'./partialCall\';\n',
+        text: "export * from './clone';\nexport * from './partialCall';\n",
       },
       {
         name: 'castings',
         kind: 'named',
-        text: 'castings = castFn()({\n  is: expandFn(\n    (value: unknown): value is Fn => {\n      return typeof value === \'function\';\n    },\n    {\n      strict: <T extends any[] = any[], R = any>(\n        fn: Checker<Fn<T, R>>,\n      ) => {\n        return (value: unknown): value is Fn<T, R> =>\n          typeof value === \'function\' && fn(value);\n      },\n    },\n  ),\n\n  forceCast: <T extends any[], R = any>(value: unknown) => {\n    return _unknown<Fn<T, R>>(value);\n  },\n\n  dynamic: <T extends any[], R = any>(..._: [...T, R]) =>\n    identity<Fn<T, R>>,\n\n  checker: castFn<Checker>()({\n    /**\n     * Very low\n     * Checks if value is a function with one argument\n     * @param value value to check\n     * @returns true if value is a function with one argument\n     */\n    is: <T = unknown>(value: unknown): value is Checker2<T> => {\n      return (\n        typeof value === \'function\' &&\n        value.length === 1 &&\n        !/^\\s*class\\s+/.test(value.toString())\n      );\n    },\n\n    byType: expandFn(<T>(checker: Checker2<T>) => checker, {\n      forceCast: <T>(value: Checker) => _unknown<Checker2<T>>(value),\n    }),\n  }),\n})',
+        text: "castings = castFn()({\n  is: expandFn(\n    (value: unknown): value is Fn => {\n      return typeof value === 'function';\n    },\n    {\n      strict: <T extends any[] = any[], R = any>(\n        fn: Checker<Fn<T, R>>,\n      ) => {\n        return (value: unknown): value is Fn<T, R> =>\n          typeof value === 'function' && fn(value);\n      },\n    },\n  ),\n\n  forceCast: <T extends any[], R = any>(value: unknown) => {\n    return _unknown<Fn<T, R>>(value);\n  },\n\n  dynamic: <T extends any[], R = any>(..._: [...T, R]) =>\n    identity<Fn<T, R>>,\n\n  checker: castFn<Checker>()({\n    /**\n     * Very low\n     * Checks if value is a function with one argument\n     * @param value value to check\n     * @returns true if value is a function with one argument\n     */\n    is: <T = unknown>(value: unknown): value is Checker2<T> => {\n      return (\n        typeof value === 'function' &&\n        value.length === 1 &&\n        !/^\\s*class\\s+/.test(value.toString())\n      );\n    },\n\n    byType: expandFn(<T>(checker: Checker2<T>) => checker, {\n      forceCast: <T>(value: Checker) => _unknown<Checker2<T>>(value),\n    }),\n  }),\n})",
         declarationKind: 'variable',
       },
       {
@@ -6778,8 +6761,7 @@ export * from './typings';
   },
   'features.functions.types': {
     relativePath: 'features/functions/types.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'Fn',
@@ -6811,13 +6793,12 @@ export type Checker<T = unknown> =
   },
   'features.functions.typings': {
     relativePath: 'features/functions/typings.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'typings',
         kind: 'named',
-        text: 'export { typings } from \'./typings/all\';',
+        text: "export { typings } from './typings/all';",
         moduleSpecifier: './typings/all',
       },
       {
@@ -7155,118 +7136,117 @@ export default typings;
   },
   'features.index': {
     relativePath: 'features/index.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * as arrays from \'./arrays\';',
+        text: "export * as arrays from './arrays';",
         moduleSpecifier: './arrays',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * as booleans from \'./booleans\';',
+        text: "export * as booleans from './booleans';",
         moduleSpecifier: './booleans',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * as common from \'./common\';',
+        text: "export * as common from './common';",
         moduleSpecifier: './common',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * as functions from \'./functions\';',
+        text: "export * as functions from './functions';",
         moduleSpecifier: './functions',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * as numbers from \'./numbers\';',
+        text: "export * as numbers from './numbers';",
         moduleSpecifier: './numbers',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * as objects from \'./objects\';',
+        text: "export * as objects from './objects';",
         moduleSpecifier: './objects',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * as promises from \'./promises\';',
+        text: "export * as promises from './promises';",
         moduleSpecifier: './promises',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * as strings from \'./strings\';',
+        text: "export * as strings from './strings';",
         moduleSpecifier: './strings',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * as transformers from \'./transform\';',
+        text: "export * as transformers from './transform';",
         moduleSpecifier: './transform',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * as typescript from \'./typescript\';',
+        text: "export * as typescript from './typescript';",
         moduleSpecifier: './typescript',
       },
       {
         name: 'arrays',
         kind: 'named',
-        text: 'export * from \'./castings/all\';\nexport * from \'./types\';\nexport * from \'./typings/all\';\n',
+        text: "export * from './castings/all';\nexport * from './types';\nexport * from './typings/all';\n",
       },
       {
         name: 'booleans',
         kind: 'named',
-        text: 'export * from \'./castings/all\';\nexport * from \'./types\';\nexport * from \'./typings/all\';\n',
+        text: "export * from './castings/all';\nexport * from './types';\nexport * from './typings/all';\n",
       },
       {
         name: 'common',
         kind: 'named',
-        text: 'export * from \'./castings/all\';\nexport * from \'./types\';\nexport * from \'./typings/all\';\n',
+        text: "export * from './castings/all';\nexport * from './types';\nexport * from './typings/all';\n",
       },
       {
         name: 'functions',
         kind: 'named',
-        text: 'export * from \'./castings\';\nexport * as functions from \'./functions\';\nexport * from \'./types\';\nexport * from \'./typings\';\n',
+        text: "export * from './castings';\nexport * as functions from './functions';\nexport * from './types';\nexport * from './typings';\n",
       },
       {
         name: 'numbers',
         kind: 'named',
-        text: 'export * from \'./castings/all\';\nexport * from \'./types\';\nexport * from \'./typings/all\';\n',
+        text: "export * from './castings/all';\nexport * from './types';\nexport * from './typings/all';\n",
       },
       {
         name: 'objects',
         kind: 'named',
-        text: 'export * from \'./castings/all\';\nexport * from \'./types\';\nexport * from \'./typings/all\';\n',
+        text: "export * from './castings/all';\nexport * from './types';\nexport * from './typings/all';\n",
       },
       {
         name: 'promises',
         kind: 'named',
-        text: 'export * from \'./types\';\n',
+        text: "export * from './types';\n",
       },
       {
         name: 'strings',
         kind: 'named',
-        text: 'export * from \'./castings/all\';\nexport * as CONSTANTS from \'./constants\';\nexport * from \'./types\';\nexport * from \'./typings/all\';\n',
+        text: "export * from './castings/all';\nexport * as CONSTANTS from './constants';\nexport * from './types';\nexport * from './typings/all';\n",
       },
       {
         name: 'transformers',
         kind: 'named',
-        text: 'export * from \'./constants\';\nexport * from \'./functions\';\nexport * from \'./types\';\n',
+        text: "export * from './constants';\nexport * from './functions';\nexport * from './types';\n",
       },
       {
         name: 'typescript',
         kind: 'named',
-        text: 'export { extractFromFile } from \'./extractFromFile\';\nexport { findFirstCallExpression } from \'./findFirstCallExpression\';\nexport { parseObject } from \'./parseObject\';\nexport { resolveType } from \'./resolveType\';\n',
+        text: "export { extractFromFile } from './extractFromFile';\nexport { findFirstCallExpression } from './findFirstCallExpression';\nexport { parseObject } from './parseObject';\nexport { resolveType } from './resolveType';\n",
       },
     ],
     text: `export * as arrays from './arrays';
@@ -7457,7 +7437,7 @@ export const castings = expandFn(_index, {
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = castFn<bigint>()({\n  is: isTypeFn(\'bigint\'),\n})',
+        text: "fn = castFn<bigint>()({\n  is: isTypeFn('bigint'),\n})",
         declarationKind: 'variable',
       },
     ],
@@ -7503,8 +7483,7 @@ export default fn;
   },
   'features.numbers.castings.getString': {
     relativePath: 'features/numbers/castings/getString.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
@@ -7555,7 +7534,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = isTypeFn(\'number\')',
+        text: "fn = isTypeFn('number')",
         declarationKind: 'variable',
       },
     ],
@@ -7568,8 +7547,7 @@ export default fn;
   },
   'features.numbers.castings.type': {
     relativePath: 'features/numbers/castings/type.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
@@ -7585,8 +7563,7 @@ export default fn;
   },
   'features.numbers.constants': {
     relativePath: 'features/numbers/constants.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'DIGITS',
@@ -7601,25 +7578,24 @@ export default fn;
 
   'features.numbers.index': {
     relativePath: 'features/numbers/index.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./castings/all\';',
+        text: "export * from './castings/all';",
         moduleSpecifier: './castings/all',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./types\';',
+        text: "export * from './types';",
         moduleSpecifier: './types',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./typings/all\';',
+        text: "export * from './typings/all';",
         moduleSpecifier: './typings/all',
       },
       {
@@ -8078,8 +8054,7 @@ export const castings = expandFn(_index, {
   },
   'features.objects.castings.byKey': {
     relativePath: 'features/objects/castings/byKey.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
@@ -8100,8 +8075,7 @@ export default fn;
   },
   'features.objects.castings.entries': {
     relativePath: 'features/objects/castings/entries.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
@@ -8119,13 +8093,12 @@ export default fn;
   },
   'features.objects.castings.freeze.all': {
     relativePath: 'features/objects/castings/freeze/all.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
         kind: 'named',
-        text: 'export { default } from \'#features/objects/castings/readonly/all\';',
+        text: "export { default } from '#features/objects/castings/readonly/all';",
         moduleSpecifier: '#features/objects/castings/readonly/all',
       },
       {
@@ -8140,13 +8113,12 @@ export default fn;
   },
   'features.objects.castings.freeze.deep.all': {
     relativePath: 'features/objects/castings/freeze/deep/all.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
         kind: 'named',
-        text: 'export { default } from \'#features/objects/castings/readonly/deep/all\';',
+        text: "export { default } from '#features/objects/castings/readonly/deep/all';",
         moduleSpecifier: '#features/objects/castings/readonly/deep/all',
       },
       {
@@ -8161,13 +8133,12 @@ export default fn;
   },
   'features.objects.castings.freeze.deep.index': {
     relativePath: 'features/objects/castings/freeze/deep/index.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
         kind: 'named',
-        text: 'export { default } from \'#features/objects/castings/readonly/deep/index\';',
+        text: "export { default } from '#features/objects/castings/readonly/deep/index';",
         moduleSpecifier: '#features/objects/castings/readonly/deep/index',
       },
       {
@@ -8182,13 +8153,12 @@ export default fn;
   },
   'features.objects.castings.freeze.deep.not': {
     relativePath: 'features/objects/castings/freeze/deep/not.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
         kind: 'named',
-        text: 'export { default } from \'#features/objects/castings/readonly/deep/not\';',
+        text: "export { default } from '#features/objects/castings/readonly/deep/not';",
         moduleSpecifier: '#features/objects/castings/readonly/deep/not',
       },
       {
@@ -8203,13 +8173,12 @@ export default fn;
   },
   'features.objects.castings.freeze.dynamic': {
     relativePath: 'features/objects/castings/freeze/dynamic.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
         kind: 'named',
-        text: 'export { default } from \'#features/objects/castings/readonly/dynamic\';',
+        text: "export { default } from '#features/objects/castings/readonly/dynamic';",
         moduleSpecifier: '#features/objects/castings/readonly/dynamic',
       },
       {
@@ -8224,13 +8193,12 @@ export default fn;
   },
   'features.objects.castings.freeze.forceCast': {
     relativePath: 'features/objects/castings/freeze/forceCast.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
         kind: 'named',
-        text: 'export { default } from \'#features/objects/castings/readonly/forceCast\';',
+        text: "export { default } from '#features/objects/castings/readonly/forceCast';",
         moduleSpecifier: '#features/objects/castings/readonly/forceCast',
       },
       {
@@ -8245,13 +8213,12 @@ export default fn;
   },
   'features.objects.castings.freeze.index': {
     relativePath: 'features/objects/castings/freeze/index.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
         kind: 'named',
-        text: 'export { default } from \'#features/objects/castings/readonly/index\';',
+        text: "export { default } from '#features/objects/castings/readonly/index';",
         moduleSpecifier: '#features/objects/castings/readonly/index',
       },
       {
@@ -8267,13 +8234,12 @@ export default fn;
 
   'features.objects.castings.freeze.is': {
     relativePath: 'features/objects/castings/freeze/is.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
         kind: 'named',
-        text: 'export { default } from \'#features/objects/castings/readonly/is\';',
+        text: "export { default } from '#features/objects/castings/readonly/is';",
         moduleSpecifier: '#features/objects/castings/readonly/is',
       },
       {
@@ -8288,13 +8254,12 @@ export default fn;
   },
   'features.objects.castings.freeze.not': {
     relativePath: 'features/objects/castings/freeze/not.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
         kind: 'named',
-        text: 'export { default } from \'#features/objects/castings/readonly/not\';',
+        text: "export { default } from '#features/objects/castings/readonly/not';",
         moduleSpecifier: '#features/objects/castings/readonly/not',
       },
       {
@@ -8681,7 +8646,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'is = (value: unknown): value is KeyTypes => {\n  const isObject = isPlainObject(value);\n  if (!isObject) return false;\n  return (\n    typeof value === \'string\' ||\n    typeof value === \'number\' ||\n    typeof value === \'symbol\'\n  );\n}',
+        text: "is = (value: unknown): value is KeyTypes => {\n  const isObject = isPlainObject(value);\n  if (!isObject) return false;\n  return (\n    typeof value === 'string' ||\n    typeof value === 'number' ||\n    typeof value === 'symbol'\n  );\n}",
         declarationKind: 'variable',
       },
     ],
@@ -8703,8 +8668,7 @@ export default is;
   },
   'features.objects.castings.keysOf': {
     relativePath: 'features/objects/castings/keysOf.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
@@ -8847,7 +8811,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = partialCall(omit, \'element\') as <\n  T extends object,\n  K extends any[],\n>(\n  object: T,\n  ...values: K\n) => SubType<T, K[number]>',
+        text: "fn = partialCall(omit, 'element') as <\n  T extends object,\n  K extends any[],\n>(\n  object: T,\n  ...values: K\n) => SubType<T, K[number]>",
         declarationKind: 'variable',
       },
     ],
@@ -8884,7 +8848,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = partialCall(omitIs, \'element\')',
+        text: "fn = partialCall(omitIs, 'element')",
         declarationKind: 'variable',
       },
     ],
@@ -8952,7 +8916,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = partialCall(omit, \'key\') as <\n  const T extends object,\n  K extends (keyof T)[],\n>(\n  object: T,\n  ...keys: K\n) => Omit<T, K[number]>',
+        text: "fn = partialCall(omit, 'key') as <\n  const T extends object,\n  K extends (keyof T)[],\n>(\n  object: T,\n  ...keys: K\n) => Omit<T, K[number]>",
         declarationKind: 'variable',
       },
     ],
@@ -8989,7 +8953,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = partialCall(omitIs, \'key\') as <\n  const T extends object,\n  K extends (keyof T)[],\n>(\n  object: T,\n  ...keys: K\n) => boolean',
+        text: "fn = partialCall(omitIs, 'key') as <\n  const T extends object,\n  K extends (keyof T)[],\n>(\n  object: T,\n  ...keys: K\n) => boolean",
         declarationKind: 'variable',
       },
     ],
@@ -9113,7 +9077,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = partialCall(omitDeep, \'element\') as <\n  T extends PrimitiveObjectMap,\n  K extends Keys[],\n>(\n  object: T,\n  ...values: K\n) => NotSubType<T, K[number]>',
+        text: "fn = partialCall(omitDeep, 'element') as <\n  T extends PrimitiveObjectMap,\n  K extends Keys[],\n>(\n  object: T,\n  ...values: K\n) => NotSubType<T, K[number]>",
         declarationKind: 'variable',
       },
     ],
@@ -9150,7 +9114,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = partialCall(omitDeepIs, \'element\')',
+        text: "fn = partialCall(omitDeepIs, 'element')",
         declarationKind: 'variable',
       },
     ],
@@ -9185,7 +9149,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = partialCall(omitDeep, \'key\') as <\n  T extends PrimitiveObjectMap,\n  K extends Keys[],\n>(\n  object: T,\n  ...keys: K\n) => DeepOmit<T, K[number]>',
+        text: "fn = partialCall(omitDeep, 'key') as <\n  T extends PrimitiveObjectMap,\n  K extends Keys[],\n>(\n  object: T,\n  ...keys: K\n) => DeepOmit<T, K[number]>",
         declarationKind: 'variable',
       },
     ],
@@ -9227,7 +9191,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = partialCall(omitDeepIs, \'key\') as (\n  object: PrimitiveObjectMap,\n  ...keys: Keys[]\n) => boolean',
+        text: "fn = partialCall(omitDeepIs, 'key') as (\n  object: PrimitiveObjectMap,\n  ...keys: Keys[]\n) => boolean",
         declarationKind: 'variable',
       },
     ],
@@ -9266,7 +9230,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = partialCall(omit, \'key\') as <\n  T extends PrimitiveObjectMap,\n  K extends any[],\n>(\n  object: T,\n  ...keys: K\n) => Omit<T, K[number]>',
+        text: "fn = partialCall(omit, 'key') as <\n  T extends PrimitiveObjectMap,\n  K extends any[],\n>(\n  object: T,\n  ...keys: K\n) => Omit<T, K[number]>",
         declarationKind: 'variable',
       },
     ],
@@ -9308,7 +9272,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = partialCall(omitIs, \'key\') as <K extends Keys[]>(\n  object: PrimitiveObjectMap,\n  ...keys: K\n) => boolean',
+        text: "fn = partialCall(omitIs, 'key') as <K extends Keys[]>(\n  object: PrimitiveObjectMap,\n  ...keys: K\n) => boolean",
         declarationKind: 'variable',
       },
     ],
@@ -9381,7 +9345,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = partialCall(omit, \'key\') as <\n  T extends object,\n  K extends (keyof T)[],\n>(\n  object: T,\n  ...keys: K\n) => Omit<T, K[number]>',
+        text: "fn = partialCall(omit, 'key') as <\n  T extends object,\n  K extends (keyof T)[],\n>(\n  object: T,\n  ...keys: K\n) => Omit<T, K[number]>",
         declarationKind: 'variable',
       },
     ],
@@ -9417,7 +9381,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = partialCall(omitIs, \'key\') as <\n  T extends object,\n  K extends (keyof T)[],\n>(\n  object: T,\n  ...keys: K\n) => boolean',
+        text: "fn = partialCall(omitIs, 'key') as <\n  T extends object,\n  K extends (keyof T)[],\n>(\n  object: T,\n  ...keys: K\n) => boolean",
         declarationKind: 'variable',
       },
     ],
@@ -9503,7 +9467,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = partialCall(pick, \'element\') as <\n  T extends object,\n  K extends any[],\n>(\n  object: T,\n  ...keys: K\n) => SubType<T, K[number]>',
+        text: "fn = partialCall(pick, 'element') as <\n  T extends object,\n  K extends any[],\n>(\n  object: T,\n  ...keys: K\n) => SubType<T, K[number]>",
         declarationKind: 'variable',
       },
     ],
@@ -9578,7 +9542,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = partialCall(pickDeep, \'element\')',
+        text: "fn = partialCall(pickDeep, 'element')",
         declarationKind: 'variable',
       },
     ],
@@ -9608,7 +9572,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = partialCall(pickDeep, \'key\')',
+        text: "fn = partialCall(pickDeep, 'key')",
         declarationKind: 'variable',
       },
     ],
@@ -9638,7 +9602,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = partialCall(pick, \'key\') as <T extends object, K extends any[]>(\n  object: T,\n  ...keys: K\n) => Pick<T, K[number]>',
+        text: "fn = partialCall(pick, 'key') as <T extends object, K extends any[]>(\n  object: T,\n  ...keys: K\n) => Pick<T, K[number]>",
         declarationKind: 'variable',
       },
     ],
@@ -9902,8 +9866,7 @@ export default fn;
   },
   'features.objects.castings.readonly.dynamic': {
     relativePath: 'features/objects/castings/readonly/dynamic.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
@@ -9948,8 +9911,7 @@ export default fn;
   },
   'features.objects.castings.readonly.index': {
     relativePath: 'features/objects/castings/readonly/index.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
@@ -9967,8 +9929,7 @@ export default fn;
   },
   'features.objects.castings.readonly.is': {
     relativePath: 'features/objects/castings/readonly/is.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
@@ -10103,8 +10064,7 @@ export default fn;
   },
   'features.objects.castings.require.index': {
     relativePath: 'features/objects/castings/require/index.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
@@ -10184,8 +10144,7 @@ export default fn;
   },
   'features.objects.castings.require.is.index': {
     relativePath: 'features/objects/castings/require/is/index.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
@@ -10331,8 +10290,7 @@ export default fn;
   },
   'features.objects.castings.type': {
     relativePath: 'features/objects/castings/type.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
@@ -10349,8 +10307,7 @@ export default fn;
 
   'features.objects.castings.values': {
     relativePath: 'features/objects/castings/values.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
@@ -10368,25 +10325,24 @@ export default fn;
   },
   'features.objects.index': {
     relativePath: 'features/objects/index.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./castings/all\';',
+        text: "export * from './castings/all';",
         moduleSpecifier: './castings/all',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./types\';',
+        text: "export * from './types';",
         moduleSpecifier: './types',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./typings/all\';',
+        text: "export * from './typings/all';",
         moduleSpecifier: './typings/all',
       },
       {
@@ -10398,7 +10354,7 @@ export default fn;
       {
         name: 'TrueObject',
         kind: 'named',
-        text: 'export type TrueObject = Ru & {\n  [Symbol.iterator]?: never;\n  //@ts-expect-error - \'SymbolConstructor\' does not exist on type \'object\'\n  [SymbolConstructor]?: never;\n};',
+        text: "export type TrueObject = Ru & {\n  [Symbol.iterator]?: never;\n  //@ts-expect-error - 'SymbolConstructor' does not exist on type 'object'\n  [SymbolConstructor]?: never;\n};",
         declarationKind: 'type',
       },
       {
@@ -10542,7 +10498,7 @@ export default fn;
       {
         name: 'OnPropChangedMethods',
         kind: 'named',
-        text: 'export type OnPropChangedMethods<T, I extends keyof T = keyof T> = T & {\n  [K in Extract<PickKeysBy<T, (...args: any) => any>, I> &\n    string as AddString<Capitalize<K>, \'on\', \'Changed\'>]: (\n    cb: (newValue: T[K]) => void,\n  ) => void;\n};',
+        text: "export type OnPropChangedMethods<T, I extends keyof T = keyof T> = T & {\n  [K in Extract<PickKeysBy<T, (...args: any) => any>, I> &\n    string as AddString<Capitalize<K>, 'on', 'Changed'>]: (\n    cb: (newValue: T[K]) => void,\n  ) => void;\n};",
         declarationKind: 'type',
       },
       {
@@ -10572,7 +10528,7 @@ export default fn;
       {
         name: '_FlatMapByKey',
         kind: 'named',
-        text: 'export type _FlatMapByKey<\n  T extends object,\n  _omit extends PickKeysBy<T, object>,\n  _withChildren extends boolean = false,\n  Delimiter extends string = \'.\',\n  Keys extends string = \'\',\n  K extends string = keyof T[_omit] & string,\n> = T extends {\n  [Key in _omit]?: any;\n}\n  ? K extends keyof T[_omit]\n    ? T[_omit][K] extends infer TK extends object\n      ?\n          | _FlatMapByKey<\n              TK,\n              _omit,\n              _withChildren,\n              Delimiter,\n              `${Keys}${Delimiter}${K}`\n            >\n          | {\n              [key in DefaultK<Keys, Delimiter>]: WithChildren<\n                T,\n                _omit,\n                _withChildren\n              >;\n            }\n      : {\n          [key in DefaultK<Keys, Delimiter>]: WithChildren<\n            T,\n            _omit,\n            _withChildren\n          >;\n        }\n    : never\n  : {\n      [key in DefaultK<Keys, Delimiter>]: WithChildren<\n        T,\n        _omit,\n        _withChildren\n      >;\n    };',
+        text: "export type _FlatMapByKey<\n  T extends object,\n  _omit extends PickKeysBy<T, object>,\n  _withChildren extends boolean = false,\n  Delimiter extends string = '.',\n  Keys extends string = '',\n  K extends string = keyof T[_omit] & string,\n> = T extends {\n  [Key in _omit]?: any;\n}\n  ? K extends keyof T[_omit]\n    ? T[_omit][K] extends infer TK extends object\n      ?\n          | _FlatMapByKey<\n              TK,\n              _omit,\n              _withChildren,\n              Delimiter,\n              `${Keys}${Delimiter}${K}`\n            >\n          | {\n              [key in DefaultK<Keys, Delimiter>]: WithChildren<\n                T,\n                _omit,\n                _withChildren\n              >;\n            }\n      : {\n          [key in DefaultK<Keys, Delimiter>]: WithChildren<\n            T,\n            _omit,\n            _withChildren\n          >;\n        }\n    : never\n  : {\n      [key in DefaultK<Keys, Delimiter>]: WithChildren<\n        T,\n        _omit,\n        _withChildren\n      >;\n    };",
         declarationKind: 'type',
       },
       {
@@ -10706,7 +10662,7 @@ export * from './typings/all';
       {
         name: 'TrueObject',
         kind: 'named',
-        text: 'export type TrueObject = Ru & {\n  [Symbol.iterator]?: never;\n  //@ts-expect-error - \'SymbolConstructor\' does not exist on type \'object\'\n  [SymbolConstructor]?: never;\n};',
+        text: "export type TrueObject = Ru & {\n  [Symbol.iterator]?: never;\n  //@ts-expect-error - 'SymbolConstructor' does not exist on type 'object'\n  [SymbolConstructor]?: never;\n};",
         declarationKind: 'type',
       },
       {
@@ -10850,7 +10806,7 @@ export * from './typings/all';
       {
         name: 'OnPropChangedMethods',
         kind: 'named',
-        text: 'export type OnPropChangedMethods<T, I extends keyof T = keyof T> = T & {\n  [K in Extract<PickKeysBy<T, (...args: any) => any>, I> &\n    string as AddString<Capitalize<K>, \'on\', \'Changed\'>]: (\n    cb: (newValue: T[K]) => void,\n  ) => void;\n};',
+        text: "export type OnPropChangedMethods<T, I extends keyof T = keyof T> = T & {\n  [K in Extract<PickKeysBy<T, (...args: any) => any>, I> &\n    string as AddString<Capitalize<K>, 'on', 'Changed'>]: (\n    cb: (newValue: T[K]) => void,\n  ) => void;\n};",
         declarationKind: 'type',
       },
       {
@@ -10880,7 +10836,7 @@ export * from './typings/all';
       {
         name: '_FlatMapByKey',
         kind: 'named',
-        text: 'export type _FlatMapByKey<\n  T extends object,\n  _omit extends PickKeysBy<T, object>,\n  _withChildren extends boolean = false,\n  Delimiter extends string = \'.\',\n  Keys extends string = \'\',\n  K extends string = keyof T[_omit] & string,\n> = T extends {\n  [Key in _omit]?: any;\n}\n  ? K extends keyof T[_omit]\n    ? T[_omit][K] extends infer TK extends object\n      ?\n          | _FlatMapByKey<\n              TK,\n              _omit,\n              _withChildren,\n              Delimiter,\n              `${Keys}${Delimiter}${K}`\n            >\n          | {\n              [key in DefaultK<Keys, Delimiter>]: WithChildren<\n                T,\n                _omit,\n                _withChildren\n              >;\n            }\n      : {\n          [key in DefaultK<Keys, Delimiter>]: WithChildren<\n            T,\n            _omit,\n            _withChildren\n          >;\n        }\n    : never\n  : {\n      [key in DefaultK<Keys, Delimiter>]: WithChildren<\n        T,\n        _omit,\n        _withChildren\n      >;\n    };',
+        text: "export type _FlatMapByKey<\n  T extends object,\n  _omit extends PickKeysBy<T, object>,\n  _withChildren extends boolean = false,\n  Delimiter extends string = '.',\n  Keys extends string = '',\n  K extends string = keyof T[_omit] & string,\n> = T extends {\n  [Key in _omit]?: any;\n}\n  ? K extends keyof T[_omit]\n    ? T[_omit][K] extends infer TK extends object\n      ?\n          | _FlatMapByKey<\n              TK,\n              _omit,\n              _withChildren,\n              Delimiter,\n              `${Keys}${Delimiter}${K}`\n            >\n          | {\n              [key in DefaultK<Keys, Delimiter>]: WithChildren<\n                T,\n                _omit,\n                _withChildren\n              >;\n            }\n      : {\n          [key in DefaultK<Keys, Delimiter>]: WithChildren<\n            T,\n            _omit,\n            _withChildren\n          >;\n        }\n    : never\n  : {\n      [key in DefaultK<Keys, Delimiter>]: WithChildren<\n        T,\n        _omit,\n        _withChildren\n      >;\n    };",
         declarationKind: 'type',
       },
       {
@@ -13665,7 +13621,7 @@ export default fn;
       {
         name: 'checkEntries',
         kind: 'named',
-        text: 'checkEntries = (keys: KeyTypes, object: object) => {\n  const entries = Object.entries(keys);\n  return entries.every(([key, type]) => {\n    const check1 = key in object;\n    if (!check1) return false;\n\n    const value = (object as any)[key];\n    if (typeof type === \'string\') {\n      return typeof value === type;\n    } else if (typeof type === \'function\') {\n      return type(value);\n    }\n    return false;\n  });\n}',
+        text: "checkEntries = (keys: KeyTypes, object: object) => {\n  const entries = Object.entries(keys);\n  return entries.every(([key, type]) => {\n    const check1 = key in object;\n    if (!check1) return false;\n\n    const value = (object as any)[key];\n    if (typeof type === 'string') {\n      return typeof value === type;\n    } else if (typeof type === 'function') {\n      return type(value);\n    }\n    return false;\n  });\n}",
         declarationKind: 'variable',
       },
     ],
@@ -13706,7 +13662,7 @@ export const checkEntries = (keys: KeyTypes, object: object) => {
       {
         name: 'omit',
         kind: 'named',
-        text: 'omit = (\n  by: Picker,\n  object: PrimitiveObjectMap,\n  ...valuesOrKeys: any[]\n) => {\n  const result: any = {};\n\n  const entries = Object.entries(object);\n  entries.forEach(([key, value]) => {\n    const checkKey = by === \'key\' && !valuesOrKeys.includes(key);\n    const checkElement = by === \'element\' && !valuesOrKeys.includes(value);\n    if (checkKey) {\n      result[key] = value;\n    } else if (checkElement) {\n      result[key] = value;\n    }\n  });\n\n  return result;\n}',
+        text: "omit = (\n  by: Picker,\n  object: PrimitiveObjectMap,\n  ...valuesOrKeys: any[]\n) => {\n  const result: any = {};\n\n  const entries = Object.entries(object);\n  entries.forEach(([key, value]) => {\n    const checkKey = by === 'key' && !valuesOrKeys.includes(key);\n    const checkElement = by === 'element' && !valuesOrKeys.includes(value);\n    if (checkKey) {\n      result[key] = value;\n    } else if (checkElement) {\n      result[key] = value;\n    }\n  });\n\n  return result;\n}",
         declarationKind: 'variable',
       },
     ],
@@ -13832,7 +13788,7 @@ export const omitDeep = (
       {
         name: 'omitDeepIs',
         kind: 'named',
-        text: 'omitDeepIs = (\n  by: Picker,\n  object: object,\n  ...valuesOrKeys: Primitive2[]\n) => {\n  const entries = Object.entries(object);\n  for (const [key, value] of entries) {\n    const isObject = isPlainObject(value);\n    if (isObject) {\n      const isDeep = omitDeepIs(by, value, ...valuesOrKeys);\n      if (!isDeep) return false;\n    } else {\n      const shouldOmit =\n        by === \'element\'\n          ? valuesOrKeys.includes(value)\n          : valuesOrKeys.includes(key);\n      if (shouldOmit) return false;\n    }\n  }\n  return true;\n}',
+        text: "omitDeepIs = (\n  by: Picker,\n  object: object,\n  ...valuesOrKeys: Primitive2[]\n) => {\n  const entries = Object.entries(object);\n  for (const [key, value] of entries) {\n    const isObject = isPlainObject(value);\n    if (isObject) {\n      const isDeep = omitDeepIs(by, value, ...valuesOrKeys);\n      if (!isDeep) return false;\n    } else {\n      const shouldOmit =\n        by === 'element'\n          ? valuesOrKeys.includes(value)\n          : valuesOrKeys.includes(key);\n      if (shouldOmit) return false;\n    }\n  }\n  return true;\n}",
         declarationKind: 'variable',
       },
     ],
@@ -13881,7 +13837,7 @@ export const omitDeepIs = (
       {
         name: 'omitIs',
         kind: 'named',
-        text: 'omitIs = (\n  by: Picker,\n  object: PrimitiveObjectMap,\n  ...valuesOrKeys: any[]\n) => {\n  const entries = Object.entries(object);\n  for (const [key, value] of entries) {\n    const checkKey = by === \'key\' && valuesOrKeys.includes(key);\n    const checkElement = by === \'element\' && valuesOrKeys.includes(value);\n    if (checkKey) {\n      return false;\n    } else if (checkElement) {\n      return false;\n    }\n  }\n  return true;\n}',
+        text: "omitIs = (\n  by: Picker,\n  object: PrimitiveObjectMap,\n  ...valuesOrKeys: any[]\n) => {\n  const entries = Object.entries(object);\n  for (const [key, value] of entries) {\n    const checkKey = by === 'key' && valuesOrKeys.includes(key);\n    const checkElement = by === 'element' && valuesOrKeys.includes(value);\n    if (checkKey) {\n      return false;\n    } else if (checkElement) {\n      return false;\n    }\n  }\n  return true;\n}",
         declarationKind: 'variable',
       },
     ],
@@ -13920,7 +13876,7 @@ export const omitIs = (
       {
         name: 'pick',
         kind: 'named',
-        text: 'pick = (by: Picker, object: object, ...keys: any[]) => {\n  const result: any = {};\n  const entries = Object.entries(object);\n\n  entries.forEach(([key, value]) => {\n    const shouldPick =\n      by === \'element\' ? keys.includes(value) : keys.includes(key);\n\n    if (shouldPick) {\n      result[key] = value;\n    }\n  });\n\n  return result;\n}',
+        text: "pick = (by: Picker, object: object, ...keys: any[]) => {\n  const result: any = {};\n  const entries = Object.entries(object);\n\n  entries.forEach(([key, value]) => {\n    const shouldPick =\n      by === 'element' ? keys.includes(value) : keys.includes(key);\n\n    if (shouldPick) {\n      result[key] = value;\n    }\n  });\n\n  return result;\n}",
         declarationKind: 'variable',
       },
     ],
@@ -13961,7 +13917,7 @@ export const pick = (by: Picker, object: object, ...keys: any[]) => {
       {
         name: 'pickDeep',
         kind: 'named',
-        text: 'pickDeep = (\n  by: Picker,\n  object: object,\n  ...valuesOrKeys: any[]\n) => {\n  const result: any = {};\n\n  for (const key in object) {\n    if (Object.prototype.hasOwnProperty.call(object, key)) {\n      const element = (object as any)[key];\n      const isObject = isPlainObject(element);\n\n      if (isObject) {\n        const picked = pickDeep(by, element, ...valuesOrKeys);\n        if (Object.keys(picked).length > 0) {\n          result[key] = picked;\n        }\n      } else {\n        const shouldPick =\n          by === \'element\'\n            ? valuesOrKeys.includes(element)\n            : valuesOrKeys.includes(key);\n        if (shouldPick) result[key] = element;\n      }\n    }\n  }\n\n  return result;\n}',
+        text: "pickDeep = (\n  by: Picker,\n  object: object,\n  ...valuesOrKeys: any[]\n) => {\n  const result: any = {};\n\n  for (const key in object) {\n    if (Object.prototype.hasOwnProperty.call(object, key)) {\n      const element = (object as any)[key];\n      const isObject = isPlainObject(element);\n\n      if (isObject) {\n        const picked = pickDeep(by, element, ...valuesOrKeys);\n        if (Object.keys(picked).length > 0) {\n          result[key] = picked;\n        }\n      } else {\n        const shouldPick =\n          by === 'element'\n            ? valuesOrKeys.includes(element)\n            : valuesOrKeys.includes(key);\n        if (shouldPick) result[key] = element;\n      }\n    }\n  }\n\n  return result;\n}",
         declarationKind: 'variable',
       },
     ],
@@ -14062,13 +14018,12 @@ export const isRequiredDeep = (
   },
   'features.objects.utils.types': {
     relativePath: 'features/objects/utils/types.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'Picker',
         kind: 'named',
-        text: 'export type Picker = \'element\' | \'key\';',
+        text: "export type Picker = 'element' | 'key';",
         declarationKind: 'type',
       },
     ],
@@ -14077,13 +14032,12 @@ export const isRequiredDeep = (
   },
   'features.promises.index': {
     relativePath: 'features/promises/index.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./types\';',
+        text: "export * from './types';",
         moduleSpecifier: './types',
       },
       {
@@ -14105,8 +14059,7 @@ export const isRequiredDeep = (
 
   'features.promises.types': {
     relativePath: 'features/promises/types.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'PromisifyMethod',
@@ -14152,7 +14105,7 @@ export type PromisifyObject<T extends Record<string, unknown>> = T & {
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = <T extends string, Before extends string, After extends string>(\n  value: T,\n  before = \'\' as Before,\n  after = \'\' as After,\n) => {\n  const out = `${before}${value}${after}`;\n  return _unknown<AddString<T, Before, After>>(out);\n}',
+        text: "fn = <T extends string, Before extends string, After extends string>(\n  value: T,\n  before = '' as Before,\n  after = '' as After,\n) => {\n  const out = `${before}${value}${after}`;\n  return _unknown<AddString<T, Before, After>>(out);\n}",
         declarationKind: 'variable',
       },
     ],
@@ -14346,7 +14299,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = <U extends string>(\n  value: unknown,\n  suffix: U,\n): value is `${string}${U}` => {\n  return isTypeFn(\'string\')(value) && value.endsWith(suffix);\n}',
+        text: "fn = <U extends string>(\n  value: unknown,\n  suffix: U,\n): value is `${string}${U}` => {\n  return isTypeFn('string')(value) && value.endsWith(suffix);\n}",
         declarationKind: 'variable',
       },
     ],
@@ -14375,7 +14328,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = <const T extends string>(value: T) => {\n  const out = value.length;\n  return _unknown<T[\'length\']>(out);\n}',
+        text: "fn = <const T extends string>(value: T) => {\n  const out = value.length;\n  return _unknown<T['length']>(out);\n}",
         declarationKind: 'variable',
       },
     ],
@@ -14391,13 +14344,12 @@ export default fn;
   },
   'features.strings.castings.includes': {
     relativePath: 'features/strings/castings/includes.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = <U extends string[]>(\n  value: unknown,\n  ...segments: U\n): value is `${string}${U[number]}${string}` => {\n  if (typeof value !== \'string\') return false;\n\n  // Check if the string contains any of the segments\n  for (const seg of segments) {\n    if (value.includes(seg)) {\n      return true;\n    }\n  }\n  return false;\n}',
+        text: "fn = <U extends string[]>(\n  value: unknown,\n  ...segments: U\n): value is `${string}${U[number]}${string}` => {\n  if (typeof value !== 'string') return false;\n\n  // Check if the string contains any of the segments\n  for (const seg of segments) {\n    if (value.includes(seg)) {\n      return true;\n    }\n  }\n  return false;\n}",
         declarationKind: 'variable',
       },
     ],
@@ -14486,7 +14438,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = isTypeFn(\'string\')',
+        text: "fn = isTypeFn('string')",
         declarationKind: 'variable',
       },
     ],
@@ -14516,7 +14468,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = <T extends readonly string[], S extends string = \' \'>(\n  sep = \' \' as S,\n  ...args: T\n) => {\n  const out = args.join(sep);\n  return _unknown<JoinString<T, S>>(out);\n}',
+        text: "fn = <T extends readonly string[], S extends string = ' '>(\n  sep = ' ' as S,\n  ...args: T\n) => {\n  const out = args.join(sep);\n  return _unknown<JoinString<T, S>>(out);\n}",
         declarationKind: 'variable',
       },
     ],
@@ -14634,7 +14586,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = (value: unknown): value is Letters => {\n  if (typeof value !== \'string\') return false;\n  if (value.length === 0) return false;\n\n  // Check if all characters are English letters\n  for (const char of value.toLowerCase()) {\n    if (!ENGLISH_LETTERS.includes(char as any)) {\n      return false;\n    }\n  }\n  return true;\n}',
+        text: "fn = (value: unknown): value is Letters => {\n  if (typeof value !== 'string') return false;\n  if (value.length === 0) return false;\n\n  // Check if all characters are English letters\n  for (const char of value.toLowerCase()) {\n    if (!ENGLISH_LETTERS.includes(char as any)) {\n      return false;\n    }\n  }\n  return true;\n}",
         declarationKind: 'variable',
       },
     ],
@@ -14680,7 +14632,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = castFn<LowerLetters>()({\n  is: (value: unknown): value is LowerLetters => {\n    return (\n      typeof value === \'string\' &&\n      is(value) &&\n      value === value.toLowerCase()\n    );\n  },\n})',
+        text: "fn = castFn<LowerLetters>()({\n  is: (value: unknown): value is LowerLetters => {\n    return (\n      typeof value === 'string' &&\n      is(value) &&\n      value === value.toLowerCase()\n    );\n  },\n})",
         declarationKind: 'variable',
       },
     ],
@@ -14724,7 +14676,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = castFn<UpperLetters>()({\n  is: (value: unknown): value is UpperLetters => {\n    return (\n      typeof value === \'string\' &&\n      is(value) &&\n      value === value.toUpperCase()\n    );\n  },\n})',
+        text: "fn = castFn<UpperLetters>()({\n  is: (value: unknown): value is UpperLetters => {\n    return (\n      typeof value === 'string' &&\n      is(value) &&\n      value === value.toUpperCase()\n    );\n  },\n})",
         declarationKind: 'variable',
       },
     ],
@@ -14763,7 +14715,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = <const S extends string, By extends string = \'.\'>(\n  value: S,\n  by = \'.\' as By,\n) => {\n  const out = value.split(by);\n  return _unknown<SplitStringBy<S, By>>(out);\n}',
+        text: "fn = <const S extends string, By extends string = '.'>(\n  value: S,\n  by = '.' as By,\n) => {\n  const out = value.split(by);\n  return _unknown<SplitStringBy<S, By>>(out);\n}",
         declarationKind: 'variable',
       },
     ],
@@ -14794,7 +14746,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = <U extends string>(\n  value: unknown,\n  prefix: U,\n): value is `${U}${string}` => {\n  return isTypeFn(\'string\')(value) && value.startsWith(prefix);\n}',
+        text: "fn = <U extends string>(\n  value: unknown,\n  prefix: U,\n): value is `${U}${string}` => {\n  return isTypeFn('string')(value) && value.startsWith(prefix);\n}",
         declarationKind: 'variable',
       },
     ],
@@ -14867,8 +14819,7 @@ export default fn;
 
   'features.strings.castings.type': {
     relativePath: 'features/strings/castings/type.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'default',
@@ -14884,19 +14835,18 @@ export default fn;
   },
   'features.strings.constants': {
     relativePath: 'features/strings/constants.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'ENGLISH_LETTERS',
         kind: 'named',
-        text: 'ENGLISH_LETTERS = [\n  \'a\',\n  \'b\',\n  \'c\',\n  \'d\',\n  \'e\',\n  \'f\',\n  \'g\',\n  \'h\',\n  \'i\',\n  \'j\',\n  \'k\',\n  \'l\',\n  \'m\',\n  \'n\',\n  \'o\',\n  \'p\',\n  \'q\',\n  \'r\',\n  \'s\',\n  \'t\',\n  \'u\',\n  \'v\',\n  \'w\',\n  \'x\',\n  \'y\',\n  \'z\',\n] as const',
+        text: "ENGLISH_LETTERS = [\n  'a',\n  'b',\n  'c',\n  'd',\n  'e',\n  'f',\n  'g',\n  'h',\n  'i',\n  'j',\n  'k',\n  'l',\n  'm',\n  'n',\n  'o',\n  'p',\n  'q',\n  'r',\n  's',\n  't',\n  'u',\n  'v',\n  'w',\n  'x',\n  'y',\n  'z',\n] as const",
         declarationKind: 'variable',
       },
       {
         name: 'DEFAULT_DELIMITER',
         kind: 'named',
-        text: 'DEFAULT_DELIMITER = \'.\'',
+        text: "DEFAULT_DELIMITER = '.'",
         declarationKind: 'variable',
       },
     ],
@@ -14934,37 +14884,36 @@ export const DEFAULT_DELIMITER = '.';
   },
   'features.strings.index': {
     relativePath: 'features/strings/index.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./castings/all\';',
+        text: "export * from './castings/all';",
         moduleSpecifier: './castings/all',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * as CONSTANTS from \'./constants\';',
+        text: "export * as CONSTANTS from './constants';",
         moduleSpecifier: './constants',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./types\';',
+        text: "export * from './types';",
         moduleSpecifier: './types',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./typings/all\';',
+        text: "export * from './typings/all';",
         moduleSpecifier: './typings/all',
       },
       {
         name: 'CONSTANTS',
         kind: 'named',
-        text: 'export const ENGLISH_LETTERS = [\n  \'a\',\n  \'b\',\n  \'c\',\n  \'d\',\n  \'e\',\n  \'f\',\n  \'g\',\n  \'h\',\n  \'i\',\n  \'j\',\n  \'k\',\n  \'l\',\n  \'m\',\n  \'n\',\n  \'o\',\n  \'p\',\n  \'q\',\n  \'r\',\n  \'s\',\n  \'t\',\n  \'u\',\n  \'v\',\n  \'w\',\n  \'x\',\n  \'y\',\n  \'z\',\n] as const;\n\nexport const DEFAULT_DELIMITER = \'.\';\n',
+        text: "export const ENGLISH_LETTERS = [\n  'a',\n  'b',\n  'c',\n  'd',\n  'e',\n  'f',\n  'g',\n  'h',\n  'i',\n  'j',\n  'k',\n  'l',\n  'm',\n  'n',\n  'o',\n  'p',\n  'q',\n  'r',\n  's',\n  't',\n  'u',\n  'v',\n  'w',\n  'x',\n  'y',\n  'z',\n] as const;\n\nexport const DEFAULT_DELIMITER = '.';\n",
       },
       {
         name: 'castings',
@@ -15005,13 +14954,13 @@ export const DEFAULT_DELIMITER = '.';
       {
         name: 'JoinString',
         kind: 'named',
-        text: 'export type JoinString<\n  T extends readonly string[],\n  sep extends string = \' \',\n> = T extends []\n  ? \'\'\n  : T extends [_JoinStringHelper]\n    ? `${T[0]}`\n    : T extends [_JoinStringHelper, ...infer U extends readonly string[]]\n      ? `${T[0]}${sep}${JoinString<U, sep>}`\n      : string;',
+        text: "export type JoinString<\n  T extends readonly string[],\n  sep extends string = ' ',\n> = T extends []\n  ? ''\n  : T extends [_JoinStringHelper]\n    ? `${T[0]}`\n    : T extends [_JoinStringHelper, ...infer U extends readonly string[]]\n      ? `${T[0]}${sep}${JoinString<U, sep>}`\n      : string;",
         declarationKind: 'type',
       },
       {
         name: 'AddString',
         kind: 'named',
-        text: 'export type AddString<\n  T,\n  Before extends string = \'\',\n  After extends string = \'\',\n> = `${Before}${T & string}${After}`;',
+        text: "export type AddString<\n  T,\n  Before extends string = '',\n  After extends string = '',\n> = `${Before}${T & string}${After}`;",
         declarationKind: 'type',
       },
       {
@@ -15035,7 +14984,7 @@ export const DEFAULT_DELIMITER = '.';
       {
         name: 'SplitStringBy',
         kind: 'named',
-        text: 'export type SplitStringBy<\n  S extends string,\n  By extends string = \'.\',\n> = string extends S\n  ? string[]\n  : S extends \'\'\n    ? []\n    : S extends `${infer T}${By}${infer U}`\n      ? [T, ...SplitStringBy<U, By>]\n      : [S];',
+        text: "export type SplitStringBy<\n  S extends string,\n  By extends string = '.',\n> = string extends S\n  ? string[]\n  : S extends ''\n    ? []\n    : S extends `${infer T}${By}${infer U}`\n      ? [T, ...SplitStringBy<U, By>]\n      : [S];",
         declarationKind: 'type',
       },
       {
@@ -15100,13 +15049,13 @@ export * from './typings/all';
       {
         name: 'JoinString',
         kind: 'named',
-        text: 'export type JoinString<\n  T extends readonly string[],\n  sep extends string = \' \',\n> = T extends []\n  ? \'\'\n  : T extends [_JoinStringHelper]\n    ? `${T[0]}`\n    : T extends [_JoinStringHelper, ...infer U extends readonly string[]]\n      ? `${T[0]}${sep}${JoinString<U, sep>}`\n      : string;',
+        text: "export type JoinString<\n  T extends readonly string[],\n  sep extends string = ' ',\n> = T extends []\n  ? ''\n  : T extends [_JoinStringHelper]\n    ? `${T[0]}`\n    : T extends [_JoinStringHelper, ...infer U extends readonly string[]]\n      ? `${T[0]}${sep}${JoinString<U, sep>}`\n      : string;",
         declarationKind: 'type',
       },
       {
         name: 'AddString',
         kind: 'named',
-        text: 'export type AddString<\n  T,\n  Before extends string = \'\',\n  After extends string = \'\',\n> = `${Before}${T & string}${After}`;',
+        text: "export type AddString<\n  T,\n  Before extends string = '',\n  After extends string = '',\n> = `${Before}${T & string}${After}`;",
         declarationKind: 'type',
       },
       {
@@ -15130,7 +15079,7 @@ export * from './typings/all';
       {
         name: 'SplitStringBy',
         kind: 'named',
-        text: 'export type SplitStringBy<\n  S extends string,\n  By extends string = \'.\',\n> = string extends S\n  ? string[]\n  : S extends \'\'\n    ? []\n    : S extends `${infer T}${By}${infer U}`\n      ? [T, ...SplitStringBy<U, By>]\n      : [S];',
+        text: "export type SplitStringBy<\n  S extends string,\n  By extends string = '.',\n> = string extends S\n  ? string[]\n  : S extends ''\n    ? []\n    : S extends `${infer T}${By}${infer U}`\n      ? [T, ...SplitStringBy<U, By>]\n      : [S];",
         declarationKind: 'type',
       },
       {
@@ -15456,7 +15405,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = <const T extends string>(_?: T) => _unknown<T[\'length\']>()',
+        text: "fn = <const T extends string>(_?: T) => _unknown<T['length']>()",
         declarationKind: 'variable',
       },
     ],
@@ -15559,7 +15508,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = <T extends readonly string[], sep extends string = \' \'>(\n  _?: sep,\n  ...__: T\n) => _unknown<JoinString<T, sep>>()',
+        text: "fn = <T extends readonly string[], sep extends string = ' '>(\n  _?: sep,\n  ...__: T\n) => _unknown<JoinString<T, sep>>()",
         declarationKind: 'variable',
       },
     ],
@@ -15757,7 +15706,7 @@ export default fn;
       {
         name: 'default',
         kind: 'default',
-        text: 'fn = <const S extends string, By extends string = \'.\'>(\n  _?: S,\n  __?: By,\n) => _unknown<SplitStringBy<S, By>>()',
+        text: "fn = <const S extends string, By extends string = '.'>(\n  _?: S,\n  __?: By,\n) => _unknown<SplitStringBy<S, By>>()",
         declarationKind: 'variable',
       },
     ],
@@ -15848,31 +15797,30 @@ export default fn;
   },
   'features.transform.constants': {
     relativePath: 'features/transform/constants.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'PRIMITIVES',
         kind: 'named',
-        text: 'PRIMITIVES = [\n  \'string\',\n  \'number\',\n  \'boolean\',\n  \'bigint\',\n  \'symbol\',\n  \'undefined\',\n  \'null\',\n] as const',
+        text: "PRIMITIVES = [\n  'string',\n  'number',\n  'boolean',\n  'bigint',\n  'symbol',\n  'undefined',\n  'null',\n] as const",
         declarationKind: 'variable',
       },
       {
         name: 'PRIMITIVE_OBJECTS',
         kind: 'named',
-        text: 'PRIMITIVE_OBJECTS = [\'object\', \'date\', \'primitive\'] as const',
+        text: "PRIMITIVE_OBJECTS = ['object', 'date', 'primitive'] as const",
         declarationKind: 'variable',
       },
       {
         name: 'CUSTOM',
         kind: 'named',
-        text: 'CUSTOM = \'$$app-ts => custom$$\' as const',
+        text: "CUSTOM = '$$app-ts => custom$$' as const",
         declarationKind: 'variable',
       },
       {
         name: 'PARTIAL',
         kind: 'named',
-        text: 'PARTIAL = \'$$app-ts => partial$$\' as const',
+        text: "PARTIAL = '$$app-ts => partial$$' as const",
         declarationKind: 'variable',
       },
     ],
@@ -15903,7 +15851,12 @@ export const PARTIAL = '$$app-ts => partial$$' as const;
       {
         moduleSpecifier: './constants',
         kind: 'named',
-        namedImports: ['CUSTOM', 'PARTIAL', 'PRIMITIVE_OBJECTS', 'PRIMITIVES'],
+        namedImports: [
+          'CUSTOM',
+          'PARTIAL',
+          'PRIMITIVE_OBJECTS',
+          'PRIMITIVES',
+        ],
       },
       {
         moduleSpecifier: './types',
@@ -16009,49 +15962,48 @@ export const transform = expandFn(
   },
   'features.transform.index': {
     relativePath: 'features/transform/index.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./constants\';',
+        text: "export * from './constants';",
         moduleSpecifier: './constants',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./functions\';',
+        text: "export * from './functions';",
         moduleSpecifier: './functions',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./types\';',
+        text: "export * from './types';",
         moduleSpecifier: './types',
       },
       {
         name: 'PRIMITIVES',
         kind: 'named',
-        text: 'PRIMITIVES = [\n  \'string\',\n  \'number\',\n  \'boolean\',\n  \'bigint\',\n  \'symbol\',\n  \'undefined\',\n  \'null\',\n] as const',
+        text: "PRIMITIVES = [\n  'string',\n  'number',\n  'boolean',\n  'bigint',\n  'symbol',\n  'undefined',\n  'null',\n] as const",
         declarationKind: 'variable',
       },
       {
         name: 'PRIMITIVE_OBJECTS',
         kind: 'named',
-        text: 'PRIMITIVE_OBJECTS = [\'object\', \'date\', \'primitive\'] as const',
+        text: "PRIMITIVE_OBJECTS = ['object', 'date', 'primitive'] as const",
         declarationKind: 'variable',
       },
       {
         name: 'CUSTOM',
         kind: 'named',
-        text: 'CUSTOM = \'$$app-ts => custom$$\' as const',
+        text: "CUSTOM = '$$app-ts => custom$$' as const",
         declarationKind: 'variable',
       },
       {
         name: 'PARTIAL',
         kind: 'named',
-        text: 'PARTIAL = \'$$app-ts => partial$$\' as const',
+        text: "PARTIAL = '$$app-ts => partial$$' as const",
         declarationKind: 'variable',
       },
       {
@@ -16069,7 +16021,7 @@ export const transform = expandFn(
       {
         name: 'TransformS',
         kind: 'named',
-        text: 'export type TransformS<T extends PrimitiveS> = T extends \'string\'\n  ? string\n  : T extends \'number\'\n    ? number\n    : T extends \'boolean\'\n      ? boolean\n      : T extends \'bigint\'\n        ? bigint\n        : T extends \'symbol\'\n          ? symbol\n          : T extends \'undefined\'\n            ? undefined\n            : T extends \'null\'\n              ? null\n              : never;',
+        text: "export type TransformS<T extends PrimitiveS> = T extends 'string'\n  ? string\n  : T extends 'number'\n    ? number\n    : T extends 'boolean'\n      ? boolean\n      : T extends 'bigint'\n        ? bigint\n        : T extends 'symbol'\n          ? symbol\n          : T extends 'undefined'\n            ? undefined\n            : T extends 'null'\n              ? null\n              : never;",
         declarationKind: 'type',
       },
       {
@@ -16105,7 +16057,7 @@ export const transform = expandFn(
       {
         name: 'TransformO',
         kind: 'named',
-        text: 'export type TransformO<T> = T extends \'function\'\n  ? Fn\n  : T extends PrimitiveS\n    ? TransformS<T>\n    : T extends \'date\'\n      ? Date\n      : T extends \'object\'\n        ? // eslint-disable-next-line @typescript-eslint/no-empty-object-type\n          {}\n        : T extends \'primitive\'\n          ? PrimitiveObject\n          : T extends PartialCustom\n            ? Partial<TransformO<NOmit<T, typeof PARTIAL>>>\n            : T extends AnyArray<any>\n              ? T[number] extends infer TKN extends ObjectS\n                ? TransformO<TKN>[]\n                : never\n              : {\n                  [K in keyof T]: TransformO<T[K]>;\n                };',
+        text: "export type TransformO<T> = T extends 'function'\n  ? Fn\n  : T extends PrimitiveS\n    ? TransformS<T>\n    : T extends 'date'\n      ? Date\n      : T extends 'object'\n        ? // eslint-disable-next-line @typescript-eslint/no-empty-object-type\n          {}\n        : T extends 'primitive'\n          ? PrimitiveObject\n          : T extends PartialCustom\n            ? Partial<TransformO<NOmit<T, typeof PARTIAL>>>\n            : T extends AnyArray<any>\n              ? T[number] extends infer TKN extends ObjectS\n                ? TransformO<TKN>[]\n                : never\n              : {\n                  [K in keyof T]: TransformO<T[K]>;\n                };",
         declarationKind: 'type',
       },
     ],
@@ -16120,12 +16072,23 @@ export * from './types';
       {
         moduleSpecifier: '#types',
         kind: 'named',
-        namedImports: ['AnyArray', 'Fn', 'NOmit', 'PrimitiveObject', 'SoRa'],
+        namedImports: [
+          'AnyArray',
+          'Fn',
+          'NOmit',
+          'PrimitiveObject',
+          'SoRa',
+        ],
       },
       {
         moduleSpecifier: './constants',
         kind: 'named',
-        namedImports: ['CUSTOM', 'PARTIAL', 'PRIMITIVE_OBJECTS', 'PRIMITIVES'],
+        namedImports: [
+          'CUSTOM',
+          'PARTIAL',
+          'PRIMITIVE_OBJECTS',
+          'PRIMITIVES',
+        ],
       },
     ],
     exports: [
@@ -16138,7 +16101,7 @@ export * from './types';
       {
         name: 'TransformS',
         kind: 'named',
-        text: 'export type TransformS<T extends PrimitiveS> = T extends \'string\'\n  ? string\n  : T extends \'number\'\n    ? number\n    : T extends \'boolean\'\n      ? boolean\n      : T extends \'bigint\'\n        ? bigint\n        : T extends \'symbol\'\n          ? symbol\n          : T extends \'undefined\'\n            ? undefined\n            : T extends \'null\'\n              ? null\n              : never;',
+        text: "export type TransformS<T extends PrimitiveS> = T extends 'string'\n  ? string\n  : T extends 'number'\n    ? number\n    : T extends 'boolean'\n      ? boolean\n      : T extends 'bigint'\n        ? bigint\n        : T extends 'symbol'\n          ? symbol\n          : T extends 'undefined'\n            ? undefined\n            : T extends 'null'\n              ? null\n              : never;",
         declarationKind: 'type',
       },
       {
@@ -16174,7 +16137,7 @@ export * from './types';
       {
         name: 'TransformO',
         kind: 'named',
-        text: 'export type TransformO<T> = T extends \'function\'\n  ? Fn\n  : T extends PrimitiveS\n    ? TransformS<T>\n    : T extends \'date\'\n      ? Date\n      : T extends \'object\'\n        ? // eslint-disable-next-line @typescript-eslint/no-empty-object-type\n          {}\n        : T extends \'primitive\'\n          ? PrimitiveObject\n          : T extends PartialCustom\n            ? Partial<TransformO<NOmit<T, typeof PARTIAL>>>\n            : T extends AnyArray<any>\n              ? T[number] extends infer TKN extends ObjectS\n                ? TransformO<TKN>[]\n                : never\n              : {\n                  [K in keyof T]: TransformO<T[K]>;\n                };',
+        text: "export type TransformO<T> = T extends 'function'\n  ? Fn\n  : T extends PrimitiveS\n    ? TransformS<T>\n    : T extends 'date'\n      ? Date\n      : T extends 'object'\n        ? // eslint-disable-next-line @typescript-eslint/no-empty-object-type\n          {}\n        : T extends 'primitive'\n          ? PrimitiveObject\n          : T extends PartialCustom\n            ? Partial<TransformO<NOmit<T, typeof PARTIAL>>>\n            : T extends AnyArray<any>\n              ? T[number] extends infer TKN extends ObjectS\n                ? TransformO<TKN>[]\n                : never\n              : {\n                  [K in keyof T]: TransformO<T[K]>;\n                };",
         declarationKind: 'type',
       },
     ],
@@ -16263,7 +16226,10 @@ export type TransformO<T> = T extends 'function'
       {
         moduleSpecifier: './helpers',
         kind: 'named',
-        namedImports: ['extractExportsRecursively', 'resolveModuleSpecifier'],
+        namedImports: [
+          'extractExportsRecursively',
+          'resolveModuleSpecifier',
+        ],
       },
       {
         moduleSpecifier: './parseObject',
@@ -16280,7 +16246,7 @@ export type TransformO<T> = T extends 'function'
       {
         name: 'extractFromFile',
         kind: 'named',
-        text: 'extractFromFile = (filePath: string) => {\n  const project = new Project({\n    tsConfigFilePath: \'tsconfig.json\',\n  });\n  const sourceFile = project.addSourceFileAtPath(filePath);\n\n  // Fonction pour résoudre les spécificateurs de modules en utilisant tsconfig.json\n\n  // Fonction pour résoudre récursivement les types importés en utilisant l\'API du compilateur\n\n  const out = {\n    exports: extractExportsRecursively(project, sourceFile),\n\n    imports: sourceFile.getImportDeclarations().map(imp => ({\n      moduleSpecifier: resolveModuleSpecifier(\n        project,\n        imp.getModuleSpecifierValue(),\n      ),\n      namedImports: imp.getNamedImports().map(named => named.getName()),\n    })),\n\n    types: sourceFile.getTypeAliases().map(type => ({\n      name: type.getName(),\n      typeParameters: type.getTypeParameters().map(tp => tp.getName()),\n      type: type.getTypeNodeOrThrow().getText(),\n    })),\n\n    variables: sourceFile.getVariableDeclarations().map(v => {\n      const initializer = v.getInitializer();\n      let params: any[] = [];\n      let firstFunctionName: string | undefined;\n\n      const isCallable1 = Node.isCallExpression(initializer);\n\n      // Fonction pour trouver le premier appel de fonction dans une chaîne\n\n      // Vérifier si l\'initializer est un appel de fonction\n      if (isCallable1) {\n        // Trouver le premier appel de fonction dans la chaîne\n        const firstCallExpression = findFirstCallExpression(initializer);\n\n        const isCallable2 = Node.isCallExpression(firstCallExpression);\n\n        if (isCallable2) {\n          // Récupérer le nom de la fonction\n          const expression = firstCallExpression.getExpression();\n          if (expression.getKind() === SyntaxKind.Identifier) {\n            firstFunctionName = expression.getText();\n          }\n\n          params = firstCallExpression.getArguments().map(arg => {\n            if (Node.isCallExpression(arg)) {\n              // Si c\'est un appel de fonction, extraire le type de retour\n              const type = arg.getType();\n              return resolveType(sourceFile, type);\n            }\n\n            const text = arg.getText();\n            if (Node.isObjectLiteralExpression(arg))\n              return parseObject(text);\n\n            return text;\n          });\n        }\n      }\n\n      return {\n        name: v.getName(),\n        // Type node (ce qui est écrit dans le code)\n        // Nom de la première fonction appelée\n        function: firstFunctionName,\n        // Arguments de l\'appel de fonction si applicable\n        params,\n        // Flags du type\n      };\n    }),\n  };\n\n  project.removeSourceFile(sourceFile);\n\n  return out;\n}',
+        text: "extractFromFile = (filePath: string) => {\n  const project = new Project({\n    tsConfigFilePath: 'tsconfig.json',\n  });\n  const sourceFile = project.addSourceFileAtPath(filePath);\n\n  // Fonction pour résoudre les spécificateurs de modules en utilisant tsconfig.json\n\n  // Fonction pour résoudre récursivement les types importés en utilisant l'API du compilateur\n\n  const out = {\n    exports: extractExportsRecursively(project, sourceFile),\n\n    imports: sourceFile.getImportDeclarations().map(imp => ({\n      moduleSpecifier: resolveModuleSpecifier(\n        project,\n        imp.getModuleSpecifierValue(),\n      ),\n      namedImports: imp.getNamedImports().map(named => named.getName()),\n    })),\n\n    types: sourceFile.getTypeAliases().map(type => ({\n      name: type.getName(),\n      typeParameters: type.getTypeParameters().map(tp => tp.getName()),\n      type: type.getTypeNodeOrThrow().getText(),\n    })),\n\n    variables: sourceFile.getVariableDeclarations().map(v => {\n      const initializer = v.getInitializer();\n      let params: any[] = [];\n      let firstFunctionName: string | undefined;\n\n      const isCallable1 = Node.isCallExpression(initializer);\n\n      // Fonction pour trouver le premier appel de fonction dans une chaîne\n\n      // Vérifier si l'initializer est un appel de fonction\n      if (isCallable1) {\n        // Trouver le premier appel de fonction dans la chaîne\n        const firstCallExpression = findFirstCallExpression(initializer);\n\n        const isCallable2 = Node.isCallExpression(firstCallExpression);\n\n        if (isCallable2) {\n          // Récupérer le nom de la fonction\n          const expression = firstCallExpression.getExpression();\n          if (expression.getKind() === SyntaxKind.Identifier) {\n            firstFunctionName = expression.getText();\n          }\n\n          params = firstCallExpression.getArguments().map(arg => {\n            if (Node.isCallExpression(arg)) {\n              // Si c'est un appel de fonction, extraire le type de retour\n              const type = arg.getType();\n              return resolveType(sourceFile, type);\n            }\n\n            const text = arg.getText();\n            if (Node.isObjectLiteralExpression(arg))\n              return parseObject(text);\n\n            return text;\n          });\n        }\n      }\n\n      return {\n        name: v.getName(),\n        // Type node (ce qui est écrit dans le code)\n        // Nom de la première fonction appelée\n        function: firstFunctionName,\n        // Arguments de l'appel de fonction si applicable\n        params,\n        // Flags du type\n      };\n    }),\n  };\n\n  project.removeSourceFile(sourceFile);\n\n  return out;\n}",
         declarationKind: 'variable',
       },
     ],
@@ -16390,7 +16356,7 @@ export const extractFromFile = (filePath: string) => {
       {
         name: 'findFirstCallExpression',
         kind: 'named',
-        text: 'findFirstCallExpression = (node: Node): any => {\n  const hasExpression = Node.hasExpression(node);\n  if (hasExpression) {\n    const expression = node.getExpression();\n\n    // Si l\'expression est un PropertyAccessExpression (e.g., createMachine(...).provideOptions)\n    if (\n      expression &&\n      // expression.getKind() === SyntaxKind.PropertyAccessExpression &&\n      Node.hasExpression(expression)\n    ) {\n      // Récursivement chercher dans l\'expression de gauche\n      // Cast to PropertyAccessExpression to access getExpression()\n      return findFirstCallExpression(expression.getExpression());\n    }\n\n    // Si c\'est un Identifier ou autre, c\'est le premier appel\n    return node;\n  }\n\n  return node;\n}',
+        text: "findFirstCallExpression = (node: Node): any => {\n  const hasExpression = Node.hasExpression(node);\n  if (hasExpression) {\n    const expression = node.getExpression();\n\n    // Si l'expression est un PropertyAccessExpression (e.g., createMachine(...).provideOptions)\n    if (\n      expression &&\n      // expression.getKind() === SyntaxKind.PropertyAccessExpression &&\n      Node.hasExpression(expression)\n    ) {\n      // Récursivement chercher dans l'expression de gauche\n      // Cast to PropertyAccessExpression to access getExpression()\n      return findFirstCallExpression(expression.getExpression());\n    }\n\n    // Si c'est un Identifier ou autre, c'est le premier appel\n    return node;\n  }\n\n  return node;\n}",
         declarationKind: 'variable',
       },
     ],
@@ -16438,13 +16404,13 @@ export const findFirstCallExpression = (node: Node): any => {
       {
         name: 'resolveModuleSpecifier',
         kind: 'named',
-        text: 'resolveModuleSpecifier = (\n  project: Project,\n  moduleSpecifier: string,\n): string => {\n  try {\n    // Obtenir les options du compilateur du projet\n    const compilerOptions = project.getCompilerOptions();\n    const baseUrl = compilerOptions.baseUrl;\n    const paths = compilerOptions.paths;\n\n    // Si on a un chemin relatif simple, le retourner tel quel\n    if (\n      moduleSpecifier.startsWith(\'./\') ||\n      moduleSpecifier.startsWith(\'../\')\n    ) {\n      return moduleSpecifier;\n    }\n\n    // Si on a des chemins définis dans tsconfig, essayer de les résoudre\n    if (paths && baseUrl) {\n      for (const [pathPattern, pathMappings] of Object.entries(paths)) {\n        // Enlever l\'astérisque pour la comparaison\n        const patternBase = pathPattern.replace(\'/*\', \'\');\n\n        if (moduleSpecifier.startsWith(patternBase)) {\n          // Remplacer le préfixe par le chemin réel\n          const suffix = moduleSpecifier.slice(patternBase.length);\n          const mappingBase = pathMappings[0]?.replace(\'/*\', \'\') || \'\';\n          return `${mappingBase}${suffix}`;\n        }\n      }\n    }\n\n    // Sinon, retourner le spécificateur original\n    return moduleSpecifier;\n  } catch {\n    // En cas d\'erreur, retourner le spécificateur original\n    return moduleSpecifier;\n  }\n}',
+        text: "resolveModuleSpecifier = (\n  project: Project,\n  moduleSpecifier: string,\n): string => {\n  try {\n    // Obtenir les options du compilateur du projet\n    const compilerOptions = project.getCompilerOptions();\n    const baseUrl = compilerOptions.baseUrl;\n    const paths = compilerOptions.paths;\n\n    // Si on a un chemin relatif simple, le retourner tel quel\n    if (\n      moduleSpecifier.startsWith('./') ||\n      moduleSpecifier.startsWith('../')\n    ) {\n      return moduleSpecifier;\n    }\n\n    // Si on a des chemins définis dans tsconfig, essayer de les résoudre\n    if (paths && baseUrl) {\n      for (const [pathPattern, pathMappings] of Object.entries(paths)) {\n        // Enlever l'astérisque pour la comparaison\n        const patternBase = pathPattern.replace('/*', '');\n\n        if (moduleSpecifier.startsWith(patternBase)) {\n          // Remplacer le préfixe par le chemin réel\n          const suffix = moduleSpecifier.slice(patternBase.length);\n          const mappingBase = pathMappings[0]?.replace('/*', '') || '';\n          return `${mappingBase}${suffix}`;\n        }\n      }\n    }\n\n    // Sinon, retourner le spécificateur original\n    return moduleSpecifier;\n  } catch {\n    // En cas d'erreur, retourner le spécificateur original\n    return moduleSpecifier;\n  }\n}",
         declarationKind: 'variable',
       },
       {
         name: 'extractExportsRecursively',
         kind: 'named',
-        text: 'extractExportsRecursively = (\n  project: Project,\n  sourceFile: SourceFile,\n  visited = new Set<string>(),\n): any => {\n  const filePath = sourceFile.getFilePath();\n\n  // Éviter les cycles infinis\n  if (visited.has(filePath)) {\n    return [];\n  }\n  visited.add(filePath);\n\n  const exports: any[] = [];\n\n  // Traiter toutes les déclarations d\'export\n  for (const [\n    name,\n    declarations,\n  ] of sourceFile.getExportedDeclarations()) {\n    for (const declaration of declarations) {\n      const declarationSourceFile = declaration.getSourceFile();\n\n      // Si la déclaration vient d\'un autre fichier, extraire récursivement\n      if (declarationSourceFile.getFilePath() !== filePath) {\n        const recursiveExports = extractExportsRecursively(\n          project,\n          declarationSourceFile,\n          visited,\n        );\n\n        // Extraire tous les imports du fichier source de la déclaration\n        const fileImports = declarationSourceFile\n          .getImportDeclarations()\n          .map(imp => ({\n            moduleSpecifier: resolveModuleSpecifier(\n              project,\n              imp.getModuleSpecifierValue(),\n            ),\n            namedImports: imp\n              .getNamedImports()\n              .map(named => named.getName()),\n            defaultImport: imp.getDefaultImport()?.getText(),\n            namespaceImport: imp.getNamespaceImport()?.getText(),\n          }));\n\n        exports.push({\n          name,\n          type: \'recursive\',\n          imports: fileImports, // Ajouter les imports comme exports\n          filePath: declarationSourceFile.getFilePath(),\n          declarations: recursiveExports,\n        });\n      } else {\n        // Traiter les différents types de déclarations\n        const declarationInfo: any = {\n          name,\n          type: declaration.getKindName(),\n        };\n\n        // Traitement spécifique selon le type de déclaration\n        if (Node.isVariableDeclaration(declaration)) {\n          const initializer = declaration.getInitializer();\n          declarationInfo.hasInitializer = !!initializer;\n          if (initializer) {\n            declarationInfo.initializerText = initializer.getText();\n          }\n        } else if (Node.isFunctionDeclaration(declaration)) {\n          declarationInfo.parameters = declaration\n            .getParameters()\n            .map(p => ({\n              name: p.getName(),\n              type: p.getTypeNode()?.getText(),\n            }));\n          declarationInfo.returnType = declaration\n            .getReturnTypeNode()\n            ?.getText();\n        } else if (Node.isClassDeclaration(declaration)) {\n          declarationInfo.extends = declaration.getExtends()?.getText();\n          declarationInfo.implements = declaration\n            .getImplements()\n            .map(i => i.getText());\n          declarationInfo.properties = declaration\n            .getProperties()\n            .map(p => ({\n              name: p.getName(),\n              type: p.getTypeNode()?.getText(),\n            }));\n        } else if (Node.isInterfaceDeclaration(declaration)) {\n          declarationInfo.extends = declaration\n            .getExtends()\n            .map(e => e.getText());\n          declarationInfo.properties = declaration\n            .getProperties()\n            .map(p => ({\n              name: p.getName(),\n              type: p.getTypeNode()?.getText(),\n            }));\n        } else if (Node.isTypeAliasDeclaration(declaration)) {\n          declarationInfo.typeParameters = declaration\n            .getTypeParameters()\n            .map(tp => tp.getName());\n          declarationInfo.typeDefinition = declaration\n            .getTypeNode()\n            ?.getText();\n        } else if (Node.isExportDeclaration(declaration)) {\n          // Gérer les re-exports (export * from \'./module\')\n          const moduleSpecifier = declaration.getModuleSpecifier();\n          if (moduleSpecifier) {\n            const targetFile = declaration.getModuleSpecifierSourceFile();\n            if (targetFile) {\n              const recursiveExports = extractExportsRecursively(\n                project,\n                targetFile,\n                visited,\n              );\n              declarationInfo.reExports = recursiveExports;\n              declarationInfo.moduleSpecifier = resolveModuleSpecifier(\n                project,\n                moduleSpecifier.getLiteralValue(),\n              );\n            }\n          }\n        }\n\n        exports.push(declarationInfo);\n      }\n    }\n  }\n\n  return exports;\n}',
+        text: "extractExportsRecursively = (\n  project: Project,\n  sourceFile: SourceFile,\n  visited = new Set<string>(),\n): any => {\n  const filePath = sourceFile.getFilePath();\n\n  // Éviter les cycles infinis\n  if (visited.has(filePath)) {\n    return [];\n  }\n  visited.add(filePath);\n\n  const exports: any[] = [];\n\n  // Traiter toutes les déclarations d'export\n  for (const [\n    name,\n    declarations,\n  ] of sourceFile.getExportedDeclarations()) {\n    for (const declaration of declarations) {\n      const declarationSourceFile = declaration.getSourceFile();\n\n      // Si la déclaration vient d'un autre fichier, extraire récursivement\n      if (declarationSourceFile.getFilePath() !== filePath) {\n        const recursiveExports = extractExportsRecursively(\n          project,\n          declarationSourceFile,\n          visited,\n        );\n\n        // Extraire tous les imports du fichier source de la déclaration\n        const fileImports = declarationSourceFile\n          .getImportDeclarations()\n          .map(imp => ({\n            moduleSpecifier: resolveModuleSpecifier(\n              project,\n              imp.getModuleSpecifierValue(),\n            ),\n            namedImports: imp\n              .getNamedImports()\n              .map(named => named.getName()),\n            defaultImport: imp.getDefaultImport()?.getText(),\n            namespaceImport: imp.getNamespaceImport()?.getText(),\n          }));\n\n        exports.push({\n          name,\n          type: 'recursive',\n          imports: fileImports, // Ajouter les imports comme exports\n          filePath: declarationSourceFile.getFilePath(),\n          declarations: recursiveExports,\n        });\n      } else {\n        // Traiter les différents types de déclarations\n        const declarationInfo: any = {\n          name,\n          type: declaration.getKindName(),\n        };\n\n        // Traitement spécifique selon le type de déclaration\n        if (Node.isVariableDeclaration(declaration)) {\n          const initializer = declaration.getInitializer();\n          declarationInfo.hasInitializer = !!initializer;\n          if (initializer) {\n            declarationInfo.initializerText = initializer.getText();\n          }\n        } else if (Node.isFunctionDeclaration(declaration)) {\n          declarationInfo.parameters = declaration\n            .getParameters()\n            .map(p => ({\n              name: p.getName(),\n              type: p.getTypeNode()?.getText(),\n            }));\n          declarationInfo.returnType = declaration\n            .getReturnTypeNode()\n            ?.getText();\n        } else if (Node.isClassDeclaration(declaration)) {\n          declarationInfo.extends = declaration.getExtends()?.getText();\n          declarationInfo.implements = declaration\n            .getImplements()\n            .map(i => i.getText());\n          declarationInfo.properties = declaration\n            .getProperties()\n            .map(p => ({\n              name: p.getName(),\n              type: p.getTypeNode()?.getText(),\n            }));\n        } else if (Node.isInterfaceDeclaration(declaration)) {\n          declarationInfo.extends = declaration\n            .getExtends()\n            .map(e => e.getText());\n          declarationInfo.properties = declaration\n            .getProperties()\n            .map(p => ({\n              name: p.getName(),\n              type: p.getTypeNode()?.getText(),\n            }));\n        } else if (Node.isTypeAliasDeclaration(declaration)) {\n          declarationInfo.typeParameters = declaration\n            .getTypeParameters()\n            .map(tp => tp.getName());\n          declarationInfo.typeDefinition = declaration\n            .getTypeNode()\n            ?.getText();\n        } else if (Node.isExportDeclaration(declaration)) {\n          // Gérer les re-exports (export * from './module')\n          const moduleSpecifier = declaration.getModuleSpecifier();\n          if (moduleSpecifier) {\n            const targetFile = declaration.getModuleSpecifierSourceFile();\n            if (targetFile) {\n              const recursiveExports = extractExportsRecursively(\n                project,\n                targetFile,\n                visited,\n              );\n              declarationInfo.reExports = recursiveExports;\n              declarationInfo.moduleSpecifier = resolveModuleSpecifier(\n                project,\n                moduleSpecifier.getLiteralValue(),\n              );\n            }\n          }\n        }\n\n        exports.push(declarationInfo);\n      }\n    }\n  }\n\n  return exports;\n}",
         declarationKind: 'variable',
       },
     ],
@@ -16630,55 +16596,54 @@ export const extractExportsRecursively = (
 
   'features.typescript.index': {
     relativePath: 'features/typescript/index.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'extractFromFile',
         kind: 'named',
-        text: 'export { extractFromFile } from \'./extractFromFile\';',
+        text: "export { extractFromFile } from './extractFromFile';",
         moduleSpecifier: './extractFromFile',
       },
       {
         name: 'findFirstCallExpression',
         kind: 'named',
-        text: 'export { findFirstCallExpression } from \'./findFirstCallExpression\';',
+        text: "export { findFirstCallExpression } from './findFirstCallExpression';",
         moduleSpecifier: './findFirstCallExpression',
       },
       {
         name: 'parseObject',
         kind: 'named',
-        text: 'export { parseObject } from \'./parseObject\';',
+        text: "export { parseObject } from './parseObject';",
         moduleSpecifier: './parseObject',
       },
       {
         name: 'resolveType',
         kind: 'named',
-        text: 'export { resolveType } from \'./resolveType\';',
+        text: "export { resolveType } from './resolveType';",
         moduleSpecifier: './resolveType',
       },
       {
         name: 'extractFromFile',
         kind: 'named',
-        text: 'extractFromFile = (filePath: string) => {\n  const project = new Project({\n    tsConfigFilePath: \'tsconfig.json\',\n  });\n  const sourceFile = project.addSourceFileAtPath(filePath);\n\n  // Fonction pour résoudre les spécificateurs de modules en utilisant tsconfig.json\n\n  // Fonction pour résoudre récursivement les types importés en utilisant l\'API du compilateur\n\n  const out = {\n    exports: extractExportsRecursively(project, sourceFile),\n\n    imports: sourceFile.getImportDeclarations().map(imp => ({\n      moduleSpecifier: resolveModuleSpecifier(\n        project,\n        imp.getModuleSpecifierValue(),\n      ),\n      namedImports: imp.getNamedImports().map(named => named.getName()),\n    })),\n\n    types: sourceFile.getTypeAliases().map(type => ({\n      name: type.getName(),\n      typeParameters: type.getTypeParameters().map(tp => tp.getName()),\n      type: type.getTypeNodeOrThrow().getText(),\n    })),\n\n    variables: sourceFile.getVariableDeclarations().map(v => {\n      const initializer = v.getInitializer();\n      let params: any[] = [];\n      let firstFunctionName: string | undefined;\n\n      const isCallable1 = Node.isCallExpression(initializer);\n\n      // Fonction pour trouver le premier appel de fonction dans une chaîne\n\n      // Vérifier si l\'initializer est un appel de fonction\n      if (isCallable1) {\n        // Trouver le premier appel de fonction dans la chaîne\n        const firstCallExpression = findFirstCallExpression(initializer);\n\n        const isCallable2 = Node.isCallExpression(firstCallExpression);\n\n        if (isCallable2) {\n          // Récupérer le nom de la fonction\n          const expression = firstCallExpression.getExpression();\n          if (expression.getKind() === SyntaxKind.Identifier) {\n            firstFunctionName = expression.getText();\n          }\n\n          params = firstCallExpression.getArguments().map(arg => {\n            if (Node.isCallExpression(arg)) {\n              // Si c\'est un appel de fonction, extraire le type de retour\n              const type = arg.getType();\n              return resolveType(sourceFile, type);\n            }\n\n            const text = arg.getText();\n            if (Node.isObjectLiteralExpression(arg))\n              return parseObject(text);\n\n            return text;\n          });\n        }\n      }\n\n      return {\n        name: v.getName(),\n        // Type node (ce qui est écrit dans le code)\n        // Nom de la première fonction appelée\n        function: firstFunctionName,\n        // Arguments de l\'appel de fonction si applicable\n        params,\n        // Flags du type\n      };\n    }),\n  };\n\n  project.removeSourceFile(sourceFile);\n\n  return out;\n}',
+        text: "extractFromFile = (filePath: string) => {\n  const project = new Project({\n    tsConfigFilePath: 'tsconfig.json',\n  });\n  const sourceFile = project.addSourceFileAtPath(filePath);\n\n  // Fonction pour résoudre les spécificateurs de modules en utilisant tsconfig.json\n\n  // Fonction pour résoudre récursivement les types importés en utilisant l'API du compilateur\n\n  const out = {\n    exports: extractExportsRecursively(project, sourceFile),\n\n    imports: sourceFile.getImportDeclarations().map(imp => ({\n      moduleSpecifier: resolveModuleSpecifier(\n        project,\n        imp.getModuleSpecifierValue(),\n      ),\n      namedImports: imp.getNamedImports().map(named => named.getName()),\n    })),\n\n    types: sourceFile.getTypeAliases().map(type => ({\n      name: type.getName(),\n      typeParameters: type.getTypeParameters().map(tp => tp.getName()),\n      type: type.getTypeNodeOrThrow().getText(),\n    })),\n\n    variables: sourceFile.getVariableDeclarations().map(v => {\n      const initializer = v.getInitializer();\n      let params: any[] = [];\n      let firstFunctionName: string | undefined;\n\n      const isCallable1 = Node.isCallExpression(initializer);\n\n      // Fonction pour trouver le premier appel de fonction dans une chaîne\n\n      // Vérifier si l'initializer est un appel de fonction\n      if (isCallable1) {\n        // Trouver le premier appel de fonction dans la chaîne\n        const firstCallExpression = findFirstCallExpression(initializer);\n\n        const isCallable2 = Node.isCallExpression(firstCallExpression);\n\n        if (isCallable2) {\n          // Récupérer le nom de la fonction\n          const expression = firstCallExpression.getExpression();\n          if (expression.getKind() === SyntaxKind.Identifier) {\n            firstFunctionName = expression.getText();\n          }\n\n          params = firstCallExpression.getArguments().map(arg => {\n            if (Node.isCallExpression(arg)) {\n              // Si c'est un appel de fonction, extraire le type de retour\n              const type = arg.getType();\n              return resolveType(sourceFile, type);\n            }\n\n            const text = arg.getText();\n            if (Node.isObjectLiteralExpression(arg))\n              return parseObject(text);\n\n            return text;\n          });\n        }\n      }\n\n      return {\n        name: v.getName(),\n        // Type node (ce qui est écrit dans le code)\n        // Nom de la première fonction appelée\n        function: firstFunctionName,\n        // Arguments de l'appel de fonction si applicable\n        params,\n        // Flags du type\n      };\n    }),\n  };\n\n  project.removeSourceFile(sourceFile);\n\n  return out;\n}",
         declarationKind: 'variable',
       },
       {
         name: 'findFirstCallExpression',
         kind: 'named',
-        text: 'findFirstCallExpression = (node: Node): any => {\n  const hasExpression = Node.hasExpression(node);\n  if (hasExpression) {\n    const expression = node.getExpression();\n\n    // Si l\'expression est un PropertyAccessExpression (e.g., createMachine(...).provideOptions)\n    if (\n      expression &&\n      // expression.getKind() === SyntaxKind.PropertyAccessExpression &&\n      Node.hasExpression(expression)\n    ) {\n      // Récursivement chercher dans l\'expression de gauche\n      // Cast to PropertyAccessExpression to access getExpression()\n      return findFirstCallExpression(expression.getExpression());\n    }\n\n    // Si c\'est un Identifier ou autre, c\'est le premier appel\n    return node;\n  }\n\n  return node;\n}',
+        text: "findFirstCallExpression = (node: Node): any => {\n  const hasExpression = Node.hasExpression(node);\n  if (hasExpression) {\n    const expression = node.getExpression();\n\n    // Si l'expression est un PropertyAccessExpression (e.g., createMachine(...).provideOptions)\n    if (\n      expression &&\n      // expression.getKind() === SyntaxKind.PropertyAccessExpression &&\n      Node.hasExpression(expression)\n    ) {\n      // Récursivement chercher dans l'expression de gauche\n      // Cast to PropertyAccessExpression to access getExpression()\n      return findFirstCallExpression(expression.getExpression());\n    }\n\n    // Si c'est un Identifier ou autre, c'est le premier appel\n    return node;\n  }\n\n  return node;\n}",
         declarationKind: 'variable',
       },
       {
         name: 'parseObject',
         kind: 'named',
-        text: 'parseObject = (objString: string): any => {\n  try {\n    const project = new Project();\n\n    // Créer un fichier temporaire avec l\'objet\n    const tempFile = project.createSourceFile(\n      \'temp.ts\',\n      `\n      const obj = ${objString};\n      export default obj;\n    `,\n    );\n\n    // Obtenir la déclaration de variable\n    const variableDeclaration = tempFile.getVariableDeclaration(\'obj\');\n    if (!variableDeclaration) return null;\n\n    const initializer = variableDeclaration.getInitializer();\n    if (\n      !initializer ||\n      initializer.getKind() !== SyntaxKind.ObjectLiteralExpression\n    ) {\n      return null;\n    }\n\n    // Fonction récursive pour parser l\'objet\n    const parseNode = (node: Node): any => {\n      if (Node.isObjectLiteralExpression(node)) {\n        const obj: any = {};\n        node.getProperties().forEach((prop: any) => {\n          if (Node.isPropertyAssignment(prop)) {\n            const name = prop.getName();\n            const initializer = prop.getInitializer();\n            if (initializer) {\n              const value = parseNode(initializer);\n              obj[name] = value;\n            }\n          }\n        });\n        return obj;\n      }\n\n      if (Node.isArrayLiteralExpression(node)) {\n        return node\n          .getElements()\n          .map((element: any) => parseNode(element));\n      }\n\n      if (Node.isStringLiteral(node) || Node.isNumericLiteral(node)) {\n        return node.getLiteralValue();\n      }\n\n      if (Node.isTrueLiteral(node)) {\n        return true;\n      }\n\n      if (Node.isFalseLiteral(node)) {\n        return false;\n      }\n\n      if (Node.isNullLiteral(node)) {\n        return null;\n      }\n\n      if (Node.isIdentifier(node)) {\n        return node.getText();\n      }\n\n      return node.getText();\n    };\n\n    return parseNode(initializer);\n  } catch (error) {\n    console.error(\'Erreur avec ts-morph:\', error);\n    return null;\n  }\n}',
+        text: "parseObject = (objString: string): any => {\n  try {\n    const project = new Project();\n\n    // Créer un fichier temporaire avec l'objet\n    const tempFile = project.createSourceFile(\n      'temp.ts',\n      `\n      const obj = ${objString};\n      export default obj;\n    `,\n    );\n\n    // Obtenir la déclaration de variable\n    const variableDeclaration = tempFile.getVariableDeclaration('obj');\n    if (!variableDeclaration) return null;\n\n    const initializer = variableDeclaration.getInitializer();\n    if (\n      !initializer ||\n      initializer.getKind() !== SyntaxKind.ObjectLiteralExpression\n    ) {\n      return null;\n    }\n\n    // Fonction récursive pour parser l'objet\n    const parseNode = (node: Node): any => {\n      if (Node.isObjectLiteralExpression(node)) {\n        const obj: any = {};\n        node.getProperties().forEach((prop: any) => {\n          if (Node.isPropertyAssignment(prop)) {\n            const name = prop.getName();\n            const initializer = prop.getInitializer();\n            if (initializer) {\n              const value = parseNode(initializer);\n              obj[name] = value;\n            }\n          }\n        });\n        return obj;\n      }\n\n      if (Node.isArrayLiteralExpression(node)) {\n        return node\n          .getElements()\n          .map((element: any) => parseNode(element));\n      }\n\n      if (Node.isStringLiteral(node) || Node.isNumericLiteral(node)) {\n        return node.getLiteralValue();\n      }\n\n      if (Node.isTrueLiteral(node)) {\n        return true;\n      }\n\n      if (Node.isFalseLiteral(node)) {\n        return false;\n      }\n\n      if (Node.isNullLiteral(node)) {\n        return null;\n      }\n\n      if (Node.isIdentifier(node)) {\n        return node.getText();\n      }\n\n      return node.getText();\n    };\n\n    return parseNode(initializer);\n  } catch (error) {\n    console.error('Erreur avec ts-morph:', error);\n    return null;\n  }\n}",
         declarationKind: 'variable',
       },
       {
         name: 'resolveType',
         kind: 'named',
-        text: 'resolveType = (\n  sourceFile: SourceFile,\n  type: Type,\n): string => {\n  const typeText = type.getText();\n\n  try {\n    // Accéder au compilateur TypeScript sous-jacent\n    const compilerType = type.compilerType;\n    const typeChecker = sourceFile\n      .getProject()\n      .getTypeChecker().compilerObject;\n\n    const fullyResolvedTypeText = typeChecker.typeToString(\n      compilerType,\n      undefined,\n      TypeFormatFlags.InTypeAlias |\n        TypeFormatFlags.WriteArrayAsGenericType |\n        TypeFormatFlags.UseStructuralFallback |\n        TypeFormatFlags.NoTruncation |\n        TypeFormatFlags.WriteClassExpressionAsTypeLiteral |\n        TypeFormatFlags.InElementType,\n    );\n\n    // #region Première  tentative: Si le type résolu est structurel\n    // contient des objets et aucun import\n    if (\n      fullyResolvedTypeText !== typeText &&\n      !fullyResolvedTypeText.includes(\'import(\') &&\n      (fullyResolvedTypeText.includes(\'{\') ||\n        fullyResolvedTypeText.length > typeText.length * 1.5)\n    ) {\n      return fullyResolvedTypeText;\n    }\n    // #endregion\n\n    // #region Deuxième tentative: résoudre les alias et types importés\n    const symbol = compilerType.symbol;\n\n    // Pour les types aliasés (comme TransformArgs)\n    if (symbol.flags & SymbolFlags.TypeAlias) {\n      const aliasResolvedTypeText = typeChecker.typeToString(\n        compilerType,\n        undefined,\n        TypeFormatFlags.InTypeAlias |\n          TypeFormatFlags.WriteClassExpressionAsTypeLiteral |\n          TypeFormatFlags.NoTruncation,\n      );\n\n      if (\n        aliasResolvedTypeText !== typeText &&\n        !aliasResolvedTypeText.includes(\'import(\') &&\n        aliasResolvedTypeText.includes(\'{\')\n      ) {\n        return aliasResolvedTypeText;\n      }\n    }\n\n    // Pour les types importés, essayer de résoudre le symbole aliasé\n    if (symbol.flags & SymbolFlags.Alias) {\n      const aliasedSymbol = typeChecker.getAliasedSymbol(symbol);\n      if (aliasedSymbol && aliasedSymbol !== symbol) {\n        const aliasedType = typeChecker.getTypeOfSymbolAtLocation(\n          aliasedSymbol,\n          aliasedSymbol.declarations?.[0] || sourceFile.compilerNode,\n        );\n\n        const resolvedAliasTypeText = typeChecker.typeToString(\n          aliasedType,\n          undefined,\n          TypeFormatFlags.InTypeAlias |\n            TypeFormatFlags.WriteClassExpressionAsTypeLiteral |\n            TypeFormatFlags.NoTruncation,\n        );\n\n        if (\n          resolvedAliasTypeText !== typeText &&\n          !resolvedAliasTypeText.includes(\'import(\') &&\n          resolvedAliasTypeText.includes(\'{\')\n        ) {\n          return resolvedAliasTypeText;\n        }\n      }\n    }\n    // #endregion\n\n    // #region Troisième tentative: type apparent pour révéler la structure cachée\n    const apparentType = typeChecker.getApparentType(compilerType);\n\n    const apparentText = typeChecker.typeToString(\n      apparentType,\n      undefined,\n      TypeFormatFlags.InTypeAlias |\n        TypeFormatFlags.WriteClassExpressionAsTypeLiteral |\n        TypeFormatFlags.UseStructuralFallback |\n        TypeFormatFlags.NoTruncation,\n    );\n\n    if (\n      apparentText !== typeText &&\n      !apparentText.includes(\'import(\') &&\n      (apparentText.includes(\'{\') ||\n        apparentText.length > typeText.length * 1.2)\n    ) {\n      return apparentText;\n    }\n    // #endregion\n\n    // #region Quatrième tentative: forcer l\'expansion structurelle\n    const structuralTypeText = typeChecker.typeToString(\n      compilerType,\n      undefined,\n      TypeFormatFlags.WriteClassExpressionAsTypeLiteral |\n        TypeFormatFlags.UseStructuralFallback |\n        TypeFormatFlags.InElementType |\n        TypeFormatFlags.NoTruncation,\n    );\n\n    if (\n      structuralTypeText !== typeText &&\n      structuralTypeText !== fullyResolvedTypeText &&\n      !structuralTypeText.includes(\'import(\') &&\n      structuralTypeText.includes(\'{\')\n    ) {\n      return structuralTypeText;\n    }\n    // #endregion\n  } catch (error) {\n    console.warn(\n      `Erreur lors de la résolution du type ${typeText} : `,\n      error,\n    );\n  }\n\n  return typeText;\n}',
+        text: "resolveType = (\n  sourceFile: SourceFile,\n  type: Type,\n): string => {\n  const typeText = type.getText();\n\n  try {\n    // Accéder au compilateur TypeScript sous-jacent\n    const compilerType = type.compilerType;\n    const typeChecker = sourceFile\n      .getProject()\n      .getTypeChecker().compilerObject;\n\n    const fullyResolvedTypeText = typeChecker.typeToString(\n      compilerType,\n      undefined,\n      TypeFormatFlags.InTypeAlias |\n        TypeFormatFlags.WriteArrayAsGenericType |\n        TypeFormatFlags.UseStructuralFallback |\n        TypeFormatFlags.NoTruncation |\n        TypeFormatFlags.WriteClassExpressionAsTypeLiteral |\n        TypeFormatFlags.InElementType,\n    );\n\n    // #region Première  tentative: Si le type résolu est structurel\n    // contient des objets et aucun import\n    if (\n      fullyResolvedTypeText !== typeText &&\n      !fullyResolvedTypeText.includes('import(') &&\n      (fullyResolvedTypeText.includes('{') ||\n        fullyResolvedTypeText.length > typeText.length * 1.5)\n    ) {\n      return fullyResolvedTypeText;\n    }\n    // #endregion\n\n    // #region Deuxième tentative: résoudre les alias et types importés\n    const symbol = compilerType.symbol;\n\n    // Pour les types aliasés (comme TransformArgs)\n    if (symbol.flags & SymbolFlags.TypeAlias) {\n      const aliasResolvedTypeText = typeChecker.typeToString(\n        compilerType,\n        undefined,\n        TypeFormatFlags.InTypeAlias |\n          TypeFormatFlags.WriteClassExpressionAsTypeLiteral |\n          TypeFormatFlags.NoTruncation,\n      );\n\n      if (\n        aliasResolvedTypeText !== typeText &&\n        !aliasResolvedTypeText.includes('import(') &&\n        aliasResolvedTypeText.includes('{')\n      ) {\n        return aliasResolvedTypeText;\n      }\n    }\n\n    // Pour les types importés, essayer de résoudre le symbole aliasé\n    if (symbol.flags & SymbolFlags.Alias) {\n      const aliasedSymbol = typeChecker.getAliasedSymbol(symbol);\n      if (aliasedSymbol && aliasedSymbol !== symbol) {\n        const aliasedType = typeChecker.getTypeOfSymbolAtLocation(\n          aliasedSymbol,\n          aliasedSymbol.declarations?.[0] || sourceFile.compilerNode,\n        );\n\n        const resolvedAliasTypeText = typeChecker.typeToString(\n          aliasedType,\n          undefined,\n          TypeFormatFlags.InTypeAlias |\n            TypeFormatFlags.WriteClassExpressionAsTypeLiteral |\n            TypeFormatFlags.NoTruncation,\n        );\n\n        if (\n          resolvedAliasTypeText !== typeText &&\n          !resolvedAliasTypeText.includes('import(') &&\n          resolvedAliasTypeText.includes('{')\n        ) {\n          return resolvedAliasTypeText;\n        }\n      }\n    }\n    // #endregion\n\n    // #region Troisième tentative: type apparent pour révéler la structure cachée\n    const apparentType = typeChecker.getApparentType(compilerType);\n\n    const apparentText = typeChecker.typeToString(\n      apparentType,\n      undefined,\n      TypeFormatFlags.InTypeAlias |\n        TypeFormatFlags.WriteClassExpressionAsTypeLiteral |\n        TypeFormatFlags.UseStructuralFallback |\n        TypeFormatFlags.NoTruncation,\n    );\n\n    if (\n      apparentText !== typeText &&\n      !apparentText.includes('import(') &&\n      (apparentText.includes('{') ||\n        apparentText.length > typeText.length * 1.2)\n    ) {\n      return apparentText;\n    }\n    // #endregion\n\n    // #region Quatrième tentative: forcer l'expansion structurelle\n    const structuralTypeText = typeChecker.typeToString(\n      compilerType,\n      undefined,\n      TypeFormatFlags.WriteClassExpressionAsTypeLiteral |\n        TypeFormatFlags.UseStructuralFallback |\n        TypeFormatFlags.InElementType |\n        TypeFormatFlags.NoTruncation,\n    );\n\n    if (\n      structuralTypeText !== typeText &&\n      structuralTypeText !== fullyResolvedTypeText &&\n      !structuralTypeText.includes('import(') &&\n      structuralTypeText.includes('{')\n    ) {\n      return structuralTypeText;\n    }\n    // #endregion\n  } catch (error) {\n    console.warn(\n      `Erreur lors de la résolution du type ${typeText} : `,\n      error,\n    );\n  }\n\n  return typeText;\n}",
         declarationKind: 'variable',
       },
     ],
@@ -16701,7 +16666,7 @@ export { resolveType } from './resolveType';
       {
         name: 'parseObject',
         kind: 'named',
-        text: 'parseObject = (objString: string): any => {\n  try {\n    const project = new Project();\n\n    // Créer un fichier temporaire avec l\'objet\n    const tempFile = project.createSourceFile(\n      \'temp.ts\',\n      `\n      const obj = ${objString};\n      export default obj;\n    `,\n    );\n\n    // Obtenir la déclaration de variable\n    const variableDeclaration = tempFile.getVariableDeclaration(\'obj\');\n    if (!variableDeclaration) return null;\n\n    const initializer = variableDeclaration.getInitializer();\n    if (\n      !initializer ||\n      initializer.getKind() !== SyntaxKind.ObjectLiteralExpression\n    ) {\n      return null;\n    }\n\n    // Fonction récursive pour parser l\'objet\n    const parseNode = (node: Node): any => {\n      if (Node.isObjectLiteralExpression(node)) {\n        const obj: any = {};\n        node.getProperties().forEach((prop: any) => {\n          if (Node.isPropertyAssignment(prop)) {\n            const name = prop.getName();\n            const initializer = prop.getInitializer();\n            if (initializer) {\n              const value = parseNode(initializer);\n              obj[name] = value;\n            }\n          }\n        });\n        return obj;\n      }\n\n      if (Node.isArrayLiteralExpression(node)) {\n        return node\n          .getElements()\n          .map((element: any) => parseNode(element));\n      }\n\n      if (Node.isStringLiteral(node) || Node.isNumericLiteral(node)) {\n        return node.getLiteralValue();\n      }\n\n      if (Node.isTrueLiteral(node)) {\n        return true;\n      }\n\n      if (Node.isFalseLiteral(node)) {\n        return false;\n      }\n\n      if (Node.isNullLiteral(node)) {\n        return null;\n      }\n\n      if (Node.isIdentifier(node)) {\n        return node.getText();\n      }\n\n      return node.getText();\n    };\n\n    return parseNode(initializer);\n  } catch (error) {\n    console.error(\'Erreur avec ts-morph:\', error);\n    return null;\n  }\n}',
+        text: "parseObject = (objString: string): any => {\n  try {\n    const project = new Project();\n\n    // Créer un fichier temporaire avec l'objet\n    const tempFile = project.createSourceFile(\n      'temp.ts',\n      `\n      const obj = ${objString};\n      export default obj;\n    `,\n    );\n\n    // Obtenir la déclaration de variable\n    const variableDeclaration = tempFile.getVariableDeclaration('obj');\n    if (!variableDeclaration) return null;\n\n    const initializer = variableDeclaration.getInitializer();\n    if (\n      !initializer ||\n      initializer.getKind() !== SyntaxKind.ObjectLiteralExpression\n    ) {\n      return null;\n    }\n\n    // Fonction récursive pour parser l'objet\n    const parseNode = (node: Node): any => {\n      if (Node.isObjectLiteralExpression(node)) {\n        const obj: any = {};\n        node.getProperties().forEach((prop: any) => {\n          if (Node.isPropertyAssignment(prop)) {\n            const name = prop.getName();\n            const initializer = prop.getInitializer();\n            if (initializer) {\n              const value = parseNode(initializer);\n              obj[name] = value;\n            }\n          }\n        });\n        return obj;\n      }\n\n      if (Node.isArrayLiteralExpression(node)) {\n        return node\n          .getElements()\n          .map((element: any) => parseNode(element));\n      }\n\n      if (Node.isStringLiteral(node) || Node.isNumericLiteral(node)) {\n        return node.getLiteralValue();\n      }\n\n      if (Node.isTrueLiteral(node)) {\n        return true;\n      }\n\n      if (Node.isFalseLiteral(node)) {\n        return false;\n      }\n\n      if (Node.isNullLiteral(node)) {\n        return null;\n      }\n\n      if (Node.isIdentifier(node)) {\n        return node.getText();\n      }\n\n      return node.getText();\n    };\n\n    return parseNode(initializer);\n  } catch (error) {\n    console.error('Erreur avec ts-morph:', error);\n    return null;\n  }\n}",
         declarationKind: 'variable',
       },
     ],
@@ -16792,14 +16757,19 @@ export const parseObject = (objString: string): any => {
       {
         moduleSpecifier: 'ts-morph',
         kind: 'named',
-        namedImports: ['SymbolFlags', 'TypeFormatFlags', 'SourceFile', 'Type'],
+        namedImports: [
+          'SymbolFlags',
+          'TypeFormatFlags',
+          'SourceFile',
+          'Type',
+        ],
       },
     ],
     exports: [
       {
         name: 'resolveType',
         kind: 'named',
-        text: 'resolveType = (\n  sourceFile: SourceFile,\n  type: Type,\n): string => {\n  const typeText = type.getText();\n\n  try {\n    // Accéder au compilateur TypeScript sous-jacent\n    const compilerType = type.compilerType;\n    const typeChecker = sourceFile\n      .getProject()\n      .getTypeChecker().compilerObject;\n\n    const fullyResolvedTypeText = typeChecker.typeToString(\n      compilerType,\n      undefined,\n      TypeFormatFlags.InTypeAlias |\n        TypeFormatFlags.WriteArrayAsGenericType |\n        TypeFormatFlags.UseStructuralFallback |\n        TypeFormatFlags.NoTruncation |\n        TypeFormatFlags.WriteClassExpressionAsTypeLiteral |\n        TypeFormatFlags.InElementType,\n    );\n\n    // #region Première  tentative: Si le type résolu est structurel\n    // contient des objets et aucun import\n    if (\n      fullyResolvedTypeText !== typeText &&\n      !fullyResolvedTypeText.includes(\'import(\') &&\n      (fullyResolvedTypeText.includes(\'{\') ||\n        fullyResolvedTypeText.length > typeText.length * 1.5)\n    ) {\n      return fullyResolvedTypeText;\n    }\n    // #endregion\n\n    // #region Deuxième tentative: résoudre les alias et types importés\n    const symbol = compilerType.symbol;\n\n    // Pour les types aliasés (comme TransformArgs)\n    if (symbol.flags & SymbolFlags.TypeAlias) {\n      const aliasResolvedTypeText = typeChecker.typeToString(\n        compilerType,\n        undefined,\n        TypeFormatFlags.InTypeAlias |\n          TypeFormatFlags.WriteClassExpressionAsTypeLiteral |\n          TypeFormatFlags.NoTruncation,\n      );\n\n      if (\n        aliasResolvedTypeText !== typeText &&\n        !aliasResolvedTypeText.includes(\'import(\') &&\n        aliasResolvedTypeText.includes(\'{\')\n      ) {\n        return aliasResolvedTypeText;\n      }\n    }\n\n    // Pour les types importés, essayer de résoudre le symbole aliasé\n    if (symbol.flags & SymbolFlags.Alias) {\n      const aliasedSymbol = typeChecker.getAliasedSymbol(symbol);\n      if (aliasedSymbol && aliasedSymbol !== symbol) {\n        const aliasedType = typeChecker.getTypeOfSymbolAtLocation(\n          aliasedSymbol,\n          aliasedSymbol.declarations?.[0] || sourceFile.compilerNode,\n        );\n\n        const resolvedAliasTypeText = typeChecker.typeToString(\n          aliasedType,\n          undefined,\n          TypeFormatFlags.InTypeAlias |\n            TypeFormatFlags.WriteClassExpressionAsTypeLiteral |\n            TypeFormatFlags.NoTruncation,\n        );\n\n        if (\n          resolvedAliasTypeText !== typeText &&\n          !resolvedAliasTypeText.includes(\'import(\') &&\n          resolvedAliasTypeText.includes(\'{\')\n        ) {\n          return resolvedAliasTypeText;\n        }\n      }\n    }\n    // #endregion\n\n    // #region Troisième tentative: type apparent pour révéler la structure cachée\n    const apparentType = typeChecker.getApparentType(compilerType);\n\n    const apparentText = typeChecker.typeToString(\n      apparentType,\n      undefined,\n      TypeFormatFlags.InTypeAlias |\n        TypeFormatFlags.WriteClassExpressionAsTypeLiteral |\n        TypeFormatFlags.UseStructuralFallback |\n        TypeFormatFlags.NoTruncation,\n    );\n\n    if (\n      apparentText !== typeText &&\n      !apparentText.includes(\'import(\') &&\n      (apparentText.includes(\'{\') ||\n        apparentText.length > typeText.length * 1.2)\n    ) {\n      return apparentText;\n    }\n    // #endregion\n\n    // #region Quatrième tentative: forcer l\'expansion structurelle\n    const structuralTypeText = typeChecker.typeToString(\n      compilerType,\n      undefined,\n      TypeFormatFlags.WriteClassExpressionAsTypeLiteral |\n        TypeFormatFlags.UseStructuralFallback |\n        TypeFormatFlags.InElementType |\n        TypeFormatFlags.NoTruncation,\n    );\n\n    if (\n      structuralTypeText !== typeText &&\n      structuralTypeText !== fullyResolvedTypeText &&\n      !structuralTypeText.includes(\'import(\') &&\n      structuralTypeText.includes(\'{\')\n    ) {\n      return structuralTypeText;\n    }\n    // #endregion\n  } catch (error) {\n    console.warn(\n      `Erreur lors de la résolution du type ${typeText} : `,\n      error,\n    );\n  }\n\n  return typeText;\n}',
+        text: "resolveType = (\n  sourceFile: SourceFile,\n  type: Type,\n): string => {\n  const typeText = type.getText();\n\n  try {\n    // Accéder au compilateur TypeScript sous-jacent\n    const compilerType = type.compilerType;\n    const typeChecker = sourceFile\n      .getProject()\n      .getTypeChecker().compilerObject;\n\n    const fullyResolvedTypeText = typeChecker.typeToString(\n      compilerType,\n      undefined,\n      TypeFormatFlags.InTypeAlias |\n        TypeFormatFlags.WriteArrayAsGenericType |\n        TypeFormatFlags.UseStructuralFallback |\n        TypeFormatFlags.NoTruncation |\n        TypeFormatFlags.WriteClassExpressionAsTypeLiteral |\n        TypeFormatFlags.InElementType,\n    );\n\n    // #region Première  tentative: Si le type résolu est structurel\n    // contient des objets et aucun import\n    if (\n      fullyResolvedTypeText !== typeText &&\n      !fullyResolvedTypeText.includes('import(') &&\n      (fullyResolvedTypeText.includes('{') ||\n        fullyResolvedTypeText.length > typeText.length * 1.5)\n    ) {\n      return fullyResolvedTypeText;\n    }\n    // #endregion\n\n    // #region Deuxième tentative: résoudre les alias et types importés\n    const symbol = compilerType.symbol;\n\n    // Pour les types aliasés (comme TransformArgs)\n    if (symbol.flags & SymbolFlags.TypeAlias) {\n      const aliasResolvedTypeText = typeChecker.typeToString(\n        compilerType,\n        undefined,\n        TypeFormatFlags.InTypeAlias |\n          TypeFormatFlags.WriteClassExpressionAsTypeLiteral |\n          TypeFormatFlags.NoTruncation,\n      );\n\n      if (\n        aliasResolvedTypeText !== typeText &&\n        !aliasResolvedTypeText.includes('import(') &&\n        aliasResolvedTypeText.includes('{')\n      ) {\n        return aliasResolvedTypeText;\n      }\n    }\n\n    // Pour les types importés, essayer de résoudre le symbole aliasé\n    if (symbol.flags & SymbolFlags.Alias) {\n      const aliasedSymbol = typeChecker.getAliasedSymbol(symbol);\n      if (aliasedSymbol && aliasedSymbol !== symbol) {\n        const aliasedType = typeChecker.getTypeOfSymbolAtLocation(\n          aliasedSymbol,\n          aliasedSymbol.declarations?.[0] || sourceFile.compilerNode,\n        );\n\n        const resolvedAliasTypeText = typeChecker.typeToString(\n          aliasedType,\n          undefined,\n          TypeFormatFlags.InTypeAlias |\n            TypeFormatFlags.WriteClassExpressionAsTypeLiteral |\n            TypeFormatFlags.NoTruncation,\n        );\n\n        if (\n          resolvedAliasTypeText !== typeText &&\n          !resolvedAliasTypeText.includes('import(') &&\n          resolvedAliasTypeText.includes('{')\n        ) {\n          return resolvedAliasTypeText;\n        }\n      }\n    }\n    // #endregion\n\n    // #region Troisième tentative: type apparent pour révéler la structure cachée\n    const apparentType = typeChecker.getApparentType(compilerType);\n\n    const apparentText = typeChecker.typeToString(\n      apparentType,\n      undefined,\n      TypeFormatFlags.InTypeAlias |\n        TypeFormatFlags.WriteClassExpressionAsTypeLiteral |\n        TypeFormatFlags.UseStructuralFallback |\n        TypeFormatFlags.NoTruncation,\n    );\n\n    if (\n      apparentText !== typeText &&\n      !apparentText.includes('import(') &&\n      (apparentText.includes('{') ||\n        apparentText.length > typeText.length * 1.2)\n    ) {\n      return apparentText;\n    }\n    // #endregion\n\n    // #region Quatrième tentative: forcer l'expansion structurelle\n    const structuralTypeText = typeChecker.typeToString(\n      compilerType,\n      undefined,\n      TypeFormatFlags.WriteClassExpressionAsTypeLiteral |\n        TypeFormatFlags.UseStructuralFallback |\n        TypeFormatFlags.InElementType |\n        TypeFormatFlags.NoTruncation,\n    );\n\n    if (\n      structuralTypeText !== typeText &&\n      structuralTypeText !== fullyResolvedTypeText &&\n      !structuralTypeText.includes('import(') &&\n      structuralTypeText.includes('{')\n    ) {\n      return structuralTypeText;\n    }\n    // #endregion\n  } catch (error) {\n    console.warn(\n      `Erreur lors de la résolution du type ${typeText} : `,\n      error,\n    );\n  }\n\n  return typeText;\n}",
         declarationKind: 'variable',
       },
     ],
@@ -16950,37 +16920,36 @@ export const resolveType = (
   },
   'globals.castings': {
     relativePath: 'globals/castings.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'castings',
         kind: 'named',
-        text: 'export { castings as arrays } from \'../features/arrays/castings/all\';',
+        text: "export { castings as arrays } from '../features/arrays/castings/all';",
         moduleSpecifier: '../features/arrays/castings/all',
       },
       {
         name: 'castings',
         kind: 'named',
-        text: 'export { castings as common } from \'../features/common/castings/all\';',
+        text: "export { castings as common } from '../features/common/castings/all';",
         moduleSpecifier: '../features/common/castings/all',
       },
       {
         name: 'castings',
         kind: 'named',
-        text: 'export { castings as numbers } from \'../features/numbers/castings/all\';',
+        text: "export { castings as numbers } from '../features/numbers/castings/all';",
         moduleSpecifier: '../features/numbers/castings/all',
       },
       {
         name: 'castings',
         kind: 'named',
-        text: 'export { castings as objects } from \'../features/objects/castings/all\';',
+        text: "export { castings as objects } from '../features/objects/castings/all';",
         moduleSpecifier: '../features/objects/castings/all',
       },
       {
         name: 'castings',
         kind: 'named',
-        text: 'export { castings as strings } from \'../features/strings/castings/all\';',
+        text: "export { castings as strings } from '../features/strings/castings/all';",
         moduleSpecifier: '../features/strings/castings/all',
       },
       {
@@ -17025,55 +16994,54 @@ export { castings as strings } from '../features/strings/castings/all';
   },
   'globals.types': {
     relativePath: 'globals/types.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'../features/arrays/types\';',
+        text: "export * from '../features/arrays/types';",
         moduleSpecifier: '../features/arrays/types',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'../features/common/types\';',
+        text: "export * from '../features/common/types';",
         moduleSpecifier: '../features/common/types',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'../features/functions/types\';',
+        text: "export * from '../features/functions/types';",
         moduleSpecifier: '../features/functions/types',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'../features/numbers/types\';',
+        text: "export * from '../features/numbers/types';",
         moduleSpecifier: '../features/numbers/types',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'../features/objects/types\';',
+        text: "export * from '../features/objects/types';",
         moduleSpecifier: '../features/objects/types',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'../features/promises/types\';',
+        text: "export * from '../features/promises/types';",
         moduleSpecifier: '../features/promises/types',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'../features/strings/types\';',
+        text: "export * from '../features/strings/types';",
         moduleSpecifier: '../features/strings/types',
       },
       {
         name: 'IndexesOfArray',
         kind: 'named',
-        text: 'export type IndexesOfArray<\n  T extends readonly unknown[],\n  S extends number[] = [],\n> = T[\'length\'] extends S[\'length\']\n  ? S[number]\n  : IndexesOfArray<T, [S[\'length\'], ...S]>;',
+        text: "export type IndexesOfArray<\n  T extends readonly unknown[],\n  S extends number[] = [],\n> = T['length'] extends S['length']\n  ? S[number]\n  : IndexesOfArray<T, [S['length'], ...S]>;",
         declarationKind: 'type',
       },
       {
@@ -17253,7 +17221,7 @@ export { castings as strings } from '../features/strings/castings/all';
       {
         name: 'TypeStrings',
         kind: 'named',
-        text: 'export type TypeStrings =\n  | \'string\'\n  | \'number\'\n  | \'boolean\'\n  | \'bigint\'\n  | \'symbol\'\n  | \'undefined\'\n  | \'object\'\n  | \'function\';',
+        text: "export type TypeStrings =\n  | 'string'\n  | 'number'\n  | 'boolean'\n  | 'bigint'\n  | 'symbol'\n  | 'undefined'\n  | 'object'\n  | 'function';",
         declarationKind: 'type',
       },
       {
@@ -17379,7 +17347,7 @@ export { castings as strings } from '../features/strings/castings/all';
       {
         name: 'TrueObject',
         kind: 'named',
-        text: 'export type TrueObject = Ru & {\n  [Symbol.iterator]?: never;\n  //@ts-expect-error - \'SymbolConstructor\' does not exist on type \'object\'\n  [SymbolConstructor]?: never;\n};',
+        text: "export type TrueObject = Ru & {\n  [Symbol.iterator]?: never;\n  //@ts-expect-error - 'SymbolConstructor' does not exist on type 'object'\n  [SymbolConstructor]?: never;\n};",
         declarationKind: 'type',
       },
       {
@@ -17523,7 +17491,7 @@ export { castings as strings } from '../features/strings/castings/all';
       {
         name: 'OnPropChangedMethods',
         kind: 'named',
-        text: 'export type OnPropChangedMethods<T, I extends keyof T = keyof T> = T & {\n  [K in Extract<PickKeysBy<T, (...args: any) => any>, I> &\n    string as AddString<Capitalize<K>, \'on\', \'Changed\'>]: (\n    cb: (newValue: T[K]) => void,\n  ) => void;\n};',
+        text: "export type OnPropChangedMethods<T, I extends keyof T = keyof T> = T & {\n  [K in Extract<PickKeysBy<T, (...args: any) => any>, I> &\n    string as AddString<Capitalize<K>, 'on', 'Changed'>]: (\n    cb: (newValue: T[K]) => void,\n  ) => void;\n};",
         declarationKind: 'type',
       },
       {
@@ -17553,7 +17521,7 @@ export { castings as strings } from '../features/strings/castings/all';
       {
         name: '_FlatMapByKey',
         kind: 'named',
-        text: 'export type _FlatMapByKey<\n  T extends object,\n  _omit extends PickKeysBy<T, object>,\n  _withChildren extends boolean = false,\n  Delimiter extends string = \'.\',\n  Keys extends string = \'\',\n  K extends string = keyof T[_omit] & string,\n> = T extends {\n  [Key in _omit]?: any;\n}\n  ? K extends keyof T[_omit]\n    ? T[_omit][K] extends infer TK extends object\n      ?\n          | _FlatMapByKey<\n              TK,\n              _omit,\n              _withChildren,\n              Delimiter,\n              `${Keys}${Delimiter}${K}`\n            >\n          | {\n              [key in DefaultK<Keys, Delimiter>]: WithChildren<\n                T,\n                _omit,\n                _withChildren\n              >;\n            }\n      : {\n          [key in DefaultK<Keys, Delimiter>]: WithChildren<\n            T,\n            _omit,\n            _withChildren\n          >;\n        }\n    : never\n  : {\n      [key in DefaultK<Keys, Delimiter>]: WithChildren<\n        T,\n        _omit,\n        _withChildren\n      >;\n    };',
+        text: "export type _FlatMapByKey<\n  T extends object,\n  _omit extends PickKeysBy<T, object>,\n  _withChildren extends boolean = false,\n  Delimiter extends string = '.',\n  Keys extends string = '',\n  K extends string = keyof T[_omit] & string,\n> = T extends {\n  [Key in _omit]?: any;\n}\n  ? K extends keyof T[_omit]\n    ? T[_omit][K] extends infer TK extends object\n      ?\n          | _FlatMapByKey<\n              TK,\n              _omit,\n              _withChildren,\n              Delimiter,\n              `${Keys}${Delimiter}${K}`\n            >\n          | {\n              [key in DefaultK<Keys, Delimiter>]: WithChildren<\n                T,\n                _omit,\n                _withChildren\n              >;\n            }\n      : {\n          [key in DefaultK<Keys, Delimiter>]: WithChildren<\n            T,\n            _omit,\n            _withChildren\n          >;\n        }\n    : never\n  : {\n      [key in DefaultK<Keys, Delimiter>]: WithChildren<\n        T,\n        _omit,\n        _withChildren\n      >;\n    };",
         declarationKind: 'type',
       },
       {
@@ -17697,13 +17665,13 @@ export { castings as strings } from '../features/strings/castings/all';
       {
         name: 'JoinString',
         kind: 'named',
-        text: 'export type JoinString<\n  T extends readonly string[],\n  sep extends string = \' \',\n> = T extends []\n  ? \'\'\n  : T extends [_JoinStringHelper]\n    ? `${T[0]}`\n    : T extends [_JoinStringHelper, ...infer U extends readonly string[]]\n      ? `${T[0]}${sep}${JoinString<U, sep>}`\n      : string;',
+        text: "export type JoinString<\n  T extends readonly string[],\n  sep extends string = ' ',\n> = T extends []\n  ? ''\n  : T extends [_JoinStringHelper]\n    ? `${T[0]}`\n    : T extends [_JoinStringHelper, ...infer U extends readonly string[]]\n      ? `${T[0]}${sep}${JoinString<U, sep>}`\n      : string;",
         declarationKind: 'type',
       },
       {
         name: 'AddString',
         kind: 'named',
-        text: 'export type AddString<\n  T,\n  Before extends string = \'\',\n  After extends string = \'\',\n> = `${Before}${T & string}${After}`;',
+        text: "export type AddString<\n  T,\n  Before extends string = '',\n  After extends string = '',\n> = `${Before}${T & string}${After}`;",
         declarationKind: 'type',
       },
       {
@@ -17727,7 +17695,7 @@ export { castings as strings } from '../features/strings/castings/all';
       {
         name: 'SplitStringBy',
         kind: 'named',
-        text: 'export type SplitStringBy<\n  S extends string,\n  By extends string = \'.\',\n> = string extends S\n  ? string[]\n  : S extends \'\'\n    ? []\n    : S extends `${infer T}${By}${infer U}`\n      ? [T, ...SplitStringBy<U, By>]\n      : [S];',
+        text: "export type SplitStringBy<\n  S extends string,\n  By extends string = '.',\n> = string extends S\n  ? string[]\n  : S extends ''\n    ? []\n    : S extends `${infer T}${By}${infer U}`\n      ? [T, ...SplitStringBy<U, By>]\n      : [S];",
         declarationKind: 'type',
       },
       {
@@ -17748,37 +17716,36 @@ export * from '../features/strings/types';
   },
   'globals.typings': {
     relativePath: 'globals/typings.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'typings',
         kind: 'named',
-        text: 'export { typings as arrays } from \'../features/arrays/typings/all\';',
+        text: "export { typings as arrays } from '../features/arrays/typings/all';",
         moduleSpecifier: '../features/arrays/typings/all',
       },
       {
         name: 'typings',
         kind: 'named',
-        text: 'export { typings as common } from \'../features/common/typings/all\';',
+        text: "export { typings as common } from '../features/common/typings/all';",
         moduleSpecifier: '../features/common/typings/all',
       },
       {
         name: 'typings',
         kind: 'named',
-        text: 'export { typings as numbers } from \'../features/numbers/typings/all\';',
+        text: "export { typings as numbers } from '../features/numbers/typings/all';",
         moduleSpecifier: '../features/numbers/typings/all',
       },
       {
         name: 'typings',
         kind: 'named',
-        text: 'export { typings as objects } from \'../features/objects/typings/all\';',
+        text: "export { typings as objects } from '../features/objects/typings/all';",
         moduleSpecifier: '../features/objects/typings/all',
       },
       {
         name: 'typings',
         kind: 'named',
-        text: 'export { typings as strings } from \'../features/strings/typings/all\';',
+        text: "export { typings as strings } from '../features/strings/typings/all';",
         moduleSpecifier: '../features/strings/typings/all',
       },
       {
@@ -17823,8 +17790,7 @@ export { typings as strings } from '../features/strings/typings/all';
   },
   'globals.utils._unknown': {
     relativePath: 'globals/utils/_unknown.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: '_unknown',
@@ -17942,8 +17908,7 @@ export const expandFn = <
   },
   'globals.utils.identity': {
     relativePath: 'globals/utils/identity.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'identity',
@@ -17958,43 +17923,42 @@ export const expandFn = <
 
   'globals.utils.index': {
     relativePath: 'globals/utils/index.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./_unknown\';',
+        text: "export * from './_unknown';",
         moduleSpecifier: './_unknown',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./castFn\';',
+        text: "export * from './castFn';",
         moduleSpecifier: './castFn',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./expandFn\';',
+        text: "export * from './expandFn';",
         moduleSpecifier: './expandFn',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./identity\';',
+        text: "export * from './identity';",
         moduleSpecifier: './identity',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./is\';',
+        text: "export * from './is';",
         moduleSpecifier: './is',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./typeFn\';',
+        text: "export * from './typeFn';",
         moduleSpecifier: './typeFn',
       },
       {
@@ -18035,7 +17999,7 @@ export const expandFn = <
       {
         name: 'isTypeFn',
         kind: 'named',
-        text: 'isTypeFn = <T extends PrimitiveS | \'object\'>(type: T) => {\n  return (value: unknown): value is TransformO<T> => {\n    return typeof value === type;\n  };\n}',
+        text: "isTypeFn = <T extends PrimitiveS | 'object'>(type: T) => {\n  return (value: unknown): value is TransformO<T> => {\n    return typeof value === type;\n  };\n}",
         declarationKind: 'variable',
       },
       {
@@ -18053,7 +18017,7 @@ export const expandFn = <
       {
         name: 'isPlainObject',
         kind: 'named',
-        text: 'isPlainObject = (value: any): value is object => {\n  return (\n    Object.prototype.toString.call(value) == \'[object Object]\' &&\n    value.constructor &&\n    value.constructor.name == \'Object\'\n  );\n}',
+        text: "isPlainObject = (value: any): value is object => {\n  return (\n    Object.prototype.toString.call(value) == '[object Object]' &&\n    value.constructor &&\n    value.constructor.name == 'Object'\n  );\n}",
         declarationKind: 'variable',
       },
       {
@@ -18107,7 +18071,7 @@ export * from './typeFn';
       {
         name: 'isTypeFn',
         kind: 'named',
-        text: 'isTypeFn = <T extends PrimitiveS | \'object\'>(type: T) => {\n  return (value: unknown): value is TransformO<T> => {\n    return typeof value === type;\n  };\n}',
+        text: "isTypeFn = <T extends PrimitiveS | 'object'>(type: T) => {\n  return (value: unknown): value is TransformO<T> => {\n    return typeof value === type;\n  };\n}",
         declarationKind: 'variable',
       },
       {
@@ -18141,37 +18105,36 @@ export const isInstance = <T extends Classe>(instance: T) => {
   },
   'globals.utils.is.index': {
     relativePath: 'globals/utils/is/index.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./_default\';',
+        text: "export * from './_default';",
         moduleSpecifier: './_default',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./merge\';',
+        text: "export * from './merge';",
         moduleSpecifier: './merge',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./object\';',
+        text: "export * from './object';",
         moduleSpecifier: './object',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./primitive\';',
+        text: "export * from './primitive';",
         moduleSpecifier: './primitive',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./primitive.object\';',
+        text: "export * from './primitive.object';",
         moduleSpecifier: './primitive.object',
       },
       {
@@ -18183,7 +18146,7 @@ export const isInstance = <T extends Classe>(instance: T) => {
       {
         name: 'isTypeFn',
         kind: 'named',
-        text: 'isTypeFn = <T extends PrimitiveS | \'object\'>(type: T) => {\n  return (value: unknown): value is TransformO<T> => {\n    return typeof value === type;\n  };\n}',
+        text: "isTypeFn = <T extends PrimitiveS | 'object'>(type: T) => {\n  return (value: unknown): value is TransformO<T> => {\n    return typeof value === type;\n  };\n}",
         declarationKind: 'variable',
       },
       {
@@ -18201,7 +18164,7 @@ export const isInstance = <T extends Classe>(instance: T) => {
       {
         name: 'isPlainObject',
         kind: 'named',
-        text: 'isPlainObject = (value: any): value is object => {\n  return (\n    Object.prototype.toString.call(value) == \'[object Object]\' &&\n    value.constructor &&\n    value.constructor.name == \'Object\'\n  );\n}',
+        text: "isPlainObject = (value: any): value is object => {\n  return (\n    Object.prototype.toString.call(value) == '[object Object]' &&\n    value.constructor &&\n    value.constructor.name == 'Object'\n  );\n}",
         declarationKind: 'variable',
       },
       {
@@ -18261,13 +18224,12 @@ export const mergeIs = expandFn(
   },
   'globals.utils.is.object': {
     relativePath: 'globals/utils/is/object.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: 'isPlainObject',
         kind: 'named',
-        text: 'isPlainObject = (value: any): value is object => {\n  return (\n    Object.prototype.toString.call(value) == \'[object Object]\' &&\n    value.constructor &&\n    value.constructor.name == \'Object\'\n  );\n}',
+        text: "isPlainObject = (value: any): value is object => {\n  return (\n    Object.prototype.toString.call(value) == '[object Object]' &&\n    value.constructor &&\n    value.constructor.name == 'Object'\n  );\n}",
         declarationKind: 'variable',
       },
     ],
@@ -18419,21 +18381,20 @@ export const typeFn = <T = any>() => {
 };
 `,
   },
-  'index': {
+  index: {
     relativePath: 'index.ts',
-    imports: [
-    ],
+    imports: [],
     exports: [
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'#utils/index\';',
+        text: "export * from '#utils/index';",
         moduleSpecifier: '#utils/index',
       },
       {
         name: '*',
         kind: 'namespace',
-        text: 'export * from \'./features\';',
+        text: "export * from './features';",
         moduleSpecifier: './features',
       },
       {
@@ -18474,7 +18435,7 @@ export const typeFn = <T = any>() => {
       {
         name: 'isTypeFn',
         kind: 'named',
-        text: 'isTypeFn = <T extends PrimitiveS | \'object\'>(type: T) => {\n  return (value: unknown): value is TransformO<T> => {\n    return typeof value === type;\n  };\n}',
+        text: "isTypeFn = <T extends PrimitiveS | 'object'>(type: T) => {\n  return (value: unknown): value is TransformO<T> => {\n    return typeof value === type;\n  };\n}",
         declarationKind: 'variable',
       },
       {
@@ -18492,7 +18453,7 @@ export const typeFn = <T = any>() => {
       {
         name: 'isPlainObject',
         kind: 'named',
-        text: 'isPlainObject = (value: any): value is object => {\n  return (\n    Object.prototype.toString.call(value) == \'[object Object]\' &&\n    value.constructor &&\n    value.constructor.name == \'Object\'\n  );\n}',
+        text: "isPlainObject = (value: any): value is object => {\n  return (\n    Object.prototype.toString.call(value) == '[object Object]' &&\n    value.constructor &&\n    value.constructor.name == 'Object'\n  );\n}",
         declarationKind: 'variable',
       },
       {
@@ -18516,52 +18477,52 @@ export const typeFn = <T = any>() => {
       {
         name: 'arrays',
         kind: 'named',
-        text: 'export * from \'./castings/all\';\nexport * from \'./types\';\nexport * from \'./typings/all\';\n',
+        text: "export * from './castings/all';\nexport * from './types';\nexport * from './typings/all';\n",
       },
       {
         name: 'booleans',
         kind: 'named',
-        text: 'export * from \'./castings/all\';\nexport * from \'./types\';\nexport * from \'./typings/all\';\n',
+        text: "export * from './castings/all';\nexport * from './types';\nexport * from './typings/all';\n",
       },
       {
         name: 'common',
         kind: 'named',
-        text: 'export * from \'./castings/all\';\nexport * from \'./types\';\nexport * from \'./typings/all\';\n',
+        text: "export * from './castings/all';\nexport * from './types';\nexport * from './typings/all';\n",
       },
       {
         name: 'functions',
         kind: 'named',
-        text: 'export * from \'./castings\';\nexport * as functions from \'./functions\';\nexport * from \'./types\';\nexport * from \'./typings\';\n',
+        text: "export * from './castings';\nexport * as functions from './functions';\nexport * from './types';\nexport * from './typings';\n",
       },
       {
         name: 'numbers',
         kind: 'named',
-        text: 'export * from \'./castings/all\';\nexport * from \'./types\';\nexport * from \'./typings/all\';\n',
+        text: "export * from './castings/all';\nexport * from './types';\nexport * from './typings/all';\n",
       },
       {
         name: 'objects',
         kind: 'named',
-        text: 'export * from \'./castings/all\';\nexport * from \'./types\';\nexport * from \'./typings/all\';\n',
+        text: "export * from './castings/all';\nexport * from './types';\nexport * from './typings/all';\n",
       },
       {
         name: 'promises',
         kind: 'named',
-        text: 'export * from \'./types\';\n',
+        text: "export * from './types';\n",
       },
       {
         name: 'strings',
         kind: 'named',
-        text: 'export * from \'./castings/all\';\nexport * as CONSTANTS from \'./constants\';\nexport * from \'./types\';\nexport * from \'./typings/all\';\n',
+        text: "export * from './castings/all';\nexport * as CONSTANTS from './constants';\nexport * from './types';\nexport * from './typings/all';\n",
       },
       {
         name: 'transformers',
         kind: 'named',
-        text: 'export * from \'./constants\';\nexport * from \'./functions\';\nexport * from \'./types\';\n',
+        text: "export * from './constants';\nexport * from './functions';\nexport * from './types';\n",
       },
       {
         name: 'typescript',
         kind: 'named',
-        text: 'export { extractFromFile } from \'./extractFromFile\';\nexport { findFirstCallExpression } from \'./findFirstCallExpression\';\nexport { parseObject } from \'./parseObject\';\nexport { resolveType } from \'./resolveType\';\n',
+        text: "export { extractFromFile } from './extractFromFile';\nexport { findFirstCallExpression } from './findFirstCallExpression';\nexport { parseObject } from './parseObject';\nexport { resolveType } from './resolveType';\n",
       },
     ],
     text: `export * from '#utils/index';
@@ -18575,5 +18536,5 @@ export const ANALYSIS_STATS = {
   totalFiles: 429,
   totalImports: 897,
   totalExports: 934,
-  generatedAt: '2025-08-23T02:01:29.551Z',
+  generatedAt: '2025-08-23T02:05:32.387Z',
 };
