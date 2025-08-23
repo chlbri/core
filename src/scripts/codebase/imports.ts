@@ -1,4 +1,4 @@
-import { join } from 'node:path';
+import { join, relative } from 'node:path';
 import { SourceFile, SyntaxKind } from 'ts-morph';
 import type { ImportInfo } from './types';
 
@@ -14,10 +14,7 @@ const resolveModuleSpecifier = (
 
   if (!paths) return moduleSpecifier;
 
-  const paths2 = Object.entries(paths).map(([_key, value]) => {
-    const key = baseUrl ? join(baseUrl, _key) : _key;
-    return [key, value] as const;
-  });
+  const paths2 = Object.entries(paths);
 
   // Chercher la correspondance dans les paths
   for (const [pattern, mappings] of paths2) {
@@ -28,7 +25,11 @@ const resolveModuleSpecifier = (
 
     if (match) {
       // Prendre le premier mapping disponible
-      const mapping = mappings[0];
+      const first = mappings[0];
+
+      const mapping = baseUrl
+        ? join(relative(process.cwd(), baseUrl), first)
+        : first;
       if (mapping) {
         // Remplacer * dans le mapping par la partie matchée
         let resolvedPath = mapping;
