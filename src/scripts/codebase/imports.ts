@@ -9,11 +9,11 @@ const resolveModuleSpecifier = (
   sourceFile: SourceFile,
   moduleSpecifier: string,
 ): string => {
-  const baseUrl = sourceFile.getProject().getCompilerOptions().baseUrl;
   const paths = sourceFile.getProject().getCompilerOptions().paths;
 
   if (!paths) return moduleSpecifier;
 
+  const baseUrl = sourceFile.getProject().getCompilerOptions().baseUrl;
   const paths2 = Object.entries(paths);
 
   // Chercher la correspondance dans les paths
