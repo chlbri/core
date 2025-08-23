@@ -115,7 +115,6 @@ export interface CodebaseAnalysis {
   code += `  totalFiles: ${Object.keys(analysis).length},\n`;
   code += `  totalImports: ${Object.values(analysis).reduce((acc, file) => acc + file.imports.length, 0)},\n`;
   code += `  totalExports: ${Object.values(analysis).reduce((acc, file) => acc + file.exports.length, 0)},\n`;
-  code += `  generatedAt: '${new Date().toISOString()}',\n`;
   code += `};\n`;
 
   return code;
