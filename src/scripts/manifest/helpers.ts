@@ -291,12 +291,33 @@ export const debounce = <T extends (...args: any[]) => any>(
   };
 };
 
-export const buildWatcher = (
-  options: WatcherOptions = { watch: false },
-) => {
+export const initialConsole = (persistent: boolean, verbose = true) => {
+  consoleStars();
+
+  console.log(
+    '📝 Le manifest sera automatiquement mis à jour lors des changements',
+  );
+
+  if (persistent) {
+    console.log('👀 Surveillance active sur le dossier src/');
+    if (verbose) {
+      console.log('⏹️  Appuyez sur Ctrl+C pour arrêter la surveillance');
+    }
+  }
+
+  consoleStars();
+};
+
+export const consoleStars = () => {
   console.log();
   console.log('*'.repeat(30));
   console.log();
+};
+
+export const buildWatcher = (
+  options: WatcherOptions = { watch: false },
+) => {
+  consoleStars();
   console.log('🚀 Génération initiale du manifest...');
 
   const persistent = options.watch === true;
@@ -316,6 +337,11 @@ export const buildWatcher = (
     relative(process.cwd(), MANIFEST_FILE), // Ignorer le fichier manifest lui-même
   ];
 
+  if (!persistent) {
+    initialConsole(persistent, options.verbose);
+    return generateManifest(options);
+  }
+
   const watcher = watch(SRC_DIR, {
     ignored,
     persistent,
@@ -329,39 +355,27 @@ export const buildWatcher = (
   watcher
     .on('add', (filePath: string) => {
       if (options.verbose) {
-        console.log();
-        console.log('*'.repeat(30));
-        console.log();
+        consoleStars();
         console.log(`➕ Fichier créé: ${relative(SRC_DIR, filePath)}`);
-        console.log();
-        console.log('*'.repeat(30));
-        console.log();
+        consoleStars();
       }
 
       return generateManifest({ ...options, verbose: false });
     })
     .on('change', (filePath: string) => {
       if (options.verbose) {
-        console.log();
-        console.log('*'.repeat(30));
-        console.log();
+        consoleStars();
         console.log(`🔄 Fichier modifié: ${relative(SRC_DIR, filePath)}`);
-        console.log();
-        console.log('*'.repeat(30));
-        console.log();
+        consoleStars();
       }
 
       return generateManifest({ ...options, verbose: false });
     })
     .on('unlink', (filePath: string) => {
       if (options.verbose) {
-        console.log();
-        console.log('*'.repeat(30));
-        console.log();
+        consoleStars();
         console.log(`🗑️ Fichier supprimé: ${relative(SRC_DIR, filePath)}`);
-        console.log();
-        console.log('*'.repeat(30));
-        console.log();
+        consoleStars();
       }
 
       return generateManifest({ ...options, verbose: false });
@@ -370,21 +384,7 @@ export const buildWatcher = (
       console.error('❌ Erreur de surveillance:', error);
     })
     .on('ready', () => {
-      console.log();
-      console.log('*'.repeat(30));
-      console.log();
-      console.log('👀 Surveillance active sur le dossier src/');
-      console.log(
-        '📝 Le manifest sera automatiquement mis à jour lors des changements',
-      );
-
-      if (options.verbose) {
-        console.log('⏹️  Appuyez sur Ctrl+C pour arrêter la surveillance');
-      }
-
-      console.log();
-      console.log('*'.repeat(30));
-      console.log();
+      initialConsole(persistent, options.verbose);
 
       return generateManifest(options);
     });
