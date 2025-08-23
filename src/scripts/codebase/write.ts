@@ -11,7 +11,6 @@ export const write = async () => {
   try {
     const analysis = await analyze();
     const code = generate(analysis);
-    console.log(JSON.stringify(analysis, null, 2));
 
     await writeFile(OUTPUT_FILE, code, 'utf8');
 
