@@ -1,3 +1,4 @@
+import { REPLACERS } from './constants';
 import type { CodebaseAnalysis } from './types';
 
 /**
@@ -68,10 +69,15 @@ export interface CodebaseAnalysis {
     code += `    ],\n`;
 
     // Échapper les backticks pour qu'ils n'interrompent pas la template literal générée
-    const escapedTextForBackticks = fileAnalysis.text
-      .replace(/`/g, '\\`')
-      .replace(/\${/g, '$|||{') // Special to be replaced
-      .replace(/\\s/g, '|||s'); // Special to be replaced
+    let escapedTextForBackticks = fileAnalysis.text;
+
+    REPLACERS.code.forEach(([search, replace]) => {
+      escapedTextForBackticks = escapedTextForBackticks.replaceAll(
+        search,
+        replace,
+      );
+    });
+
     code += `    text: \`${escapedTextForBackticks}\`,\n`;
 
     code += `  },\n`;

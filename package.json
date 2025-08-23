@@ -55,7 +55,7 @@
     "lint:watch": "onchange --await-write-finish 5500 \"**/*\" -- pnpm run lint",
     "prepublishOnly": "",
     "prepare": "husky",
-    "pretest": "pnpm run build && pnpm run manifest && pnpm run codebase",
+    "pretest": "pnpm run manifest && pnpm run codebase && pnpm run build",
     "posttest": "pnpm run size && pnpm run lint",
     "prettier": "prettier --write \"src/**/*.{ts,tsx}\"",
     "p-q": "pretty-quick",
@@ -77,7 +77,7 @@
   },
   "size-limit": [
     {
-      "path": "lib/*.js",
+      "path": "lib/*.js", 
       "limit": "10 KB"
     },
     {

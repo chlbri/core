@@ -4,7 +4,7 @@ import { pathToDotNotation } from '../utils';
 import { addJSDocToSourceText } from './analyse.utils';
 import { SRC_DIR } from './constants';
 import { analyzeExports } from './exports';
-import { analyzeImports } from './imports';
+import { analyzeImports, buildImportStrings } from './imports';
 import type { CodebaseAnalysis } from './types';
 
 /**
@@ -35,25 +35,45 @@ export const analyze = (): CodebaseAnalysis => {
     const relativePath = relative(SRC_DIR, filePath);
 
     // Générer le texte modifié avec JSDoc pour les exports
-    const modifiedText = addJSDocToSourceText(sourceFile);
 
-    // Analyser les imports et exports (sans modification)
+    const _text = addJSDocToSourceText(sourceFile);
+
+    // #region Analyser les imports et exports
     const imports = analyzeImports(sourceFile);
     const exports = analyzeExports(sourceFile);
+    // #endregion
+
+    // Construire les imports à partir de fileAnalysis.imports
+    const importsStrings = buildImportStrings(imports);
+
+    // Combiner imports et contenu
+    const importsSection =
+      importsStrings.length > 0 ? importsStrings.join('\n') : '';
+
+    const text =
+      importsSection === ''
+        ? _text
+        : `${importsSection}
+
+${_text}
+    `;
 
     analysis[pathToDotNotation(relativePath)] = {
       relativePath,
       imports,
       exports,
-      text: modifiedText,
+      text,
     };
 
     processedCount++;
+
+    // #region Afficher l'avancement de l'analyse par palliers de 50
     if (processedCount % 50 === 0) {
       console.log(
         `📊 Analysé ${processedCount}/${sourceFiles.length} fichiers...`,
       );
     }
+    // #endregion
   }
 
   console.log(`✅ Analyse terminée: ${processedCount} fichiers analysés`);

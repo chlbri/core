@@ -27,15 +27,24 @@ const resolveModuleSpecifier = (
       // Prendre le premier mapping disponible
       const first = mappings[0];
 
-      const mapping = baseUrl
-        ? join(relative(process.cwd(), baseUrl), first)
-        : first;
-      if (mapping) {
-        // Remplacer * dans le mapping par la partie matchée
-        let resolvedPath = mapping;
-        if (match[1]) resolvedPath = mapping.replace('*', match[1]);
-        return resolvedPath;
+      // Résoudre le chemin absolu
+      let relativedPath = baseUrl ? join(baseUrl, first) : first;
+
+      if (match[1]) {
+        relativedPath = relativedPath.replace('*', match[1]);
       }
+
+      // Calculer le chemin relatif depuis le fichier source actuel
+      const sourceFileDir = relative(
+        process.cwd(),
+        sourceFile.getDirectoryPath(),
+      );
+      const relativePath = relative(sourceFileDir, relativedPath);
+
+      // S'assurer que le chemin relatif commence par ./ ou ../
+      return relativePath.startsWith('.')
+        ? relativePath
+        : `./${relativePath}`;
     }
   }
 
@@ -119,4 +128,28 @@ export const analyzeImports = (sourceFile: SourceFile): ImportInfo[] => {
     });
 
   return imports;
+};
+
+export const buildImportStrings = (imports: ImportInfo[]) => {
+  return imports.map(imp => {
+    switch (imp.kind) {
+      case 'named': {
+        const namedImports = imp.namedImports?.join(', ') || '';
+        return `import { ${namedImports} } from '${imp.moduleSpecifier}';`;
+      }
+      case 'namespace':
+        return `import * as ${imp.default} from '${imp.moduleSpecifier}';`;
+      case 'side-effect': {
+        if (imp.isDynamic) {
+          return `// Dynamic import: import('${imp.moduleSpecifier}')`;
+        }
+        return `import '${imp.moduleSpecifier}';`;
+      }
+
+      case 'default':
+        return `import ${imp.default} from '${imp.moduleSpecifier}';`;
+      default:
+        return '';
+    }
+  });
 };

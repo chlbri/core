@@ -176,7 +176,17 @@ export const getDeclarationKind = (line: string): string => {
  * Ajoute des JSDoc aux expressions exportées dans le texte source
  */
 export const addJSDocToSourceText = (sourceFile: SourceFile): string => {
-  let modifiedText = sourceFile.getFullText();
+  // Obtenir le texte sans les imports dès le début
+  const fullText = sourceFile.getText();
+  const imports = sourceFile
+    .getImportDeclarations()
+    .map(importDecl => importDecl.getText());
+
+  const linesWithoutImports = fullText
+    .replace(imports.join('\n'), '')
+    .trimStart();
+
+  let modifiedText = linesWithoutImports;
 
   // Collecter toutes les positions d'insertion avec leurs JSDoc
   const insertions: Array<{ position: number; jsdoc: string }> = [];

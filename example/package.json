@@ -1,0 +1,34 @@
+{
+  "name": "@bemedev/core-examples",
+  "version": "0.0.1",
+  "description": "Examples and demonstrations for @bemedev/core library",
+  "private": true,
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "codebase": "tsx src/cli.ts",
+    "config": "pnpm install",
+    "config:off": "pnpm run config --offline",
+    "cli": "pnpm run config:off && tsx src/cli.ts",
+    "upgrade": "pnpm upgrade --latest"
+  },
+  "keywords": [
+    "examples",
+    "arithmetic",
+    "math",
+    "typescript"
+  ],
+  "author": {
+    "email": "bri_lvi@icloud.com",
+    "name": "chlbri",
+    "url": "https://bemedev.vercel.app"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "core": "file:..",
+    "ts-morph": "^26.0.0",
+    "tsx": "^4.20.4",
+    "typescript": "^5.9.2"
+  }
+}

@@ -3,7 +3,7 @@ import { isPlainObject } from './object';
 import { isPrimitive } from './primitive';
 
 export const isPrimitiveObject = (
-  object: any,
+  object?: unknown,
 ): object is PrimitiveObject => {
   const isObject = isPlainObject(object);
   if (isObject) {

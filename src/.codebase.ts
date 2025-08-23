@@ -13,15 +13,7 @@ export interface ExportInfo {
   kind: 'default' | 'named' | 'namespace';
   text?: string;
   moduleSpecifier?: string;
-  declarationKind?:
-    | 'function'
-    | 'class'
-    | 'interface'
-    | 'type'
-    | 'variable'
-    | 'const'
-    | 'let'
-    | 'enum';
+  declarationKind?: 'function' | 'class' | 'interface' | 'type' | 'variable' | 'const' | 'let' | 'enum';
 }
 
 export interface FileAnalysis {
@@ -39,7 +31,7 @@ export const CODEBASE_ANALYSIS: CodebaseAnalysis = {
     relativePath: 'features/arrays/castings/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -119,7 +111,7 @@ export const CODEBASE_ANALYSIS: CodebaseAnalysis = {
         default: 'type',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../globals/utils/expandFn';
 import dynamic from './dynamic';
 import fn from './exclude';
 import extract from './extract';
@@ -162,24 +154,25 @@ export const castings = expandFn(_index, {
   dynamic,
   type,
 });
-`,
+
+    `,
   },
   'features.arrays.castings.dynamic': {
     relativePath: 'features/arrays/castings/dynamic.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['AnyArray'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import type { AnyArray } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { AnyArray } from '../../../globals/types';
+import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -196,24 +189,25 @@ const fn = <T extends AnyArray>(value: T) => {
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.castings.exclude': {
     relativePath: 'features/arrays/castings/exclude.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['ExcludeArray'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import type { ExcludeArray } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { ExcludeArray } from '../../../globals/types';
+import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -234,24 +228,25 @@ const fn = <const T extends any[], const Ex extends T[number][]>(
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.castings.extract': {
     relativePath: 'features/arrays/castings/extract.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['ExtractArray'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import type { ExtractArray } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { ExtractArray } from '../../../globals/types';
+import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -272,18 +267,19 @@ const fn = <const T extends any[], const Ex extends T[number][]>(
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.castings.forceCast': {
     relativePath: 'features/arrays/castings/forceCast.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -300,7 +296,8 @@ const fn = <T>(value: unknown) => {
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.castings.freeze': {
     relativePath: 'features/arrays/castings/freeze.ts',
@@ -327,11 +324,13 @@ const fn = <const T extends any[]>(...args: T) =>
   Object.freeze(tuple(...args));
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.castings.index': {
     relativePath: 'features/arrays/castings/index.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -351,18 +350,18 @@ export default fn;
     relativePath: 'features/arrays/castings/indexes.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['IndexesOfArray', 'RuA', 'UnionToTuple'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import type { IndexesOfArray, RuA, UnionToTuple } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { IndexesOfArray, RuA, UnionToTuple } from '../../../globals/types';
+import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -380,11 +379,13 @@ const fn = <const T extends RuA>(...array: T) => {
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.castings.is': {
     relativePath: 'features/arrays/castings/is.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -406,7 +407,7 @@ export default fn;
     relativePath: 'features/arrays/castings/length/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -421,7 +422,7 @@ export default fn;
         default: '_index',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import has from './has';
 import _index from './index';
 
@@ -438,14 +439,15 @@ import _index from './index';
 const fn = expandFn(_index, { has });
 
 export default fn;
-`,
+
+    `,
   },
 
   'features.arrays.castings.length.has': {
     relativePath: 'features/arrays/castings/length/has.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['TupleOf'],
       },
@@ -455,7 +457,7 @@ export default fn;
         default: 'is',
       },
     ],
-    text: `import type { TupleOf } from '#types';
+    text: `import { TupleOf } from '../../../../globals/types';
 import is from '../is';
 
 /**
@@ -477,24 +479,25 @@ const fn = <T extends number>(check: T) => {
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.castings.length.index': {
     relativePath: 'features/arrays/castings/length/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['RuA'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import type { RuA } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { RuA } from '../../../../globals/types';
+import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -512,11 +515,13 @@ const fn = <T extends RuA>(...array: T) => {
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.castings.low': {
     relativePath: 'features/arrays/castings/low.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -536,12 +541,12 @@ export default fn;
     relativePath: 'features/arrays/castings/reduce.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -559,24 +564,25 @@ const fn = <T>(value: T | readonly [T] | [T]) => {
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.castings.reverse': {
     relativePath: 'features/arrays/castings/reverse.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['ReverseArray', 'RuA'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import type { ReverseArray, RuA } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { ReverseArray, RuA } from '../../../globals/types';
+import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -594,24 +600,25 @@ const fn = <T extends RuA>(...args: T) => {
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.castings.toArray': {
     relativePath: 'features/arrays/castings/toArray.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['ToArray'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import type { ToArray } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { ToArray } from '../../../globals/types';
+import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -632,13 +639,14 @@ const fn = <T>(value?: T) => {
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.castings.tuple.all': {
     relativePath: 'features/arrays/castings/tuple/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -658,7 +666,7 @@ export default fn;
         default: 'multiply',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import is from '../is';
 import _index from './index';
 import multiply from './multiply';
@@ -679,24 +687,25 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.castings.tuple.index': {
     relativePath: 'features/arrays/castings/tuple/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['RuA'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import type { RuA } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { RuA } from '../../../../globals/types';
+import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -714,13 +723,14 @@ const fn = <const T extends RuA>(...args: T) => {
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.castings.tuple.is': {
     relativePath: 'features/arrays/castings/tuple/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['Checker2'],
       },
@@ -730,7 +740,7 @@ export default fn;
         default: 'is',
       },
     ],
-    text: `import type { Checker2 } from '#types';
+    text: `import { Checker2 } from '../../../../globals/types';
 import is from '../is';
 
 /**
@@ -752,24 +762,25 @@ const fn = <const T>(fn: Checker2<T>) => {
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.castings.tuple.multiply': {
     relativePath: 'features/arrays/castings/tuple/multiply.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['TupleOf'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import type { TupleOf } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { TupleOf } from '../../../../globals/types';
+import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -787,12 +798,14 @@ const fn = <const T, N extends number>(data: T, times: N) => {
 };
 
 export default fn;
-`,
+
+    `,
   },
 
   'features.arrays.castings.type': {
     relativePath: 'features/arrays/castings/type.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -810,7 +823,8 @@ export default fn;
   },
   'features.arrays.index': {
     relativePath: 'features/arrays/index.ts',
-    imports: [],
+    imports: [
+    ],
     text: `export * from './castings/all';
 export * from './types';
 export * from './typings/all';
@@ -820,12 +834,12 @@ export * from './typings/all';
     relativePath: 'features/arrays/types.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../globals/types',
         kind: 'named',
         namedImports: ['UnionOmit', 'UnionToTuple'],
       },
     ],
-    text: `import type { UnionOmit, UnionToTuple } from '#types';
+    text: `import { UnionOmit, UnionToTuple } from '../../globals/types';
 
 /**
  * IndexesOfArray type - Auto-generated expression
@@ -1058,26 +1072,25 @@ export type RecursiveArrayOf<T> =
   | ReadonlyArray<_SingleOrRecursiveArrayOf<T>>;
 
 type _SingleOrRecursiveArrayOf<T> = T | RecursiveArrayOf<T>;
-`,
+
+    `,
   },
   'features.arrays.typings._length': {
     relativePath: 'features/arrays/typings/_length.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['RuA'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { RuA } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { RuA } from '../../../globals/types';
+import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -1092,13 +1105,14 @@ import { _unknown } from '#utils/_unknown';
 const fn = <const T extends RuA>(_?: T) => _unknown<T['length']>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.typings.all': {
     relativePath: 'features/arrays/typings/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
@@ -1173,7 +1187,7 @@ export default fn;
         default: 'type',
       },
     ],
-    text: `import { typeFn } from '#utils/typeFn';
+    text: `import { typeFn } from '../../../globals/utils/typeFn';
 import dynamic from './dynamic';
 import exclude from './exclude';
 import extract from './extract';
@@ -1215,20 +1229,19 @@ export const typings = typeFn<Array<unknown>>()({
   dynamic,
   type,
 });
-`,
+
+    `,
   },
   'features.arrays.typings.dynamic': {
     relativePath: 'features/arrays/typings/dynamic.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -1243,26 +1256,25 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T extends unknown[]>(_?: T) => _unknown<T>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.typings.exclude': {
     relativePath: 'features/arrays/typings/exclude.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['AnyArray', 'ExcludeArray'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { AnyArray, ExcludeArray } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { AnyArray, ExcludeArray } from '../../../globals/types';
+import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -1280,26 +1292,25 @@ const fn = <const T extends AnyArray, const U extends T[number][]>(
 ) => _unknown<ExcludeArray<T, U[number]>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.typings.extract': {
     relativePath: 'features/arrays/typings/extract.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['AnyArray', 'ExtractArray'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { AnyArray, ExtractArray } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { AnyArray, ExtractArray } from '../../../globals/types';
+import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -1317,20 +1328,19 @@ const fn = <const T extends AnyArray, const U extends T[number][]>(
 ) => _unknown<ExtractArray<T, U[number]>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.typings.forceCast': {
     relativePath: 'features/arrays/typings/forceCast.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -1345,26 +1355,25 @@ import { _unknown } from '#utils/_unknown';
 const fn = (_?: unknown) => _unknown<unknown[]>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.typings.freeze': {
     relativePath: 'features/arrays/typings/freeze.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['RuA'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { RuA } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { RuA } from '../../../globals/types';
+import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -1379,27 +1388,26 @@ import { _unknown } from '#utils/_unknown';
 const fn = <const T extends RuA>(..._: T) => _unknown<Readonly<T>>();
 
 export default fn;
-`,
+
+    `,
   },
 
   'features.arrays.typings.index': {
     relativePath: 'features/arrays/typings/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['AnyArray'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { AnyArray } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { AnyArray } from '../../../globals/types';
+import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -1414,13 +1422,14 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T extends AnyArray>(..._: T) => _unknown<T[number][]>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.typings.indexes.all': {
     relativePath: 'features/arrays/typings/indexes/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -1435,7 +1444,7 @@ export default fn;
         default: 'union',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import _index from './index';
 import union from './union';
 
@@ -1454,26 +1463,25 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.typings.indexes.index': {
     relativePath: 'features/arrays/typings/indexes/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['IndexesOfArray', 'RuA', 'UnionToTuple'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { IndexesOfArray, RuA, UnionToTuple } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { IndexesOfArray, RuA, UnionToTuple } from '../../../../globals/types';
+import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -1489,26 +1497,25 @@ const fn = <const T extends RuA>(..._: T) =>
   _unknown<UnionToTuple<IndexesOfArray<T>>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.typings.indexes.union': {
     relativePath: 'features/arrays/typings/indexes/union.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['IndexesOfArray', 'RuA'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { IndexesOfArray, RuA } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { IndexesOfArray, RuA } from '../../../../globals/types';
+import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -1523,20 +1530,19 @@ import { _unknown } from '#utils/_unknown';
 const fn = <const T extends RuA>(..._: T) => _unknown<IndexesOfArray<T>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.typings.is': {
     relativePath: 'features/arrays/typings/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -1551,13 +1557,14 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T>(_?: T) => _unknown<T extends unknown[] ? true : false>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.typings.length': {
     relativePath: 'features/arrays/typings/length.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -1567,7 +1574,7 @@ export default fn;
         default: '_index',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../globals/utils/expandFn';
 import _index from './_length';
 
 /**
@@ -1583,20 +1590,19 @@ import _index from './_length';
 const fn = expandFn(_index, {});
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.typings.low': {
     relativePath: 'features/arrays/typings/low.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -1611,13 +1617,14 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T>(..._: T[]) => _unknown<T[]>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.typings.reduce.all': {
     relativePath: 'features/arrays/typings/reduce/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -1632,7 +1639,7 @@ export default fn;
         default: '_index',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import deep from './deep';
 import _index from './index';
 
@@ -1651,26 +1658,25 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.typings.reduce.deep': {
     relativePath: 'features/arrays/typings/reduce/deep.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['ReduceDeepArray'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { ReduceDeepArray } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { ReduceDeepArray } from '../../../../globals/types';
+import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -1685,20 +1691,19 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T>(_?: T) => _unknown<ReduceDeepArray<T>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.typings.reduce.index': {
     relativePath: 'features/arrays/typings/reduce/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -1713,27 +1718,26 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T>(_: T | readonly T[] | T[]) => _unknown<T>();
 
 export default fn;
-`,
+
+    `,
   },
 
   'features.arrays.typings.reverse': {
     relativePath: 'features/arrays/typings/reverse.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['ReverseArray', 'RuA'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { ReverseArray, RuA } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { ReverseArray, RuA } from '../../../globals/types';
+import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -1748,26 +1752,25 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T extends RuA>(..._: T) => _unknown<ReverseArray<T>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.typings.toArray': {
     relativePath: 'features/arrays/typings/toArray.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['AnyArray'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { AnyArray } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { AnyArray } from '../../../globals/types';
+import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -1782,13 +1785,14 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T>(_?: T) => _unknown<AnyArray<T>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.typings.tuple.all': {
     relativePath: 'features/arrays/typings/tuple/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -1808,7 +1812,7 @@ export default fn;
         default: 'multiply',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import _index from './index';
 import is from './is';
 import multiply from './multiply';
@@ -1829,26 +1833,25 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.typings.tuple.index': {
     relativePath: 'features/arrays/typings/tuple/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['RuA'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { RuA } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { RuA } from '../../../../globals/types';
+import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -1863,26 +1866,25 @@ import { _unknown } from '#utils/_unknown';
 const fn = <const T extends RuA>(..._: T) => _unknown<T>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.typings.tuple.is': {
     relativePath: 'features/arrays/typings/tuple/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['RuA'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { RuA } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { RuA } from '../../../../globals/types';
+import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -1897,32 +1899,31 @@ import { _unknown } from '#utils/_unknown';
 const fn = <const T>(_?: T) => _unknown<T extends RuA ? true : false>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.typings.tuple.multiply': {
     relativePath: 'features/arrays/typings/tuple/multiply.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['TupleOf'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { TupleOf } from '#types';
-import { _unknown } from '#utils/_unknown';
-import { expandFn } from '#utils/expandFn';
+    text: `import { TupleOf } from '../../../../globals/types';
+import { _unknown } from '../../../../globals/utils/_unknown';
+import { expandFn } from '../../../../globals/utils/expandFn';
 
 /**
  * fn const - Auto-generated expression
@@ -1946,18 +1947,19 @@ const fn = expandFn(
 );
 
 export default fn;
-`,
+
+    `,
   },
   'features.arrays.typings.type': {
     relativePath: 'features/arrays/typings/type.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -1972,13 +1974,14 @@ export default fn;
 const fn = _unknown<unknown[]>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.booleans.castings.all': {
     relativePath: 'features/booleans/castings/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/castFn',
+        moduleSpecifier: '../../../globals/utils/castFn',
         kind: 'named',
         namedImports: ['castFn'],
       },
@@ -2003,7 +2006,7 @@ export default fn;
         default: 'type',
       },
     ],
-    text: `import { castFn } from '#utils/castFn';
+    text: `import { castFn } from '../../../globals/utils/castFn';
 import _false from './false';
 import _index from './index';
 import _true from './true';
@@ -2025,24 +2028,25 @@ export const castings = castFn<boolean>()({
   true: _true,
   false: _false,
 });
-`,
+
+    `,
   },
   'features.booleans.castings.false': {
     relativePath: 'features/booleans/castings/false.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/castFn',
+        moduleSpecifier: '../../../globals/utils/castFn',
         kind: 'named',
         namedImports: ['castFn'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/is/_default',
+        moduleSpecifier: '../../../globals/utils/is/_default',
         kind: 'named',
         namedImports: ['isFn'],
       },
     ],
-    text: `import { castFn } from '#utils/castFn';
-import { isFn } from '#utils/is/_default';
+    text: `import { castFn } from '../../../globals/utils/castFn';
+import { isFn } from '../../../globals/utils/is/_default';
 
 /**
  * fn const - Auto-generated expression
@@ -2060,11 +2064,13 @@ const fn = castFn<false>()({
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.booleans.castings.index': {
     relativePath: 'features/booleans/castings/index.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -2085,18 +2091,18 @@ export default fn;
     relativePath: 'features/booleans/castings/true.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/castFn',
+        moduleSpecifier: '../../../globals/utils/castFn',
         kind: 'named',
         namedImports: ['castFn'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/is/_default',
+        moduleSpecifier: '../../../globals/utils/is/_default',
         kind: 'named',
         namedImports: ['isFn'],
       },
     ],
-    text: `import { castFn } from '#utils/castFn';
-import { isFn } from '#utils/is/_default';
+    text: `import { castFn } from '../../../globals/utils/castFn';
+import { isFn } from '../../../globals/utils/is/_default';
 
 /**
  * fn const - Auto-generated expression
@@ -2114,11 +2120,13 @@ const fn = castFn<true>()({
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.booleans.castings.type': {
     relativePath: 'features/booleans/castings/type.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -2136,7 +2144,8 @@ export default fn;
   },
   'features.booleans.index': {
     relativePath: 'features/booleans/index.ts',
-    imports: [],
+    imports: [
+    ],
     text: `export * from './castings/all';
 export * from './types';
 export * from './typings/all';
@@ -2144,7 +2153,8 @@ export * from './typings/all';
   },
   'features.booleans.types': {
     relativePath: 'features/booleans/types.ts',
-    imports: [],
+    imports: [
+    ],
     text: `export {};
 `,
   },
@@ -2152,7 +2162,7 @@ export * from './typings/all';
     relativePath: 'features/booleans/typings/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -2187,7 +2197,7 @@ export * from './typings/all';
         default: 'type',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../globals/utils/expandFn';
 import _false from './false';
 import forceCast from './forceCast';
 import _index from './index';
@@ -2212,18 +2222,19 @@ export const typings = expandFn(_index, {
   true: _true,
   false: _false,
 });
-`,
+
+    `,
   },
   'features.booleans.typings.false': {
     relativePath: 'features/booleans/typings/false.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
     ],
-    text: `import { typeFn } from '#utils/typeFn';
+    text: `import { typeFn } from '../../../globals/utils/typeFn';
 
 /**
  * fn const - Auto-generated expression
@@ -2238,20 +2249,19 @@ export const typings = expandFn(_index, {
 const fn = typeFn<false>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.booleans.typings.forceCast': {
     relativePath: 'features/booleans/typings/forceCast.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -2266,20 +2276,19 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T extends boolean>(_: unknown) => _unknown<T>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.booleans.typings.index': {
     relativePath: 'features/booleans/typings/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -2294,20 +2303,19 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T extends boolean>(_: T) => _unknown<T>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.booleans.typings.is': {
     relativePath: 'features/booleans/typings/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -2322,18 +2330,19 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T>(_: T) => _unknown<T extends boolean ? true : false>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.booleans.typings.true': {
     relativePath: 'features/booleans/typings/true.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
     ],
-    text: `import { typeFn } from '#utils/typeFn';
+    text: `import { typeFn } from '../../../globals/utils/typeFn';
 
 /**
  * fn const - Auto-generated expression
@@ -2348,19 +2357,20 @@ export default fn;
 const fn = typeFn<true>()();
 
 export default fn;
-`,
+
+    `,
   },
 
   'features.booleans.typings.type': {
     relativePath: 'features/booleans/typings/type.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -2375,18 +2385,19 @@ export default fn;
 const fn = _unknown<boolean>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings._unknown': {
     relativePath: 'features/common/castings/_unknown.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -2401,13 +2412,14 @@ export default fn;
 const fn = _unknown;
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.all': {
     relativePath: 'features/common/castings/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -2507,7 +2519,7 @@ export default fn;
         default: 'undefiny',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../globals/utils/expandFn';
 import _unknown from './_unknown';
 import any from './any';
 import clone from './clone';
@@ -2558,18 +2570,19 @@ export const castings = expandFn(_index, {
   never,
   defaulted,
 });
-`,
+
+    `,
   },
   'features.common.castings.any': {
     relativePath: 'features/common/castings/any.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/castFn',
+        moduleSpecifier: '../../../globals/utils/castFn',
         kind: 'named',
         namedImports: ['castFn'],
       },
     ],
-    text: `import { castFn } from '#utils/castFn';
+    text: `import { castFn } from '../../../globals/utils/castFn';
 
 /**
  * fn const - Auto-generated expression
@@ -2584,24 +2597,25 @@ export const castings = expandFn(_index, {
 const fn = castFn<any>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.clone': {
     relativePath: 'features/common/castings/clone.ts',
     imports: [
       {
-        moduleSpecifier: 'src/features/functions/functions/clone',
+        moduleSpecifier: '../../functions/functions/clone',
         kind: 'default',
         default: 'deepClone',
       },
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['PrimitiveObject'],
       },
     ],
-    text: `import deepClone from '#features/functions/functions/clone';
-import type { PrimitiveObject } from '#types';
+    text: `import deepClone from '../../functions/functions/clone';
+import { PrimitiveObject } from '../../../globals/types';
 
 /**
  * fn const - Auto-generated expression
@@ -2618,11 +2632,13 @@ const fn = <T extends PrimitiveObject>(object: T): T => {
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.const': {
     relativePath: 'features/common/castings/const.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -2642,7 +2658,7 @@ export default fn;
     relativePath: 'features/common/castings/date/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -2657,7 +2673,7 @@ export default fn;
         default: 'is',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import _index from './index';
 import is from './is';
 
@@ -2676,18 +2692,19 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.date.index': {
     relativePath: 'features/common/castings/date/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/castFn',
+        moduleSpecifier: '../../../../globals/utils/castFn',
         kind: 'named',
         namedImports: ['castFn'],
       },
     ],
-    text: `import { castFn } from '#utils/castFn';
+    text: `import { castFn } from '../../../../globals/utils/castFn';
 
 /**
  * fn const - Auto-generated expression
@@ -2702,18 +2719,19 @@ export default fn;
 const fn = castFn<Date>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.date.is': {
     relativePath: 'features/common/castings/date/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/is/_default',
+        moduleSpecifier: '../../../../globals/utils/is/_default',
         kind: 'named',
         namedImports: ['isInstance'],
       },
     ],
-    text: `import { isInstance } from '#utils/is/_default';
+    text: `import { isInstance } from '../../../../globals/utils/is/_default';
 
 /**
  * fn const - Auto-generated expression
@@ -2728,13 +2746,14 @@ export default fn;
 const fn = isInstance(Date);
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.defaulted.all': {
     relativePath: 'features/common/castings/defaulted/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -2749,7 +2768,7 @@ export default fn;
         default: 'typings',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import runtime from './runtime';
 import typings from './typings';
 
@@ -2766,7 +2785,8 @@ import typings from './typings';
 const fn = expandFn(runtime, { runtime, typings });
 
 export default fn;
-`,
+
+    `,
   },
 
   'features.common.castings.defaulted.index': {
@@ -2793,24 +2813,25 @@ export default fn;
 const fn = runtime;
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.defaulted.runtime': {
     relativePath: 'features/common/castings/defaulted/runtime.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['NonN'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import type { NonN } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { NonN } from '../../../../globals/types';
+import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -2828,24 +2849,25 @@ const fn = <T, U extends NonN<T>>(value: T, defaultValue: U) => {
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.defaulted.typings': {
     relativePath: 'features/common/castings/defaulted/typings.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['Defaulted', 'NonN'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import type { Defaulted, NonN } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { Defaulted, NonN } from '../../../../globals/types';
+import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -2863,18 +2885,19 @@ const fn = <T, const U extends NonN<T>>(value: T, defaultValue: U) => {
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.identity': {
     relativePath: 'features/common/castings/identity.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/identity',
+        moduleSpecifier: '../../../globals/utils/identity',
         kind: 'named',
         namedImports: ['identity'],
       },
     ],
-    text: `import { identity } from '#utils/identity';
+    text: `import { identity } from '../../../globals/utils/identity';
 
 /**
  * fn const - Auto-generated expression
@@ -2889,18 +2912,19 @@ export default fn;
 const fn = identity;
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.index': {
     relativePath: 'features/common/castings/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/castFn',
+        moduleSpecifier: '../../../globals/utils/castFn',
         kind: 'named',
         namedImports: ['castFn'],
       },
     ],
-    text: `import { castFn } from '#utils/castFn';
+    text: `import { castFn } from '../../../globals/utils/castFn';
 
 /**
  * fn const - Auto-generated expression
@@ -2915,7 +2939,8 @@ export default fn;
 const fn = castFn<unknown>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.is.all': {
     relativePath: 'features/common/castings/is/all.ts',
@@ -2999,11 +3024,13 @@ const fn = {
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.is.defined': {
     relativePath: 'features/common/castings/is/defined.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -3033,11 +3060,13 @@ export default fn;
     text: `import defined from './defined';
 
 export default defined;
-`,
+
+    `,
   },
   'features.common.castings.is.notDefined': {
     relativePath: 'features/common/castings/is/notDefined.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -3057,7 +3086,8 @@ export default fn;
   },
   'features.common.castings.is.notNull': {
     relativePath: 'features/common/castings/is/notNull.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -3078,7 +3108,8 @@ export default fn;
 
   'features.common.castings.is.notNullish': {
     relativePath: 'features/common/castings/is/notNullish.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -3098,7 +3129,8 @@ export default fn;
   },
   'features.common.castings.is.notUndefined': {
     relativePath: 'features/common/castings/is/notUndefined.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -3118,7 +3150,8 @@ export default fn;
   },
   'features.common.castings.is.null': {
     relativePath: 'features/common/castings/is/null.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -3138,7 +3171,8 @@ export default fn;
   },
   'features.common.castings.is.nullish': {
     relativePath: 'features/common/castings/is/nullish.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -3158,7 +3192,8 @@ export default fn;
   },
   'features.common.castings.is.symbol': {
     relativePath: 'features/common/castings/is/symbol.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -3178,7 +3213,8 @@ export default fn;
   },
   'features.common.castings.is.undefined': {
     relativePath: 'features/common/castings/is/undefined.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -3200,18 +3236,18 @@ export default fn;
     relativePath: 'features/common/castings/never.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/castFn',
+        moduleSpecifier: '../../../globals/utils/castFn',
         kind: 'named',
         namedImports: ['castFn'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/is/_default',
+        moduleSpecifier: '../../../globals/utils/is/_default',
         kind: 'named',
         namedImports: ['isInstance'],
       },
     ],
-    text: `import { castFn } from '#utils/castFn';
-import { isInstance } from '#utils/is/_default';
+    text: `import { castFn } from '../../../globals/utils/castFn';
+import { isInstance } from '../../../globals/utils/is/_default';
 
 /**
  * fn const - Auto-generated expression
@@ -3226,13 +3262,14 @@ import { isInstance } from '#utils/is/_default';
 const fn = castFn<never>()({ is: isInstance(Error) });
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.neverify': {
     relativePath: 'features/common/castings/neverify.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['Neverify'],
       },
@@ -3242,7 +3279,7 @@ export default fn;
         default: '_unknown',
       },
     ],
-    text: `import type { Neverify } from '#types';
+    text: `import { Neverify } from '../../../globals/types';
 import _unknown from './_unknown';
 
 /**
@@ -3260,24 +3297,25 @@ const fn = <T>(value: T) => {
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.null': {
     relativePath: 'features/common/castings/null.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/castFn',
+        moduleSpecifier: '../../../globals/utils/castFn',
         kind: 'named',
         namedImports: ['castFn'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/is/_default',
+        moduleSpecifier: '../../../globals/utils/is/_default',
         kind: 'named',
         namedImports: ['isFn'],
       },
     ],
-    text: `import { castFn } from '#utils/castFn';
-import { isFn } from '#utils/is/_default';
+    text: `import { castFn } from '../../../globals/utils/castFn';
+import { isFn } from '../../../globals/utils/is/_default';
 
 /**
  * fn const - Auto-generated expression
@@ -3292,13 +3330,14 @@ import { isFn } from '#utils/is/_default';
 const fn = castFn<null>()({ is: isFn(null) });
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.partial.all': {
     relativePath: 'features/common/castings/partial/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -3313,7 +3352,7 @@ export default fn;
         default: '_index',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import deep from './deep';
 import _index from './index';
 
@@ -3332,25 +3371,26 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
 
   'features.common.castings.partial.deep': {
     relativePath: 'features/common/castings/partial/deep.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['DeepPartial'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import type { DeepPartial } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { DeepPartial } from '../../../../globals/types';
+import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -3367,18 +3407,19 @@ const fn = <T>(value: T) => {
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.partial.index': {
     relativePath: 'features/common/castings/partial/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -3395,13 +3436,14 @@ const fn = <T>(value: T) => {
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.primitive.all': {
     relativePath: 'features/common/castings/primitive/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -3421,7 +3463,7 @@ export default fn;
         default: 'object',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import _index from './index';
 import is from './is';
 import object from './object/all';
@@ -3442,24 +3484,25 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.primitive.index': {
     relativePath: 'features/common/castings/primitive/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['Primitive'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/castFn',
+        moduleSpecifier: '../../../../globals/utils/castFn',
         kind: 'named',
         namedImports: ['castFn'],
       },
     ],
-    text: `import type { Primitive } from '#types';
-import { castFn } from '#utils/castFn';
+    text: `import { Primitive } from '../../../../globals/types';
+import { castFn } from '../../../../globals/utils/castFn';
 
 /**
  * fn const - Auto-generated expression
@@ -3474,18 +3517,19 @@ import { castFn } from '#utils/castFn';
 const fn = castFn<Primitive>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.primitive.is': {
     relativePath: 'features/common/castings/primitive/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/is/primitive',
+        moduleSpecifier: '../../../../globals/utils/is/primitive',
         kind: 'named',
         namedImports: ['isPrimitive'],
       },
     ],
-    text: `import { isPrimitive } from '#utils/is/primitive';
+    text: `import { isPrimitive } from '../../../../globals/utils/is/primitive';
 
 /**
  * fn const - Auto-generated expression
@@ -3500,13 +3544,14 @@ export default fn;
 const fn = isPrimitive;
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.primitive.object.all': {
     relativePath: 'features/common/castings/primitive/object/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -3521,7 +3566,7 @@ export default fn;
         default: 'is',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../../globals/utils/expandFn';
 import _index from './index';
 import is from './is';
 
@@ -3540,24 +3585,25 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.primitive.object.index': {
     relativePath: 'features/common/castings/primitive/object/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../globals/types',
         kind: 'named',
         namedImports: ['PrimitiveObject'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/castFn',
+        moduleSpecifier: '../../../../../globals/utils/castFn',
         kind: 'named',
         namedImports: ['castFn'],
       },
     ],
-    text: `import type { PrimitiveObject } from '#types';
-import { castFn } from '#utils/castFn';
+    text: `import { PrimitiveObject } from '../../../../../globals/types';
+import { castFn } from '../../../../../globals/utils/castFn';
 
 /**
  * fn const - Auto-generated expression
@@ -3572,18 +3618,19 @@ import { castFn } from '#utils/castFn';
 const fn = castFn<PrimitiveObject>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.primitive.object.is': {
     relativePath: 'features/common/castings/primitive/object/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/is/primitive.object',
+        moduleSpecifier: '../../../../../globals/utils/is/primitive.object',
         kind: 'named',
         namedImports: ['isPrimitiveObject'],
       },
     ],
-    text: `import { isPrimitiveObject } from '#utils/is/primitive.object';
+    text: `import { isPrimitiveObject } from '../../../../../globals/utils/is/primitive.object';
 
 /**
  * fn const - Auto-generated expression
@@ -3598,13 +3645,14 @@ export default fn;
 const fn = isPrimitiveObject;
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.readonly.all': {
     relativePath: 'features/common/castings/readonly/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -3624,7 +3672,7 @@ export default fn;
         default: 'not',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import deep from './deep/all';
 import _index from './index';
 import not from './not';
@@ -3645,13 +3693,14 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.readonly.deep.all': {
     relativePath: 'features/common/castings/readonly/deep/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -3666,7 +3715,7 @@ export default fn;
         default: 'not',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../../globals/utils/expandFn';
 import _index from './index';
 import not from './not';
 
@@ -3685,25 +3734,26 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
 
   'features.common.castings.readonly.deep.index': {
     relativePath: 'features/common/castings/readonly/deep/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../globals/types',
         kind: 'named',
         namedImports: ['DeepReadonly'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import type { DeepReadonly } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { DeepReadonly } from '../../../../../globals/types';
+import { _unknown } from '../../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -3719,24 +3769,25 @@ const fn = <T extends object>(value: T) =>
   _unknown<DeepReadonly<T>>(value);
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.readonly.deep.not': {
     relativePath: 'features/common/castings/readonly/deep/not.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../globals/types',
         kind: 'named',
         namedImports: ['DeepNotReadonly'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import type { DeepNotReadonly } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { DeepNotReadonly } from '../../../../../globals/types';
+import { _unknown } from '../../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -3752,11 +3803,13 @@ const fn = <const T extends object>(value: T) =>
   _unknown<DeepNotReadonly<T>>(value);
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.readonly.index': {
     relativePath: 'features/common/castings/readonly/index.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -3776,18 +3829,18 @@ export default fn;
     relativePath: 'features/common/castings/readonly/not.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['NotReadonly'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import type { NotReadonly } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { NotReadonly } from '../../../../globals/types';
+import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -3802,13 +3855,14 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T extends object>(value: T) => _unknown<NotReadonly<T>>(value);
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.required.all': {
     relativePath: 'features/common/castings/required/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -3823,7 +3877,7 @@ export default fn;
         default: '_index',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import deep from './deep';
 import _index from './index';
 
@@ -3842,24 +3896,25 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.required.deep': {
     relativePath: 'features/common/castings/required/deep.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['DeepRequired'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import type { DeepRequired } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { DeepRequired } from '../../../../globals/types';
+import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -3876,24 +3931,25 @@ const fn = <T extends object | undefined>(value: T) => {
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.required.index': {
     relativePath: 'features/common/castings/required/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['NotUndefined'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import type { NotUndefined } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { NotUndefined } from '../../../../globals/types';
+import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -3910,13 +3966,14 @@ const fn = <T>(value: T) => {
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.symbol.all': {
     relativePath: 'features/common/castings/symbol/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -3931,7 +3988,7 @@ export default fn;
         default: 'is',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import _index from './index';
 import is from './is';
 
@@ -3950,18 +4007,19 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.symbol.index': {
     relativePath: 'features/common/castings/symbol/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/castFn',
+        moduleSpecifier: '../../../../globals/utils/castFn',
         kind: 'named',
         namedImports: ['castFn'],
       },
     ],
-    text: `import { castFn } from '#utils/castFn';
+    text: `import { castFn } from '../../../../globals/utils/castFn';
 
 /**
  * fn const - Auto-generated expression
@@ -3976,18 +4034,19 @@ export default fn;
 const fn = castFn<symbol>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.symbol.is': {
     relativePath: 'features/common/castings/symbol/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/is/_default',
+        moduleSpecifier: '../../../../globals/utils/is/_default',
         kind: 'named',
         namedImports: ['isTypeFn'],
       },
     ],
-    text: `import { isTypeFn } from '#utils/is/_default';
+    text: `import { isTypeFn } from '../../../../globals/utils/is/_default';
 
 /**
  * fn const - Auto-generated expression
@@ -4002,25 +4061,26 @@ export default fn;
 const fn = isTypeFn('symbol');
 
 export default fn;
-`,
+
+    `,
   },
 
   'features.common.castings.undefined': {
     relativePath: 'features/common/castings/undefined.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/castFn',
+        moduleSpecifier: '../../../globals/utils/castFn',
         kind: 'named',
         namedImports: ['castFn'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/is/_default',
+        moduleSpecifier: '../../../globals/utils/is/_default',
         kind: 'named',
         namedImports: ['isFn'],
       },
     ],
-    text: `import { castFn } from '#utils/castFn';
-import { isFn } from '#utils/is/_default';
+    text: `import { castFn } from '../../../globals/utils/castFn';
+import { isFn } from '../../../globals/utils/is/_default';
 
 /**
  * fn const - Auto-generated expression
@@ -4035,11 +4095,13 @@ import { isFn } from '#utils/is/_default';
 const fn = castFn<undefined>()({ is: isFn(undefined) });
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.castings.undefiny': {
     relativePath: 'features/common/castings/undefiny.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -4057,7 +4119,8 @@ export default fn;
   },
   'features.common.index': {
     relativePath: 'features/common/index.ts',
-    imports: [],
+    imports: [
+    ],
     text: `export * from './castings/all';
 export * from './types';
 export * from './typings/all';
@@ -4067,18 +4130,18 @@ export * from './typings/all';
     relativePath: 'features/common/types.ts',
     imports: [
       {
-        moduleSpecifier: 'src/features/transform',
+        moduleSpecifier: '../transform/types',
         kind: 'named',
         namedImports: ['TransformO'],
       },
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../globals/types',
         kind: 'named',
         namedImports: ['Fn', 'RecursiveArrayOf'],
       },
     ],
-    text: `import type { TransformO } from '#features/transform';
-import type { Fn, RecursiveArrayOf } from '#types';
+    text: `import { TransformO } from '../transform/types';
+import { Fn, RecursiveArrayOf } from '../../globals/types';
 
 /**
  * SingleOrRecursiveArrayOf type - Auto-generated expression
@@ -4530,13 +4593,14 @@ export type Equals<T, U> = T extends U
 export type Classe = {
   [Symbol.hasInstance]: Fn<any, boolean>;
 };
-`,
+
+    `,
   },
   'features.common.typings.all': {
     relativePath: 'features/common/typings/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -4646,7 +4710,7 @@ export type Classe = {
         default: 'unknown',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../globals/utils/expandFn';
 import any from './any';
 import _const from './const';
 import date from './date';
@@ -4701,18 +4765,19 @@ export const typings = expandFn(_index, {
   keys,
   defaulted,
 });
-`,
+
+    `,
   },
   'features.common.typings.any': {
     relativePath: 'features/common/typings/any.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
     ],
-    text: `import { typeFn } from '#utils/typeFn';
+    text: `import { typeFn } from '../../../globals/utils/typeFn';
 
 /**
  * fn const - Auto-generated expression
@@ -4727,20 +4792,19 @@ export const typings = expandFn(_index, {
 const fn = typeFn<any>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.const': {
     relativePath: 'features/common/typings/const.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -4755,18 +4819,19 @@ import { _unknown } from '#utils/_unknown';
 const fn = <const T>(_?: T) => _unknown<T>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.date': {
     relativePath: 'features/common/typings/date.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
     ],
-    text: `import { typeFn } from '#utils/typeFn';
+    text: `import { typeFn } from '../../../globals/utils/typeFn';
 
 /**
  * fn const - Auto-generated expression
@@ -4781,26 +4846,25 @@ export default fn;
 const fn = typeFn<Date>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.defaulted': {
     relativePath: 'features/common/typings/defaulted.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['Defaulted', 'NonN'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { Defaulted, NonN } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { Defaulted, NonN } from '../../../globals/types';
+import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -4816,13 +4880,14 @@ const fn = <T, U extends NonN<T>>(_?: T, __?: U) =>
   _unknown<Defaulted<T, U>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.exclude.all': {
     relativePath: 'features/common/typings/exclude/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -4837,7 +4902,7 @@ export default fn;
         default: 'exclude',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import const_ from './const';
 import exclude from './index';
 
@@ -4856,21 +4921,20 @@ const excludeTyping = expandFn(exclude, {
 });
 
 export default excludeTyping;
-`,
+
+    `,
   },
 
   'features.common.typings.exclude.const': {
     relativePath: 'features/common/typings/exclude/const.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -4886,20 +4950,19 @@ const fn = <const T, const U extends T[]>(_?: T, ...__: U) =>
   _unknown<Exclude<T, U[number]>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.exclude.index': {
     relativePath: 'features/common/typings/exclude/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -4915,13 +4978,14 @@ const fn = <T, U extends any[]>(_?: T, ...__: U) =>
   _unknown<Exclude<T, U[number]>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.extract.all': {
     relativePath: 'features/common/typings/extract/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -4936,7 +5000,7 @@ export default fn;
         default: 'extract',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import const_ from './const';
 import extract from './index';
 
@@ -4955,20 +5019,19 @@ const extractTyping = expandFn(extract, {
 });
 
 export default extractTyping;
-`,
+
+    `,
   },
   'features.common.typings.extract.const': {
     relativePath: 'features/common/typings/extract/const.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -4984,20 +5047,19 @@ const fn = <const T, const U extends T[]>(_?: T, ...__: U) =>
   _unknown<Extract<T, U[number]>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.extract.index': {
     relativePath: 'features/common/typings/extract/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -5013,20 +5075,19 @@ const fn = <T, U extends any[]>(_?: T, ...__: U) =>
   _unknown<Extract<T, U[number]>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.identity': {
     relativePath: 'features/common/typings/identity.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -5041,18 +5102,19 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T>(_?: T) => _unknown<T>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.index': {
     relativePath: 'features/common/typings/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
     ],
-    text: `import { typeFn } from '#utils/typeFn';
+    text: `import { typeFn } from '../../../globals/utils/typeFn';
 
 /**
  * fn const - Auto-generated expression
@@ -5067,24 +5129,25 @@ export default fn;
 const fn = typeFn<unknown>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.keys': {
     relativePath: 'features/common/typings/keys.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['Keys'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
     ],
-    text: `import type { Keys } from '#types';
-import { typeFn } from '#utils/typeFn';
+    text: `import { Keys } from '../../../globals/types';
+import { typeFn } from '../../../globals/utils/typeFn';
 
 /**
  * fn const - Auto-generated expression
@@ -5099,18 +5162,19 @@ import { typeFn } from '#utils/typeFn';
 const fn = typeFn<Keys>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.never': {
     relativePath: 'features/common/typings/never.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
     ],
-    text: `import { typeFn } from '#utils/typeFn';
+    text: `import { typeFn } from '../../../globals/utils/typeFn';
 
 /**
  * fn const - Auto-generated expression
@@ -5125,20 +5189,19 @@ export default fn;
 const fn = typeFn<never>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.neverify': {
     relativePath: 'features/common/typings/neverify.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -5153,19 +5216,20 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T>(_?: T) => _unknown<T extends never ? true : false>();
 
 export default fn;
-`,
+
+    `,
   },
 
   'features.common.typings.null': {
     relativePath: 'features/common/typings/null.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
     ],
-    text: `import { typeFn } from '#utils/typeFn';
+    text: `import { typeFn } from '../../../globals/utils/typeFn';
 
 /**
  * fn const - Auto-generated expression
@@ -5180,13 +5244,14 @@ export default fn;
 const fn = typeFn<null>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.partial.all': {
     relativePath: 'features/common/typings/partial/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -5201,7 +5266,7 @@ export default fn;
         default: '_index',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import deep from './deep';
 import _index from './index';
 
@@ -5220,26 +5285,25 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.partial.deep': {
     relativePath: 'features/common/typings/partial/deep.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['DeepPartial'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { DeepPartial } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { DeepPartial } from '../../../../globals/types';
+import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -5254,20 +5318,19 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T extends object>(_?: T) => _unknown<DeepPartial<T>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.partial.index': {
     relativePath: 'features/common/typings/partial/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -5282,13 +5345,14 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T extends object>(_?: T) => _unknown<Partial<T>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.primitive.all': {
     relativePath: 'features/common/typings/primitive/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -5303,7 +5367,7 @@ export default fn;
         default: 'object',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import _index from './index';
 import object from './object';
 
@@ -5320,24 +5384,25 @@ import object from './object';
 const fn = expandFn(_index, { object });
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.primitive.index': {
     relativePath: 'features/common/typings/primitive/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['Primitive'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
     ],
-    text: `import type { Primitive } from '#types';
-import { typeFn } from '#utils/typeFn';
+    text: `import { Primitive } from '../../../../globals/types';
+import { typeFn } from '../../../../globals/utils/typeFn';
 
 /**
  * fn const - Auto-generated expression
@@ -5352,24 +5417,25 @@ import { typeFn } from '#utils/typeFn';
 const fn = typeFn<Primitive>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.primitive.object': {
     relativePath: 'features/common/typings/primitive/object.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['PrimitiveObject'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
     ],
-    text: `import type { PrimitiveObject } from '#types';
-import { typeFn } from '#utils/typeFn';
+    text: `import { PrimitiveObject } from '../../../../globals/types';
+import { typeFn } from '../../../../globals/utils/typeFn';
 
 /**
  * fn const - Auto-generated expression
@@ -5384,13 +5450,14 @@ import { typeFn } from '#utils/typeFn';
 const fn = typeFn<PrimitiveObject>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.readonly.all': {
     relativePath: 'features/common/typings/readonly/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -5415,7 +5482,7 @@ export default fn;
         default: 'not',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import deep from './deep/all';
 import _index from './index';
 import is from './is';
@@ -5438,13 +5505,14 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.readonly.deep.all': {
     relativePath: 'features/common/typings/readonly/deep/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -5464,7 +5532,7 @@ export default fn;
         default: 'not',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../../globals/utils/expandFn';
 import deepReadonly from './index';
 import is from './is';
 import not from './not/all';
@@ -5485,26 +5553,25 @@ const deep = expandFn(deepReadonly, {
 });
 
 export default deep;
-`,
+
+    `,
   },
   'features.common.typings.readonly.deep.index': {
     relativePath: 'features/common/typings/readonly/deep/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../globals/types',
         kind: 'named',
         namedImports: ['DeepReadonly'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { DeepReadonly } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { DeepReadonly } from '../../../../../globals/types';
+import { _unknown } from '../../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -5519,27 +5586,26 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T extends object>(_?: T) => _unknown<DeepReadonly<T>>();
 
 export default fn;
-`,
+
+    `,
   },
 
   'features.common.typings.readonly.deep.is': {
     relativePath: 'features/common/typings/readonly/deep/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../globals/types',
         kind: 'named',
         namedImports: ['DeepReadonly'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { DeepReadonly } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { DeepReadonly } from '../../../../../globals/types';
+import { _unknown } from '../../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -5555,13 +5621,14 @@ const fn = <T extends object>(_?: T) =>
   _unknown<T extends DeepReadonly<T> ? true : false>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.readonly.deep.not.all': {
     relativePath: 'features/common/typings/readonly/deep/not/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -5576,7 +5643,7 @@ export default fn;
         default: 'is',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../../../globals/utils/expandFn';
 import _index from './index';
 import is from './is';
 
@@ -5595,26 +5662,25 @@ const deepNot = expandFn(_index, {
 });
 
 export default deepNot;
-`,
+
+    `,
   },
   'features.common.typings.readonly.deep.not.index': {
     relativePath: 'features/common/typings/readonly/deep/not/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../../globals/types',
         kind: 'named',
         namedImports: ['DeepNotReadonly'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { DeepNotReadonly } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { DeepNotReadonly } from '../../../../../../globals/types';
+import { _unknown } from '../../../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -5629,26 +5695,25 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T extends object>(_?: T) => _unknown<DeepNotReadonly<T>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.readonly.deep.not.is': {
     relativePath: 'features/common/typings/readonly/deep/not/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../../globals/types',
         kind: 'named',
         namedImports: ['DeepNotReadonly'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { DeepNotReadonly } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { DeepNotReadonly } from '../../../../../../globals/types';
+import { _unknown } from '../../../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -5664,20 +5729,19 @@ const fn = <T extends object>(_?: T) =>
   _unknown<T extends DeepNotReadonly<T> ? true : false>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.readonly.index': {
     relativePath: 'features/common/typings/readonly/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -5692,20 +5756,19 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T extends object>(_?: T) => _unknown<Readonly<T>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.readonly.is': {
     relativePath: 'features/common/typings/readonly/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -5721,13 +5784,14 @@ const fn = <T extends object>(_?: T) =>
   _unknown<T extends Readonly<T> ? true : false>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.readonly.not.all': {
     relativePath: 'features/common/typings/readonly/not/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -5742,7 +5806,7 @@ export default fn;
         default: 'is',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../../globals/utils/expandFn';
 import _index from './index';
 import is from './is';
 
@@ -5761,26 +5825,25 @@ const not = expandFn(_index, {
 });
 
 export default not;
-`,
+
+    `,
   },
   'features.common.typings.readonly.not.index': {
     relativePath: 'features/common/typings/readonly/not/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../globals/types',
         kind: 'named',
         namedImports: ['NotReadonly'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { NotReadonly } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { NotReadonly } from '../../../../../globals/types';
+import { _unknown } from '../../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -5795,26 +5858,25 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T extends object>(_?: T) => _unknown<NotReadonly<T>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.readonly.not.is': {
     relativePath: 'features/common/typings/readonly/not/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../globals/types',
         kind: 'named',
         namedImports: ['NotReadonly'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { NotReadonly } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { NotReadonly } from '../../../../../globals/types';
+import { _unknown } from '../../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -5830,13 +5892,14 @@ const fn = <T extends object>(_?: T) =>
   _unknown<T extends NotReadonly<T> ? true : false>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.required.all': {
     relativePath: 'features/common/typings/required/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -5856,7 +5919,7 @@ export default fn;
         default: 'is',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import deep from './deep';
 import required from './index';
 import is from './is';
@@ -5877,27 +5940,26 @@ const fn = expandFn(required, {
 });
 
 export default fn;
-`,
+
+    `,
   },
 
   'features.common.typings.required.deep': {
     relativePath: 'features/common/typings/required/deep.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['DeepRequired'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { DeepRequired } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { DeepRequired } from '../../../../globals/types';
+import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -5912,20 +5974,19 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T extends object>(_?: T) => _unknown<DeepRequired<T>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.required.index': {
     relativePath: 'features/common/typings/required/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -5940,20 +6001,19 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T extends object>(_?: T) => _unknown<Required<T>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.required.is': {
     relativePath: 'features/common/typings/required/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -5969,18 +6029,19 @@ const fn = <T>(_: T) =>
   _unknown<T extends null | undefined ? false : true>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.symbol': {
     relativePath: 'features/common/typings/symbol.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
     ],
-    text: `import { typeFn } from '#utils/typeFn';
+    text: `import { typeFn } from '../../../globals/utils/typeFn';
 
 /**
  * fn const - Auto-generated expression
@@ -5995,18 +6056,19 @@ export default fn;
 const fn = typeFn<symbol>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.undefined': {
     relativePath: 'features/common/typings/undefined.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
     ],
-    text: `import { typeFn } from '#utils/typeFn';
+    text: `import { typeFn } from '../../../globals/utils/typeFn';
 
 /**
  * fn const - Auto-generated expression
@@ -6021,20 +6083,19 @@ export default fn;
 const fn = typeFn<undefined>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.undefiny': {
     relativePath: 'features/common/typings/undefiny.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -6049,20 +6110,19 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T>(_?: T) => _unknown<T | undefined>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.union': {
     relativePath: 'features/common/typings/union.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -6077,18 +6137,19 @@ import { _unknown } from '#utils/_unknown';
 const fn = <const T extends any[]>(..._: T) => _unknown<T[number]>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.common.typings.unknown': {
     relativePath: 'features/common/typings/unknown.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
     ],
-    text: `import { typeFn } from '#utils/typeFn';
+    text: `import { typeFn } from '../../../globals/utils/typeFn';
 
 /**
  * fn const - Auto-generated expression
@@ -6103,43 +6164,43 @@ export default fn;
 const fn = typeFn<unknown>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.functions.castings': {
     relativePath: 'features/functions/castings.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../globals/types',
         kind: 'named',
         namedImports: ['Checker', 'Checker2', 'Fn'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/castFn',
+        moduleSpecifier: '../../globals/utils/castFn',
         kind: 'named',
         namedImports: ['castFn'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/identity',
+        moduleSpecifier: '../../globals/utils/identity',
         kind: 'named',
         namedImports: ['identity'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-import type { Checker, Checker2, Fn } from '#types';
-import { _unknown } from '#utils/_unknown';
-import { castFn } from '#utils/castFn';
-import { expandFn } from '#utils/expandFn';
-import { identity } from '#utils/identity';
+    text: `import { Checker, Checker2, Fn } from '../../globals/types';
+import { _unknown } from '../../globals/utils/_unknown';
+import { castFn } from '../../globals/utils/castFn';
+import { expandFn } from '../../globals/utils/expandFn';
+import { identity } from '../../globals/utils/identity';
 
 /**
  * castings variable - Auto-generated expression
@@ -6184,7 +6245,7 @@ export const castings = castFn()({
       return (
         typeof value === 'function' &&
         value.length === 1 &&
-        !/^|||s*class|||s+/.test(value.toString())
+        !/^-|||-s*class-|||-s+/.test(value.toString())
       );
     },
 
@@ -6193,13 +6254,14 @@ export const castings = castFn()({
     }),
   }),
 });
-`,
+
+    `,
   },
   'features.functions.castings.all': {
     relativePath: 'features/functions/castings/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -6229,7 +6291,7 @@ export const castings = castFn()({
         default: 'is',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../globals/utils/expandFn';
 import checker from './checker/all';
 import dynamic from './dynamic';
 import forceCast from './forceCast';
@@ -6254,14 +6316,15 @@ export const castings = expandFn(_index, {
 });
 
 export default castings;
-`,
+
+    `,
   },
 
   'features.functions.castings.checker.all': {
     relativePath: 'features/functions/castings/checker/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -6286,7 +6349,7 @@ export default castings;
         default: 'is',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import byType from './byType/all';
 import forceCast from './forceCast';
 import _index from './index';
@@ -6309,13 +6372,14 @@ const checker = expandFn(_index, {
 });
 
 export default checker;
-`,
+
+    `,
   },
   'features.functions.castings.checker.byType.all': {
     relativePath: 'features/functions/castings/checker/byType/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -6330,7 +6394,7 @@ export default checker;
         default: '_index',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../../globals/utils/expandFn';
 import cast from './cast';
 import _index from './index';
 
@@ -6349,24 +6413,25 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.functions.castings.checker.byType.cast': {
     relativePath: 'features/functions/castings/checker/byType/cast.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../globals/types',
         kind: 'named',
         namedImports: ['Checker', 'Checker2'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import type { Checker, Checker2 } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { Checker, Checker2 } from '../../../../../globals/types';
+import { _unknown } from '../../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -6381,18 +6446,19 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T>(value: Checker) => _unknown<Checker2<T>>(value);
 
 export default fn;
-`,
+
+    `,
   },
   'features.functions.castings.checker.byType.index': {
     relativePath: 'features/functions/castings/checker/byType/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../globals/types',
         kind: 'named',
         namedImports: ['Checker2'],
       },
     ],
-    text: `import type { Checker2 } from '#types';
+    text: `import { Checker2 } from '../../../../../globals/types';
 
 /**
  * byType const - Auto-generated expression
@@ -6407,24 +6473,25 @@ export default fn;
 const byType = <T>(checker: Checker2<T>) => checker;
 
 export default byType;
-`,
+
+    `,
   },
   'features.functions.castings.checker.forceCast': {
     relativePath: 'features/functions/castings/checker/forceCast.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['Checker', 'Checker2'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import type { Checker, Checker2 } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { Checker, Checker2 } from '../../../../globals/types';
+import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * forceCast const - Auto-generated expression
@@ -6439,24 +6506,25 @@ import { _unknown } from '#utils/_unknown';
 const forceCast = <T>(value: Checker) => _unknown<Checker2<T>>(value);
 
 export default forceCast;
-`,
+
+    `,
   },
   'features.functions.castings.checker.index': {
     relativePath: 'features/functions/castings/checker/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['Checker'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/castFn',
+        moduleSpecifier: '../../../../globals/utils/castFn',
         kind: 'named',
         namedImports: ['castFn'],
       },
     ],
-    text: `import type { Checker } from '#types';
-import { castFn } from '#utils/castFn';
+    text: `import { Checker } from '../../../../globals/types';
+import { castFn } from '../../../../globals/utils/castFn';
 
 /**
  * fn const - Auto-generated expression
@@ -6471,18 +6539,19 @@ import { castFn } from '#utils/castFn';
 const fn = castFn<Checker>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.functions.castings.checker.is': {
     relativePath: 'features/functions/castings/checker/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['Checker2'],
       },
     ],
-    text: `import type { Checker2 } from '#types';
+    text: `import { Checker2 } from '../../../../globals/types';
 
 /**
  * Very low
@@ -6504,30 +6573,30 @@ const is = <T = unknown>(value: unknown): value is Checker2<T> => {
   return (
     typeof value === 'function' &&
     value.length === 1 &&
-    !/^|||s*class|||s+/.test(value.toString())
+    !/^-|||-s*class-|||-s+/.test(value.toString())
   );
 };
 
 export default is;
-`,
+
+    `,
   },
   'features.functions.castings.dynamic': {
     relativePath: 'features/functions/castings/dynamic.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['Fn'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/identity',
+        moduleSpecifier: '../../../globals/utils/identity',
         kind: 'named',
         namedImports: ['identity'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-import type { Fn } from '#types';
-import { identity } from '#utils/identity';
+    text: `import { Fn } from '../../../globals/types';
+import { identity } from '../../../globals/utils/identity';
 
 /**
  * dynamic const - Auto-generated expression
@@ -6543,24 +6612,25 @@ const dynamic = <T extends any[], R = any>(..._: [...T, R]) =>
   identity<Fn<T, R>>;
 
 export default dynamic;
-`,
+
+    `,
   },
   'features.functions.castings.forceCast': {
     relativePath: 'features/functions/castings/forceCast.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['Fn'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import type { Fn } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { Fn } from '../../../globals/types';
+import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * forceCast const - Auto-generated expression
@@ -6577,43 +6647,43 @@ const forceCast = <T extends any[], R = any>(value: unknown) => {
 };
 
 export default forceCast;
-`,
+
+    `,
   },
   'features.functions.castings.index': {
     relativePath: 'features/functions/castings/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['Fn'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/castFn',
+        moduleSpecifier: '../../../globals/utils/castFn',
         kind: 'named',
         namedImports: ['castFn'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/identity',
+        moduleSpecifier: '../../../globals/utils/identity',
         kind: 'named',
         namedImports: ['identity'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-import type { Fn } from '#types';
-import { _unknown } from '#utils/_unknown';
-import { castFn } from '#utils/castFn';
-import { expandFn } from '#utils/expandFn';
-import { identity } from '#utils/identity';
+    text: `import { Fn } from '../../../globals/types';
+import { _unknown } from '../../../globals/utils/_unknown';
+import { castFn } from '../../../globals/utils/castFn';
+import { expandFn } from '../../../globals/utils/expandFn';
+import { identity } from '../../../globals/utils/identity';
 
 /**
  * castings const - Auto-generated expression
@@ -6649,14 +6719,15 @@ const castings = castFn()({
 });
 
 export default castings;
-`,
+
+    `,
   },
 
   'features.functions.castings.is.all': {
     relativePath: 'features/functions/castings/is/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -6671,7 +6742,7 @@ export default castings;
         default: 'strict',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import _index from './index';
 import strict from './strict';
 
@@ -6690,18 +6761,19 @@ const is = expandFn(_index, {
 });
 
 export default is;
-`,
+
+    `,
   },
   'features.functions.castings.is.index': {
     relativePath: 'features/functions/castings/is/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['Fn'],
       },
     ],
-    text: `import type { Fn } from '#types';
+    text: `import { Fn } from '../../../../globals/types';
 
 /**
  * is const - Auto-generated expression
@@ -6718,18 +6790,19 @@ const is = (value: unknown): value is Fn => {
 };
 
 export default is;
-`,
+
+    `,
   },
   'features.functions.castings.is.strict': {
     relativePath: 'features/functions/castings/is/strict.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['Fn'],
       },
     ],
-    text: `import type { Fn } from '#types';
+    text: `import { Fn } from '../../../../globals/types';
 
 /**
  * strict const - Auto-generated expression
@@ -6749,18 +6822,19 @@ const strict = <T extends any[] = any[], R = any>(
 };
 
 export default strict;
-`,
+
+    `,
   },
   'features.functions.functions.clone': {
     relativePath: 'features/functions/functions/clone.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['PrimitiveObject'],
       },
     ],
-    text: `import type { PrimitiveObject } from '#types';
+    text: `import { PrimitiveObject } from '../../../globals/types';
 
 /**
  * FormatKey type - Auto-generated expression
@@ -6836,11 +6910,13 @@ export default function deepClone<I extends PrimitiveObject>(
 
   return clone as I;
 }
-`,
+
+    `,
   },
   'features.functions.functions.index': {
     relativePath: 'features/functions/functions/index.ts',
-    imports: [],
+    imports: [
+    ],
     text: `export * from './clone';
 export * from './partialCall';
 `,
@@ -6859,8 +6935,8 @@ export * from './partialCall';
         namedImports: ['Fn'],
       },
     ],
-    text: `import type { AnyArray } from '../../arrays/types';
-import type { Fn } from '../types';
+    text: `import { AnyArray } from '../../arrays/types';
+import { Fn } from '../types';
 
 type PartialCall_F = <
   T extends AnyArray = AnyArray,
@@ -6884,11 +6960,13 @@ type PartialCall_F = <
 export const partialCall: PartialCall_F = (f, ...headArgs) => {
   return (...tailArgs) => f(...headArgs, ...tailArgs);
 };
-`,
+
+    `,
   },
   'features.functions.index': {
     relativePath: 'features/functions/index.ts',
-    imports: [],
+    imports: [
+    ],
     text: `export * from './castings';
 export * as functions from './functions';
 export * from './types';
@@ -6897,7 +6975,8 @@ export * from './typings';
   },
   'features.functions.types': {
     relativePath: 'features/functions/types.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * Fn type - Auto-generated expression
  * 
@@ -6939,7 +7018,8 @@ export type Checker<T = unknown> =
   },
   'features.functions.typings': {
     relativePath: 'features/functions/typings.ts',
-    imports: [],
+    imports: [
+    ],
     text: `export { typings } from './typings/all';
 `,
   },
@@ -6947,7 +7027,7 @@ export type Checker<T = unknown> =
     relativePath: 'features/functions/typings/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -6972,7 +7052,7 @@ export type Checker<T = unknown> =
         default: '_index',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../globals/utils/expandFn';
 import checker from './checker/all';
 import dynamic from './dynamic';
 import forceCast from './forceCast';
@@ -6993,14 +7073,15 @@ export const typings = expandFn(_index, {
   forceCast,
   checker,
 });
-`,
+
+    `,
   },
 
   'features.functions.typings.checker.all': {
     relativePath: 'features/functions/typings/checker/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -7015,7 +7096,7 @@ export const typings = expandFn(_index, {
         default: '_index',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import byType from './byType/all';
 import _index from './index';
 
@@ -7034,13 +7115,14 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.functions.typings.checker.byType.all': {
     relativePath: 'features/functions/typings/checker/byType/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -7055,7 +7137,7 @@ export default fn;
         default: '_index',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../../globals/utils/expandFn';
 import cast from './cast';
 import _index from './index';
 
@@ -7074,25 +7156,25 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.functions.typings.checker.byType.cast': {
     relativePath: 'features/functions/typings/checker/byType/cast.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../globals/types',
         kind: 'named',
         namedImports: ['Checker', 'Checker2'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-import type { Checker, Checker2 } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { Checker, Checker2 } from '../../../../../globals/types';
+import { _unknown } from '../../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -7107,25 +7189,25 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T>(_?: Checker) => _unknown<Checker2<T>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.functions.typings.checker.byType.index': {
     relativePath: 'features/functions/typings/checker/byType/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../globals/types',
         kind: 'named',
         namedImports: ['Checker2'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-import type { Checker2 } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { Checker2 } from '../../../../../globals/types';
+import { _unknown } from '../../../../../globals/utils/_unknown';
 
 /**
  * byType const - Auto-generated expression
@@ -7140,24 +7222,25 @@ import { _unknown } from '#utils/_unknown';
 const byType = <T>(_?: Checker2<T>) => _unknown<Checker2<T>>();
 
 export default byType;
-`,
+
+    `,
   },
   'features.functions.typings.checker.index': {
     relativePath: 'features/functions/typings/checker/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['Checker'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
     ],
-    text: `import type { Checker } from '#types';
-import { typeFn } from '#utils/typeFn';
+    text: `import { Checker } from '../../../../globals/types';
+import { typeFn } from '../../../../globals/utils/typeFn';
 
 /**
  * checker const - Auto-generated expression
@@ -7172,25 +7255,25 @@ import { typeFn } from '#utils/typeFn';
 const checker = typeFn<Checker>()();
 
 export default checker;
-`,
+
+    `,
   },
   'features.functions.typings.dynamic': {
     relativePath: 'features/functions/typings/dynamic.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['Fn'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-import type { Fn } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { Fn } from '../../../globals/types';
+import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * dynamic const - Auto-generated expression
@@ -7206,25 +7289,25 @@ const dynamic = <T extends any[], R = any>(..._: [...T, R]) =>
   _unknown<Fn<T, R>>();
 
 export default dynamic;
-`,
+
+    `,
   },
   'features.functions.typings.forceCast': {
     relativePath: 'features/functions/typings/forceCast.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['Fn'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-import type { Fn } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { Fn } from '../../../globals/types';
+import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * forceCast const - Auto-generated expression
@@ -7241,31 +7324,31 @@ const forceCast = <T extends any[], R = any>(_?: unknown) => {
 };
 
 export default forceCast;
-`,
+
+    `,
   },
   'features.functions.typings.index': {
     relativePath: 'features/functions/typings/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['Fn'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-import type { Fn } from '#types';
-import { _unknown } from '#utils/_unknown';
-import { typeFn } from '#utils/typeFn';
+    text: `import { Fn } from '../../../globals/types';
+import { _unknown } from '../../../globals/utils/_unknown';
+import { typeFn } from '../../../globals/utils/typeFn';
 
 /**
  * typings const - Auto-generated expression
@@ -7287,11 +7370,13 @@ const typings = typeFn<Fn>()({
 });
 
 export default typings;
-`,
+
+    `,
   },
   'features.index': {
     relativePath: 'features/index.ts',
-    imports: [],
+    imports: [
+    ],
     text: `export * as arrays from './arrays';
 export * as booleans from './booleans';
 export * as common from './common';
@@ -7308,12 +7393,12 @@ export * as typescript from './typescript';
     relativePath: 'features/numbers/castings/MINUS_1.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/identity',
+        moduleSpecifier: '../../../globals/utils/identity',
         kind: 'named',
         namedImports: ['identity'],
       },
     ],
-    text: `import { identity } from '#utils/identity';
+    text: `import { identity } from '../../../globals/utils/identity';
 
 /**
  * fn const - Auto-generated expression
@@ -7328,19 +7413,20 @@ export * as typescript from './typescript';
 const fn = identity(-1);
 
 export default fn;
-`,
+
+    `,
   },
 
   'features.numbers.castings.ONE': {
     relativePath: 'features/numbers/castings/ONE.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/identity',
+        moduleSpecifier: '../../../globals/utils/identity',
         kind: 'named',
         namedImports: ['identity'],
       },
     ],
-    text: `import { identity } from '#utils/identity';
+    text: `import { identity } from '../../../globals/utils/identity';
 
 /**
  * fn const - Auto-generated expression
@@ -7355,18 +7441,19 @@ export default fn;
 const fn = identity(1);
 
 export default fn;
-`,
+
+    `,
   },
   'features.numbers.castings.ZERO': {
     relativePath: 'features/numbers/castings/ZERO.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/identity',
+        moduleSpecifier: '../../../globals/utils/identity',
         kind: 'named',
         namedImports: ['identity'],
       },
     ],
-    text: `import { identity } from '#utils/identity';
+    text: `import { identity } from '../../../globals/utils/identity';
 
 /**
  * fn const - Auto-generated expression
@@ -7381,13 +7468,14 @@ export default fn;
 const fn = identity(0);
 
 export default fn;
-`,
+
+    `,
   },
   'features.numbers.castings.all': {
     relativePath: 'features/numbers/castings/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -7437,7 +7525,7 @@ export default fn;
         default: 'ZERO',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../globals/utils/expandFn';
 import bigint from './bigint';
 import digit from './digit';
 import getString from './getString';
@@ -7468,24 +7556,25 @@ export const castings = expandFn(_index, {
   MINUS_1,
   bigint,
 });
-`,
+
+    `,
   },
   'features.numbers.castings.bigint': {
     relativePath: 'features/numbers/castings/bigint.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/castFn',
+        moduleSpecifier: '../../../globals/utils/castFn',
         kind: 'named',
         namedImports: ['castFn'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/is/_default',
+        moduleSpecifier: '../../../globals/utils/is/_default',
         kind: 'named',
         namedImports: ['isTypeFn'],
       },
     ],
-    text: `import { castFn } from '#utils/castFn';
-import { isTypeFn } from '#utils/is/_default';
+    text: `import { castFn } from '../../../globals/utils/castFn';
+import { isTypeFn } from '../../../globals/utils/is/_default';
 
 /**
  * fn const - Auto-generated expression
@@ -7502,13 +7591,14 @@ const fn = castFn<bigint>()({
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.numbers.castings.digit': {
     relativePath: 'features/numbers/castings/digit.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/castFn',
+        moduleSpecifier: '../../../globals/utils/castFn',
         kind: 'named',
         namedImports: ['castFn'],
       },
@@ -7518,7 +7608,7 @@ export default fn;
         namedImports: ['DIGITS'],
       },
     ],
-    text: `import { castFn } from '#utils/castFn';
+    text: `import { castFn } from '../../../globals/utils/castFn';
 import { DIGITS } from '../constants';
 
 /**
@@ -7534,11 +7624,13 @@ import { DIGITS } from '../constants';
 const fn = castFn.withValues(...DIGITS);
 
 export default fn;
-`,
+
+    `,
   },
   'features.numbers.castings.getString': {
     relativePath: 'features/numbers/castings/getString.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -7549,7 +7641,7 @@ export default fn;
  * @readonly
  * @author chlbri (bri_lvi@icloud.com)
  */
-const fn = <T extends number | string>(arg: T): \`$|||{T}\` => \`$|||{arg}\`;
+const fn = <T extends number | string>(arg: T): \`$-|||-{T}\` => \`$-|||-{arg}\`;
 
 export default fn;
 `,
@@ -7558,12 +7650,12 @@ export default fn;
     relativePath: 'features/numbers/castings/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/castFn',
+        moduleSpecifier: '../../../globals/utils/castFn',
         kind: 'named',
         namedImports: ['castFn'],
       },
     ],
-    text: `import { castFn } from '#utils/castFn';
+    text: `import { castFn } from '../../../globals/utils/castFn';
 
 /**
  * fn const - Auto-generated expression
@@ -7578,18 +7670,19 @@ export default fn;
 const fn = castFn<number>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.numbers.castings.is': {
     relativePath: 'features/numbers/castings/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/is/_default',
+        moduleSpecifier: '../../../globals/utils/is/_default',
         kind: 'named',
         namedImports: ['isTypeFn'],
       },
     ],
-    text: `import { isTypeFn } from '#utils/is/_default';
+    text: `import { isTypeFn } from '../../../globals/utils/is/_default';
 
 /**
  * fn const - Auto-generated expression
@@ -7604,11 +7697,13 @@ export default fn;
 const fn = isTypeFn('number');
 
 export default fn;
-`,
+
+    `,
   },
   'features.numbers.castings.type': {
     relativePath: 'features/numbers/castings/type.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -7626,7 +7721,8 @@ export default fn;
   },
   'features.numbers.constants': {
     relativePath: 'features/numbers/constants.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * DIGITS variable - Auto-generated expression
  * 
@@ -7643,7 +7739,8 @@ export const DIGITS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] as const;
 
   'features.numbers.index': {
     relativePath: 'features/numbers/index.ts',
-    imports: [],
+    imports: [
+    ],
     text: `export * from './castings/all';
 export * from './types';
 export * from './typings/all';
@@ -7658,7 +7755,7 @@ export * from './typings/all';
         namedImports: ['DIGITS'],
       },
     ],
-    text: `import type { DIGITS } from './constants';
+    text: `import { DIGITS } from './constants';
 
 /**
  * ToString type - Auto-generated expression
@@ -7670,7 +7767,7 @@ export * from './typings/all';
  * @readonly
  * @author chlbri (bri_lvi@icloud.com)
  */
-export type ToString<T extends number | string> = \`$|||{T}\`;
+export type ToString<T extends number | string> = \`$-|||-{T}\`;
 
 /**
  * Digit type - Auto-generated expression
@@ -7683,18 +7780,19 @@ export type ToString<T extends number | string> = \`$|||{T}\`;
  * @author chlbri (bri_lvi@icloud.com)
  */
 export type Digit = (typeof DIGITS)[number];
-`,
+
+    `,
   },
   'features.numbers.typings.MINUS_1': {
     relativePath: 'features/numbers/typings/MINUS_1.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -7709,18 +7807,19 @@ export type Digit = (typeof DIGITS)[number];
 const fn = () => _unknown<-1>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.numbers.typings.ONE': {
     relativePath: 'features/numbers/typings/ONE.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -7735,18 +7834,19 @@ export default fn;
 const fn = () => _unknown<1>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.numbers.typings.ZERO': {
     relativePath: 'features/numbers/typings/ZERO.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -7761,13 +7861,14 @@ export default fn;
 const fn = () => _unknown<0>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.numbers.typings.all': {
     relativePath: 'features/numbers/typings/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -7807,7 +7908,7 @@ export default fn;
         default: 'ZERO',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../globals/utils/expandFn';
 import bigint from './bigint';
 import digit from './digit';
 import getString from './getString';
@@ -7834,18 +7935,19 @@ export const typings = expandFn(_index, {
   MINUS_1,
   bigint,
 });
-`,
+
+    `,
   },
   'features.numbers.typings.bigint': {
     relativePath: 'features/numbers/typings/bigint.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
     ],
-    text: `import { typeFn } from '#utils/typeFn';
+    text: `import { typeFn } from '../../../globals/utils/typeFn';
 
 /**
  * fn const - Auto-generated expression
@@ -7860,24 +7962,25 @@ export const typings = expandFn(_index, {
 const fn = typeFn<bigint>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.numbers.typings.digit': {
     relativePath: 'features/numbers/typings/digit.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['Digit'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
     ],
-    text: `import type { Digit } from '#types';
-import { typeFn } from '#utils/typeFn';
+    text: `import { Digit } from '../../../globals/types';
+import { typeFn } from '../../../globals/utils/typeFn';
 
 /**
  * fn const - Auto-generated expression
@@ -7892,20 +7995,19 @@ import { typeFn } from '#utils/typeFn';
 const fn = typeFn<Digit>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.numbers.typings.getString': {
     relativePath: 'features/numbers/typings/getString.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -7917,21 +8019,22 @@ import { _unknown } from '#utils/_unknown';
  * @readonly
  * @author chlbri (bri_lvi@icloud.com)
  */
-const fn = <const T extends number>(_: T) => _unknown<\`$|||{T}\`>();
+const fn = <const T extends number>(_: T) => _unknown<\`$-|||-{T}\`>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.numbers.typings.index': {
     relativePath: 'features/numbers/typings/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
     ],
-    text: `import { typeFn } from '#utils/typeFn';
+    text: `import { typeFn } from '../../../globals/utils/typeFn';
 
 /**
  * fn const - Auto-generated expression
@@ -7946,14 +8049,15 @@ export default fn;
 const fn = typeFn<number>()();
 
 export default fn;
-`,
+
+    `,
   },
 
   'features.objects.castings.all': {
     relativePath: 'features/objects/castings/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -8048,7 +8152,7 @@ export default fn;
         default: 'values',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../globals/utils/expandFn';
 import byKey from './byKey';
 import entries from './entries';
 import freeze from './freeze/all';
@@ -8097,11 +8201,13 @@ export const castings = expandFn(_index, {
   ra,
   primitive,
 });
-`,
+
+    `,
   },
   'features.objects.castings.byKey': {
     relativePath: 'features/objects/castings/byKey.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -8124,7 +8230,8 @@ export default fn;
   },
   'features.objects.castings.entries': {
     relativePath: 'features/objects/castings/entries.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -8144,56 +8251,65 @@ export default fn;
   },
   'features.objects.castings.freeze.all': {
     relativePath: 'features/objects/castings/freeze/all.ts',
-    imports: [],
+    imports: [
+    ],
     text: `export { default } from '#features/objects/castings/readonly/all';
 `,
   },
   'features.objects.castings.freeze.deep.all': {
     relativePath: 'features/objects/castings/freeze/deep/all.ts',
-    imports: [],
+    imports: [
+    ],
     text: `export { default } from '#features/objects/castings/readonly/deep/all';
 `,
   },
   'features.objects.castings.freeze.deep.index': {
     relativePath: 'features/objects/castings/freeze/deep/index.ts',
-    imports: [],
+    imports: [
+    ],
     text: `export { default } from '#features/objects/castings/readonly/deep/index';
 `,
   },
   'features.objects.castings.freeze.deep.not': {
     relativePath: 'features/objects/castings/freeze/deep/not.ts',
-    imports: [],
+    imports: [
+    ],
     text: `export { default } from '#features/objects/castings/readonly/deep/not';
 `,
   },
   'features.objects.castings.freeze.dynamic': {
     relativePath: 'features/objects/castings/freeze/dynamic.ts',
-    imports: [],
+    imports: [
+    ],
     text: `export { default } from '#features/objects/castings/readonly/dynamic';
 `,
   },
   'features.objects.castings.freeze.forceCast': {
     relativePath: 'features/objects/castings/freeze/forceCast.ts',
-    imports: [],
+    imports: [
+    ],
     text: `export { default } from '#features/objects/castings/readonly/forceCast';
 `,
   },
   'features.objects.castings.freeze.index': {
     relativePath: 'features/objects/castings/freeze/index.ts',
-    imports: [],
+    imports: [
+    ],
     text: `export { default } from '#features/objects/castings/readonly/index';
 `,
   },
 
   'features.objects.castings.freeze.is': {
     relativePath: 'features/objects/castings/freeze/is.ts',
-    imports: [],
+    imports: [
+    ],
     text: `export { default } from '#features/objects/castings/readonly/is';
 `,
   },
   'features.objects.castings.freeze.not': {
     relativePath: 'features/objects/castings/freeze/not.ts',
-    imports: [],
+    imports: [
+    ],
     text: `export { default } from '#features/objects/castings/readonly/not';
 `,
   },
@@ -8201,7 +8317,7 @@ export default fn;
     relativePath: 'features/objects/castings/hasKeys/_all/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -8216,7 +8332,7 @@ export default fn;
         default: 'typings',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../../globals/utils/expandFn';
 import _index from './index';
 import typings from './typings';
 
@@ -8235,18 +8351,19 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.hasKeys._all.index': {
     relativePath: 'features/objects/castings/hasKeys/_all/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../globals/types',
         kind: 'named',
         namedImports: ['Keys'],
       },
     ],
-    text: `import type { Keys } from '#types';
+    text: `import { Keys } from '../../../../../globals/types';
 
 /**
  * fn const - Auto-generated expression
@@ -8269,24 +8386,25 @@ const fn = <K extends Keys[]>(
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.hasKeys._all.typings': {
     relativePath: 'features/objects/castings/hasKeys/_all/typings.ts',
     imports: [
       {
-        moduleSpecifier: 'src/features/objects/utils/entries',
+        moduleSpecifier: '../../../utils/entries',
         kind: 'named',
         namedImports: ['checkEntries'],
       },
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../globals/types',
         kind: 'named',
         namedImports: ['KeyTypes', 'KeyTypesFrom'],
       },
     ],
-    text: `import { checkEntries } from '#features/objects/utils/entries';
-import type { KeyTypes, KeyTypesFrom } from '#types';
+    text: `import { checkEntries } from '../../../utils/entries';
+import { KeyTypes, KeyTypesFrom } from '../../../../../globals/types';
 
 /**
  * fn const - Auto-generated expression
@@ -8312,13 +8430,14 @@ const fn = <K extends KeyTypes>(
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.hasKeys.all': {
     relativePath: 'features/objects/castings/hasKeys/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -8338,7 +8457,7 @@ export default fn;
         default: 'typings',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import all from './_all/all';
 import _index from './index';
 import typings from './typings';
@@ -8359,18 +8478,19 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.hasKeys.index': {
     relativePath: 'features/objects/castings/hasKeys/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['Keys'],
       },
     ],
-    text: `import type { Keys } from '#types';
+    text: `import { Keys } from '../../../../globals/types';
 
 /**
  * fn const - Auto-generated expression
@@ -8390,24 +8510,25 @@ const fn = <K extends Keys[]>(
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.hasKeys.typings': {
     relativePath: 'features/objects/castings/hasKeys/typings.ts',
     imports: [
       {
-        moduleSpecifier: 'src/features/objects/utils/entries',
+        moduleSpecifier: '../../utils/entries',
         kind: 'named',
         namedImports: ['checkEntries'],
       },
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['KeyTypes', 'KeyTypesFrom'],
       },
     ],
-    text: `import { checkEntries } from '#features/objects/utils/entries';
-import type { KeyTypes, KeyTypesFrom } from '#types';
+    text: `import { checkEntries } from '../../utils/entries';
+import { KeyTypes, KeyTypesFrom } from '../../../../globals/types';
 
 /**
  * fn const - Auto-generated expression
@@ -8427,18 +8548,19 @@ const fn = <K extends KeyTypes>(
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.index': {
     relativePath: 'features/objects/castings/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/castFn',
+        moduleSpecifier: '../../../globals/utils/castFn',
         kind: 'named',
         namedImports: ['castFn'],
       },
     ],
-    text: `import { castFn } from '#utils/castFn';
+    text: `import { castFn } from '../../../globals/utils/castFn';
 
 /**
  * fn const - Auto-generated expression
@@ -8453,13 +8575,14 @@ export default fn;
 const fn = castFn<object>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.keyTypes.all': {
     relativePath: 'features/objects/castings/keyTypes/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -8479,7 +8602,7 @@ export default fn;
         default: 'is',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import from from './from';
 import _index from './index';
 import is from './is';
@@ -8500,25 +8623,26 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
 
   'features.objects.castings.keyTypes.from': {
     relativePath: 'features/objects/castings/keyTypes/from.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['KeyTypes', 'KeyTypesFrom'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/castFn',
+        moduleSpecifier: '../../../../globals/utils/castFn',
         kind: 'named',
         namedImports: ['castFn'],
       },
     ],
-    text: `import type { KeyTypes, KeyTypesFrom } from '#types';
-import { castFn } from '#utils/castFn';
+    text: `import { KeyTypes, KeyTypesFrom } from '../../../../globals/types';
+import { castFn } from '../../../../globals/utils/castFn';
 
 /**
  * fn const - Auto-generated expression
@@ -8539,24 +8663,25 @@ const fn = <T extends KeyTypes>(keyType: T) => {
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.keyTypes.index': {
     relativePath: 'features/objects/castings/keyTypes/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['KeyTypes'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/castFn',
+        moduleSpecifier: '../../../../globals/utils/castFn',
         kind: 'named',
         namedImports: ['castFn'],
       },
     ],
-    text: `import type { KeyTypes } from '#types';
-import { castFn } from '#utils/castFn';
+    text: `import { KeyTypes } from '../../../../globals/types';
+import { castFn } from '../../../../globals/utils/castFn';
 
 /**
  * fn const - Auto-generated expression
@@ -8571,24 +8696,25 @@ import { castFn } from '#utils/castFn';
 const fn = castFn<KeyTypes>()({});
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.keyTypes.is': {
     relativePath: 'features/objects/castings/keyTypes/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['KeyTypes'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/is/object',
+        moduleSpecifier: '../../../../globals/utils/is/object',
         kind: 'named',
         namedImports: ['isPlainObject'],
       },
     ],
-    text: `import type { KeyTypes } from '#types';
-import { isPlainObject } from '#utils/is/object';
+    text: `import { KeyTypes } from '../../../../globals/types';
+import { isPlainObject } from '../../../../globals/utils/is/object';
 
 /**
  * is const - Auto-generated expression
@@ -8611,11 +8737,13 @@ const is = (value: unknown): value is KeyTypes => {
 };
 
 export default is;
-`,
+
+    `,
   },
   'features.objects.castings.keysOf': {
     relativePath: 'features/objects/castings/keysOf.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -8637,7 +8765,7 @@ export default fn;
     relativePath: 'features/objects/castings/omit/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -8672,7 +8800,7 @@ export default fn;
         default: 'strict',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import by from './by/all';
 import _const from './const/all';
 import deep from './deep/all';
@@ -8699,13 +8827,14 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.omit.by.all': {
     relativePath: 'features/objects/castings/omit/by/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -8720,7 +8849,7 @@ export default fn;
         default: 'is',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../../globals/utils/expandFn';
 import _index from './index';
 import is from './is';
 
@@ -8739,18 +8868,19 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.omit.by.index': {
     relativePath: 'features/objects/castings/omit/by/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/features/functions/functions/partialCall',
+        moduleSpecifier: '../../../../functions/functions/partialCall',
         kind: 'named',
         namedImports: ['partialCall'],
       },
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../globals/types',
         kind: 'named',
         namedImports: ['SubType'],
       },
@@ -8760,8 +8890,8 @@ export default fn;
         namedImports: ['omit'],
       },
     ],
-    text: `import { partialCall } from '#features/functions/functions/partialCall';
-import type { SubType } from '#types';
+    text: `import { partialCall } from '../../../../functions/functions/partialCall';
+import { SubType } from '../../../../../globals/types';
 import { omit } from '../../../utils/omit';
 
 /**
@@ -8783,24 +8913,25 @@ const fn = partialCall(omit, 'element') as <
 ) => SubType<T, K[number]>;
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.omit.by.is': {
     relativePath: 'features/objects/castings/omit/by/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/features/functions/functions/partialCall',
+        moduleSpecifier: '../../../../functions/functions/partialCall',
         kind: 'named',
         namedImports: ['partialCall'],
       },
       {
-        moduleSpecifier: 'src/features/objects/utils/omit.is',
+        moduleSpecifier: '../../../utils/omit.is',
         kind: 'named',
         namedImports: ['omitIs'],
       },
     ],
-    text: `import { partialCall } from '#features/functions/functions/partialCall';
-import { omitIs } from '#features/objects/utils/omit.is';
+    text: `import { partialCall } from '../../../../functions/functions/partialCall';
+import { omitIs } from '../../../utils/omit.is';
 
 /**
  * fn const - Auto-generated expression
@@ -8815,13 +8946,14 @@ import { omitIs } from '#features/objects/utils/omit.is';
 const fn = partialCall(omitIs, 'element');
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.omit.const.all': {
     relativePath: 'features/objects/castings/omit/const/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -8836,7 +8968,7 @@ export default fn;
         default: 'is',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../../globals/utils/expandFn';
 import _index from './index';
 import is from './is';
 
@@ -8855,13 +8987,14 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.omit.const.index': {
     relativePath: 'features/objects/castings/omit/const/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/features/functions/functions/partialCall',
+        moduleSpecifier: '../../../../functions/functions/partialCall',
         kind: 'named',
         namedImports: ['partialCall'],
       },
@@ -8871,7 +9004,7 @@ export default fn;
         namedImports: ['omit'],
       },
     ],
-    text: `import { partialCall } from '#features/functions/functions/partialCall';
+    text: `import { partialCall } from '../../../../functions/functions/partialCall';
 import { omit } from '../../../utils/omit';
 
 /**
@@ -8893,25 +9026,26 @@ const fn = partialCall(omit, 'key') as <
 ) => Omit<T, K[number]>;
 
 export default fn;
-`,
+
+    `,
   },
 
   'features.objects.castings.omit.const.is': {
     relativePath: 'features/objects/castings/omit/const/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/features/functions/functions/partialCall',
+        moduleSpecifier: '../../../../functions/functions/partialCall',
         kind: 'named',
         namedImports: ['partialCall'],
       },
       {
-        moduleSpecifier: 'src/features/objects/utils/omit.is',
+        moduleSpecifier: '../../../utils/omit.is',
         kind: 'named',
         namedImports: ['omitIs'],
       },
     ],
-    text: `import { partialCall } from '#features/functions/functions/partialCall';
-import { omitIs } from '#features/objects/utils/omit.is';
+    text: `import { partialCall } from '../../../../functions/functions/partialCall';
+import { omitIs } from '../../../utils/omit.is';
 
 /**
  * fn const - Auto-generated expression
@@ -8932,13 +9066,14 @@ const fn = partialCall(omitIs, 'key') as <
 ) => boolean;
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.omit.deep.all': {
     relativePath: 'features/objects/castings/omit/deep/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -8958,7 +9093,7 @@ export default fn;
         default: 'is',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../../globals/utils/expandFn';
 import by from './by/all';
 import _index from './index';
 import is from './is';
@@ -8979,13 +9114,14 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.omit.deep.by.all': {
     relativePath: 'features/objects/castings/omit/deep/by/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -9000,7 +9136,7 @@ export default fn;
         default: 'is',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../../../globals/utils/expandFn';
 import _index from './index';
 import is from './is';
 
@@ -9019,18 +9155,19 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.omit.deep.by.index': {
     relativePath: 'features/objects/castings/omit/deep/by/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/features/functions/functions/partialCall',
+        moduleSpecifier: '../../../../../functions/functions/partialCall',
         kind: 'named',
         namedImports: ['partialCall'],
       },
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../../globals/types',
         kind: 'named',
         namedImports: ['Keys', 'NotSubType', 'PrimitiveObjectMap'],
       },
@@ -9040,8 +9177,8 @@ export default fn;
         namedImports: ['omitDeep'],
       },
     ],
-    text: `import { partialCall } from '#features/functions/functions/partialCall';
-import type { Keys, NotSubType, PrimitiveObjectMap } from '#types';
+    text: `import { partialCall } from '../../../../../functions/functions/partialCall';
+import { Keys, NotSubType, PrimitiveObjectMap } from '../../../../../../globals/types';
 import { omitDeep } from '../../../../utils/omit.deep';
 
 /**
@@ -9063,24 +9200,25 @@ const fn = partialCall(omitDeep, 'element') as <
 ) => NotSubType<T, K[number]>;
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.omit.deep.by.is': {
     relativePath: 'features/objects/castings/omit/deep/by/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/features/functions/functions/partialCall',
+        moduleSpecifier: '../../../../../functions/functions/partialCall',
         kind: 'named',
         namedImports: ['partialCall'],
       },
       {
-        moduleSpecifier: 'src/features/objects/utils/omit.deep.is',
+        moduleSpecifier: '../../../../utils/omit.deep.is',
         kind: 'named',
         namedImports: ['omitDeepIs'],
       },
     ],
-    text: `import { partialCall } from '#features/functions/functions/partialCall';
-import { omitDeepIs } from '#features/objects/utils/omit.deep.is';
+    text: `import { partialCall } from '../../../../../functions/functions/partialCall';
+import { omitDeepIs } from '../../../../utils/omit.deep.is';
 
 /**
  * fn const - Auto-generated expression
@@ -9095,18 +9233,19 @@ import { omitDeepIs } from '#features/objects/utils/omit.deep.is';
 const fn = partialCall(omitDeepIs, 'element');
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.omit.deep.index': {
     relativePath: 'features/objects/castings/omit/deep/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/features/functions/functions/partialCall',
+        moduleSpecifier: '../../../../functions/functions/partialCall',
         kind: 'named',
         namedImports: ['partialCall'],
       },
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../globals/types',
         kind: 'named',
         namedImports: ['DeepOmit', 'Keys', 'PrimitiveObjectMap'],
       },
@@ -9116,8 +9255,8 @@ export default fn;
         namedImports: ['omitDeep'],
       },
     ],
-    text: `import { partialCall } from '#features/functions/functions/partialCall';
-import type { DeepOmit, Keys, PrimitiveObjectMap } from '#types';
+    text: `import { partialCall } from '../../../../functions/functions/partialCall';
+import { DeepOmit, Keys, PrimitiveObjectMap } from '../../../../../globals/types';
 import { omitDeep } from '../../../utils/omit.deep';
 
 /**
@@ -9139,30 +9278,31 @@ const fn = partialCall(omitDeep, 'key') as <
 ) => DeepOmit<T, K[number]>;
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.omit.deep.is': {
     relativePath: 'features/objects/castings/omit/deep/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/features/functions/functions/partialCall',
+        moduleSpecifier: '../../../../functions/functions/partialCall',
         kind: 'named',
         namedImports: ['partialCall'],
       },
       {
-        moduleSpecifier: 'src/features/objects/utils/omit.deep.is',
+        moduleSpecifier: '../../../utils/omit.deep.is',
         kind: 'named',
         namedImports: ['omitDeepIs'],
       },
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../globals/types',
         kind: 'named',
         namedImports: ['Keys', 'PrimitiveObjectMap'],
       },
     ],
-    text: `import { partialCall } from '#features/functions/functions/partialCall';
-import { omitDeepIs } from '#features/objects/utils/omit.deep.is';
-import type { Keys, PrimitiveObjectMap } from '#types';
+    text: `import { partialCall } from '../../../../functions/functions/partialCall';
+import { omitDeepIs } from '../../../utils/omit.deep.is';
+import { Keys, PrimitiveObjectMap } from '../../../../../globals/types';
 
 /**
  * fn const - Auto-generated expression
@@ -9180,18 +9320,19 @@ const fn = partialCall(omitDeepIs, 'key') as (
 ) => boolean;
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.omit.index': {
     relativePath: 'features/objects/castings/omit/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/features/functions/functions/partialCall',
+        moduleSpecifier: '../../../functions/functions/partialCall',
         kind: 'named',
         namedImports: ['partialCall'],
       },
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['PrimitiveObjectMap'],
       },
@@ -9201,8 +9342,8 @@ export default fn;
         namedImports: ['omit'],
       },
     ],
-    text: `import { partialCall } from '#features/functions/functions/partialCall';
-import type { PrimitiveObjectMap } from '#types';
+    text: `import { partialCall } from '../../../functions/functions/partialCall';
+import { PrimitiveObjectMap } from '../../../../globals/types';
 import { omit } from '../../utils/omit';
 
 /**
@@ -9224,30 +9365,31 @@ const fn = partialCall(omit, 'key') as <
 ) => Omit<T, K[number]>;
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.omit.is': {
     relativePath: 'features/objects/castings/omit/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/features/functions/functions/partialCall',
+        moduleSpecifier: '../../../functions/functions/partialCall',
         kind: 'named',
         namedImports: ['partialCall'],
       },
       {
-        moduleSpecifier: 'src/features/objects/utils/omit.is',
+        moduleSpecifier: '../../utils/omit.is',
         kind: 'named',
         namedImports: ['omitIs'],
       },
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['Keys', 'PrimitiveObjectMap'],
       },
     ],
-    text: `import { partialCall } from '#features/functions/functions/partialCall';
-import { omitIs } from '#features/objects/utils/omit.is';
-import type { Keys, PrimitiveObjectMap } from '#types';
+    text: `import { partialCall } from '../../../functions/functions/partialCall';
+import { omitIs } from '../../utils/omit.is';
+import { Keys, PrimitiveObjectMap } from '../../../../globals/types';
 
 /**
  * fn const - Auto-generated expression
@@ -9265,13 +9407,14 @@ const fn = partialCall(omitIs, 'key') as <K extends Keys[]>(
 ) => boolean;
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.omit.strict.all': {
     relativePath: 'features/objects/castings/omit/strict/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -9286,7 +9429,7 @@ export default fn;
         default: 'is',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../../globals/utils/expandFn';
 import _index from './index';
 import is from './is';
 
@@ -9305,25 +9448,26 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
 
   'features.objects.castings.omit.strict.index': {
     relativePath: 'features/objects/castings/omit/strict/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/features/functions/functions/partialCall',
+        moduleSpecifier: '../../../../functions/functions/partialCall',
         kind: 'named',
         namedImports: ['partialCall'],
       },
       {
-        moduleSpecifier: 'src/features/objects/utils/omit',
+        moduleSpecifier: '../../../utils/omit',
         kind: 'named',
         namedImports: ['omit'],
       },
     ],
-    text: `import { partialCall } from '#features/functions/functions/partialCall';
-import { omit } from '#features/objects/utils/omit';
+    text: `import { partialCall } from '../../../../functions/functions/partialCall';
+import { omit } from '../../../utils/omit';
 
 /**
  * fn const - Auto-generated expression
@@ -9344,24 +9488,25 @@ const fn = partialCall(omit, 'key') as <
 ) => Omit<T, K[number]>;
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.omit.strict.is': {
     relativePath: 'features/objects/castings/omit/strict/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/features/functions/functions/partialCall',
+        moduleSpecifier: '../../../../functions/functions/partialCall',
         kind: 'named',
         namedImports: ['partialCall'],
       },
       {
-        moduleSpecifier: 'src/features/objects/utils/omit.is',
+        moduleSpecifier: '../../../utils/omit.is',
         kind: 'named',
         namedImports: ['omitIs'],
       },
     ],
-    text: `import { partialCall } from '#features/functions/functions/partialCall';
-import { omitIs } from '#features/objects/utils/omit.is';
+    text: `import { partialCall } from '../../../../functions/functions/partialCall';
+import { omitIs } from '../../../utils/omit.is';
 
 /**
  * fn const - Auto-generated expression
@@ -9382,13 +9527,14 @@ const fn = partialCall(omitIs, 'key') as <
 ) => boolean;
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.pick.all': {
     relativePath: 'features/objects/castings/pick/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -9408,7 +9554,7 @@ export default fn;
         default: '_index',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import by from './by';
 import deep from './deep/all';
 import _index from './index';
@@ -9429,18 +9575,19 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.pick.by': {
     relativePath: 'features/objects/castings/pick/by.ts',
     imports: [
       {
-        moduleSpecifier: 'src/features/functions/functions/partialCall',
+        moduleSpecifier: '../../../functions/functions/partialCall',
         kind: 'named',
         namedImports: ['partialCall'],
       },
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['SubType'],
       },
@@ -9450,8 +9597,8 @@ export default fn;
         namedImports: ['pick'],
       },
     ],
-    text: `import { partialCall } from '#features/functions/functions/partialCall';
-import type { SubType } from '#types';
+    text: `import { partialCall } from '../../../functions/functions/partialCall';
+import { SubType } from '../../../../globals/types';
 import { pick } from '../../utils/pick';
 
 /**
@@ -9473,13 +9620,14 @@ const fn = partialCall(pick, 'element') as <
 ) => SubType<T, K[number]>;
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.pick.deep.all': {
     relativePath: 'features/objects/castings/pick/deep/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -9494,7 +9642,7 @@ export default fn;
         default: '_index',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../../globals/utils/expandFn';
 import by from './by';
 import _index from './index';
 
@@ -9513,24 +9661,25 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.pick.deep.by': {
     relativePath: 'features/objects/castings/pick/deep/by.ts',
     imports: [
       {
-        moduleSpecifier: 'src/features/functions/functions/partialCall',
+        moduleSpecifier: '../../../../functions/functions/partialCall',
         kind: 'named',
         namedImports: ['partialCall'],
       },
       {
-        moduleSpecifier: 'src/features/objects/utils/pick.deep',
+        moduleSpecifier: '../../../utils/pick.deep',
         kind: 'named',
         namedImports: ['pickDeep'],
       },
     ],
-    text: `import { partialCall } from '#features/functions/functions/partialCall';
-import { pickDeep } from '#features/objects/utils/pick.deep';
+    text: `import { partialCall } from '../../../../functions/functions/partialCall';
+import { pickDeep } from '../../../utils/pick.deep';
 
 /**
  * fn const - Auto-generated expression
@@ -9545,24 +9694,25 @@ import { pickDeep } from '#features/objects/utils/pick.deep';
 const fn = partialCall(pickDeep, 'element');
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.pick.deep.index': {
     relativePath: 'features/objects/castings/pick/deep/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/features/functions/functions/partialCall',
+        moduleSpecifier: '../../../../functions/functions/partialCall',
         kind: 'named',
         namedImports: ['partialCall'],
       },
       {
-        moduleSpecifier: 'src/features/objects/utils/pick.deep',
+        moduleSpecifier: '../../../utils/pick.deep',
         kind: 'named',
         namedImports: ['pickDeep'],
       },
     ],
-    text: `import { partialCall } from '#features/functions/functions/partialCall';
-import { pickDeep } from '#features/objects/utils/pick.deep';
+    text: `import { partialCall } from '../../../../functions/functions/partialCall';
+import { pickDeep } from '../../../utils/pick.deep';
 
 /**
  * fn const - Auto-generated expression
@@ -9577,13 +9727,14 @@ import { pickDeep } from '#features/objects/utils/pick.deep';
 const fn = partialCall(pickDeep, 'key');
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.pick.index': {
     relativePath: 'features/objects/castings/pick/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/features/functions/functions/partialCall',
+        moduleSpecifier: '../../../functions/functions/partialCall',
         kind: 'named',
         namedImports: ['partialCall'],
       },
@@ -9593,7 +9744,7 @@ export default fn;
         namedImports: ['pick'],
       },
     ],
-    text: `import { partialCall } from '#features/functions/functions/partialCall';
+    text: `import { partialCall } from '../../../functions/functions/partialCall';
 import { pick } from '../../utils/pick';
 
 /**
@@ -9612,36 +9763,37 @@ const fn = partialCall(pick, 'key') as <T extends object, K extends any[]>(
 ) => Pick<T, K[number]>;
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.primitive': {
     relativePath: 'features/objects/castings/primitive.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['PrimitiveObjectMap'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/castFn',
+        moduleSpecifier: '../../../globals/utils/castFn',
         kind: 'named',
         namedImports: ['castFn'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/is/object',
+        moduleSpecifier: '../../../globals/utils/is/object',
         kind: 'named',
         namedImports: ['isPlainObject'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/is/primitive.object',
+        moduleSpecifier: '../../../globals/utils/is/primitive.object',
         kind: 'named',
         namedImports: ['isPrimitiveObject'],
       },
     ],
-    text: `import type { PrimitiveObjectMap } from '#types';
-import { castFn } from '#utils/castFn';
-import { isPlainObject } from '#utils/is/object';
-import { isPrimitiveObject } from '#utils/is/primitive.object';
+    text: `import { PrimitiveObjectMap } from '../../../globals/types';
+import { castFn } from '../../../globals/utils/castFn';
+import { isPlainObject } from '../../../globals/utils/is/object';
+import { isPrimitiveObject } from '../../../globals/utils/is/primitive.object';
 
 /**
  * fn const - Auto-generated expression
@@ -9661,24 +9813,25 @@ const fn = castFn<PrimitiveObjectMap>()({
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.ra': {
     relativePath: 'features/objects/castings/ra.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['Ra'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/castFn',
+        moduleSpecifier: '../../../globals/utils/castFn',
         kind: 'named',
         namedImports: ['castFn'],
       },
     ],
-    text: `import type { Ra } from '#types';
-import { castFn } from '#utils/castFn';
+    text: `import { Ra } from '../../../globals/types';
+import { castFn } from '../../../globals/utils/castFn';
 
 /**
  * fn const - Auto-generated expression
@@ -9693,14 +9846,15 @@ import { castFn } from '#utils/castFn';
 const fn = castFn<Ra>()();
 
 export default fn;
-`,
+
+    `,
   },
 
   'features.objects.castings.readonly.all': {
     relativePath: 'features/objects/castings/readonly/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -9735,7 +9889,7 @@ export default fn;
         default: 'not',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import deep from './deep/all';
 import dynamic from './dynamic';
 import forceCast from './forceCast';
@@ -9762,13 +9916,14 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.readonly.deep.all': {
     relativePath: 'features/objects/castings/readonly/deep/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -9783,7 +9938,7 @@ export default fn;
         default: 'not',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../../globals/utils/expandFn';
 import _index from './index';
 import not from './not';
 
@@ -9802,24 +9957,25 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.readonly.deep.index': {
     relativePath: 'features/objects/castings/readonly/deep/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../globals/types',
         kind: 'named',
         namedImports: ['DeepReadonly'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import type { DeepReadonly } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { DeepReadonly } from '../../../../../globals/types';
+import { _unknown } from '../../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -9837,24 +9993,25 @@ const fn = <T extends object>(object: T) => {
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.readonly.deep.not': {
     relativePath: 'features/objects/castings/readonly/deep/not.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../globals/types',
         kind: 'named',
         namedImports: ['DeepNotReadonly'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import type { DeepNotReadonly } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { DeepNotReadonly } from '../../../../../globals/types';
+import { _unknown } from '../../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -9871,11 +10028,13 @@ const fn = <T extends object>(object: T) => {
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.readonly.dynamic': {
     relativePath: 'features/objects/castings/readonly/dynamic.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -9897,12 +10056,12 @@ export default fn;
     relativePath: 'features/objects/castings/readonly/forceCast.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -9920,11 +10079,13 @@ const fn = <T extends object>(object: unknown) => {
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.readonly.index': {
     relativePath: 'features/objects/castings/readonly/index.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -9944,7 +10105,8 @@ export default fn;
   },
   'features.objects.castings.readonly.is': {
     relativePath: 'features/objects/castings/readonly/is.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -9966,18 +10128,18 @@ export default fn;
     relativePath: 'features/objects/castings/readonly/not.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['NotReadonly'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import type { NotReadonly } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { NotReadonly } from '../../../../globals/types';
+import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -9994,13 +10156,14 @@ const fn = <const T extends object>(object: T) => {
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.require.all': {
     relativePath: 'features/objects/castings/require/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -10025,7 +10188,7 @@ export default fn;
         default: 'strict',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import _const from './const';
 import _index from './index';
 import is from './is/all';
@@ -10048,19 +10211,20 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
 
   'features.objects.castings.require.const': {
     relativePath: 'features/objects/castings/require/const.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['AllowedNamesLow'],
       },
     ],
-    text: `import type { AllowedNamesLow } from '#types';
+    text: `import { AllowedNamesLow } from '../../../../globals/types';
 
 /**
  * fn const - Auto-generated expression
@@ -10083,11 +10247,13 @@ const fn = <
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.require.index': {
     relativePath: 'features/objects/castings/require/index.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -10109,7 +10275,7 @@ export default fn;
     relativePath: 'features/objects/castings/require/is/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -10124,7 +10290,7 @@ export default fn;
         default: '_index',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../../globals/utils/expandFn';
 import deep from './deep';
 import _index from './index';
 
@@ -10143,7 +10309,8 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.require.is.deep': {
     relativePath: 'features/objects/castings/require/is/deep.ts',
@@ -10169,11 +10336,13 @@ export default fn;
 const fn = isRequiredDeep;
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.require.is.index': {
     relativePath: 'features/objects/castings/require/is/index.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -10196,12 +10365,12 @@ export default fn;
     relativePath: 'features/objects/castings/require/strict.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['AllowedNamesLow'],
       },
     ],
-    text: `import type { AllowedNamesLow } from '#types';
+    text: `import { AllowedNamesLow } from '../../../../globals/types';
 
 /**
  * fn const - Auto-generated expression
@@ -10221,18 +10390,19 @@ const fn = <T extends object, K extends AllowedNamesLow<T, undefined>>(
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.reverse': {
     relativePath: 'features/objects/castings/reverse.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['Keys'],
       },
     ],
-    text: `import type { Keys } from '#types';
+    text: `import { Keys } from '../../../globals/types';
 
 /**
  * fn const - Auto-generated expression
@@ -10255,24 +10425,25 @@ const fn = <T extends Record<Keys, Keys>>(
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.ru': {
     relativePath: 'features/objects/castings/ru.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['Ru'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/castFn',
+        moduleSpecifier: '../../../globals/utils/castFn',
         kind: 'named',
         namedImports: ['castFn'],
       },
     ],
-    text: `import type { Ru } from '#types';
-import { castFn } from '#utils/castFn';
+    text: `import { Ru } from '../../../globals/types';
+import { castFn } from '../../../globals/utils/castFn';
 
 /**
  * fn const - Auto-generated expression
@@ -10287,30 +10458,31 @@ import { castFn } from '#utils/castFn';
 const fn = castFn<Ru>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.trueObject': {
     relativePath: 'features/objects/castings/trueObject.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['To'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/castFn',
+        moduleSpecifier: '../../../globals/utils/castFn',
         kind: 'named',
         namedImports: ['castFn'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/is/object',
+        moduleSpecifier: '../../../globals/utils/is/object',
         kind: 'named',
         namedImports: ['isPlainObject'],
       },
     ],
-    text: `import type { To } from '#types';
-import { castFn } from '#utils/castFn';
-import { isPlainObject } from '#utils/is/object';
+    text: `import { To } from '../../../globals/types';
+import { castFn } from '../../../globals/utils/castFn';
+import { isPlainObject } from '../../../globals/utils/is/object';
 
 /**
  * fn const - Auto-generated expression
@@ -10325,11 +10497,13 @@ import { isPlainObject } from '#utils/is/object';
 const fn = castFn<To>()({ is: isPlainObject });
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.castings.type': {
     relativePath: 'features/objects/castings/type.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -10348,7 +10522,8 @@ export default fn;
 
   'features.objects.castings.values': {
     relativePath: 'features/objects/castings/values.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -10368,7 +10543,8 @@ export default fn;
   },
   'features.objects.index': {
     relativePath: 'features/objects/index.ts',
-    imports: [],
+    imports: [
+    ],
     text: `export * from './castings/all';
 export * from './types';
 export * from './typings/all';
@@ -10378,7 +10554,7 @@ export * from './typings/all';
     relativePath: 'features/objects/types.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../globals/types',
         kind: 'named',
         namedImports: ['Fn'],
       },
@@ -10393,8 +10569,8 @@ export * from './typings/all';
         namedImports: ['AddString'],
       },
     ],
-    text: `import type { Fn } from '#types';
-import type { Keys, NotUndefined, Primitive } from '../common/types';
+    text: `import { Fn } from '../../globals/types';
+import { Keys, NotUndefined, Primitive } from '../common/types';
 import { AddString } from '../strings/types';
 
 /**
@@ -10912,7 +11088,7 @@ export type _FlatMapByKey<
               _omit,
               _withChildren,
               Delimiter,
-              \`$|||{Keys}$|||{Delimiter}$|||{K}\`
+              \`$-|||-{Keys}$-|||-{Delimiter}$-|||-{K}\`
             >
           | {
               [key in DefaultK<Keys, Delimiter>]: WithChildren<
@@ -11187,13 +11363,14 @@ export type Rn = Record<Keys, never>;
  * @author chlbri (bri_lvi@icloud.com)
  */
 export type Ra = Record<Keys, any>;
-`,
+
+    `,
   },
   'features.objects.typings.all': {
     relativePath: 'features/objects/typings/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
@@ -11283,7 +11460,7 @@ export type Ra = Record<Keys, any>;
         default: 'values',
       },
     ],
-    text: `import { typeFn } from '#utils/typeFn';
+    text: `import { typeFn } from '../../../globals/utils/typeFn';
 import byKey from './byKey';
 import entries from './entries';
 import freeze from './freeze/all';
@@ -11331,20 +11508,19 @@ export const typings = typeFn<object>()({
   ra,
   primitive,
 });
-`,
+
+    `,
   },
   'features.objects.typings.byKey': {
     relativePath: 'features/objects/typings/byKey.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -11360,20 +11536,19 @@ const fn = <T extends object, K extends keyof T>(_?: T, __?: K) =>
   _unknown<T[K]>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.entries': {
     relativePath: 'features/objects/typings/entries.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -11389,13 +11564,14 @@ const fn = <T extends object>(_?: T) =>
   _unknown<[keyof T, T[keyof T]][]>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.freeze.all': {
     relativePath: 'features/objects/typings/freeze/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -11430,7 +11606,7 @@ export default fn;
         default: 'not',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import deep from './deep/all';
 import dynamic from './dynamic';
 import forceCast from './forceCast';
@@ -11457,13 +11633,14 @@ const freezeTyping = expandFn(freeze, {
 });
 
 export default freezeTyping;
-`,
+
+    `,
   },
   'features.objects.typings.freeze.deep.all': {
     relativePath: 'features/objects/typings/freeze/deep/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -11478,7 +11655,7 @@ export default freezeTyping;
         default: 'not',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../../globals/utils/expandFn';
 import deepFreeze from './index';
 import not from './not';
 
@@ -11497,26 +11674,25 @@ const deep = expandFn(deepFreeze, {
 });
 
 export default deep;
-`,
+
+    `,
   },
   'features.objects.typings.freeze.deep.index': {
     relativePath: 'features/objects/typings/freeze/deep/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../globals/types',
         kind: 'named',
         namedImports: ['DeepReadonly'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { DeepReadonly } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { DeepReadonly } from '../../../../../globals/types';
+import { _unknown } from '../../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -11531,26 +11707,25 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T extends object>(_?: T) => _unknown<DeepReadonly<T>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.freeze.deep.not': {
     relativePath: 'features/objects/typings/freeze/deep/not.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../globals/types',
         kind: 'named',
         namedImports: ['DeepNotReadonly'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { DeepNotReadonly } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { DeepNotReadonly } from '../../../../../globals/types';
+import { _unknown } from '../../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -11565,21 +11740,20 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T extends object>(_?: T) => _unknown<DeepNotReadonly<T>>();
 
 export default fn;
-`,
+
+    `,
   },
 
   'features.objects.typings.freeze.dynamic': {
     relativePath: 'features/objects/typings/freeze/dynamic.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -11594,20 +11768,19 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T extends Readonly<T>>(_?: T) => _unknown<T>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.freeze.forceCast': {
     relativePath: 'features/objects/typings/freeze/forceCast.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -11622,20 +11795,19 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T extends object>(_?: unknown) => _unknown<Readonly<T>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.freeze.index': {
     relativePath: 'features/objects/typings/freeze/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -11650,20 +11822,19 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T extends object>(_?: T) => _unknown<Readonly<T>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.freeze.is': {
     relativePath: 'features/objects/typings/freeze/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -11679,26 +11850,25 @@ const fn = <T extends object>(_?: T) =>
   _unknown<T extends Readonly<T> ? true : false>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.freeze.not': {
     relativePath: 'features/objects/typings/freeze/not.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['NotReadonly'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { NotReadonly } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { NotReadonly } from '../../../../globals/types';
+import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -11713,26 +11883,25 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T extends object>(_?: T) => _unknown<NotReadonly<T>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.hasKeys._all': {
     relativePath: 'features/objects/typings/hasKeys/_all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['Equals', 'Keys'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { Equals, Keys } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { Equals, Keys } from '../../../../globals/types';
+import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -11748,13 +11917,14 @@ const fn = <T extends object, K extends Keys[]>(_?: T, ...__: K) =>
   _unknown<Equals<K[number], keyof T>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.hasKeys.all': {
     relativePath: 'features/objects/typings/hasKeys/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -11774,7 +11944,7 @@ export default fn;
         default: 'typings',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import all from './_all';
 import _index from './index';
 import typings from './typings';
@@ -11795,26 +11965,25 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.hasKeys.index': {
     relativePath: 'features/objects/typings/hasKeys/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['Keys'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { Keys } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { Keys } from '../../../../globals/types';
+import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -11830,26 +11999,25 @@ const fn = <T extends object, K extends Keys[]>(_?: T, ...__: K) =>
   _unknown<K[number] extends keyof T ? true : false>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.hasKeys.typings': {
     relativePath: 'features/objects/typings/hasKeys/typings.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['KeyTypes', 'KeyTypesFrom'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { KeyTypes, KeyTypesFrom } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { KeyTypes, KeyTypesFrom } from '../../../../globals/types';
+import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -11869,18 +12037,19 @@ const fn = <K extends KeyTypes>(_?: K) => {
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.keyTypes.all': {
     relativePath: 'features/objects/typings/keyTypes/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['KeyTypes'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
@@ -11895,8 +12064,8 @@ export default fn;
         default: '_index',
       },
     ],
-    text: `import type { KeyTypes } from '#types';
-import { typeFn } from '#utils/typeFn';
+    text: `import { KeyTypes } from '../../../../globals/types';
+import { typeFn } from '../../../../globals/utils/typeFn';
 import from from './from';
 import _index from './index';
 
@@ -11916,27 +12085,26 @@ const fn = typeFn<KeyTypes>()({
 });
 
 export default fn;
-`,
+
+    `,
   },
 
   'features.objects.typings.keyTypes.from': {
     relativePath: 'features/objects/typings/keyTypes/from.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['KeyTypes', 'KeyTypesFrom'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { KeyTypes, KeyTypesFrom } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { KeyTypes, KeyTypesFrom } from '../../../../globals/types';
+import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -11951,24 +12119,25 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T extends KeyTypes>(_?: T) => _unknown<KeyTypesFrom<T>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.keyTypes.index': {
     relativePath: 'features/objects/typings/keyTypes/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['KeyTypes'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
     ],
-    text: `import type { KeyTypes } from '#types';
-import { typeFn } from '#utils/typeFn';
+    text: `import { KeyTypes } from '../../../../globals/types';
+import { typeFn } from '../../../../globals/utils/typeFn';
 
 /**
  * fn const - Auto-generated expression
@@ -11983,26 +12152,25 @@ import { typeFn } from '#utils/typeFn';
 const fn = typeFn<KeyTypes>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.keysOf': {
     relativePath: 'features/objects/typings/keysOf.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
-import { expandFn } from '#utils/expandFn';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
+import { expandFn } from '../../../globals/utils/expandFn';
 
 /**
  * fn const - Auto-generated expression
@@ -12019,13 +12187,14 @@ const fn = expandFn(<T extends object>(_?: T) => _unknown<(keyof T)[]>(), {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.omit.all': {
     relativePath: 'features/objects/typings/omit/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -12050,7 +12219,7 @@ export default fn;
         default: 'is',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import by from './by/all';
 import _const from './const/all';
 import _index from './index';
@@ -12073,13 +12242,14 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.omit.by.all': {
     relativePath: 'features/objects/typings/omit/by/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -12099,7 +12269,7 @@ export default fn;
         default: 'is',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../../globals/utils/expandFn';
 import _const from './const/all';
 import _index from './index';
 import is from './is';
@@ -12120,13 +12290,14 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.omit.by.const.all': {
     relativePath: 'features/objects/typings/omit/by/const/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -12141,7 +12312,7 @@ export default fn;
         default: 'is',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../../../globals/utils/expandFn';
 import _index from './index';
 import is from './is';
 
@@ -12160,26 +12331,25 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.omit.by.const.index': {
     relativePath: 'features/objects/typings/omit/by/const/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../../globals/types',
         kind: 'named',
         namedImports: ['NotSubType', 'ValuesOf'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { NotSubType, ValuesOf } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { NotSubType, ValuesOf } from '../../../../../../globals/types';
+import { _unknown } from '../../../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -12197,26 +12367,25 @@ const fn = <const T extends object, K extends ValuesOf<T>[]>(
 ) => _unknown<NotSubType<T, K[number]>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.omit.by.const.is': {
     relativePath: 'features/objects/typings/omit/by/const/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../../globals/types',
         kind: 'named',
         namedImports: ['NotSubType', 'ValuesOf'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { NotSubType, ValuesOf } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { NotSubType, ValuesOf } from '../../../../../../globals/types';
+import { _unknown } from '../../../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -12239,26 +12408,25 @@ const fn = <const T extends object, K extends ValuesOf<T>[]>(
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.omit.by.index': {
     relativePath: 'features/objects/typings/omit/by/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../globals/types',
         kind: 'named',
         namedImports: ['NotSubType'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { NotSubType } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { NotSubType } from '../../../../../globals/types';
+import { _unknown } from '../../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -12274,26 +12442,25 @@ const fn = <T extends object, K extends any[]>(_?: T, ...__: K) =>
   _unknown<NotSubType<T, K[number]>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.omit.by.is': {
     relativePath: 'features/objects/typings/omit/by/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../globals/types',
         kind: 'named',
         namedImports: ['NotSubType'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { NotSubType } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { NotSubType } from '../../../../../globals/types';
+import { _unknown } from '../../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -12312,14 +12479,15 @@ const fn = <T extends object, K extends any[]>(_?: T, ...__: K) => {
 };
 
 export default fn;
-`,
+
+    `,
   },
 
   'features.objects.typings.omit.const.all': {
     relativePath: 'features/objects/typings/omit/const/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -12334,7 +12502,7 @@ export default fn;
         default: 'is',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../../globals/utils/expandFn';
 import _index from './index';
 import is from './is';
 
@@ -12353,20 +12521,19 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.omit.const.index': {
     relativePath: 'features/objects/typings/omit/const/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -12384,20 +12551,19 @@ const fn = <const T extends object, K extends (keyof T)[]>(
 ) => _unknown<Omit<T, K[number]>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.omit.const.is': {
     relativePath: 'features/objects/typings/omit/const/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -12417,26 +12583,25 @@ const fn = <const T, K extends (keyof T)[]>(_?: T, ...__: K) => {
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.omit.index': {
     relativePath: 'features/objects/typings/omit/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['Keys'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { Keys } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { Keys } from '../../../../globals/types';
+import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -12452,26 +12617,25 @@ const fn = <T, K extends Keys[]>(_?: T, ...__: K) =>
   _unknown<Omit<T, K[number]>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.omit.is': {
     relativePath: 'features/objects/typings/omit/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['Keys'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { Keys } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { Keys } from '../../../../globals/types';
+import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -12491,13 +12655,14 @@ const fn = <T, K extends Keys[]>(_?: T, ...__: K) => {
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.pick.all': {
     relativePath: 'features/objects/typings/pick/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -12517,7 +12682,7 @@ export default fn;
         default: 'pick',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import by from './by';
 import deep from './deep/all';
 import pick from './index';
@@ -12538,26 +12703,25 @@ const pickTyping = expandFn(pick, {
 });
 
 export default pickTyping;
-`,
+
+    `,
   },
   'features.objects.typings.pick.by': {
     relativePath: 'features/objects/typings/pick/by.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['SubType'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { SubType } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { SubType } from '../../../../globals/types';
+import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -12573,13 +12737,14 @@ const fn = <T extends object, K extends any[]>(_?: T, ...__: K) =>
   _unknown<SubType<T, K[number]>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.pick.deep.all': {
     relativePath: 'features/objects/typings/pick/deep/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -12594,7 +12759,7 @@ export default fn;
         default: 'deepPick',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../../globals/utils/expandFn';
 import by from './by';
 import deepPick from './index';
 
@@ -12613,26 +12778,25 @@ const deep = expandFn(deepPick, {
 });
 
 export default deep;
-`,
+
+    `,
   },
   'features.objects.typings.pick.deep.by': {
     relativePath: 'features/objects/typings/pick/deep/by.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../globals/types',
         kind: 'named',
         namedImports: ['SubType'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { SubType } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { SubType } from '../../../../../globals/types';
+import { _unknown } from '../../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -12648,20 +12812,19 @@ const fn = <T extends object, K extends any[]>(_?: T, ...__: K) =>
   _unknown<SubType<T, K[number]>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.pick.deep.index': {
     relativePath: 'features/objects/typings/pick/deep/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -12677,21 +12840,20 @@ const fn = <T extends object, K extends keyof T>(_?: T, ...__: K[]) =>
   _unknown<Pick<T, K>>();
 
 export default fn;
-`,
+
+    `,
   },
 
   'features.objects.typings.pick.index': {
     relativePath: 'features/objects/typings/pick/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -12707,24 +12869,25 @@ const fn = <T extends object, K extends keyof T>(_?: T, ...__: K[]) =>
   _unknown<Pick<T, K>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.primitive': {
     relativePath: 'features/objects/typings/primitive.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['PrimitiveObjectMap'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
     ],
-    text: `import type { PrimitiveObjectMap } from '#types';
-import { typeFn } from '#utils/typeFn';
+    text: `import { PrimitiveObjectMap } from '../../../globals/types';
+import { typeFn } from '../../../globals/utils/typeFn';
 
 /**
  * fn const - Auto-generated expression
@@ -12739,24 +12902,25 @@ import { typeFn } from '#utils/typeFn';
 const fn = typeFn<PrimitiveObjectMap>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.ra': {
     relativePath: 'features/objects/typings/ra.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['Ra'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
     ],
-    text: `import type { Ra } from '#types';
-import { typeFn } from '#utils/typeFn';
+    text: `import { Ra } from '../../../globals/types';
+import { typeFn } from '../../../globals/utils/typeFn';
 
 /**
  * fn const - Auto-generated expression
@@ -12771,13 +12935,14 @@ import { typeFn } from '#utils/typeFn';
 const fn = typeFn<Ra>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.readonly.all': {
     relativePath: 'features/objects/typings/readonly/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -12817,7 +12982,7 @@ export default fn;
         default: 'type_',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import deep from './deep/all';
 import dynamic from './dynamic';
 import forceCast from './forceCast';
@@ -12846,13 +13011,14 @@ const _readonly = expandFn(readonly, {
 });
 
 export default _readonly;
-`,
+
+    `,
   },
   'features.objects.typings.readonly.deep.all': {
     relativePath: 'features/objects/typings/readonly/deep/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -12872,7 +13038,7 @@ export default _readonly;
         default: 'not',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../../globals/utils/expandFn';
 import deepReadonly from './index';
 import is from './is';
 import not from './not/all';
@@ -12893,26 +13059,25 @@ const fn = expandFn(deepReadonly, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.readonly.deep.index': {
     relativePath: 'features/objects/typings/readonly/deep/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../globals/types',
         kind: 'named',
         namedImports: ['DeepReadonly'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { DeepReadonly } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { DeepReadonly } from '../../../../../globals/types';
+import { _unknown } from '../../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -12927,26 +13092,25 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T extends object>(_?: T) => _unknown<DeepReadonly<T>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.readonly.deep.is': {
     relativePath: 'features/objects/typings/readonly/deep/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../globals/types',
         kind: 'named',
         namedImports: ['DeepReadonly'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { DeepReadonly } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { DeepReadonly } from '../../../../../globals/types';
+import { _unknown } from '../../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -12962,13 +13126,14 @@ const fn = <T extends object>(_?: T) =>
   _unknown<T extends DeepReadonly<T> ? true : false>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.readonly.deep.not.all': {
     relativePath: 'features/objects/typings/readonly/deep/not/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -12983,7 +13148,7 @@ export default fn;
         default: 'is',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../../../globals/utils/expandFn';
 import deepNotReadonly from './index';
 import is from './is';
 
@@ -13002,26 +13167,25 @@ const fn = expandFn(deepNotReadonly, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.readonly.deep.not.index': {
     relativePath: 'features/objects/typings/readonly/deep/not/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../../globals/types',
         kind: 'named',
         namedImports: ['DeepNotReadonly'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { DeepNotReadonly } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { DeepNotReadonly } from '../../../../../../globals/types';
+import { _unknown } from '../../../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -13037,26 +13201,25 @@ const fn = <const T extends object>(_?: T) =>
   _unknown<DeepNotReadonly<T>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.readonly.deep.not.is': {
     relativePath: 'features/objects/typings/readonly/deep/not/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../../globals/types',
         kind: 'named',
         namedImports: ['DeepNotReadonly'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { DeepNotReadonly } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { DeepNotReadonly } from '../../../../../../globals/types';
+import { _unknown } from '../../../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -13072,21 +13235,20 @@ const fn = <const T extends object>(_?: T) =>
   _unknown<T extends DeepNotReadonly<T> ? true : false>();
 
 export default fn;
-`,
+
+    `,
   },
 
   'features.objects.typings.readonly.dynamic': {
     relativePath: 'features/objects/typings/readonly/dynamic.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -13101,20 +13263,19 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T extends Readonly<T>>(_?: T) => _unknown<T>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.readonly.forceCast': {
     relativePath: 'features/objects/typings/readonly/forceCast.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -13129,20 +13290,19 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T extends object>(_?: unknown) => _unknown<Readonly<T>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.readonly.index': {
     relativePath: 'features/objects/typings/readonly/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -13157,20 +13317,19 @@ import { _unknown } from '#utils/_unknown';
 const fn = <T extends object>(_?: T) => _unknown<Readonly<T>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.readonly.is': {
     relativePath: 'features/objects/typings/readonly/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -13186,13 +13345,14 @@ const fn = <T extends object>(_?: T) =>
   _unknown<T extends Readonly<T> ? true : false>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.readonly.not.all': {
     relativePath: 'features/objects/typings/readonly/not/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -13207,7 +13367,7 @@ export default fn;
         default: 'is',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../../globals/utils/expandFn';
 import notReadonly from './index';
 import is from './is';
 
@@ -13226,26 +13386,25 @@ const fn = expandFn(notReadonly, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.readonly.not.index': {
     relativePath: 'features/objects/typings/readonly/not/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../globals/types',
         kind: 'named',
         namedImports: ['NotReadonly'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { NotReadonly } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { NotReadonly } from '../../../../../globals/types';
+import { _unknown } from '../../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -13260,26 +13419,25 @@ import { _unknown } from '#utils/_unknown';
 const fn = <const T extends object>(_?: T) => _unknown<NotReadonly<T>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.readonly.not.is': {
     relativePath: 'features/objects/typings/readonly/not/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../globals/types',
         kind: 'named',
         namedImports: ['NotReadonly'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { NotReadonly } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { NotReadonly } from '../../../../../globals/types';
+import { _unknown } from '../../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -13295,18 +13453,19 @@ const fn = <const T extends object>(_?: T) =>
   _unknown<T extends NotReadonly<T> ? true : false>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.readonly.type': {
     relativePath: 'features/objects/typings/readonly/type.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -13321,13 +13480,14 @@ export default fn;
 const fn = () => _unknown<Readonly<object>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.require.all': {
     relativePath: 'features/objects/typings/require/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -13352,7 +13512,7 @@ export default fn;
         default: 'strict',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import const_ from './const';
 import require from './index';
 import is from './is/all';
@@ -13375,20 +13535,19 @@ const requireTyping = expandFn(require, {
 });
 
 export default requireTyping;
-`,
+
+    `,
   },
   'features.objects.typings.require.const': {
     relativePath: 'features/objects/typings/require/const.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -13406,21 +13565,20 @@ const fn = <const T extends object, const R extends object>(
 ) => _unknown<T & R>();
 
 export default fn;
-`,
+
+    `,
   },
 
   'features.objects.typings.require.index': {
     relativePath: 'features/objects/typings/require/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -13436,13 +13594,14 @@ const fn = <T extends object, R extends object>(_?: T, __?: R) =>
   _unknown<T & R>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.require.is.all': {
     relativePath: 'features/objects/typings/require/is/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -13457,7 +13616,7 @@ export default fn;
         default: 'requireIs',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../../globals/utils/expandFn';
 import deep from './deep';
 import requireIs from './index';
 
@@ -13476,26 +13635,25 @@ const is = expandFn(requireIs, {
 });
 
 export default is;
-`,
+
+    `,
   },
   'features.objects.typings.require.is.deep': {
     relativePath: 'features/objects/typings/require/is/deep.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../../globals/types',
         kind: 'named',
         namedImports: ['DeepRequired'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { DeepRequired } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { DeepRequired } from '../../../../../globals/types';
+import { _unknown } from '../../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -13511,20 +13669,19 @@ const fn = <T extends object>(_?: T) =>
   _unknown<T extends DeepRequired<T> ? true : false>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.require.is.index': {
     relativePath: 'features/objects/typings/require/is/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -13540,20 +13697,19 @@ const fn = <T extends object, R extends object>(_?: T, __?: R) =>
   _unknown<T extends T & R ? true : false>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.require.strict': {
     relativePath: 'features/objects/typings/require/strict.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -13569,26 +13725,25 @@ const fn = <T extends object, R extends Partial<T>>(_?: T, __?: R) =>
   _unknown<T & Required<R>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.reverse': {
     relativePath: 'features/objects/typings/reverse.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['Keys'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { Keys } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { Keys } from '../../../globals/types';
+import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -13607,24 +13762,25 @@ const fn = <T extends Record<Keys, Keys>>(_?: T) => {
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.rn': {
     relativePath: 'features/objects/typings/rn.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['Rn'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
     ],
-    text: `import type { Rn } from '#types';
-import { typeFn } from '#utils/typeFn';
+    text: `import { Rn } from '../../../globals/types';
+import { typeFn } from '../../../globals/utils/typeFn';
 
 /**
  * fn const - Auto-generated expression
@@ -13639,24 +13795,25 @@ import { typeFn } from '#utils/typeFn';
 const fn = typeFn<Rn>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.ru': {
     relativePath: 'features/objects/typings/ru.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['Ru'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
     ],
-    text: `import type { Ru } from '#types';
-import { typeFn } from '#utils/typeFn';
+    text: `import { Ru } from '../../../globals/types';
+import { typeFn } from '../../../globals/utils/typeFn';
 
 /**
  * fn const - Auto-generated expression
@@ -13671,24 +13828,25 @@ import { typeFn } from '#utils/typeFn';
 const fn = typeFn<Ru>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.trueObject': {
     relativePath: 'features/objects/typings/trueObject.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['To'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
     ],
-    text: `import type { To } from '#types';
-import { typeFn } from '#utils/typeFn';
+    text: `import { To } from '../../../globals/types';
+import { typeFn } from '../../../globals/utils/typeFn';
 
 /**
  * fn const - Auto-generated expression
@@ -13703,26 +13861,25 @@ import { typeFn } from '#utils/typeFn';
 const fn = typeFn<To>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.objects.typings.values': {
     relativePath: 'features/objects/typings/values.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
-import { expandFn } from '#utils/expandFn';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
+import { expandFn } from '../../../globals/utils/expandFn';
 
 /**
  * fn const - Auto-generated expression
@@ -13742,19 +13899,20 @@ const fn = expandFn(
 );
 
 export default fn;
-`,
+
+    `,
   },
 
   'features.objects.utils.entries': {
     relativePath: 'features/objects/utils/entries.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['KeyTypes'],
       },
     ],
-    text: `import type { KeyTypes } from '#types';
+    text: `import { KeyTypes } from '../../../globals/types';
 
 /**
  * checkEntries variable - Auto-generated expression
@@ -13781,13 +13939,14 @@ export const checkEntries = (keys: KeyTypes, object: object) => {
     return false;
   });
 };
-`,
+
+    `,
   },
   'features.objects.utils.omit': {
     relativePath: 'features/objects/utils/omit.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['PrimitiveObjectMap'],
       },
@@ -13797,8 +13956,8 @@ export const checkEntries = (keys: KeyTypes, object: object) => {
         namedImports: ['Picker'],
       },
     ],
-    text: `import type { PrimitiveObjectMap } from '#types';
-import type { Picker } from './types';
+    text: `import { PrimitiveObjectMap } from '../../../globals/types';
+import { Picker } from './types';
 
 /**
  * omit variable - Auto-generated expression
@@ -13830,18 +13989,19 @@ export const omit = (
 
   return result;
 };
-`,
+
+    `,
   },
   'features.objects.utils.omit.deep': {
     relativePath: 'features/objects/utils/omit.deep.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['PrimitiveObjectMap'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/is/object',
+        moduleSpecifier: '../../../globals/utils/is/object',
         kind: 'named',
         namedImports: ['isPlainObject'],
       },
@@ -13851,9 +14011,9 @@ export const omit = (
         namedImports: ['Picker'],
       },
     ],
-    text: `import type { PrimitiveObjectMap } from '#types';
-import { isPlainObject } from '#utils/is/object';
-import type { Picker } from './types';
+    text: `import { PrimitiveObjectMap } from '../../../globals/types';
+import { isPlainObject } from '../../../globals/utils/is/object';
+import { Picker } from './types';
 
 const __omitDeep = (
   by: Picker,
@@ -13906,18 +14066,19 @@ export const omitDeep = (
 
   return result;
 };
-`,
+
+    `,
   },
   'features.objects.utils.omit.deep.is': {
     relativePath: 'features/objects/utils/omit.deep.is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['Primitive2'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/is/object',
+        moduleSpecifier: '../../../globals/utils/is/object',
         kind: 'named',
         namedImports: ['isPlainObject'],
       },
@@ -13927,9 +14088,9 @@ export const omitDeep = (
         namedImports: ['Picker'],
       },
     ],
-    text: `import type { Primitive2 } from '#types';
-import { isPlainObject } from '#utils/is/object';
-import type { Picker } from './types';
+    text: `import { Primitive2 } from '../../../globals/types';
+import { isPlainObject } from '../../../globals/utils/is/object';
+import { Picker } from './types';
 
 /**
  * omitDeepIs variable - Auto-generated expression
@@ -13962,13 +14123,14 @@ export const omitDeepIs = (
   }
   return true;
 };
-`,
+
+    `,
   },
   'features.objects.utils.omit.is': {
     relativePath: 'features/objects/utils/omit.is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['PrimitiveObjectMap'],
       },
@@ -13978,8 +14140,8 @@ export const omitDeepIs = (
         namedImports: ['Picker'],
       },
     ],
-    text: `import type { PrimitiveObjectMap } from '#types';
-import type { Picker } from './types';
+    text: `import { PrimitiveObjectMap } from '../../../globals/types';
+import { Picker } from './types';
 
 /**
  * omitIs variable - Auto-generated expression
@@ -14008,7 +14170,8 @@ export const omitIs = (
   }
   return true;
 };
-`,
+
+    `,
   },
   'features.objects.utils.pick': {
     relativePath: 'features/objects/utils/pick.ts',
@@ -14019,7 +14182,7 @@ export const omitIs = (
         namedImports: ['Picker'],
       },
     ],
-    text: `import type { Picker } from './types';
+    text: `import { Picker } from './types';
 
 /**
  * pick variable - Auto-generated expression
@@ -14046,13 +14209,14 @@ export const pick = (by: Picker, object: object, ...keys: any[]) => {
 
   return result;
 };
-`,
+
+    `,
   },
   'features.objects.utils.pick.deep': {
     relativePath: 'features/objects/utils/pick.deep.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/is/object',
+        moduleSpecifier: '../../../globals/utils/is/object',
         kind: 'named',
         namedImports: ['isPlainObject'],
       },
@@ -14062,8 +14226,8 @@ export const pick = (by: Picker, object: object, ...keys: any[]) => {
         namedImports: ['Picker'],
       },
     ],
-    text: `import { isPlainObject } from '#utils/is/object';
-import type { Picker } from './types';
+    text: `import { isPlainObject } from '../../../globals/utils/is/object';
+import { Picker } from './types';
 
 /**
  * pickDeep variable - Auto-generated expression
@@ -14104,30 +14268,31 @@ export const pickDeep = (
 
   return result;
 };
-`,
+
+    `,
   },
   'features.objects.utils.require': {
     relativePath: 'features/objects/utils/require.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['DeepRequired'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/is/merge',
+        moduleSpecifier: '../../../globals/utils/is/merge',
         kind: 'named',
         namedImports: ['mergeIs'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/is/object',
+        moduleSpecifier: '../../../globals/utils/is/object',
         kind: 'named',
         namedImports: ['isPlainObject'],
       },
     ],
-    text: `import type { DeepRequired } from '#types';
-import { mergeIs } from '#utils/is/merge';
-import { isPlainObject } from '#utils/is/object';
+    text: `import { DeepRequired } from '../../../globals/types';
+import { mergeIs } from '../../../globals/utils/is/merge';
+import { isPlainObject } from '../../../globals/utils/is/object';
 
 /**
  * isRequiredDeep variable - Auto-generated expression
@@ -14167,11 +14332,13 @@ export const isRequiredDeep = (
 
   return !checker(object);
 };
-`,
+
+    `,
   },
   'features.objects.utils.types': {
     relativePath: 'features/objects/utils/types.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * Picker type - Auto-generated expression
  * 
@@ -14187,14 +14354,16 @@ export type Picker = 'element' | 'key';
   },
   'features.promises.index': {
     relativePath: 'features/promises/index.ts',
-    imports: [],
+    imports: [
+    ],
     text: `export * from './types';
 `,
   },
 
   'features.promises.types': {
     relativePath: 'features/promises/types.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * PromisifyMethod type - Auto-generated expression
  * 
@@ -14224,7 +14393,7 @@ export type PromisifyMethod<T> = T extends (...args: infer P) => infer R
 export type PromisifyObject<T extends Record<string, unknown>> = T & {
   [P in keyof T as PromisifyMethod<T[P]> extends never
     ? never
-    : \`$|||{string & P}Async\`]: PromisifyMethod<T[P]>;
+    : \`$-|||-{string & P}Async\`]: PromisifyMethod<T[P]>;
 };
 `,
   },
@@ -14232,18 +14401,18 @@ export type PromisifyObject<T extends Record<string, unknown>> = T & {
     relativePath: 'features/strings/castings/add.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['AddString'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import type { AddString } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { AddString } from '../../../globals/types';
+import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -14260,18 +14429,19 @@ const fn = <T extends string, Before extends string, After extends string>(
   before = '' as Before,
   after = '' as After,
 ) => {
-  const out = \`$|||{before}$|||{value}$|||{after}\`;
+  const out = \`$-|||-{before}$-|||-{value}$-|||-{after}\`;
   return _unknown<AddString<T, Before, After>>(out);
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.strings.castings.all': {
     relativePath: 'features/strings/castings/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -14356,7 +14526,7 @@ export default fn;
         default: 'type',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../globals/utils/expandFn';
 import { DEFAULT_DELIMITER } from '../constants';
 import add from './add';
 import contains from './contains';
@@ -14401,7 +14571,8 @@ export const castings = expandFn(_index, {
   splitBy,
   DEFAULT_DELIMITER,
 });
-`,
+
+    `,
   },
   'features.strings.castings.contains': {
     relativePath: 'features/strings/castings/contains.ts',
@@ -14427,22 +14598,23 @@ export const castings = expandFn(_index, {
 const fn = <U extends string[]>(
   value: unknown,
   ...segments: U
-): value is \`$|||{string}$|||{U[number]}$|||{string}\` =>
+): value is \`$-|||-{string}$-|||-{U[number]}$-|||-{string}\` =>
   includes(value, ...segments);
 
 export default fn;
-`,
+
+    `,
   },
   'features.strings.castings.endsWith': {
     relativePath: 'features/strings/castings/endsWith.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/is/_default',
+        moduleSpecifier: '../../../globals/utils/is/_default',
         kind: 'named',
         namedImports: ['isTypeFn'],
       },
     ],
-    text: `import { isTypeFn } from '#utils/is/_default';
+    text: `import { isTypeFn } from '../../../globals/utils/is/_default';
 
 /**
  * fn const - Auto-generated expression
@@ -14457,23 +14629,24 @@ export default fn;
 const fn = <U extends string>(
   value: unknown,
   suffix: U,
-): value is \`$|||{string}$|||{U}\` => {
+): value is \`$-|||-{string}$-|||-{U}\` => {
   return isTypeFn('string')(value) && value.endsWith(suffix);
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.strings.castings.getLength': {
     relativePath: 'features/strings/castings/getLength.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -14491,11 +14664,13 @@ const fn = <const T extends string>(value: T) => {
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.strings.castings.includes': {
     relativePath: 'features/strings/castings/includes.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -14509,7 +14684,7 @@ export default fn;
 const fn = <U extends string[]>(
   value: unknown,
   ...segments: U
-): value is \`$|||{string}$|||{U[number]}$|||{string}\` => {
+): value is \`$-|||-{string}$-|||-{U[number]}$-|||-{string}\` => {
   if (typeof value !== 'string') return false;
 
   // Check if the string contains any of the segments
@@ -14528,12 +14703,12 @@ export default fn;
     relativePath: 'features/strings/castings/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/castFn',
+        moduleSpecifier: '../../../globals/utils/castFn',
         kind: 'named',
         namedImports: ['castFn'],
       },
     ],
-    text: `import { castFn } from '#utils/castFn';
+    text: `import { castFn } from '../../../globals/utils/castFn';
 
 /**
  * fn const - Auto-generated expression
@@ -14548,18 +14723,19 @@ export default fn;
 const fn = castFn<string>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.strings.castings.instance': {
     relativePath: 'features/strings/castings/instance.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/castFn',
+        moduleSpecifier: '../../../globals/utils/castFn',
         kind: 'named',
         namedImports: ['castFn'],
       },
     ],
-    text: `import { castFn } from '#utils/castFn';
+    text: `import { castFn } from '../../../globals/utils/castFn';
 
 // eslint-disable-next-line @typescript-eslint/no-wrapper-object-types
 /**
@@ -14580,18 +14756,19 @@ const fn = castFn<String>()({
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.strings.castings.is': {
     relativePath: 'features/strings/castings/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/is/_default',
+        moduleSpecifier: '../../../globals/utils/is/_default',
         kind: 'named',
         namedImports: ['isTypeFn'],
       },
     ],
-    text: `import { isTypeFn } from '#utils/is/_default';
+    text: `import { isTypeFn } from '../../../globals/utils/is/_default';
 
 /**
  * fn const - Auto-generated expression
@@ -14606,25 +14783,26 @@ export default fn;
 const fn = isTypeFn('string');
 
 export default fn;
-`,
+
+    `,
   },
 
   'features.strings.castings.join': {
     relativePath: 'features/strings/castings/join.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['JoinString'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import type { JoinString } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { JoinString } from '../../../globals/types';
+import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -14645,13 +14823,14 @@ const fn = <T extends readonly string[], S extends string = ' '>(
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.strings.castings.letters.all': {
     relativePath: 'features/strings/castings/letters/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -14676,7 +14855,7 @@ export default fn;
         default: 'upper',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../../globals/utils/expandFn';
 import _index from './index';
 import is from './is';
 import lower from './lower';
@@ -14699,24 +14878,25 @@ const fn = expandFn(_index, {
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.strings.castings.letters.index': {
     relativePath: 'features/strings/castings/letters/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['Letters'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/castFn',
+        moduleSpecifier: '../../../../globals/utils/castFn',
         kind: 'named',
         namedImports: ['castFn'],
       },
     ],
-    text: `import type { Letters } from '#types';
-import { castFn } from '#utils/castFn';
+    text: `import { Letters } from '../../../../globals/types';
+import { castFn } from '../../../../globals/utils/castFn';
 
 /**
  * fn const - Auto-generated expression
@@ -14731,24 +14911,25 @@ import { castFn } from '#utils/castFn';
 const fn = castFn<Letters>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.strings.castings.letters.is': {
     relativePath: 'features/strings/castings/letters/is.ts',
     imports: [
       {
-        moduleSpecifier: 'src/features/strings/constants',
+        moduleSpecifier: '../../constants',
         kind: 'named',
         namedImports: ['ENGLISH_LETTERS'],
       },
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['Letters'],
       },
     ],
-    text: `import { ENGLISH_LETTERS } from '#features/strings/constants';
-import type { Letters } from '#types';
+    text: `import { ENGLISH_LETTERS } from '../../constants';
+import { Letters } from '../../../../globals/types';
 
 /**
  * fn const - Auto-generated expression
@@ -14774,18 +14955,19 @@ const fn = (value: unknown): value is Letters => {
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.strings.castings.letters.lower': {
     relativePath: 'features/strings/castings/letters/lower.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['LowerLetters'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/castFn',
+        moduleSpecifier: '../../../../globals/utils/castFn',
         kind: 'named',
         namedImports: ['castFn'],
       },
@@ -14795,8 +14977,8 @@ export default fn;
         default: 'is',
       },
     ],
-    text: `import type { LowerLetters } from '#types';
-import { castFn } from '#utils/castFn';
+    text: `import { LowerLetters } from '../../../../globals/types';
+import { castFn } from '../../../../globals/utils/castFn';
 import is from './is';
 
 /**
@@ -14820,18 +15002,19 @@ const fn = castFn<LowerLetters>()({
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.strings.castings.letters.upper': {
     relativePath: 'features/strings/castings/letters/upper.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['UpperLetters'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/castFn',
+        moduleSpecifier: '../../../../globals/utils/castFn',
         kind: 'named',
         namedImports: ['castFn'],
       },
@@ -14841,8 +15024,8 @@ export default fn;
         default: 'is',
       },
     ],
-    text: `import type { UpperLetters } from '#types';
-import { castFn } from '#utils/castFn';
+    text: `import { UpperLetters } from '../../../../globals/types';
+import { castFn } from '../../../../globals/utils/castFn';
 import is from './is';
 
 /**
@@ -14866,24 +15049,25 @@ const fn = castFn<UpperLetters>()({
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.strings.castings.splitBy': {
     relativePath: 'features/strings/castings/splitBy.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['SplitStringBy'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import type { SplitStringBy } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { SplitStringBy } from '../../../globals/types';
+import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -14904,18 +15088,19 @@ const fn = <const S extends string, By extends string = '.'>(
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.strings.castings.startsWith': {
     relativePath: 'features/strings/castings/startsWith.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/is/_default',
+        moduleSpecifier: '../../../globals/utils/is/_default',
         kind: 'named',
         namedImports: ['isTypeFn'],
       },
     ],
-    text: `import { isTypeFn } from '#utils/is/_default';
+    text: `import { isTypeFn } from '../../../globals/utils/is/_default';
 
 /**
  * fn const - Auto-generated expression
@@ -14930,23 +15115,24 @@ export default fn;
 const fn = <U extends string>(
   value: unknown,
   prefix: U,
-): value is \`$|||{U}$|||{string}\` => {
+): value is \`$-|||-{U}$-|||-{string}\` => {
   return isTypeFn('string')(value) && value.startsWith(prefix);
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.strings.castings.toLowerCase': {
     relativePath: 'features/strings/castings/toLowerCase.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -14964,18 +15150,19 @@ const fn = <T extends string>(value: T) => {
 };
 
 export default fn;
-`,
+
+    `,
   },
   'features.strings.castings.toUpperCase': {
     relativePath: 'features/strings/castings/toUpperCase.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -14993,12 +15180,14 @@ const fn = <T extends string>(value: T) => {
 };
 
 export default fn;
-`,
+
+    `,
   },
 
   'features.strings.castings.type': {
     relativePath: 'features/strings/castings/type.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -15016,7 +15205,8 @@ export default fn;
   },
   'features.strings.constants': {
     relativePath: 'features/strings/constants.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * ENGLISH_LETTERS variable - Auto-generated expression
  * 
@@ -15071,7 +15261,8 @@ export const DEFAULT_DELIMITER = '.';
   },
   'features.strings.index': {
     relativePath: 'features/strings/index.ts',
-    imports: [],
+    imports: [
+    ],
     text: `export * from './castings/all';
 export * as CONSTANTS from './constants';
 export * from './types';
@@ -15087,7 +15278,7 @@ export * from './typings/all';
         namedImports: ['ENGLISH_LETTERS'],
       },
     ],
-    text: `import type { ENGLISH_LETTERS } from './constants';
+    text: `import { ENGLISH_LETTERS } from './constants';
 
 /**
  * LowerLetters type - Auto-generated expression
@@ -15137,7 +15328,7 @@ export type Letters = UpperLetters | LowerLetters;
  * @readonly
  * @author chlbri (bri_lvi@icloud.com)
  */
-export type Email = \`$|||{string}@$|||{string}.$|||{string}\`;
+export type Email = \`$-|||-{string}@$-|||-{string}.$-|||-{string}\`;
 
 /**
  * _JoinStringHelper type - Auto-generated expression
@@ -15167,9 +15358,9 @@ export type JoinString<
 > = T extends []
   ? ''
   : T extends [_JoinStringHelper]
-    ? \`$|||{T[0]}\`
+    ? \`$-|||-{T[0]}\`
     : T extends [_JoinStringHelper, ...infer U extends readonly string[]]
-      ? \`$|||{T[0]}$|||{sep}$|||{JoinString<U, sep>}\`
+      ? \`$-|||-{T[0]}$-|||-{sep}$-|||-{JoinString<U, sep>}\`
       : string;
 
 /**
@@ -15186,7 +15377,7 @@ export type AddString<
   T,
   Before extends string = '',
   After extends string = '',
-> = \`$|||{Before}$|||{T & string}$|||{After}\`;
+> = \`$-|||-{Before}$-|||-{T & string}$-|||-{After}\`;
 
 /**
  * StringEndWith type - Auto-generated expression
@@ -15201,7 +15392,7 @@ export type AddString<
 export type StringEndWith<
   S extends string,
   E extends string,
-> = S extends \`$|||{infer Prev}$|||{E}\`
+> = S extends \`$-|||-{infer Prev}$-|||-{E}\`
   ? { response: true; full: S; prev: Prev }
   : { response: false; full: S; prev: S };
 
@@ -15218,7 +15409,7 @@ export type StringEndWith<
 export type StringStartWith<
   S extends string,
   E extends string,
-> = S extends \`$|||{E}$|||{infer Next}\`
+> = S extends \`$-|||-{E}$-|||-{infer Next}\`
   ? { response: true; full: S; next: Next }
   : { response: false; full: S; next: S };
 
@@ -15235,7 +15426,7 @@ export type StringStartWith<
 export type StringContains<
   S extends string,
   E extends string,
-> = S extends \`$|||{infer Prev}$|||{E}$|||{infer Next}\`
+> = S extends \`$-|||-{infer Prev}$-|||-{E}$-|||-{infer Next}\`
   ? { response: true; full: S; prev: Prev; next: Next }
   : { response: false; full: S; prev: string; next: string };
 
@@ -15259,7 +15450,7 @@ export type SplitStringBy<
   ? string[]
   : S extends ''
     ? []
-    : S extends \`$|||{infer T}$|||{By}$|||{infer U}\`
+    : S extends \`$-|||-{infer T}$-|||-{By}$-|||-{infer U}\`
       ? [T, ...SplitStringBy<U, By>]
       : [S];
 
@@ -15274,26 +15465,25 @@ export type SplitStringBy<
  * @author chlbri (bri_lvi@icloud.com)
  */
 export type ExtractS<T> = Extract<T, string>;
-`,
+
+    `,
   },
   'features.strings.typings.add': {
     relativePath: 'features/strings/typings/add.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['AddString'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { AddString } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { AddString } from '../../../globals/types';
+import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -15312,13 +15502,14 @@ const fn = <T extends string, Before extends string, After extends string>(
 ) => _unknown<AddString<T, Before, After>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.strings.typings.all': {
     relativePath: 'features/strings/typings/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
@@ -15393,7 +15584,7 @@ export default fn;
         default: 'toUpperCase',
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../../../globals/utils/expandFn';
 import add from './add';
 import contains from './contains';
 import email from './email';
@@ -15434,19 +15625,19 @@ export const typings = expandFn(_index, {
   toLowerCase,
   toUpperCase,
 });
-`,
+
+    `,
   },
   'features.strings.typings.contains': {
     relativePath: 'features/strings/typings/contains.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -15459,27 +15650,28 @@ import { _unknown } from '#utils/_unknown';
  * @author chlbri (bri_lvi@icloud.com)
  */
 const fn = <const T extends string, U extends string[]>(_?: T, ...__: U) =>
-  _unknown<T extends \`$|||{string}$|||{U[number]}$|||{string}\` ? true : false>();
+  _unknown<T extends \`$-|||-{string}$-|||-{U[number]}$-|||-{string}\` ? true : false>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.strings.typings.email': {
     relativePath: 'features/strings/typings/email.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['Email'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
     ],
-    text: `import type { Email } from '#types';
-import { typeFn } from '#utils/typeFn';
+    text: `import { Email } from '../../../globals/types';
+import { typeFn } from '../../../globals/utils/typeFn';
 
 /**
  * fn const - Auto-generated expression
@@ -15494,20 +15686,19 @@ import { typeFn } from '#utils/typeFn';
 const fn = typeFn<Email>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.strings.typings.endsWith': {
     relativePath: 'features/strings/typings/endsWith.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -15520,23 +15711,22 @@ import { _unknown } from '#utils/_unknown';
  * @author chlbri (bri_lvi@icloud.com)
  */
 const fn = <const T extends string, U extends string>(_?: T, __?: U) =>
-  _unknown<T extends \`$|||{string}$|||{U}\` ? true : false>();
+  _unknown<T extends \`$-|||-{string}$-|||-{U}\` ? true : false>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.strings.typings.getLength': {
     relativePath: 'features/strings/typings/getLength.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -15551,7 +15741,8 @@ import { _unknown } from '#utils/_unknown';
 const fn = <const T extends string>(_?: T) => _unknown<T['length']>();
 
 export default fn;
-`,
+
+    `,
   },
 
   'features.strings.typings.includes': {
@@ -15578,18 +15769,19 @@ export default fn;
 const fn = contains;
 
 export default fn;
-`,
+
+    `,
   },
   'features.strings.typings.index': {
     relativePath: 'features/strings/typings/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
     ],
-    text: `import { typeFn } from '#utils/typeFn';
+    text: `import { typeFn } from '../../../globals/utils/typeFn';
 
 /**
  * fn const - Auto-generated expression
@@ -15604,18 +15796,19 @@ export default fn;
 const fn = typeFn<string>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.strings.typings.instance': {
     relativePath: 'features/strings/typings/instance.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
     ],
-    text: `import { typeFn } from '#utils/typeFn';
+    text: `import { typeFn } from '../../../globals/utils/typeFn';
 
 // eslint-disable-next-line @typescript-eslint/no-wrapper-object-types
 /**
@@ -15631,26 +15824,25 @@ export default fn;
 const fn = typeFn<String>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.strings.typings.join': {
     relativePath: 'features/strings/typings/join.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['JoinString'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { JoinString } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { JoinString } from '../../../globals/types';
+import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -15668,18 +15860,19 @@ const fn = <T extends readonly string[], sep extends string = ' '>(
 ) => _unknown<JoinString<T, sep>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.strings.typings.letters.all': {
     relativePath: 'features/strings/typings/letters/all.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['Letters'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
@@ -15694,8 +15887,8 @@ export default fn;
         default: 'upper',
       },
     ],
-    text: `import type { Letters } from '#types';
-import { typeFn } from '#utils/typeFn';
+    text: `import { Letters } from '../../../../globals/types';
+import { typeFn } from '../../../../globals/utils/typeFn';
 import lower from './lower';
 import upper from './upper';
 
@@ -15715,24 +15908,25 @@ const fn = typeFn<Letters>()({
 });
 
 export default fn;
-`,
+
+    `,
   },
   'features.strings.typings.letters.index': {
     relativePath: 'features/strings/typings/letters/index.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['Letters'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
     ],
-    text: `import type { Letters } from '#types';
-import { typeFn } from '#utils/typeFn';
+    text: `import { Letters } from '../../../../globals/types';
+import { typeFn } from '../../../../globals/utils/typeFn';
 
 /**
  * fn const - Auto-generated expression
@@ -15747,24 +15941,25 @@ import { typeFn } from '#utils/typeFn';
 const fn = typeFn<Letters>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.strings.typings.letters.lower': {
     relativePath: 'features/strings/typings/letters/lower.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['LowerLetters'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
     ],
-    text: `import type { LowerLetters } from '#types';
-import { typeFn } from '#utils/typeFn';
+    text: `import { LowerLetters } from '../../../../globals/types';
+import { typeFn } from '../../../../globals/utils/typeFn';
 
 /**
  * fn const - Auto-generated expression
@@ -15779,24 +15974,25 @@ import { typeFn } from '#utils/typeFn';
 const fn = typeFn<LowerLetters>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.strings.typings.letters.type': {
     relativePath: 'features/strings/typings/letters/type.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['Letters'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `import type { Letters } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { Letters } from '../../../../globals/types';
+import { _unknown } from '../../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -15811,24 +16007,25 @@ import { _unknown } from '#utils/_unknown';
 const fn = _unknown<Letters>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.strings.typings.letters.upper': {
     relativePath: 'features/strings/typings/letters/upper.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../../globals/types',
         kind: 'named',
         namedImports: ['UpperLetters'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/typeFn',
+        moduleSpecifier: '../../../../globals/utils/typeFn',
         kind: 'named',
         namedImports: ['typeFn'],
       },
     ],
-    text: `import type { UpperLetters } from '#types';
-import { typeFn } from '#utils/typeFn';
+    text: `import { UpperLetters } from '../../../../globals/types';
+import { typeFn } from '../../../../globals/utils/typeFn';
 
 /**
  * fn const - Auto-generated expression
@@ -15843,26 +16040,25 @@ import { typeFn } from '#utils/typeFn';
 const fn = typeFn<UpperLetters>()();
 
 export default fn;
-`,
+
+    `,
   },
   'features.strings.typings.splitBy': {
     relativePath: 'features/strings/typings/splitBy.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../../globals/types',
         kind: 'named',
         namedImports: ['SplitStringBy'],
       },
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import type { SplitStringBy } from '#types';
-import { _unknown } from '#utils/_unknown';
+    text: `import { SplitStringBy } from '../../../globals/types';
+import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -15880,21 +16076,20 @@ const fn = <const S extends string, By extends string = '.'>(
 ) => _unknown<SplitStringBy<S, By>>();
 
 export default fn;
-`,
+
+    `,
   },
 
   'features.strings.typings.startsWith': {
     relativePath: 'features/strings/typings/startsWith.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -15907,23 +16102,22 @@ import { _unknown } from '#utils/_unknown';
  * @author chlbri (bri_lvi@icloud.com)
  */
 const fn = <const T extends string, U extends string>(_?: T, __?: U) =>
-  _unknown<T extends \`$|||{U}$|||{string}\` ? true : false>();
+  _unknown<T extends \`$-|||-{U}$-|||-{string}\` ? true : false>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.strings.typings.toLowerCase': {
     relativePath: 'features/strings/typings/toLowerCase.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -15938,20 +16132,19 @@ import { _unknown } from '#utils/_unknown';
 const fn = <const T extends string>(_?: T) => _unknown<Lowercase<T>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.strings.typings.toUpperCase': {
     relativePath: 'features/strings/typings/toUpperCase.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/_unknown',
+        moduleSpecifier: '../../../globals/utils/_unknown',
         kind: 'named',
         namedImports: ['_unknown'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { _unknown } from '#utils/_unknown';
+    text: `import { _unknown } from '../../../globals/utils/_unknown';
 
 /**
  * fn const - Auto-generated expression
@@ -15966,11 +16159,13 @@ import { _unknown } from '#utils/_unknown';
 const fn = <const T extends string>(_?: T) => _unknown<Uppercase<T>>();
 
 export default fn;
-`,
+
+    `,
   },
   'features.transform.constants': {
     relativePath: 'features/transform/constants.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * PRIMITIVES variable - Auto-generated expression
  * 
@@ -16031,19 +16226,14 @@ export const PARTIAL = '$$app-ts => partial$$' as const;
     relativePath: 'features/transform/functions.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../../globals/utils/expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
       {
         moduleSpecifier: './constants',
         kind: 'named',
-        namedImports: [
-          'CUSTOM',
-          'PARTIAL',
-          'PRIMITIVE_OBJECTS',
-          'PRIMITIVES',
-        ],
+        namedImports: ['CUSTOM', 'PARTIAL', 'PRIMITIVE_OBJECTS', 'PRIMITIVES'],
       },
       {
         moduleSpecifier: './types',
@@ -16051,16 +16241,9 @@ export const PARTIAL = '$$app-ts => partial$$' as const;
         namedImports: ['Custom', 'ObjectS', 'PartialCustom', 'TransformO'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { expandFn } from '#utils/expandFn';
-import {
-  CUSTOM,
-  PARTIAL,
-  PRIMITIVE_OBJECTS,
-  PRIMITIVES,
-} from './constants';
-import type { Custom, ObjectS, PartialCustom, TransformO } from './types';
+    text: `import { expandFn } from '../../globals/utils/expandFn';
+import { CUSTOM, PARTIAL, PRIMITIVE_OBJECTS, PRIMITIVES } from './constants';
+import { Custom, ObjectS, PartialCustom, TransformO } from './types';
 
 const _transform = <T>(object?: any): T => {
   let out: any;
@@ -16149,11 +16332,13 @@ export const transform = expandFn(
     union: <T extends ObjectS[]>(..._: T) => transform<T[number]>(),
   },
 );
-`,
+
+    `,
   },
   'features.transform.index': {
     relativePath: 'features/transform/index.ts',
-    imports: [],
+    imports: [
+    ],
     text: `export * from './constants';
 export * from './functions';
 export * from './types';
@@ -16163,34 +16348,18 @@ export * from './types';
     relativePath: 'features/transform/types.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../globals/types',
         kind: 'named',
-        namedImports: [
-          'AnyArray',
-          'Fn',
-          'NOmit',
-          'PrimitiveObject',
-          'SoRa',
-        ],
+        namedImports: ['AnyArray', 'Fn', 'NOmit', 'PrimitiveObject', 'SoRa'],
       },
       {
         moduleSpecifier: './constants',
         kind: 'named',
-        namedImports: [
-          'CUSTOM',
-          'PARTIAL',
-          'PRIMITIVE_OBJECTS',
-          'PRIMITIVES',
-        ],
+        namedImports: ['CUSTOM', 'PARTIAL', 'PRIMITIVE_OBJECTS', 'PRIMITIVES'],
       },
     ],
-    text: `import type { AnyArray, Fn, NOmit, PrimitiveObject, SoRa } from '#types';
-import type {
-  CUSTOM,
-  PARTIAL,
-  PRIMITIVE_OBJECTS,
-  PRIMITIVES,
-} from './constants';
+    text: `import { AnyArray, Fn, NOmit, PrimitiveObject, SoRa } from '../../globals/types';
+import { CUSTOM, PARTIAL, PRIMITIVE_OBJECTS, PRIMITIVES } from './constants';
 
 /**
  * PrimitiveS type - Auto-generated expression
@@ -16331,11 +16500,13 @@ export type TransformO<T> = T extends 'function'
               : {
                   [K in keyof T]: TransformO<T[K]>;
                 };
-`,
+
+    `,
   },
   'globals.castings': {
     relativePath: 'globals/castings.ts',
-    imports: [],
+    imports: [
+    ],
     text: `export { castings as arrays } from '../features/arrays/castings/all';
 export { castings as common } from '../features/common/castings/all';
 // export { castings as functions } from '../features/functions/castings/all';
@@ -16347,7 +16518,8 @@ export { castings as strings } from '../features/strings/castings/all';
   },
   'globals.types': {
     relativePath: 'globals/types.ts',
-    imports: [],
+    imports: [
+    ],
     text: `export * from '../features/arrays/types';
 export * from '../features/common/types';
 export * from '../features/functions/types';
@@ -16359,7 +16531,8 @@ export * from '../features/strings/types';
   },
   'globals.typings': {
     relativePath: 'globals/typings.ts',
-    imports: [],
+    imports: [
+    ],
     text: `export { typings as arrays } from '../features/arrays/typings/all';
 export { typings as common } from '../features/common/typings/all';
 // export { typings as functions } from '../features/functions/typings/all';
@@ -16372,7 +16545,8 @@ export { typings as strings } from '../features/strings/typings/all';
 
   'globals.utils._unknown': {
     relativePath: 'globals/utils/_unknown.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * _unknown variable - Auto-generated expression
  * 
@@ -16390,7 +16564,7 @@ export const _unknown = <T>(value?: unknown) => value as T;
     relativePath: 'globals/utils/castFn.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../types',
         kind: 'named',
         namedImports: ['RuA'],
       },
@@ -16410,7 +16584,7 @@ export const _unknown = <T>(value?: unknown) => value as T;
         namedImports: ['mergeIs'],
       },
     ],
-    text: `import type { RuA } from '#types';
+    text: `import { RuA } from '../types';
 import { _unknown } from './_unknown';
 import { expandFn } from './expandFn';
 import { mergeIs } from './is/merge';
@@ -16449,7 +16623,8 @@ castFn.withValues = <T extends RuA>(...values: T) => {
     });
   return out;
 };
-`,
+
+    `,
   },
   'globals.utils.expandFn': {
     relativePath: 'globals/utils/expandFn.ts',
@@ -16460,7 +16635,7 @@ castFn.withValues = <T extends RuA>(...values: T) => {
         namedImports: ['Fn', 'FnBasic'],
       },
     ],
-    text: `import type { Fn, FnBasic } from '../../features/functions/types';
+    text: `import { Fn, FnBasic } from '../../features/functions/types';
 
 /**
  * expandFn variable - Auto-generated expression
@@ -16487,11 +16662,13 @@ export const expandFn = <
 
   return out;
 };
-`,
+
+    `,
   },
   'globals.utils.identity': {
     relativePath: 'globals/utils/identity.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * identity variable - Auto-generated expression
  * 
@@ -16507,7 +16684,8 @@ export const identity = <T>(value: T) => value;
   },
   'globals.utils.index': {
     relativePath: 'globals/utils/index.ts',
-    imports: [],
+    imports: [
+    ],
     text: `export * from './_unknown';
 export * from './castFn';
 export * from './expandFn';
@@ -16520,18 +16698,18 @@ export * from './typeFn';
     relativePath: 'globals/utils/is/_default.ts',
     imports: [
       {
-        moduleSpecifier: 'src/features/transform/types',
+        moduleSpecifier: '../../../features/transform/types',
         kind: 'named',
         namedImports: ['PrimitiveS', 'TransformO'],
       },
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../types',
         kind: 'named',
         namedImports: ['Classe'],
       },
     ],
-    text: `import type { PrimitiveS, TransformO } from '#features/transform/types';
-import type { Classe } from '#types';
+    text: `import { PrimitiveS, TransformO } from '../../../features/transform/types';
+import { Classe } from '../../types';
 
 /**
  * isFn variable - Auto-generated expression
@@ -16544,7 +16722,7 @@ import type { Classe } from '#types';
  * @author chlbri (bri_lvi@icloud.com)
  */
 export const isFn = <const T>(check: T) => {
-  return (value: unknown): value is T => {
+  return (value?: unknown): value is T => {
     return typeof value === check;
   };
 };
@@ -16560,7 +16738,7 @@ export const isFn = <const T>(check: T) => {
  * @author chlbri (bri_lvi@icloud.com)
  */
 export const isTypeFn = <T extends PrimitiveS | 'object'>(type: T) => {
-  return (value: unknown): value is TransformO<T> => {
+  return (value?: unknown): value is TransformO<T> => {
     return typeof value === type;
   };
 };
@@ -16576,15 +16754,17 @@ export const isTypeFn = <T extends PrimitiveS | 'object'>(type: T) => {
  * @author chlbri (bri_lvi@icloud.com)
  */
 export const isInstance = <T extends Classe>(instance: T) => {
-  return (value: unknown): value is T => {
+  return (value?: unknown): value is T => {
     return value instanceof instance;
   };
 };
-`,
+
+    `,
   },
   'globals.utils.is.index': {
     relativePath: 'globals/utils/is/index.ts',
-    imports: [],
+    imports: [
+    ],
     text: `export * from './_default';
 export * from './merge';
 export * from './object';
@@ -16596,12 +16776,12 @@ export * from './primitive.object';
     relativePath: 'globals/utils/is/merge.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/utils/expandFn',
+        moduleSpecifier: '../expandFn',
         kind: 'named',
         namedImports: ['expandFn'],
       },
     ],
-    text: `import { expandFn } from '#utils/expandFn';
+    text: `import { expandFn } from '../expandFn';
 
 /**
  * mergeIs variable - Auto-generated expression
@@ -16615,23 +16795,25 @@ export * from './primitive.object';
  */
 export const mergeIs = expandFn(
   <const T extends unknown[]>(...checks: T) => {
-    return (value: unknown): value is T[number] => {
+    return (value?: unknown): value is T[number] => {
       return checks.some(check => value === check);
     };
   },
   {
     type: <const T extends unknown[]>(...checks: T) => {
-      return (value: unknown): value is T[number] => {
+      return (value?: unknown): value is T[number] => {
         return checks.some(check => typeof value === check);
       };
     },
   },
 );
-`,
+
+    `,
   },
   'globals.utils.is.object': {
     relativePath: 'globals/utils/is/object.ts',
-    imports: [],
+    imports: [
+    ],
     text: `/**
  * isPlainObject variable - Auto-generated expression
  * 
@@ -16642,7 +16824,7 @@ export const mergeIs = expandFn(
  * @readonly
  * @author chlbri (bri_lvi@icloud.com)
  */
-export const isPlainObject = (value: any): value is object => {
+export const isPlainObject = (value?: any): value is object => {
   return (
     Object.prototype.toString.call(value) == '[object Object]' &&
     value.constructor &&
@@ -16655,12 +16837,12 @@ export const isPlainObject = (value: any): value is object => {
     relativePath: 'globals/utils/is/primitive.ts',
     imports: [
       {
-        moduleSpecifier: 'src/features/transform/constants',
+        moduleSpecifier: '../../../features/transform/constants',
         kind: 'named',
         namedImports: ['PRIMITIVES'],
       },
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../types',
         kind: 'named',
         namedImports: ['Primitive'],
       },
@@ -16670,8 +16852,8 @@ export const isPlainObject = (value: any): value is object => {
         namedImports: ['mergeIs'],
       },
     ],
-    text: `import { PRIMITIVES } from '#features/transform/constants';
-import type { Primitive } from '#types';
+    text: `import { PRIMITIVES } from '../../../features/transform/constants';
+import { Primitive } from '../../types';
 import { mergeIs } from './merge';
 
 /**
@@ -16684,19 +16866,20 @@ import { mergeIs } from './merge';
  * @readonly
  * @author chlbri (bri_lvi@icloud.com)
  */
-export const isPrimitive = (value: unknown): value is Primitive => {
+export const isPrimitive = (value?: unknown): value is Primitive => {
   const isType = mergeIs.type(...PRIMITIVES);
   const isValue = mergeIs(null, undefined);
   return isType(value) || isValue(value);
 };
-`,
+
+    `,
   },
 
   'globals.utils.is.primitive.object': {
     relativePath: 'globals/utils/is/primitive.object.ts',
     imports: [
       {
-        moduleSpecifier: 'src/globals/types',
+        moduleSpecifier: '../../types',
         kind: 'named',
         namedImports: ['PrimitiveObject'],
       },
@@ -16711,7 +16894,7 @@ export const isPrimitive = (value: unknown): value is Primitive => {
         namedImports: ['isPrimitive'],
       },
     ],
-    text: `import type { PrimitiveObject } from '#types';
+    text: `import { PrimitiveObject } from '../../types';
 import { isPlainObject } from './object';
 import { isPrimitive } from './primitive';
 
@@ -16726,7 +16909,7 @@ import { isPrimitive } from './primitive';
  * @author chlbri (bri_lvi@icloud.com)
  */
 export const isPrimitiveObject = (
-  object: any,
+  object?: unknown,
 ): object is PrimitiveObject => {
   const isObject = isPlainObject(object);
   if (isObject) {
@@ -16751,7 +16934,8 @@ export const isPrimitiveObject = (
 
   return isPrimitive(object);
 };
-`,
+
+    `,
   },
   'globals.utils.typeFn': {
     relativePath: 'globals/utils/typeFn.ts',
@@ -16767,8 +16951,7 @@ export const isPrimitiveObject = (
         namedImports: ['expandFn'],
       },
     ],
-    text: `/* eslint-disable @typescript-eslint/no-unused-vars */
-import { _unknown } from './_unknown';
+    text: `import { _unknown } from './_unknown';
 import { expandFn } from './expandFn';
 
 /**
@@ -16796,11 +16979,13 @@ export const typeFn = <T = any>() => {
 
   return _out;
 };
-`,
+
+    `,
   },
-  index: {
+  'index': {
     relativePath: 'index.ts',
-    imports: [],
+    imports: [
+    ],
     text: `export * from '#utils/index';
 export * from './features';
 `,

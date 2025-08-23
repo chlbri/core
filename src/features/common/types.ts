@@ -1,4 +1,4 @@
-import type { TransformO } from '#features/transform';
+import type { TransformO } from '#features/transform/types';
 import type { Fn, RecursiveArrayOf } from '#types';
 
 export type SingleOrRecursiveArrayOf<T> = T | RecursiveArrayOf<T>;
