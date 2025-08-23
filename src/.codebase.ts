@@ -13,7 +13,15 @@ export interface ExportInfo {
   kind: 'default' | 'named' | 'namespace';
   text?: string;
   moduleSpecifier?: string;
-  declarationKind?: 'function' | 'class' | 'interface' | 'type' | 'variable' | 'const' | 'let' | 'enum';
+  declarationKind?:
+    | 'function'
+    | 'class'
+    | 'interface'
+    | 'type'
+    | 'variable'
+    | 'const'
+    | 'let'
+    | 'enum';
 }
 
 export interface FileAnalysis {
@@ -329,8 +337,7 @@ export default fn;
   },
   'features.arrays.castings.index': {
     relativePath: 'features/arrays/castings/index.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -384,8 +391,7 @@ export default fn;
   },
   'features.arrays.castings.is': {
     relativePath: 'features/arrays/castings/is.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -520,8 +526,7 @@ export default fn;
   },
   'features.arrays.castings.low': {
     relativePath: 'features/arrays/castings/low.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -804,8 +809,7 @@ export default fn;
 
   'features.arrays.castings.type': {
     relativePath: 'features/arrays/castings/type.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -823,8 +827,7 @@ export default fn;
   },
   'features.arrays.index': {
     relativePath: 'features/arrays/index.ts',
-    imports: [
-    ],
+    imports: [],
     text: `export * from './castings/all';
 export * from './types';
 export * from './typings/all';
@@ -2069,8 +2072,7 @@ export default fn;
   },
   'features.booleans.castings.index': {
     relativePath: 'features/booleans/castings/index.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -2125,8 +2127,7 @@ export default fn;
   },
   'features.booleans.castings.type': {
     relativePath: 'features/booleans/castings/type.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -2144,8 +2145,7 @@ export default fn;
   },
   'features.booleans.index': {
     relativePath: 'features/booleans/index.ts',
-    imports: [
-    ],
+    imports: [],
     text: `export * from './castings/all';
 export * from './types';
 export * from './typings/all';
@@ -2153,8 +2153,7 @@ export * from './typings/all';
   },
   'features.booleans.types': {
     relativePath: 'features/booleans/types.ts',
-    imports: [
-    ],
+    imports: [],
     text: `export {};
 `,
   },
@@ -2637,8 +2636,7 @@ export default fn;
   },
   'features.common.castings.const': {
     relativePath: 'features/common/castings/const.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -3029,8 +3027,7 @@ export default fn;
   },
   'features.common.castings.is.defined': {
     relativePath: 'features/common/castings/is/defined.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -3065,8 +3062,7 @@ export default defined;
   },
   'features.common.castings.is.notDefined': {
     relativePath: 'features/common/castings/is/notDefined.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -3086,8 +3082,7 @@ export default fn;
   },
   'features.common.castings.is.notNull': {
     relativePath: 'features/common/castings/is/notNull.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -3108,8 +3103,7 @@ export default fn;
 
   'features.common.castings.is.notNullish': {
     relativePath: 'features/common/castings/is/notNullish.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -3129,8 +3123,7 @@ export default fn;
   },
   'features.common.castings.is.notUndefined': {
     relativePath: 'features/common/castings/is/notUndefined.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -3150,8 +3143,7 @@ export default fn;
   },
   'features.common.castings.is.null': {
     relativePath: 'features/common/castings/is/null.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -3171,8 +3163,7 @@ export default fn;
   },
   'features.common.castings.is.nullish': {
     relativePath: 'features/common/castings/is/nullish.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -3192,8 +3183,7 @@ export default fn;
   },
   'features.common.castings.is.symbol': {
     relativePath: 'features/common/castings/is/symbol.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -3213,8 +3203,7 @@ export default fn;
   },
   'features.common.castings.is.undefined': {
     relativePath: 'features/common/castings/is/undefined.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -3625,7 +3614,8 @@ export default fn;
     relativePath: 'features/common/castings/primitive/object/is.ts',
     imports: [
       {
-        moduleSpecifier: '../../../../../globals/utils/is/primitive.object',
+        moduleSpecifier:
+          '../../../../../globals/utils/is/primitive.object',
         kind: 'named',
         namedImports: ['isPrimitiveObject'],
       },
@@ -3808,8 +3798,7 @@ export default fn;
   },
   'features.common.castings.readonly.index': {
     relativePath: 'features/common/castings/readonly/index.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -4100,8 +4089,7 @@ export default fn;
   },
   'features.common.castings.undefiny': {
     relativePath: 'features/common/castings/undefiny.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -4119,8 +4107,7 @@ export default fn;
   },
   'features.common.index': {
     relativePath: 'features/common/index.ts',
-    imports: [
-    ],
+    imports: [],
     text: `export * from './castings/all';
 export * from './types';
 export * from './typings/all';
@@ -6915,8 +6902,7 @@ export default function deepClone<I extends PrimitiveObject>(
   },
   'features.functions.functions.index': {
     relativePath: 'features/functions/functions/index.ts',
-    imports: [
-    ],
+    imports: [],
     text: `export * from './clone';
 export * from './partialCall';
 `,
@@ -6965,8 +6951,7 @@ export const partialCall: PartialCall_F = (f, ...headArgs) => {
   },
   'features.functions.index': {
     relativePath: 'features/functions/index.ts',
-    imports: [
-    ],
+    imports: [],
     text: `export * from './castings';
 export * as functions from './functions';
 export * from './types';
@@ -6975,8 +6960,7 @@ export * from './typings';
   },
   'features.functions.types': {
     relativePath: 'features/functions/types.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * Fn type - Auto-generated expression
  * 
@@ -7018,8 +7002,7 @@ export type Checker<T = unknown> =
   },
   'features.functions.typings': {
     relativePath: 'features/functions/typings.ts',
-    imports: [
-    ],
+    imports: [],
     text: `export { typings } from './typings/all';
 `,
   },
@@ -7375,8 +7358,7 @@ export default typings;
   },
   'features.index': {
     relativePath: 'features/index.ts',
-    imports: [
-    ],
+    imports: [],
     text: `export * as arrays from './arrays';
 export * as booleans from './booleans';
 export * as common from './common';
@@ -7629,8 +7611,7 @@ export default fn;
   },
   'features.numbers.castings.getString': {
     relativePath: 'features/numbers/castings/getString.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -7702,8 +7683,7 @@ export default fn;
   },
   'features.numbers.castings.type': {
     relativePath: 'features/numbers/castings/type.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -7721,8 +7701,7 @@ export default fn;
   },
   'features.numbers.constants': {
     relativePath: 'features/numbers/constants.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * DIGITS variable - Auto-generated expression
  * 
@@ -7739,8 +7718,7 @@ export const DIGITS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] as const;
 
   'features.numbers.index': {
     relativePath: 'features/numbers/index.ts',
-    imports: [
-    ],
+    imports: [],
     text: `export * from './castings/all';
 export * from './types';
 export * from './typings/all';
@@ -8206,8 +8184,7 @@ export const castings = expandFn(_index, {
   },
   'features.objects.castings.byKey': {
     relativePath: 'features/objects/castings/byKey.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -8230,8 +8207,7 @@ export default fn;
   },
   'features.objects.castings.entries': {
     relativePath: 'features/objects/castings/entries.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -8251,65 +8227,56 @@ export default fn;
   },
   'features.objects.castings.freeze.all': {
     relativePath: 'features/objects/castings/freeze/all.ts',
-    imports: [
-    ],
+    imports: [],
     text: `export { default } from '#features/objects/castings/readonly/all';
 `,
   },
   'features.objects.castings.freeze.deep.all': {
     relativePath: 'features/objects/castings/freeze/deep/all.ts',
-    imports: [
-    ],
+    imports: [],
     text: `export { default } from '#features/objects/castings/readonly/deep/all';
 `,
   },
   'features.objects.castings.freeze.deep.index': {
     relativePath: 'features/objects/castings/freeze/deep/index.ts',
-    imports: [
-    ],
+    imports: [],
     text: `export { default } from '#features/objects/castings/readonly/deep/index';
 `,
   },
   'features.objects.castings.freeze.deep.not': {
     relativePath: 'features/objects/castings/freeze/deep/not.ts',
-    imports: [
-    ],
+    imports: [],
     text: `export { default } from '#features/objects/castings/readonly/deep/not';
 `,
   },
   'features.objects.castings.freeze.dynamic': {
     relativePath: 'features/objects/castings/freeze/dynamic.ts',
-    imports: [
-    ],
+    imports: [],
     text: `export { default } from '#features/objects/castings/readonly/dynamic';
 `,
   },
   'features.objects.castings.freeze.forceCast': {
     relativePath: 'features/objects/castings/freeze/forceCast.ts',
-    imports: [
-    ],
+    imports: [],
     text: `export { default } from '#features/objects/castings/readonly/forceCast';
 `,
   },
   'features.objects.castings.freeze.index': {
     relativePath: 'features/objects/castings/freeze/index.ts',
-    imports: [
-    ],
+    imports: [],
     text: `export { default } from '#features/objects/castings/readonly/index';
 `,
   },
 
   'features.objects.castings.freeze.is': {
     relativePath: 'features/objects/castings/freeze/is.ts',
-    imports: [
-    ],
+    imports: [],
     text: `export { default } from '#features/objects/castings/readonly/is';
 `,
   },
   'features.objects.castings.freeze.not': {
     relativePath: 'features/objects/castings/freeze/not.ts',
-    imports: [
-    ],
+    imports: [],
     text: `export { default } from '#features/objects/castings/readonly/not';
 `,
   },
@@ -8742,8 +8709,7 @@ export default is;
   },
   'features.objects.castings.keysOf': {
     relativePath: 'features/objects/castings/keysOf.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -10033,8 +9999,7 @@ export default fn;
   },
   'features.objects.castings.readonly.dynamic': {
     relativePath: 'features/objects/castings/readonly/dynamic.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -10084,8 +10049,7 @@ export default fn;
   },
   'features.objects.castings.readonly.index': {
     relativePath: 'features/objects/castings/readonly/index.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -10105,8 +10069,7 @@ export default fn;
   },
   'features.objects.castings.readonly.is': {
     relativePath: 'features/objects/castings/readonly/is.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -10252,8 +10215,7 @@ export default fn;
   },
   'features.objects.castings.require.index': {
     relativePath: 'features/objects/castings/require/index.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -10341,8 +10303,7 @@ export default fn;
   },
   'features.objects.castings.require.is.index': {
     relativePath: 'features/objects/castings/require/is/index.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -10502,8 +10463,7 @@ export default fn;
   },
   'features.objects.castings.type': {
     relativePath: 'features/objects/castings/type.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -10522,8 +10482,7 @@ export default fn;
 
   'features.objects.castings.values': {
     relativePath: 'features/objects/castings/values.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -10543,8 +10502,7 @@ export default fn;
   },
   'features.objects.index': {
     relativePath: 'features/objects/index.ts',
-    imports: [
-    ],
+    imports: [],
     text: `export * from './castings/all';
 export * from './types';
 export * from './typings/all';
@@ -14337,8 +14295,7 @@ export const isRequiredDeep = (
   },
   'features.objects.utils.types': {
     relativePath: 'features/objects/utils/types.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * Picker type - Auto-generated expression
  * 
@@ -14354,16 +14311,14 @@ export type Picker = 'element' | 'key';
   },
   'features.promises.index': {
     relativePath: 'features/promises/index.ts',
-    imports: [
-    ],
+    imports: [],
     text: `export * from './types';
 `,
   },
 
   'features.promises.types': {
     relativePath: 'features/promises/types.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * PromisifyMethod type - Auto-generated expression
  * 
@@ -14669,8 +14624,7 @@ export default fn;
   },
   'features.strings.castings.includes': {
     relativePath: 'features/strings/castings/includes.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -15186,8 +15140,7 @@ export default fn;
 
   'features.strings.castings.type': {
     relativePath: 'features/strings/castings/type.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * fn const - Auto-generated expression
  * 
@@ -15205,8 +15158,7 @@ export default fn;
   },
   'features.strings.constants': {
     relativePath: 'features/strings/constants.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * ENGLISH_LETTERS variable - Auto-generated expression
  * 
@@ -15261,8 +15213,7 @@ export const DEFAULT_DELIMITER = '.';
   },
   'features.strings.index': {
     relativePath: 'features/strings/index.ts',
-    imports: [
-    ],
+    imports: [],
     text: `export * from './castings/all';
 export * as CONSTANTS from './constants';
 export * from './types';
@@ -16164,8 +16115,7 @@ export default fn;
   },
   'features.transform.constants': {
     relativePath: 'features/transform/constants.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * PRIMITIVES variable - Auto-generated expression
  * 
@@ -16233,7 +16183,12 @@ export const PARTIAL = '$$app-ts => partial$$' as const;
       {
         moduleSpecifier: './constants',
         kind: 'named',
-        namedImports: ['CUSTOM', 'PARTIAL', 'PRIMITIVE_OBJECTS', 'PRIMITIVES'],
+        namedImports: [
+          'CUSTOM',
+          'PARTIAL',
+          'PRIMITIVE_OBJECTS',
+          'PRIMITIVES',
+        ],
       },
       {
         moduleSpecifier: './types',
@@ -16337,8 +16292,7 @@ export const transform = expandFn(
   },
   'features.transform.index': {
     relativePath: 'features/transform/index.ts',
-    imports: [
-    ],
+    imports: [],
     text: `export * from './constants';
 export * from './functions';
 export * from './types';
@@ -16350,12 +16304,23 @@ export * from './types';
       {
         moduleSpecifier: '../../globals/types',
         kind: 'named',
-        namedImports: ['AnyArray', 'Fn', 'NOmit', 'PrimitiveObject', 'SoRa'],
+        namedImports: [
+          'AnyArray',
+          'Fn',
+          'NOmit',
+          'PrimitiveObject',
+          'SoRa',
+        ],
       },
       {
         moduleSpecifier: './constants',
         kind: 'named',
-        namedImports: ['CUSTOM', 'PARTIAL', 'PRIMITIVE_OBJECTS', 'PRIMITIVES'],
+        namedImports: [
+          'CUSTOM',
+          'PARTIAL',
+          'PRIMITIVE_OBJECTS',
+          'PRIMITIVES',
+        ],
       },
     ],
     text: `import { AnyArray, Fn, NOmit, PrimitiveObject, SoRa } from '../../globals/types';
@@ -16505,8 +16470,7 @@ export type TransformO<T> = T extends 'function'
   },
   'globals.castings': {
     relativePath: 'globals/castings.ts',
-    imports: [
-    ],
+    imports: [],
     text: `export { castings as arrays } from '../features/arrays/castings/all';
 export { castings as common } from '../features/common/castings/all';
 // export { castings as functions } from '../features/functions/castings/all';
@@ -16518,8 +16482,7 @@ export { castings as strings } from '../features/strings/castings/all';
   },
   'globals.types': {
     relativePath: 'globals/types.ts',
-    imports: [
-    ],
+    imports: [],
     text: `export * from '../features/arrays/types';
 export * from '../features/common/types';
 export * from '../features/functions/types';
@@ -16531,8 +16494,7 @@ export * from '../features/strings/types';
   },
   'globals.typings': {
     relativePath: 'globals/typings.ts',
-    imports: [
-    ],
+    imports: [],
     text: `export { typings as arrays } from '../features/arrays/typings/all';
 export { typings as common } from '../features/common/typings/all';
 // export { typings as functions } from '../features/functions/typings/all';
@@ -16545,8 +16507,7 @@ export { typings as strings } from '../features/strings/typings/all';
 
   'globals.utils._unknown': {
     relativePath: 'globals/utils/_unknown.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * _unknown variable - Auto-generated expression
  * 
@@ -16667,8 +16628,7 @@ export const expandFn = <
   },
   'globals.utils.identity': {
     relativePath: 'globals/utils/identity.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * identity variable - Auto-generated expression
  * 
@@ -16684,8 +16644,7 @@ export const identity = <T>(value: T) => value;
   },
   'globals.utils.index': {
     relativePath: 'globals/utils/index.ts',
-    imports: [
-    ],
+    imports: [],
     text: `export * from './_unknown';
 export * from './castFn';
 export * from './expandFn';
@@ -16763,8 +16722,7 @@ export const isInstance = <T extends Classe>(instance: T) => {
   },
   'globals.utils.is.index': {
     relativePath: 'globals/utils/is/index.ts',
-    imports: [
-    ],
+    imports: [],
     text: `export * from './_default';
 export * from './merge';
 export * from './object';
@@ -16812,8 +16770,7 @@ export const mergeIs = expandFn(
   },
   'globals.utils.is.object': {
     relativePath: 'globals/utils/is/object.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * isPlainObject variable - Auto-generated expression
  * 
@@ -16982,10 +16939,9 @@ export const typeFn = <T = any>() => {
 
     `,
   },
-  'index': {
+  index: {
     relativePath: 'index.ts',
-    imports: [
-    ],
+    imports: [],
     text: `export * from '#utils/index';
 export * from './features';
 `,

@@ -2,13 +2,11 @@
   "include": [
     "src/**/*",
     "src/scripts",
-    "src/scripts/manifest"
-, "src/.codebase.ts"  ],
+    "src/scripts/manifest",
+    "src/.codebase.ts"
+  ],
   "compilerOptions": {
-    "lib": [
-      "dom",
-      "esnext"
-    ],
+    "lib": ["dom", "esnext"],
     "importHelpers": true,
     "target": "ESNext",
     "declaration": true,
@@ -22,9 +20,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "moduleResolution": "Bundler",
-    "types": [
-      "vitest/globals"
-    ],
+    "types": ["vitest/globals"],
     "jsx": "react",
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -34,21 +30,11 @@
     "declarationMap": true,
     "baseUrl": "./src",
     "paths": {
-      "#utils/*": [
-        "globals/utils/*"
-      ],
-      "#features/*": [
-        "features/*"
-      ],
-      "#codebase": [
-        ".codebase.ts"
-      ],
-      "#types": [
-        "globals/types"
-      ],
-      "#bemedev/*": [
-        "src/src/.bemedev/*"
-      ]
+      "#utils/*": ["globals/utils/*"],
+      "#features/*": ["features/*"],
+      "#codebase": [".codebase.ts"],
+      "#types": ["globals/types"],
+      "#bemedev/*": ["src/src/.bemedev/*"]
     }
   }
 }
