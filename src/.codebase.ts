@@ -1,4 +1,4 @@
-// Analyse automatique du codebase généré le 2025-08-23T02:07:44.245Z
+// Analyse automatique de la codebase
 
 export interface ImportInfo {
   moduleSpecifier: string;
@@ -18536,5 +18536,5 @@ export const ANALYSIS_STATS = {
   totalFiles: 429,
   totalImports: 897,
   totalExports: 934,
-  generatedAt: '2025-08-23T02:07:44.279Z',
+  generatedAt: '2025-08-23T02:10:07.231Z',
 };
