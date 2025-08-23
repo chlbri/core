@@ -18536,5 +18536,4 @@ export const ANALYSIS_STATS = {
   totalFiles: 429,
   totalImports: 897,
   totalExports: 934,
-  generatedAt: '2025-08-23T02:11:09.989Z',
 };
