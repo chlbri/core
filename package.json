@@ -55,7 +55,7 @@
     "lint:watch": "onchange --await-write-finish 5500 \"**/*\" -- pnpm run lint",
     "prepublishOnly": "",
     "prepare": "husky",
-    "pretest": "pnpm run build && pnpm run manifest",
+    "pretest": "pnpm run build && pnpm run manifest && pnpm run codebase",
     "posttest": "pnpm run size",
     "prettier": "prettier --write \"src/**/*.{ts,tsx}\"",
     "p-q": "pretty-quick",
@@ -72,6 +72,7 @@
     "test:watch": "vitest",
     "upgrade": "pnpm upgrade --latest",
     "manifest": "tsx src/scripts/manifest/generate.ts",
+    "codebase": "tsx src/scripts/codebase/cli.ts",
     "manifest:watch": "tsx src/scripts/manifest/watch.ts"
   },
   "size-limit": [

@@ -1,9 +1,13 @@
-import { readdir, readFile, writeFile } from 'fs/promises';
+import toArray from '#features/arrays/castings/toArray';
+import { watch } from 'chokidar';
+import { readdir, writeFile } from 'fs/promises';
+import { globSync } from 'node:fs';
 import { join, relative } from 'path';
 
 // Configuration
 export const SRC_DIR = join(process.cwd(), 'src');
-export const MANIFEST_FILE = join(SRC_DIR, '.manifest.ts');
+export const MANIFEST_NAME = '.manifest.ts';
+export const MANIFEST_FILE = join(SRC_DIR, MANIFEST_NAME);
 export const BASE_PATH = 'src';
 
 // Types
@@ -15,9 +19,9 @@ interface ManifestEntries {
   [key: string]: string | ManifestSection;
 }
 
-interface GenerateManifestOptions {
-  /** Patterns de fichiers à exclure (glob patterns ou regex) */
-  excludePatterns?: (string | RegExp)[];
+type GenerateManifestOptions = {
+  /** Patterns de fichiers à exclure (glob patterns ou regex), realtives to baseDir */
+  excludePatterns?: string[];
   /** Fonction personnalisée pour filtrer les fichiers */
   filter?: (filePath: string, isDirectory: boolean) => boolean;
   /** Exclure automatiquement les fichiers de test */
@@ -26,38 +30,13 @@ interface GenerateManifestOptions {
   baseDir?: string;
   /** Afficher les logs détaillés */
   verbose?: boolean;
-}
+  manifestPath?: string;
+};
 
-/**
- * Lit et parse le manifest existant
- * @returns Le manifest existant ou un objet vide
- */
-async function readExistingManifest(): Promise<ManifestEntries> {
-  try {
-    const manifestContent = await readFile(MANIFEST_FILE, 'utf8');
-
-    // Parse simple du contenu TypeScript pour extraire l'objet MANIFEST
-    // Cette approche est simplifiée et fonctionne pour notre format standard
-    const match = manifestContent.match(
-      /export const MANIFEST = ({[\s\S]*});/,
-    );
-    if (!match) {
-      return {};
-    }
-
-    // Évaluer l'objet JavaScript (attention: ceci est sécurisé car nous contrôlons le contenu)
-    const objectString = match[1];
-    // Remplacer les clés sans guillemets par des clés avec guillemets pour JSON.parse
-    const jsonString = objectString
-      .replace(/(\w+):/g, '"$1":')
-      .replace(/'/g, '"')
-      .replace(/,(\s*[}\]])/g, '$1'); // Supprimer les virgules finales
-
-    return JSON.parse(jsonString);
-  } catch {
-    return {};
-  }
-}
+type WatcherOptions = GenerateManifestOptions & {
+  /** Dossier à surveiller (par défaut: SRC_DIR) */
+  watch?: boolean;
+};
 
 /**
  * Convertit un chemin de fichier en clé dot-notation
@@ -92,9 +71,7 @@ function shouldExcludeFile(
   const { excludePatterns = [], filter, excludeTests = true } = options;
 
   // Exclure automatiquement le manifest lui-même
-  if (filePath.includes('.manifest.ts')) {
-    return true;
-  }
+  if (filePath.includes(MANIFEST_NAME)) return true;
 
   // Exclure les fichiers de test si l'option est activée
   if (
@@ -106,20 +83,14 @@ function shouldExcludeFile(
 
   // Vérifier les patterns d'exclusion
   for (const pattern of excludePatterns) {
-    if (pattern instanceof RegExp) {
-      if (pattern.test(filePath)) {
-        return true;
-      }
-    } else {
-      // Pattern string - conversion simple en regex
-      const regexPattern = pattern
-        .replace(/\./g, '\\.')
-        .replace(/\*/g, '.*')
-        .replace(/\?/g, '.');
-      const regex = new RegExp(regexPattern);
-      if (regex.test(filePath)) {
-        return true;
-      }
+    // Pattern string - conversion simple en regex
+    const regexPattern = pattern
+      .replace(/\./g, '\\.')
+      .replace(/\*/g, '.*')
+      .replace(/\?/g, '.');
+    const regex = new RegExp(regexPattern);
+    if (regex.test(filePath)) {
+      return true;
     }
   }
 
@@ -284,14 +255,18 @@ export async function generateManifest(
     // Écrire le fichier
     await writeFile(MANIFEST_FILE, manifestCode, 'utf8');
 
-    console.log('✅ Manifest généré avec succès !');
-    console.log(`📁 Fichiers inclus: ${includedCount}`);
-    if (excludedCount > 0) {
-      console.log(`🚫 Fichiers exclus: ${excludedCount}`);
+    if (verbose) {
+      console.log('✅ Manifest généré avec succès !');
+      console.log(`📁 Fichiers inclus: ${includedCount}`);
+      if (excludedCount > 0) {
+        console.log(`🚫 Fichiers exclus: ${excludedCount}`);
+      }
+      console.log(
+        `📍 Fichier généré: ${relative(process.cwd(), MANIFEST_FILE)}`,
+      );
+      console.log();
+      console.log('*'.repeat(30));
     }
-    console.log(
-      `📍 Fichier généré: ${relative(process.cwd(), MANIFEST_FILE)}`,
-    );
   } catch (error) {
     console.error('❌ Erreur lors de la génération du manifest:', error);
     process.exit(1);
@@ -299,149 +274,9 @@ export async function generateManifest(
 }
 
 /**
- * Génère une entrée de manifest pour un seul fichier
- * @param filePath - Chemin du fichier (relatif ou absolu)
- * @param options - Options de génération
- * @returns Entrée de manifest ou null si le fichier doit être exclu
- */
-export function generateManifestEntryForFile(
-  filePath: string,
-  options: GenerateManifestOptions = {},
-): { key: string; value: string } | null {
-  // Normaliser le chemin du fichier
-  const absolutePath = join(process.cwd(), filePath);
-  const relativePath = relative(SRC_DIR, absolutePath);
-
-  // Vérifier si le fichier est dans le répertoire src/
-  if (relativePath.startsWith('..')) {
-    throw new Error(
-      `Le fichier ${filePath} n'est pas dans le répertoire src/`,
-    );
-  }
-
-  // Vérifier si le fichier doit être exclu
-  if (shouldExcludeFile(relativePath, options)) {
-    return null;
-  }
-
-  // Générer la clé et la valeur
-  const key = pathToKey(relativePath);
-  const value = `${BASE_PATH}/${relativePath}`;
-
-  return { key, value };
-}
-
-/**
- * Ajoute ou met à jour une entrée dans le manifest existant
- * @param filePath - Chemin du fichier
- * @param options - Options de génération
- */
-export async function addFileToManifest(
-  filePath: string,
-  options: GenerateManifestOptions = {},
-): Promise<void> {
-  try {
-    const entry = generateManifestEntryForFile(filePath, options);
-
-    if (!entry) {
-      if (options.verbose) {
-        console.log(`🚫 Fichier exclu du manifest: ${filePath}`);
-      }
-      return;
-    }
-
-    const { key, value } = entry;
-
-    // Lire le manifest existant si il existe
-    const existingManifest = await readExistingManifest();
-
-    // Ajouter la nouvelle entrée
-    const mainSection = key.split('.')[0];
-
-    if (mainSection === 'index') {
-      existingManifest.index = value;
-    } else {
-      if (!existingManifest[mainSection]) {
-        existingManifest[mainSection] = {};
-      }
-      (existingManifest[mainSection] as ManifestSection)[key] = value;
-    }
-
-    // Régénérer le manifest
-    const manifestCode = generateManifestWithRegions(existingManifest);
-    await writeFile(MANIFEST_FILE, manifestCode, 'utf8');
-
-    if (options.verbose) {
-      console.log(`✅ Fichier ajouté au manifest: ${key} → ${value}`);
-    }
-  } catch (error) {
-    console.error(
-      `❌ Erreur lors de l'ajout du fichier au manifest:`,
-      error,
-    );
-  }
-}
-
-/**
- * Supprime une entrée du manifest existant
- * @param filePath - Chemin du fichier à supprimer
- * @param options - Options de génération
- */
-export async function removeFileFromManifest(
-  filePath: string,
-  options: GenerateManifestOptions = {},
-): Promise<void> {
-  try {
-    // Normaliser le chemin du fichier
-    const absolutePath = join(process.cwd(), filePath);
-    const relativePath = relative(SRC_DIR, absolutePath);
-    const key = pathToKey(relativePath);
-
-    // Lire le manifest existant
-    const existingManifest = await readExistingManifest();
-    if (Object.keys(existingManifest).length === 0) {
-      if (options.verbose) {
-        console.log('⚠️ Aucun manifest existant trouvé');
-      }
-      return;
-    }
-
-    // Supprimer l'entrée
-    const mainSection = key.split('.')[0];
-
-    if (mainSection === 'index' && existingManifest.index) {
-      delete existingManifest.index;
-    } else if (existingManifest[mainSection]) {
-      const section = existingManifest[mainSection] as ManifestSection;
-      if (section[key]) {
-        delete section[key];
-
-        // Supprimer la section si elle est vide
-        if (Object.keys(section).length === 0) {
-          delete existingManifest[mainSection];
-        }
-      }
-    }
-
-    // Régénérer le manifest
-    const manifestCode = generateManifestWithRegions(existingManifest);
-    await writeFile(MANIFEST_FILE, manifestCode, 'utf8');
-
-    if (options.verbose) {
-      console.log(`🗑️ Fichier supprimé du manifest: ${key}`);
-    }
-  } catch (error) {
-    console.error(
-      `❌ Erreur lors de la suppression du fichier du manifest:`,
-      error,
-    );
-  }
-}
-
-export /**
  * Fonction de debounce pour éviter les regénérations trop fréquentes
  */
-const debounce = <T extends (...args: any[]) => any>(
+export const debounce = <T extends (...args: any[]) => any>(
   func: T,
   wait: number,
 ): ((...args: Parameters<T>) => void) => {
@@ -454,4 +289,118 @@ const debounce = <T extends (...args: any[]) => any>(
     clearTimeout(timeout);
     timeout = setTimeout(later, wait);
   };
+};
+
+export const buildWatcher = (
+  options: WatcherOptions = { watch: false },
+) => {
+  console.log();
+  console.log('*'.repeat(30));
+  console.log();
+  console.log('🚀 Génération initiale du manifest...');
+
+  const persistent = options.watch === true;
+
+  const ignored = [
+    ...[
+      ...toArray(options.excludePatterns),
+      '**/*.test.ts', // Ignorer les fichiers de test
+      '**/*.spec.ts', // Ignorer les fichiers de spec
+    ]
+      .map(val => globSync(val))
+      .flat()
+      .map(val => {
+        console.log('file =>', val);
+        return join(process.cwd(), val);
+      }),
+    relative(process.cwd(), MANIFEST_FILE), // Ignorer le fichier manifest lui-même
+  ];
+
+  const watcher = watch(SRC_DIR, {
+    ignored,
+    persistent,
+    awaitWriteFinish: {
+      stabilityThreshold: 200,
+      pollInterval: 100,
+    },
+    cwd: process.cwd(),
+  });
+
+  watcher
+    .on('add', (filePath: string) => {
+      if (options.verbose) {
+        console.log();
+        console.log('*'.repeat(30));
+        console.log();
+        console.log(`➕ Fichier créé: ${relative(SRC_DIR, filePath)}`);
+        console.log();
+        console.log('*'.repeat(30));
+        console.log();
+      }
+
+      return generateManifest({ ...options, verbose: false });
+    })
+    .on('change', (filePath: string) => {
+      if (options.verbose) {
+        console.log();
+        console.log('*'.repeat(30));
+        console.log();
+        console.log(`🔄 Fichier modifié: ${relative(SRC_DIR, filePath)}`);
+        console.log();
+        console.log('*'.repeat(30));
+        console.log();
+      }
+
+      return generateManifest({ ...options, verbose: false });
+    })
+    .on('unlink', (filePath: string) => {
+      if (options.verbose) {
+        console.log();
+        console.log('*'.repeat(30));
+        console.log();
+        console.log(`🗑️ Fichier supprimé: ${relative(SRC_DIR, filePath)}`);
+        console.log();
+        console.log('*'.repeat(30));
+        console.log();
+      }
+
+      return generateManifest({ ...options, verbose: false });
+    })
+    .on('error', (error: unknown) => {
+      console.error('❌ Erreur de surveillance:', error);
+    })
+    .on('ready', () => {
+      console.log();
+      console.log('*'.repeat(30));
+      console.log();
+      console.log('👀 Surveillance active sur le dossier src/');
+      console.log(
+        '📝 Le manifest sera automatiquement mis à jour lors des changements',
+      );
+
+      if (options.verbose) {
+        console.log('⏹️  Appuyez sur Ctrl+C pour arrêter la surveillance');
+      }
+
+      console.log();
+      console.log('*'.repeat(30));
+      console.log();
+
+      return generateManifest(options);
+    });
+
+  // Gestion propre de l'arrêt
+  process.on('SIGINT', async () => {
+    console.log('\n🛑 Arrêt de la surveillance...');
+    await watcher.close();
+    console.log('✅ Surveillance arrêtée');
+    process.exit(0);
+  });
+
+  process.on('SIGTERM', async () => {
+    await watcher.close();
+    process.exit(0);
+  });
+
+  return watcher;
 };

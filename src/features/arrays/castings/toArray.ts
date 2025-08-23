@@ -1,7 +1,8 @@
 import type { ToArray } from '#types';
 import { _unknown } from '#utils/_unknown';
 
-const fn = <T>(value: T) => {
+const fn = <T>(value?: T) => {
+  if (!value) return [];
   const checkArray = Array.isArray(value);
   const out = checkArray ? value : [value];
 

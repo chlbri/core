@@ -12,7 +12,7 @@ export type FormatKey<T = any> = (key: Extract<keyof T, string>) => string;
  * This is used to prevent infinite loops when cloning objects that reference each other.
  * @returns A deep clone of the input value, preserving the structure and values of the original object or array.
  *
- * Inspired by the `deep-clone` npm {@link https://www.npmjs.com/package/deep-clone|library},
+ * Inspired by the "deep-clone" npm {@link https://www.npmjs.com/package/deep-clone|library},
  * @see the {@link https://github.com/thebearingedge/deep-clone/blob/main/src/deep-clone.ts|implementation} for more details.
  */
 export default function deepClone<I extends PrimitiveObject>(
