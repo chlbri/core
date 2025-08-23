@@ -1,3 +1,4 @@
+import { join } from 'node:path';
 import { SourceFile, SyntaxKind } from 'ts-morph';
 import type { ImportInfo } from './types';
 
@@ -8,19 +9,18 @@ const resolveModuleSpecifier = (
   sourceFile: SourceFile,
   moduleSpecifier: string,
 ): string => {
-  // Résolution uniquement pour les imports qui commencent par "#"
-  if (!moduleSpecifier.startsWith('#')) {
-    return moduleSpecifier;
-  }
-
+  const baseUrl = sourceFile.getProject().getCompilerOptions().baseUrl;
   const paths = sourceFile.getProject().getCompilerOptions().paths;
 
-  if (!paths) {
-    return moduleSpecifier;
-  }
+  if (!paths) return moduleSpecifier;
+
+  const paths2 = Object.entries(paths).map(([_key, value]) => {
+    const key = baseUrl ? join(baseUrl, _key) : _key;
+    return [key, value] as const;
+  });
 
   // Chercher la correspondance dans les paths
-  for (const [pattern, mappings] of Object.entries(paths)) {
+  for (const [pattern, mappings] of paths2) {
     // Remplacer * par une regex pour matcher
     const regexPattern = pattern.replace(/\*/g, '(.*)');
     const regex = new RegExp(`^${regexPattern}$`);
@@ -32,9 +32,7 @@ const resolveModuleSpecifier = (
       if (mapping) {
         // Remplacer * dans le mapping par la partie matchée
         let resolvedPath = mapping;
-        if (match[1]) {
-          resolvedPath = mapping.replace('*', match[1]);
-        }
+        if (match[1]) resolvedPath = mapping.replace('*', match[1]);
         return resolvedPath;
       }
     }
