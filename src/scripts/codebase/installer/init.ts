@@ -1,4 +1,4 @@
-import { CODEBASE_ANALYSIS } from '#codebase';
+import { CODEBASE_ANALYSIS, type FileAnalysis } from '#codebase';
 import isS from '#features/strings/castings/is';
 import {
   existsSync,
@@ -18,50 +18,47 @@ export interface InitOptions {
   path?: string;
 }
 
+const writeFileAnalysis = (
+  fileAnalysis: FileAnalysis,
+  bemedevPath: string,
+) => {
+  const relativePath = fileAnalysis.relativePath;
+
+  // Créer le chemin de destination dans .bemedev en maintenant la structure
+  const destPath = join(bemedevPath, relativePath);
+  const destDir = dirname(destPath);
+
+  try {
+    // Créer le dossier de destination si nécessaire
+    mkdirSync(destDir, { recursive: true });
+
+    let fileContent = fileAnalysis.text;
+    REPLACERS.init
+      // .filter(() => false)
+      .forEach(([search, replace]) => {
+        fileContent = fileContent.replaceAll(search, replace);
+      });
+
+    // Écrire le contenu du fichier types
+    writeFileSync(destPath, fileContent, 'utf8');
+
+    console.log(`  ✅ ${relativePath}`);
+  } catch (error) {
+    console.error(`  ❌ Erreur pour ${relativePath}:`, error);
+  }
+};
+
 export const createTypesStructure = (bemedevPath: string) => {
-  const typesEntries = Object.entries(CODEBASE_ANALYSIS).filter(
-    ([key]) => {
-      return key.endsWith('.types');
-    },
-  );
-
-  const constantsEntries = Object.entries(CODEBASE_ANALYSIS).filter(
-    ([key]) => {
-      return key.endsWith('.constants');
-    },
-  );
-
-  const entries = [...typesEntries, ...constantsEntries];
+  const entries = Object.entries(CODEBASE_ANALYSIS).filter(([key]) => {
+    return key.endsWith('.types') || key.endsWith('.constants');
+  });
 
   console.log(
-    `🔧 Création de la structure de types (${typesEntries.length} fichiers)...`,
+    `🔧 Création de la structure de types (${entries.length} fichiers)...`,
   );
 
   for (const [, fileAnalysis] of entries) {
-    const relativePath = fileAnalysis.relativePath;
-
-    // Créer le chemin de destination dans .bemedev en maintenant la structure
-    const destPath = join(bemedevPath, relativePath);
-    const destDir = dirname(destPath);
-
-    try {
-      // Créer le dossier de destination si nécessaire
-      mkdirSync(destDir, { recursive: true });
-
-      let fileContent = fileAnalysis.text;
-      REPLACERS.init
-        // .filter(() => false)
-        .forEach(([search, replace]) => {
-          fileContent = fileContent.replaceAll(search, replace);
-        });
-
-      // Écrire le contenu du fichier types
-      writeFileSync(destPath, fileContent, 'utf8');
-
-      console.log(`  ✅ ${relativePath}`);
-    } catch (error) {
-      console.error(`  ❌ Erreur pour ${relativePath}:`, error);
-    }
+    writeFileAnalysis(fileAnalysis, bemedevPath);
   }
 
   console.log(`✅ Structure de types créée avec succès!`);
