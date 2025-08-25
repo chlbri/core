@@ -1,4 +1,4 @@
-import { CODEBASE_ANALYSIS, type FileAnalysis } from '#codebase';
+import { CODEBASE_ANALYSIS } from '#codebase';
 import isS from '#features/strings/castings/is';
 import {
   existsSync,
@@ -6,9 +6,9 @@ import {
   readFileSync,
   writeFileSync,
 } from 'node:fs';
-import { dirname, join } from 'node:path';
-import { REPLACERS } from '../constants';
+import { join } from 'node:path';
 import { JSON_FILE_NAME, PATH_KEY } from './constants';
+import { writeFileAnalysis } from './helpers';
 
 export interface InitOptions {
   /**
@@ -17,36 +17,6 @@ export interface InitOptions {
    */
   path?: string;
 }
-
-const writeFileAnalysis = (
-  fileAnalysis: FileAnalysis,
-  bemedevPath: string,
-) => {
-  const relativePath = fileAnalysis.relativePath;
-
-  // Créer le chemin de destination dans .bemedev en maintenant la structure
-  const destPath = join(bemedevPath, relativePath);
-  const destDir = dirname(destPath);
-
-  try {
-    // Créer le dossier de destination si nécessaire
-    mkdirSync(destDir, { recursive: true });
-
-    let fileContent = fileAnalysis.text;
-    REPLACERS.init
-      // .filter(() => false)
-      .forEach(([search, replace]) => {
-        fileContent = fileContent.replaceAll(search, replace);
-      });
-
-    // Écrire le contenu du fichier types
-    writeFileSync(destPath, fileContent, 'utf8');
-
-    console.log(`  ✅ ${relativePath}`);
-  } catch (error) {
-    console.error(`  ❌ Erreur pour ${relativePath}:`, error);
-  }
-};
 
 export const createTypesStructure = (bemedevPath: string) => {
   const entries = Object.entries(CODEBASE_ANALYSIS).filter(([key]) => {

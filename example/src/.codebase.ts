@@ -69,6 +69,11 @@ export function addMany(...numbers: number[]): number {
     relativePath: 'cli.ts',
     imports: [
       {
+        moduleSpecifier: 'core/lib/scripts/codebase/installer/add',
+        kind: 'named',
+        namedImports: ['add'],
+      },
+      {
         moduleSpecifier: 'core/lib/scripts/codebase/installer/init',
         kind: 'named',
         namedImports: ['init'],
@@ -79,7 +84,8 @@ export function addMany(...numbers: number[]): number {
         namedImports: ['write'],
       },
     ],
-    text: `import { init } from 'core/lib/scripts/codebase/installer/init';
+    text: `import { add } from 'core/lib/scripts/codebase/installer/add';
+import { init } from 'core/lib/scripts/codebase/installer/init';
 import { write } from 'core/lib/scripts/codebase/write';
 
 // Exécuter si ce fichier est appelé directement
@@ -87,6 +93,7 @@ if (process.argv[1] && process.argv[1].endsWith('cli.ts')) {
   write();
   // write();
   init();
+  add('features.arrays.castings.freeze');
 }
 //# sourceMappingURL=cli.js.map
 
@@ -1063,6 +1070,6 @@ export function min(a: number, b: number): number {
 // Statistiques de l'analyse
 export const ANALYSIS_STATS = {
   totalFiles: 9,
-  totalImports: 2,
+  totalImports: 3,
   totalExports: 44,
 };
