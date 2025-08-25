@@ -87,6 +87,7 @@
     }
   ],
   "devDependencies": {
+    "@bemedev/build-tests": "^0.1.2",
     "@bemedev/fsf": "^0.8.0",
     "@bemedev/rollup-config": "^0.1.8",
     "@bemedev/vitest-alias": "^0.0.3",

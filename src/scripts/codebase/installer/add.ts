@@ -68,7 +68,7 @@ export const add = (...paths: string[]) => {
     const additionals: [string, NOmit<FileAnalysis, 'exports'>][] = [];
 
     const pathsEntries = Object.entries(CODEBASE_ANALYSIS).filter(
-      ([key]) => paths.includes(key),
+      ([key]) => paths.some(p => p.startsWith(key)),
     );
 
     pathsEntries.forEach(([, analysis]) => {
