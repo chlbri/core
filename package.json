@@ -11,6 +11,7 @@
     "type": "git",
     "url": "//TODO"
   },
+  "bin": "lib/scripts/codebase/installer/cli/index.js",
   "license": "MIT",
   "type": "module",
   "main": "lib/index.js",
@@ -74,6 +75,7 @@
     "upgrade": "pnpm upgrade --latest",
     "manifest": "tsx src/scripts/manifest/generate.ts",
     "codebase": "tsx src/scripts/codebase/cli.ts",
+    "help": "pnpm core -h",
     "manifest:watch": "tsx src/scripts/manifest/watch.ts"
   },
   "size-limit": [
@@ -114,6 +116,7 @@
     "tslib": "^2.8.1",
     "tsx": "^4.20.4",
     "typescript": "^5.9.2",
+    "cli": "file:.",
     "vitest": "^3.2.4"
   },
   "pnpm": {

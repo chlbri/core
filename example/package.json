@@ -10,7 +10,10 @@
     "codebase": "tsx src/cli.ts",
     "config": "pnpm install",
     "config:off": "pnpm run config --offline",
-    "cli": "pnpm run config:off && tsx src/cli.ts",
+    "config:lock": "pnpm run config --frozen-lockfile",
+    "cli:func": "pnpm run config && tsx src/cli.ts",
+    "cli": "pnpm run cli:func && pnpm run cli:deep",
+    "cli:deep": "pnpm core init && pnpm core add \"features.arrays.castings.freeze\" && pnpm core remove \"features.arrays.castings.tuple\"",
     "upgrade": "pnpm upgrade --latest"
   },
   "keywords": [

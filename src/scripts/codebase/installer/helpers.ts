@@ -1,7 +1,26 @@
 import { type FileAnalysis } from '#codebase';
 import { mkdirSync, writeFileSync } from 'node:fs';
-import { dirname, join } from 'node:path';
+import { dirname, join, relative, resolve } from 'node:path';
 import { REPLACERS } from '../constants';
+
+export type TransformModuleArgs = {
+  cwd?: string;
+  relativePath: string;
+  moduleSpecifier: string;
+};
+
+export const transformModule = ({
+  cwd = process.cwd(),
+  relativePath,
+  moduleSpecifier,
+}: TransformModuleArgs) => {
+  const out = relative(
+    cwd,
+    resolve(dirname(relativePath), moduleSpecifier),
+  ).replaceAll('/', '.');
+
+  return out;
+};
 
 export const writeFileAnalysis = (
   fileAnalysis: FileAnalysis,
@@ -28,7 +47,8 @@ export const writeFileAnalysis = (
     writeFileSync(destPath, fileContent, 'utf8');
 
     console.log(`  ✅ ${relativePath}`);
+    return relativePath.slice(0, -3).replaceAll('/', '.');
   } catch (error) {
-    console.error(`  ❌ Erreur pour ${relativePath}:`, error);
+    return console.error(`  ❌ Erreur pour ${relativePath}:`, error);
   }
 };

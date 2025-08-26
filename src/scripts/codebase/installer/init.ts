@@ -7,7 +7,12 @@ import {
   writeFileSync,
 } from 'node:fs';
 import { join } from 'node:path';
-import { JSON_FILE_NAME, PATH_KEY } from './constants';
+import {
+  FILES_PROPERTY,
+  JSON_FILE_NAME,
+  PATH_KEY,
+  PATH_PROPERTY,
+} from './constants';
 import { writeFileAnalysis } from './helpers';
 
 export interface InitOptions {
@@ -23,19 +28,28 @@ export const createTypesStructure = (bemedevPath: string) => {
     return key.endsWith('.types') || key.endsWith('.constants');
   });
 
+  const PATHS: string[] = [];
+
   console.log(
     `🔧 Création de la structure de types (${entries.length} fichiers)...`,
   );
 
   for (const [, fileAnalysis] of entries) {
-    writeFileAnalysis(fileAnalysis, bemedevPath);
+    const file = writeFileAnalysis(fileAnalysis, bemedevPath);
+    if (file) PATHS.push(file);
   }
 
   console.log(`✅ Structure de types créée avec succès!`);
+  return PATHS;
 };
 
-export const init = (options?: InitOptions) => {
+export const initBemedev = (options?: InitOptions) => {
   const cwd = process.cwd();
+  const configFile = join(cwd, JSON_FILE_NAME);
+  const configExists = existsSync(configFile);
+
+  if (configExists) return true;
+
   const srcExists = existsSync(join(cwd, 'src'));
 
   // Déterminer l'emplacement du dossier .bemedev
@@ -54,9 +68,10 @@ export const init = (options?: InitOptions) => {
     return false;
   }
 
+  let files: string[] = [];
   // 1.5. Créer la structure des fichiers types
   try {
-    createTypesStructure(bemedevPath);
+    files = createTypesStructure(bemedevPath);
   } catch (error) {
     console.error(
       `❌ Erreur lors de la création de la structure de types:`,
@@ -111,10 +126,11 @@ export const init = (options?: InitOptions) => {
   }
 
   // 3. Créer le fichier .bemedev.json à la racine
-  const configFile = join(cwd, JSON_FILE_NAME);
+
   const config = {
     version: '1.0.0',
-    path,
+    [PATH_PROPERTY]: path,
+    [FILES_PROPERTY]: files,
   };
 
   try {

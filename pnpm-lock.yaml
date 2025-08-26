@@ -69,6 +69,9 @@ importers:
       '@vitest/coverage-v8':
         specifier: ^3.2.4
         version: 3.2.4(vitest@3.2.4(@types/node@24.3.0)(jiti@2.5.1)(tsx@4.20.4))
+      cli:
+        specifier: file:.
+        version: '@bemedev/coreee@file:(@types/node@24.3.0)'
       eslint:
         specifier: ^9.33.0
         version: 9.33.0(jiti@2.5.1)
@@ -145,6 +148,11 @@ packages:
     hasBin: true
     peerDependencies:
       vitest: ^3.2.4
+
+  '@bemedev/coreee@file:':
+    resolution: {directory: '', type: directory}
+    engines: {node: '>=20'}
+    hasBin: true
 
   '@bemedev/fsf@0.8.0':
     resolution: {integrity: sha512-9/QvQvO/C6kerBzJocwTQxq3KYiwRLJqg+eGb6DK40O7VxNqSOZJAF6f4lJiZ4dPz893OJRh/4bNEMtqwMGJ+g==}
@@ -1943,6 +1951,18 @@ snapshots:
       sort-keys: 5.1.0
       vitest: 3.2.4(@types/node@24.3.0)(jiti@2.5.1)(tsx@4.20.4)
     transitivePeerDependencies:
+      - supports-color
+
+  '@bemedev/coreee@file:(@types/node@24.3.0)':
+    dependencies:
+      chokidar: 4.0.3
+      cmd-ts: 0.13.0
+      edit-json-file: 1.8.1
+      inquirer: 12.9.3(@types/node@24.3.0)
+      ts-morph: 26.0.0
+      yoctocolors: 2.1.2
+    transitivePeerDependencies:
+      - '@types/node'
       - supports-color
 
   '@bemedev/fsf@0.8.0':
