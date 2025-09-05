@@ -1,10 +1,5 @@
 {
-  "include": [
-    "src/**/*",
-    "src/scripts",
-    "src/scripts/manifest",
-    "src/.codebase.ts"
-  ],
+  "include": ["src/**/*"],
   "compilerOptions": {
     "lib": ["dom", "esnext"],
     "importHelpers": true,
@@ -33,7 +28,7 @@
       "#utils/*": ["globals/utils/*"],
       "#scripts/*": ["scripts/*"],
       "#features/*": ["features/*"],
-      "#codebase": [".codebase.ts"],
+      "#codebase": ["../.codebase.json"],
       "#types": ["globals/types"],
       "#bemedev/*": ["src/src/.bemedev/*"]
     }

@@ -8,7 +8,7 @@ A beautifull description
 
 MIT
 
-## CHANGE_LOG
+## [CHANGE_LOG](CHANGE_LOG.md)
 
 <details>
 

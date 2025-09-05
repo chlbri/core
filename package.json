@@ -11,7 +11,7 @@
     "type": "git",
     "url": "//TODO"
   },
-  "bin": "lib/scripts/codebase/installer/cli/index.js",
+  "bin": "lib/scripts/cli/index.js",
   "license": "MIT",
   "type": "module",
   "main": "lib/index.js",
@@ -39,15 +39,19 @@
   ],
   "files": [
     "lib",
-    "public"
+    "public",
+    "README.md",
+    "LICENSE",
+    "CHANGE_LOG.md",
+    "CONTRIBUTING.md"
   ],
   "engines": {
     "node": ">=20"
   },
   "scripts": {
-    "build": "pnpm rm:lib && pnpm run rollup",
-    "ci": "pnpm run config:off && pnpm run lint && pnpm run test && pnpm run prettier && pnpm run p-q",
-    "ci:admin": "pnpm run rm && pnpm run upgrade && pnpm run ci",
+    "build": "pnpm rm:lib && pnpm run rollup && pnpm codebase",
+    "ci": "pnpm run config:off && pnpm run lint && pnpm run test && pnpm run p-q",
+    "ci:admin": "pnpm run rm && pnpm --prefix ./example run rm && pnpm run upgrade && pnpm --prefix ./example run upgrade && pnpm run ci",
     "clean": "pnpm run rm && pnpm run config",
     "config": "pnpm install",
     "config:off": "pnpm run config --offline",
@@ -57,26 +61,25 @@
     "prepublishOnly": "",
     "prepare": "husky",
     "pretest": "pnpm run build",
-    "posttest": "pnpm run size && pnpm run lint",
+    "posttest": "pnpm run test:cli && pnpm run size && pnpm run lint",
     "prettier": "prettier --write \"src/**/*.{ts,tsx}\"",
     "p-q": "pretty-quick",
     "rinit": "pnpm run rm && pnpm run config",
     "rinit:off": "pnpm run rm && pnpm run config:off",
-    "rimraf": "pnpx rimraf -rf",
+    "rimraf": "pnpm dlx rimraf -rf",
     "rm": "pnpm run rimraf -- node_modules pnpm-lock.yaml",
     "rm:lib": "pnpm run rimraf -- lib",
     "rollup": "rollup -c",
     "size": "size-limit",
     "test": "pnpm run test:coverage --no-coverage",
-    "test:cli": "pnpm run build && pnpm --prefix ./example run cli",
+    "test:cli": "pnpm --prefix ./example run test",
     "test:only": "pnpm run test:coverage --no-coverage",
     "test:coverage": "vitest run",
     "test:watch": "vitest",
     "upgrade": "pnpm upgrade --latest",
+    "upgrade:example": "pnpm upgrade --prefix ./example --latest",
     "manifest": "tsx src/scripts/manifest/generate.ts",
-    "codebase": "tsx src/scripts/codebase/cli.ts",
-    "help": "pnpm core -h",
-    "manifest:watch": "tsx src/scripts/manifest/watch.ts"
+    "help": "pnpm core -h"
   },
   "size-limit": [
     {
@@ -91,12 +94,13 @@
   "devDependencies": {
     "@bemedev/build-tests": "^0.1.2",
     "@bemedev/fsf": "^0.8.0",
-    "@bemedev/rollup-config": "^0.1.8",
+    "@bemedev/rollup-config": "^0.2.0",
     "@bemedev/vitest-alias": "^0.0.3",
     "@bemedev/vitest-exclude": "^0.1.1",
     "@bemedev/vitest-extended": "^1.3.6",
     "@eslint/eslintrc": "^3.3.1",
-    "@eslint/js": "^9.34.0",
+    "@eslint/js": "^9.35.0",
+    "@rollup/plugin-json": "^6.1.0",
     "@size-limit/file": "^11.2.0",
     "@types/edit-json-file": "^1.7.3",
     "@types/node": "^24.3.1",
@@ -104,7 +108,7 @@
     "@typescript-eslint/parser": "^8.42.0",
     "@vitest/coverage-v8": "^3.2.4",
     "cli": "file:",
-    "eslint": "^9.34.0",
+    "eslint": "^9.35.0",
     "glob": "^11.0.3",
     "globals": "^16.3.0",
     "husky": "^9.1.7",
@@ -125,12 +129,13 @@
     ]
   },
   "dependencies": {
-    "@bemedev/codebase": "^0.0.4",
+    "@bemedev/codebase": "^0.1.1",
     "chokidar": "^4.0.3",
     "cmd-ts": "^0.14.1",
     "edit-json-file": "^1.8.1",
     "inquirer": "^12.9.4",
     "ts-morph": "^26.0.0",
+    "valibot": "^1.1.0",
     "yoctocolors": "^2.1.2"
   }
 }

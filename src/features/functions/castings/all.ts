@@ -5,7 +5,7 @@ import forceCast from './forceCast';
 import _index from './index';
 import is from './is/all';
 
-export const castings = expandFn(_index, {
+const castings = expandFn(_index, {
   is,
   forceCast,
   dynamic,
