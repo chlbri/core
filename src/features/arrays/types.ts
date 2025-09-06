@@ -91,3 +91,22 @@ export type RecursiveArrayOf<T> =
   | ReadonlyArray<_SingleOrRecursiveArrayOf<T>>;
 
 type _SingleOrRecursiveArrayOf<T> = T | RecursiveArrayOf<T>;
+
+export type Permutations<
+  T extends RuA,
+  I extends IndexesOfArray<T> = IndexesOfArray<T>,
+> = T extends any
+  ? I extends I
+    ? T['length'] extends 0
+      ? []
+      : T['length'] extends 1
+        ? [T[I]]
+        : [
+            T[I],
+            ...Permutations<
+              ExcludeArray<T, T[I]>,
+              IndexesOfArray<ExcludeArray<T, T[I]>>
+            >,
+          ]
+    : never
+  : never;

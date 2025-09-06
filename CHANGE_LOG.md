@@ -3,9 +3,25 @@
 <br/>
 <br/>
 
-### Version [0.0.1] --> _date & hour_
+### Version [0.1.1] --> _2025/09/06 19:25_
 
-- ✨ Première version de la bibliothèque
+- ✨ **feat(arrays)**: Add permutations functionality for tuples
+  - Introduced new `permutations` module for generating all possible array permutations
+  - Updated type definitions and exports for arrays
+  - Added comprehensive tests for permutations functionality
+
+- ✨ **feat(numbers)**: Add overload methods for percentage calculations
+  - Implemented `percent` and `percentS` methods on Number prototype
+  - Added string formatting capabilities for percentage values
+  - Enhanced number utilities with percentage calculation features
+
+- 🧪 **test**: Add comprehensive test coverage for new features
+  - Created test suites for permutations functionality
+  - Added validation tests for percentage calculation methods
+
+- 📝 **docs**: Update exports and type definitions
+  - Updated index files to include new functionality
+  - Enhanced type definitions for better TypeScript support
 
 <br/>
 
