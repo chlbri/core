@@ -14,8 +14,8 @@ importers:
         specifier: ^0.1.1
         version: 0.1.1(glob@11.0.3)(vitest@3.2.4(@types/node@24.3.1)(tsx@4.20.5))
       '@bemedev/vitest-extended':
-        specifier: ^1.3.6
-        version: 1.3.6(vitest@3.2.4(@types/node@24.3.1)(tsx@4.20.5))
+        specifier: ^1.5.0
+        version: 1.5.0(vitest@3.2.4(@types/node@24.3.1)(tsx@4.20.5))
       '@types/shelljs':
         specifier: ^0.8.17
         version: 0.8.17
@@ -59,13 +59,6 @@ packages:
       }
     engines: { node: '>=12' }
 
-  '@bemedev/types@0.1.9':
-    resolution:
-      {
-        integrity: sha512-deiw1HTCJzF9vEsRI6AhGwi/7RafYjufPCjoY4qReoy60bduHaheEzVv853P8iJIbRiRpMBUXro9chweI/XrGA==,
-      }
-    engines: { node: '>=22' }
-
   '@bemedev/vitest-alias@0.0.3':
     resolution:
       {
@@ -85,13 +78,13 @@ packages:
       glob: ^10.3.15
       vitest: ^1.5.2
 
-  '@bemedev/vitest-extended@1.3.6':
+  '@bemedev/vitest-extended@1.5.0':
     resolution:
       {
-        integrity: sha512-sYHdqb74FqM5iJal/0THvSO6q/MlaWQDqudewPmfaM1cHLiItsEywBaQKQ3FQGq8uAivZl9qa0tSvZdZKVBahw==,
+        integrity: sha512-8aBjo3ju2OeIqNObZ55ANxmhwoPd6Am9fkAN9/i+J/39t7ptHhErUgRIAva2AMjtXkLs/WzJrioMVMuV1wXmQg==,
       }
     peerDependencies:
-      vitest: ^3.0.4
+      vitest: ^3.2.4
 
   '@esbuild/aix-ppc64@0.25.9':
     resolution:
@@ -1532,8 +1525,6 @@ snapshots:
 
   '@bemedev/sleep@0.1.2': {}
 
-  '@bemedev/types@0.1.9': {}
-
   '@bemedev/vitest-alias@0.0.3(vitest@3.2.4(@types/node@24.3.1)(tsx@4.20.5))':
     dependencies:
       vitest: 3.2.4(@types/node@24.3.1)(tsx@4.20.5)
@@ -1543,10 +1534,9 @@ snapshots:
       glob: 11.0.3
       vitest: 3.2.4(@types/node@24.3.1)(tsx@4.20.5)
 
-  '@bemedev/vitest-extended@1.3.6(vitest@3.2.4(@types/node@24.3.1)(tsx@4.20.5))':
+  '@bemedev/vitest-extended@1.5.0(vitest@3.2.4(@types/node@24.3.1)(tsx@4.20.5))':
     dependencies:
       '@bemedev/sleep': 0.1.2
-      '@bemedev/types': 0.1.9
       vitest: 3.2.4(@types/node@24.3.1)(tsx@4.20.5)
 
   '@esbuild/aix-ppc64@0.25.9':
