@@ -14,7 +14,8 @@
     "test:coverage": "vitest run",
     "rimraf": "pnpm dlx rimraf -rf",
     "rm": "pnpm run rimraf -- node_modules pnpm-lock.yaml",
-    "test": "pnpm run rm:cli && pnpm run config && pnpm run test:coverage --no-coverage",
+    "pretest": "pnpm run config && pnpm run rm:cli",
+    "test": "pnpm run test:coverage --no-coverage",
     "upgrade": "pnpm upgrade --latest"
   },
   "keywords": [
