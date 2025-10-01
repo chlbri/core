@@ -1,9 +1,10 @@
 import { defineConfig } from '@bemedev/rollup-config';
 import json from '@rollup/plugin-json';
 
-export default defineConfig.bemedev({
+export default defineConfig({
   declarationMap: true,
-  ignoresJS: ['**/*.example.ts'],
+  ignoresJS: ['**/*.example.ts', '**/types.ts'],
+  sourcemap: true,
   plugins: [
     'alias',
     'typescript',
