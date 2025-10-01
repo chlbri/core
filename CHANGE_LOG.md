@@ -3,10 +3,17 @@
 <br/>
 <br/>
 
+### Version [0.1.2] --> _2025/09/06 19:25_
+
+-- Upgrade dependencies --
+
+<br/>
+
 ### Version [0.1.1] --> _2025/09/06 19:25_
 
 - ✨ **feat(arrays)**: Add permutations functionality for tuples
-  - Introduced new `permutations` module for generating all possible array permutations
+  - Introduced new `permutations` module for generating all possible array
+    permutations
   - Updated type definitions and exports for arrays
   - Added comprehensive tests for permutations functionality
 

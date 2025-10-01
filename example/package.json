@@ -33,13 +33,13 @@
   "devDependencies": {
     "@bemedev/vitest-alias": "^0.0.3",
     "@bemedev/vitest-exclude": "^0.1.1",
-    "@bemedev/vitest-extended": "^1.5.0",
+    "@bemedev/vitest-extended": "^1.5.3",
     "@types/shelljs": "^0.8.17",
     "core": "file:..",
     "shelljs": "^0.10.0",
-    "ts-morph": "^26.0.0",
-    "tsx": "^4.20.5",
-    "typescript": "^5.9.2",
+    "ts-morph": "^27.0.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
     "vitest": "^3.2.4"
   }
 }
