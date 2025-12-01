@@ -40,7 +40,10 @@
         {
           "moduleSpecifier": "../../globals/types",
           "kind": "named",
-          "namedImports": ["UnionOmit", "UnionToTuple"]
+          "namedImports": [
+            "UnionOmit",
+            "UnionToTuple"
+          ]
         }
       ],
       "relativePath": "features/arrays/types.ts",
@@ -66,12 +69,17 @@
         {
           "moduleSpecifier": "../transform/types",
           "kind": "named",
-          "namedImports": ["TransformO"]
+          "namedImports": [
+            "TransformO"
+          ]
         },
         {
           "moduleSpecifier": "../../globals/types",
           "kind": "named",
-          "namedImports": ["Fn", "RecursiveArrayOf"]
+          "namedImports": [
+            "Fn",
+            "RecursiveArrayOf"
+          ]
         }
       ],
       "relativePath": "features/common/types.ts",
@@ -82,27 +90,39 @@
         {
           "moduleSpecifier": "../../globals/types",
           "kind": "named",
-          "namedImports": ["Checker", "Checker2", "Fn"]
+          "namedImports": [
+            "Checker",
+            "Checker2",
+            "Fn"
+          ]
         },
         {
           "moduleSpecifier": "../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         },
         {
           "moduleSpecifier": "../../globals/utils/castFn",
           "kind": "named",
-          "namedImports": ["castFn"]
+          "namedImports": [
+            "castFn"
+          ]
         },
         {
           "moduleSpecifier": "../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "../../globals/utils/identity",
           "kind": "named",
-          "namedImports": ["identity"]
+          "namedImports": [
+            "identity"
+          ]
         }
       ],
       "relativePath": "features/functions/castings.ts",
@@ -138,7 +158,9 @@
         {
           "moduleSpecifier": "./constants",
           "kind": "named",
-          "namedImports": ["DIGITS"]
+          "namedImports": [
+            "DIGITS"
+          ]
         }
       ],
       "relativePath": "features/numbers/types.ts",
@@ -154,17 +176,25 @@
         {
           "moduleSpecifier": "../../globals/types",
           "kind": "named",
-          "namedImports": ["Fn"]
+          "namedImports": [
+            "Fn"
+          ]
         },
         {
           "moduleSpecifier": "../common/types",
           "kind": "named",
-          "namedImports": ["Keys", "NotUndefined", "Primitive"]
+          "namedImports": [
+            "Keys",
+            "NotUndefined",
+            "Primitive"
+          ]
         },
         {
           "moduleSpecifier": "../strings/types",
           "kind": "named",
-          "namedImports": ["AddString"]
+          "namedImports": [
+            "AddString"
+          ]
         }
       ],
       "relativePath": "features/objects/types.ts",
@@ -195,7 +225,9 @@
         {
           "moduleSpecifier": "./constants",
           "kind": "named",
-          "namedImports": ["ENGLISH_LETTERS"]
+          "namedImports": [
+            "ENGLISH_LETTERS"
+          ]
         }
       ],
       "relativePath": "features/strings/types.ts",
@@ -211,7 +243,9 @@
         {
           "moduleSpecifier": "../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./constants",
@@ -274,12 +308,18 @@
         {
           "moduleSpecifier": "ts-morph",
           "kind": "named",
-          "namedImports": ["Node", "Project", "SyntaxKind"]
+          "namedImports": [
+            "Node",
+            "Project",
+            "SyntaxKind"
+          ]
         },
         {
           "moduleSpecifier": "./findFirstCallExpression",
           "kind": "named",
-          "namedImports": ["findFirstCallExpression"]
+          "namedImports": [
+            "findFirstCallExpression"
+          ]
         },
         {
           "moduleSpecifier": "./helpers",
@@ -292,12 +332,16 @@
         {
           "moduleSpecifier": "./parseObject",
           "kind": "named",
-          "namedImports": ["parseObject"]
+          "namedImports": [
+            "parseObject"
+          ]
         },
         {
           "moduleSpecifier": "./resolveType",
           "kind": "named",
-          "namedImports": ["resolveType"]
+          "namedImports": [
+            "resolveType"
+          ]
         }
       ],
       "relativePath": "features/typescript/extractFromFile.ts",
@@ -308,7 +352,9 @@
         {
           "moduleSpecifier": "ts-morph",
           "kind": "named",
-          "namedImports": ["Node"]
+          "namedImports": [
+            "Node"
+          ]
         }
       ],
       "relativePath": "features/typescript/findFirstCallExpression.ts",
@@ -319,12 +365,17 @@
         {
           "moduleSpecifier": "ts-morph",
           "kind": "named",
-          "namedImports": ["Project", "SourceFile"]
+          "namedImports": [
+            "Project",
+            "SourceFile"
+          ]
         },
         {
           "moduleSpecifier": "ts-morph",
           "kind": "named",
-          "namedImports": ["Node"]
+          "namedImports": [
+            "Node"
+          ]
         }
       ],
       "relativePath": "features/typescript/helpers.ts",
@@ -340,7 +391,11 @@
         {
           "moduleSpecifier": "ts-morph",
           "kind": "named",
-          "namedImports": ["Node", "Project", "SyntaxKind"]
+          "namedImports": [
+            "Node",
+            "Project",
+            "SyntaxKind"
+          ]
         }
       ],
       "relativePath": "features/typescript/parseObject.ts",
@@ -372,22 +427,30 @@
         {
           "moduleSpecifier": "../types",
           "kind": "named",
-          "namedImports": ["RuA"]
+          "namedImports": [
+            "RuA"
+          ]
         },
         {
           "moduleSpecifier": "./_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         },
         {
           "moduleSpecifier": "./expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./is/merge",
           "kind": "named",
-          "namedImports": ["mergeIs"]
+          "namedImports": [
+            "mergeIs"
+          ]
         }
       ],
       "relativePath": "globals/utils/castFn.ts",
@@ -398,7 +461,10 @@
         {
           "moduleSpecifier": "../../features/functions/types",
           "kind": "named",
-          "namedImports": ["Fn", "FnBasic"]
+          "namedImports": [
+            "Fn",
+            "FnBasic"
+          ]
         }
       ],
       "relativePath": "globals/utils/expandFn.ts",
@@ -419,12 +485,16 @@
         {
           "moduleSpecifier": "./_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         },
         {
           "moduleSpecifier": "./expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         }
       ],
       "relativePath": "globals/utils/typeFn.ts",
@@ -435,7 +505,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./dynamic",
@@ -521,12 +593,16 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["AnyArray"]
+          "namedImports": [
+            "AnyArray"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/arrays/castings/dynamic.ts",
@@ -537,12 +613,16 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["ExcludeArray"]
+          "namedImports": [
+            "ExcludeArray"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/arrays/castings/exclude.ts",
@@ -553,12 +633,16 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["ExtractArray"]
+          "namedImports": [
+            "ExtractArray"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/arrays/castings/extract.ts",
@@ -569,7 +653,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/arrays/castings/forceCast.ts",
@@ -596,12 +682,18 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["IndexesOfArray", "RuA", "UnionToTuple"]
+          "namedImports": [
+            "IndexesOfArray",
+            "RuA",
+            "UnionToTuple"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/arrays/castings/indexes.ts",
@@ -622,7 +714,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/arrays/castings/reduce.ts",
@@ -633,12 +727,17 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["ReverseArray", "RuA"]
+          "namedImports": [
+            "ReverseArray",
+            "RuA"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/arrays/castings/reverse.ts",
@@ -649,12 +748,16 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["ToArray"]
+          "namedImports": [
+            "ToArray"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/arrays/castings/toArray.ts",
@@ -670,12 +773,16 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["RuA"]
+          "namedImports": [
+            "RuA"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/arrays/typings/_length.ts",
@@ -686,7 +793,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         },
         {
           "moduleSpecifier": "./dynamic",
@@ -767,7 +876,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/arrays/typings/dynamic.ts",
@@ -778,12 +889,17 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["AnyArray", "ExcludeArray"]
+          "namedImports": [
+            "AnyArray",
+            "ExcludeArray"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/arrays/typings/exclude.ts",
@@ -794,12 +910,17 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["AnyArray", "ExtractArray"]
+          "namedImports": [
+            "AnyArray",
+            "ExtractArray"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/arrays/typings/extract.ts",
@@ -810,7 +931,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/arrays/typings/forceCast.ts",
@@ -821,12 +944,16 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["RuA"]
+          "namedImports": [
+            "RuA"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/arrays/typings/freeze.ts",
@@ -837,12 +964,16 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["AnyArray"]
+          "namedImports": [
+            "AnyArray"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/arrays/typings/index.ts",
@@ -853,7 +984,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/arrays/typings/is.ts",
@@ -864,7 +997,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./_length",
@@ -880,7 +1015,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/arrays/typings/low.ts",
@@ -891,12 +1028,17 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["ReverseArray", "RuA"]
+          "namedImports": [
+            "ReverseArray",
+            "RuA"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/arrays/typings/reverse.ts",
@@ -907,12 +1049,16 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["AnyArray"]
+          "namedImports": [
+            "AnyArray"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/arrays/typings/toArray.ts",
@@ -923,7 +1069,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/arrays/typings/type.ts",
@@ -934,7 +1082,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/castFn",
           "kind": "named",
-          "namedImports": ["castFn"]
+          "namedImports": [
+            "castFn"
+          ]
         },
         {
           "moduleSpecifier": "./false",
@@ -965,12 +1115,16 @@
         {
           "moduleSpecifier": "../../../globals/utils/castFn",
           "kind": "named",
-          "namedImports": ["castFn"]
+          "namedImports": [
+            "castFn"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/is/_default",
           "kind": "named",
-          "namedImports": ["isFn"]
+          "namedImports": [
+            "isFn"
+          ]
         }
       ],
       "relativePath": "features/booleans/castings/false.ts",
@@ -986,12 +1140,16 @@
         {
           "moduleSpecifier": "../../../globals/utils/castFn",
           "kind": "named",
-          "namedImports": ["castFn"]
+          "namedImports": [
+            "castFn"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/is/_default",
           "kind": "named",
-          "namedImports": ["isFn"]
+          "namedImports": [
+            "isFn"
+          ]
         }
       ],
       "relativePath": "features/booleans/castings/true.ts",
@@ -1007,7 +1165,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./false",
@@ -1048,7 +1208,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         }
       ],
       "relativePath": "features/booleans/typings/false.ts",
@@ -1059,7 +1221,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/booleans/typings/forceCast.ts",
@@ -1070,7 +1234,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/booleans/typings/index.ts",
@@ -1081,7 +1247,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/booleans/typings/is.ts",
@@ -1092,7 +1260,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         }
       ],
       "relativePath": "features/booleans/typings/true.ts",
@@ -1103,7 +1273,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/booleans/typings/type.ts",
@@ -1114,7 +1286,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/castings/_unknown.ts",
@@ -1125,7 +1299,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./_unknown",
@@ -1231,7 +1407,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/castFn",
           "kind": "named",
-          "namedImports": ["castFn"]
+          "namedImports": [
+            "castFn"
+          ]
         }
       ],
       "relativePath": "features/common/castings/any.ts",
@@ -1247,7 +1425,9 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["PrimitiveObject"]
+          "namedImports": [
+            "PrimitiveObject"
+          ]
         }
       ],
       "relativePath": "features/common/castings/clone.ts",
@@ -1263,7 +1443,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/identity",
           "kind": "named",
-          "namedImports": ["identity"]
+          "namedImports": [
+            "identity"
+          ]
         }
       ],
       "relativePath": "features/common/castings/identity.ts",
@@ -1274,7 +1456,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/castFn",
           "kind": "named",
-          "namedImports": ["castFn"]
+          "namedImports": [
+            "castFn"
+          ]
         }
       ],
       "relativePath": "features/common/castings/index.ts",
@@ -1285,12 +1469,16 @@
         {
           "moduleSpecifier": "../../../globals/utils/castFn",
           "kind": "named",
-          "namedImports": ["castFn"]
+          "namedImports": [
+            "castFn"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/is/_default",
           "kind": "named",
-          "namedImports": ["isInstance"]
+          "namedImports": [
+            "isInstance"
+          ]
         }
       ],
       "relativePath": "features/common/castings/never.ts",
@@ -1301,7 +1489,9 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["Neverify"]
+          "namedImports": [
+            "Neverify"
+          ]
         },
         {
           "moduleSpecifier": "./_unknown",
@@ -1317,12 +1507,16 @@
         {
           "moduleSpecifier": "../../../globals/utils/castFn",
           "kind": "named",
-          "namedImports": ["castFn"]
+          "namedImports": [
+            "castFn"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/is/_default",
           "kind": "named",
-          "namedImports": ["isFn"]
+          "namedImports": [
+            "isFn"
+          ]
         }
       ],
       "relativePath": "features/common/castings/null.ts",
@@ -1333,12 +1527,16 @@
         {
           "moduleSpecifier": "../../../globals/utils/castFn",
           "kind": "named",
-          "namedImports": ["castFn"]
+          "namedImports": [
+            "castFn"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/is/_default",
           "kind": "named",
-          "namedImports": ["isFn"]
+          "namedImports": [
+            "isFn"
+          ]
         }
       ],
       "relativePath": "features/common/castings/undefined.ts",
@@ -1354,7 +1552,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./any",
@@ -1470,7 +1670,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         }
       ],
       "relativePath": "features/common/typings/any.ts",
@@ -1481,7 +1683,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/typings/const.ts",
@@ -1492,7 +1696,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         }
       ],
       "relativePath": "features/common/typings/date.ts",
@@ -1503,12 +1709,17 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["Defaulted", "NonN"]
+          "namedImports": [
+            "Defaulted",
+            "NonN"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/typings/defaulted.ts",
@@ -1519,7 +1730,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/typings/identity.ts",
@@ -1530,7 +1743,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         }
       ],
       "relativePath": "features/common/typings/index.ts",
@@ -1541,12 +1756,16 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["Keys"]
+          "namedImports": [
+            "Keys"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         }
       ],
       "relativePath": "features/common/typings/keys.ts",
@@ -1557,7 +1776,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         }
       ],
       "relativePath": "features/common/typings/never.ts",
@@ -1568,7 +1789,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/typings/neverify.ts",
@@ -1579,7 +1802,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         }
       ],
       "relativePath": "features/common/typings/null.ts",
@@ -1590,7 +1815,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         }
       ],
       "relativePath": "features/common/typings/symbol.ts",
@@ -1601,7 +1828,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         }
       ],
       "relativePath": "features/common/typings/undefined.ts",
@@ -1612,7 +1841,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/typings/undefiny.ts",
@@ -1623,7 +1854,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/typings/union.ts",
@@ -1634,7 +1867,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         }
       ],
       "relativePath": "features/common/typings/unknown.ts",
@@ -1645,7 +1880,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./checker/all",
@@ -1681,12 +1918,16 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["Fn"]
+          "namedImports": [
+            "Fn"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/identity",
           "kind": "named",
-          "namedImports": ["identity"]
+          "namedImports": [
+            "identity"
+          ]
         }
       ],
       "relativePath": "features/functions/castings/dynamic.ts",
@@ -1697,12 +1938,16 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["Fn"]
+          "namedImports": [
+            "Fn"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/functions/castings/forceCast.ts",
@@ -1713,27 +1958,37 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["Fn"]
+          "namedImports": [
+            "Fn"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/castFn",
           "kind": "named",
-          "namedImports": ["castFn"]
+          "namedImports": [
+            "castFn"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/identity",
           "kind": "named",
-          "namedImports": ["identity"]
+          "namedImports": [
+            "identity"
+          ]
         }
       ],
       "relativePath": "features/functions/castings/index.ts",
@@ -1744,7 +1999,9 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["PrimitiveObject"]
+          "namedImports": [
+            "PrimitiveObject"
+          ]
         }
       ],
       "relativePath": "features/functions/functions/clone.ts",
@@ -1760,12 +2017,16 @@
         {
           "moduleSpecifier": "../../arrays/types",
           "kind": "named",
-          "namedImports": ["AnyArray"]
+          "namedImports": [
+            "AnyArray"
+          ]
         },
         {
           "moduleSpecifier": "../types",
           "kind": "named",
-          "namedImports": ["Fn"]
+          "namedImports": [
+            "Fn"
+          ]
         }
       ],
       "relativePath": "features/functions/functions/partialCall.ts",
@@ -1776,7 +2037,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./checker/all",
@@ -1807,12 +2070,16 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["Fn"]
+          "namedImports": [
+            "Fn"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/functions/typings/dynamic.ts",
@@ -1823,12 +2090,16 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["Fn"]
+          "namedImports": [
+            "Fn"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/functions/typings/forceCast.ts",
@@ -1839,17 +2110,23 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["Fn"]
+          "namedImports": [
+            "Fn"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         }
       ],
       "relativePath": "features/functions/typings/index.ts",
@@ -1860,7 +2137,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/identity",
           "kind": "named",
-          "namedImports": ["identity"]
+          "namedImports": [
+            "identity"
+          ]
         }
       ],
       "relativePath": "features/numbers/castings/MINUS_1.ts",
@@ -1871,7 +2150,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/identity",
           "kind": "named",
-          "namedImports": ["identity"]
+          "namedImports": [
+            "identity"
+          ]
         }
       ],
       "relativePath": "features/numbers/castings/ONE.ts",
@@ -1882,7 +2163,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/identity",
           "kind": "named",
-          "namedImports": ["identity"]
+          "namedImports": [
+            "identity"
+          ]
         }
       ],
       "relativePath": "features/numbers/castings/ZERO.ts",
@@ -1893,7 +2176,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./bigint",
@@ -1949,12 +2234,16 @@
         {
           "moduleSpecifier": "../../../globals/utils/castFn",
           "kind": "named",
-          "namedImports": ["castFn"]
+          "namedImports": [
+            "castFn"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/is/_default",
           "kind": "named",
-          "namedImports": ["isTypeFn"]
+          "namedImports": [
+            "isTypeFn"
+          ]
         }
       ],
       "relativePath": "features/numbers/castings/bigint.ts",
@@ -1965,12 +2254,16 @@
         {
           "moduleSpecifier": "../../../globals/utils/castFn",
           "kind": "named",
-          "namedImports": ["castFn"]
+          "namedImports": [
+            "castFn"
+          ]
         },
         {
           "moduleSpecifier": "../constants",
           "kind": "named",
-          "namedImports": ["DIGITS"]
+          "namedImports": [
+            "DIGITS"
+          ]
         }
       ],
       "relativePath": "features/numbers/castings/digit.ts",
@@ -1986,7 +2279,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/castFn",
           "kind": "named",
-          "namedImports": ["castFn"]
+          "namedImports": [
+            "castFn"
+          ]
         }
       ],
       "relativePath": "features/numbers/castings/index.ts",
@@ -1997,7 +2292,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/is/_default",
           "kind": "named",
-          "namedImports": ["isTypeFn"]
+          "namedImports": [
+            "isTypeFn"
+          ]
         }
       ],
       "relativePath": "features/numbers/castings/is.ts",
@@ -2028,7 +2325,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/numbers/typings/MINUS_1.ts",
@@ -2039,7 +2338,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/numbers/typings/ONE.ts",
@@ -2050,7 +2351,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/numbers/typings/ZERO.ts",
@@ -2061,7 +2364,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./bigint",
@@ -2107,7 +2412,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         }
       ],
       "relativePath": "features/numbers/typings/bigint.ts",
@@ -2118,12 +2425,16 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["Digit"]
+          "namedImports": [
+            "Digit"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         }
       ],
       "relativePath": "features/numbers/typings/digit.ts",
@@ -2134,7 +2445,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/numbers/typings/getString.ts",
@@ -2145,7 +2458,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         }
       ],
       "relativePath": "features/numbers/typings/index.ts",
@@ -2156,7 +2471,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./byKey",
@@ -2267,7 +2584,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/castFn",
           "kind": "named",
-          "namedImports": ["castFn"]
+          "namedImports": [
+            "castFn"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/index.ts",
@@ -2283,22 +2602,30 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["PrimitiveObjectMap"]
+          "namedImports": [
+            "PrimitiveObjectMap"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/castFn",
           "kind": "named",
-          "namedImports": ["castFn"]
+          "namedImports": [
+            "castFn"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/is/object",
           "kind": "named",
-          "namedImports": ["isPlainObject"]
+          "namedImports": [
+            "isPlainObject"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/is/primitive.object",
           "kind": "named",
-          "namedImports": ["isPrimitiveObject"]
+          "namedImports": [
+            "isPrimitiveObject"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/primitive.ts",
@@ -2309,12 +2636,16 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["Ra"]
+          "namedImports": [
+            "Ra"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/castFn",
           "kind": "named",
-          "namedImports": ["castFn"]
+          "namedImports": [
+            "castFn"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/ra.ts",
@@ -2325,7 +2656,9 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["Keys"]
+          "namedImports": [
+            "Keys"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/reverse.ts",
@@ -2336,12 +2669,16 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["Ru"]
+          "namedImports": [
+            "Ru"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/castFn",
           "kind": "named",
-          "namedImports": ["castFn"]
+          "namedImports": [
+            "castFn"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/ru.ts",
@@ -2352,17 +2689,23 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["To"]
+          "namedImports": [
+            "To"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/castFn",
           "kind": "named",
-          "namedImports": ["castFn"]
+          "namedImports": [
+            "castFn"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/is/object",
           "kind": "named",
-          "namedImports": ["isPlainObject"]
+          "namedImports": [
+            "isPlainObject"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/trueObject.ts",
@@ -2383,7 +2726,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         },
         {
           "moduleSpecifier": "./byKey",
@@ -2479,7 +2824,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/byKey.ts",
@@ -2490,7 +2837,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/entries.ts",
@@ -2501,12 +2850,16 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/keysOf.ts",
@@ -2517,12 +2870,16 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["PrimitiveObjectMap"]
+          "namedImports": [
+            "PrimitiveObjectMap"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/primitive.ts",
@@ -2533,12 +2890,16 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["Ra"]
+          "namedImports": [
+            "Ra"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/ra.ts",
@@ -2549,12 +2910,16 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["Keys"]
+          "namedImports": [
+            "Keys"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/reverse.ts",
@@ -2565,12 +2930,16 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["Rn"]
+          "namedImports": [
+            "Rn"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/rn.ts",
@@ -2581,12 +2950,16 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["Ru"]
+          "namedImports": [
+            "Ru"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/ru.ts",
@@ -2597,12 +2970,16 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["To"]
+          "namedImports": [
+            "To"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/trueObject.ts",
@@ -2613,12 +2990,16 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/values.ts",
@@ -2629,7 +3010,9 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["KeyTypes"]
+          "namedImports": [
+            "KeyTypes"
+          ]
         }
       ],
       "relativePath": "features/objects/utils/entries.ts",
@@ -2640,17 +3023,23 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["Primitive2"]
+          "namedImports": [
+            "Primitive2"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/is/object",
           "kind": "named",
-          "namedImports": ["isPlainObject"]
+          "namedImports": [
+            "isPlainObject"
+          ]
         },
         {
           "moduleSpecifier": "./types",
           "kind": "named",
-          "namedImports": ["Picker"]
+          "namedImports": [
+            "Picker"
+          ]
         }
       ],
       "relativePath": "features/objects/utils/omit.deep.is.ts",
@@ -2661,17 +3050,23 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["PrimitiveObjectMap"]
+          "namedImports": [
+            "PrimitiveObjectMap"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/is/object",
           "kind": "named",
-          "namedImports": ["isPlainObject"]
+          "namedImports": [
+            "isPlainObject"
+          ]
         },
         {
           "moduleSpecifier": "./types",
           "kind": "named",
-          "namedImports": ["Picker"]
+          "namedImports": [
+            "Picker"
+          ]
         }
       ],
       "relativePath": "features/objects/utils/omit.deep.ts",
@@ -2682,12 +3077,16 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["PrimitiveObjectMap"]
+          "namedImports": [
+            "PrimitiveObjectMap"
+          ]
         },
         {
           "moduleSpecifier": "./types",
           "kind": "named",
-          "namedImports": ["Picker"]
+          "namedImports": [
+            "Picker"
+          ]
         }
       ],
       "relativePath": "features/objects/utils/omit.is.ts",
@@ -2698,12 +3097,16 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["PrimitiveObjectMap"]
+          "namedImports": [
+            "PrimitiveObjectMap"
+          ]
         },
         {
           "moduleSpecifier": "./types",
           "kind": "named",
-          "namedImports": ["Picker"]
+          "namedImports": [
+            "Picker"
+          ]
         }
       ],
       "relativePath": "features/objects/utils/omit.ts",
@@ -2714,12 +3117,16 @@
         {
           "moduleSpecifier": "../../../globals/utils/is/object",
           "kind": "named",
-          "namedImports": ["isPlainObject"]
+          "namedImports": [
+            "isPlainObject"
+          ]
         },
         {
           "moduleSpecifier": "./types",
           "kind": "named",
-          "namedImports": ["Picker"]
+          "namedImports": [
+            "Picker"
+          ]
         }
       ],
       "relativePath": "features/objects/utils/pick.deep.ts",
@@ -2730,7 +3137,9 @@
         {
           "moduleSpecifier": "./types",
           "kind": "named",
-          "namedImports": ["Picker"]
+          "namedImports": [
+            "Picker"
+          ]
         }
       ],
       "relativePath": "features/objects/utils/pick.ts",
@@ -2741,17 +3150,23 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["DeepRequired"]
+          "namedImports": [
+            "DeepRequired"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/is/merge",
           "kind": "named",
-          "namedImports": ["mergeIs"]
+          "namedImports": [
+            "mergeIs"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/is/object",
           "kind": "named",
-          "namedImports": ["isPlainObject"]
+          "namedImports": [
+            "isPlainObject"
+          ]
         }
       ],
       "relativePath": "features/objects/utils/require.ts",
@@ -2767,12 +3182,16 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["AddString"]
+          "namedImports": [
+            "AddString"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/strings/castings/add.ts",
@@ -2783,12 +3202,16 @@
         {
           "moduleSpecifier": "../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "../constants",
           "kind": "named",
-          "namedImports": ["DEFAULT_DELIMITER"]
+          "namedImports": [
+            "DEFAULT_DELIMITER"
+          ]
         },
         {
           "moduleSpecifier": "./add",
@@ -2885,7 +3308,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/is/_default",
           "kind": "named",
-          "namedImports": ["isTypeFn"]
+          "namedImports": [
+            "isTypeFn"
+          ]
         }
       ],
       "relativePath": "features/strings/castings/endsWith.ts",
@@ -2896,7 +3321,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/strings/castings/getLength.ts",
@@ -2912,7 +3339,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/castFn",
           "kind": "named",
-          "namedImports": ["castFn"]
+          "namedImports": [
+            "castFn"
+          ]
         }
       ],
       "relativePath": "features/strings/castings/index.ts",
@@ -2923,7 +3352,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/castFn",
           "kind": "named",
-          "namedImports": ["castFn"]
+          "namedImports": [
+            "castFn"
+          ]
         }
       ],
       "relativePath": "features/strings/castings/instance.ts",
@@ -2934,7 +3365,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/is/_default",
           "kind": "named",
-          "namedImports": ["isTypeFn"]
+          "namedImports": [
+            "isTypeFn"
+          ]
         }
       ],
       "relativePath": "features/strings/castings/is.ts",
@@ -2945,12 +3378,16 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["JoinString"]
+          "namedImports": [
+            "JoinString"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/strings/castings/join.ts",
@@ -2961,12 +3398,16 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["SplitStringBy"]
+          "namedImports": [
+            "SplitStringBy"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/strings/castings/splitBy.ts",
@@ -2977,7 +3418,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/is/_default",
           "kind": "named",
-          "namedImports": ["isTypeFn"]
+          "namedImports": [
+            "isTypeFn"
+          ]
         }
       ],
       "relativePath": "features/strings/castings/startsWith.ts",
@@ -2988,7 +3431,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/strings/castings/toLowerCase.ts",
@@ -2999,7 +3444,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/strings/castings/toUpperCase.ts",
@@ -3015,12 +3462,16 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["AddString"]
+          "namedImports": [
+            "AddString"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/strings/typings/add.ts",
@@ -3031,7 +3482,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./add",
@@ -3112,7 +3565,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/strings/typings/contains.ts",
@@ -3123,12 +3578,16 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["Email"]
+          "namedImports": [
+            "Email"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         }
       ],
       "relativePath": "features/strings/typings/email.ts",
@@ -3139,7 +3598,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/strings/typings/endsWith.ts",
@@ -3150,7 +3611,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/strings/typings/getLength.ts",
@@ -3172,7 +3635,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         }
       ],
       "relativePath": "features/strings/typings/index.ts",
@@ -3183,7 +3648,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         }
       ],
       "relativePath": "features/strings/typings/instance.ts",
@@ -3194,12 +3661,16 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["JoinString"]
+          "namedImports": [
+            "JoinString"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/strings/typings/join.ts",
@@ -3210,12 +3681,16 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["SplitStringBy"]
+          "namedImports": [
+            "SplitStringBy"
+          ]
         },
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/strings/typings/splitBy.ts",
@@ -3226,7 +3701,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/strings/typings/startsWith.ts",
@@ -3237,7 +3714,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/strings/typings/toLowerCase.ts",
@@ -3248,7 +3727,9 @@
         {
           "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/strings/typings/toUpperCase.ts",
@@ -3259,12 +3740,17 @@
         {
           "moduleSpecifier": "../../../features/transform/types",
           "kind": "named",
-          "namedImports": ["PrimitiveS", "TransformO"]
+          "namedImports": [
+            "PrimitiveS",
+            "TransformO"
+          ]
         },
         {
           "moduleSpecifier": "../../types",
           "kind": "named",
-          "namedImports": ["Classe"]
+          "namedImports": [
+            "Classe"
+          ]
         }
       ],
       "relativePath": "globals/utils/is/_default.ts",
@@ -3280,7 +3766,9 @@
         {
           "moduleSpecifier": "../expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         }
       ],
       "relativePath": "globals/utils/is/merge.ts",
@@ -3296,17 +3784,23 @@
         {
           "moduleSpecifier": "../../types",
           "kind": "named",
-          "namedImports": ["PrimitiveObject"]
+          "namedImports": [
+            "PrimitiveObject"
+          ]
         },
         {
           "moduleSpecifier": "./object",
           "kind": "named",
-          "namedImports": ["isPlainObject"]
+          "namedImports": [
+            "isPlainObject"
+          ]
         },
         {
           "moduleSpecifier": "./primitive",
           "kind": "named",
-          "namedImports": ["isPrimitive"]
+          "namedImports": [
+            "isPrimitive"
+          ]
         }
       ],
       "relativePath": "globals/utils/is/primitive.object.ts",
@@ -3317,17 +3811,23 @@
         {
           "moduleSpecifier": "../../../features/transform/constants",
           "kind": "named",
-          "namedImports": ["PRIMITIVES"]
+          "namedImports": [
+            "PRIMITIVES"
+          ]
         },
         {
           "moduleSpecifier": "../../types",
           "kind": "named",
-          "namedImports": ["Primitive"]
+          "namedImports": [
+            "Primitive"
+          ]
         },
         {
           "moduleSpecifier": "./merge",
           "kind": "named",
-          "namedImports": ["mergeIs"]
+          "namedImports": [
+            "mergeIs"
+          ]
         }
       ],
       "relativePath": "globals/utils/is/primitive.ts",
@@ -3338,7 +3838,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./has",
@@ -3359,7 +3861,9 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["TupleOf"]
+          "namedImports": [
+            "TupleOf"
+          ]
         },
         {
           "moduleSpecifier": "../is",
@@ -3375,12 +3879,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["RuA"]
+          "namedImports": [
+            "RuA"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/arrays/castings/length/index.ts",
@@ -3391,7 +3899,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "../is",
@@ -3422,12 +3932,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["RuA"]
+          "namedImports": [
+            "RuA"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/arrays/castings/tuple/index.ts",
@@ -3438,7 +3952,9 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["Checker2"]
+          "namedImports": [
+            "Checker2"
+          ]
         },
         {
           "moduleSpecifier": "../is",
@@ -3454,12 +3970,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["TupleOf"]
+          "namedImports": [
+            "TupleOf"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/arrays/castings/tuple/multiply.ts",
@@ -3470,7 +3990,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./index",
@@ -3491,12 +4013,18 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["IndexesOfArray", "RuA", "UnionToTuple"]
+          "namedImports": [
+            "IndexesOfArray",
+            "RuA",
+            "UnionToTuple"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/arrays/typings/indexes/index.ts",
@@ -3507,12 +4035,17 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["IndexesOfArray", "RuA"]
+          "namedImports": [
+            "IndexesOfArray",
+            "RuA"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/arrays/typings/indexes/union.ts",
@@ -3523,7 +4056,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./deep",
@@ -3544,12 +4079,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["ReduceDeepArray"]
+          "namedImports": [
+            "ReduceDeepArray"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/arrays/typings/reduce/deep.ts",
@@ -3560,7 +4099,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/arrays/typings/reduce/index.ts",
@@ -3571,7 +4112,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./index",
@@ -3597,12 +4140,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["RuA"]
+          "namedImports": [
+            "RuA"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/arrays/typings/tuple/index.ts",
@@ -3613,12 +4160,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["RuA"]
+          "namedImports": [
+            "RuA"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/arrays/typings/tuple/is.ts",
@@ -3629,17 +4180,23 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["TupleOf"]
+          "namedImports": [
+            "TupleOf"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         }
       ],
       "relativePath": "features/arrays/typings/tuple/multiply.ts",
@@ -3650,7 +4207,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./index",
@@ -3671,7 +4230,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/castFn",
           "kind": "named",
-          "namedImports": ["castFn"]
+          "namedImports": [
+            "castFn"
+          ]
         }
       ],
       "relativePath": "features/common/castings/date/index.ts",
@@ -3682,7 +4243,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/is/_default",
           "kind": "named",
-          "namedImports": ["isInstance"]
+          "namedImports": [
+            "isInstance"
+          ]
         }
       ],
       "relativePath": "features/common/castings/date/is.ts",
@@ -3693,7 +4256,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./runtime",
@@ -3725,12 +4290,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["NonN"]
+          "namedImports": [
+            "NonN"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/castings/defaulted/runtime.ts",
@@ -3741,12 +4310,17 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["Defaulted", "NonN"]
+          "namedImports": [
+            "Defaulted",
+            "NonN"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/castings/defaulted/typings.ts",
@@ -3864,7 +4438,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./deep",
@@ -3885,12 +4461,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["DeepPartial"]
+          "namedImports": [
+            "DeepPartial"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/castings/partial/deep.ts",
@@ -3901,7 +4481,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/castings/partial/index.ts",
@@ -3912,7 +4494,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./index",
@@ -3938,12 +4522,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["Primitive"]
+          "namedImports": [
+            "Primitive"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/castFn",
           "kind": "named",
-          "namedImports": ["castFn"]
+          "namedImports": [
+            "castFn"
+          ]
         }
       ],
       "relativePath": "features/common/castings/primitive/index.ts",
@@ -3954,7 +4542,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/is/primitive",
           "kind": "named",
-          "namedImports": ["isPrimitive"]
+          "namedImports": [
+            "isPrimitive"
+          ]
         }
       ],
       "relativePath": "features/common/castings/primitive/is.ts",
@@ -3965,7 +4555,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./deep/all",
@@ -3996,12 +4588,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["NotReadonly"]
+          "namedImports": [
+            "NotReadonly"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/castings/readonly/not.ts",
@@ -4012,7 +4608,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./deep",
@@ -4033,12 +4631,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["DeepRequired"]
+          "namedImports": [
+            "DeepRequired"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/castings/required/deep.ts",
@@ -4049,12 +4651,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["NotUndefined"]
+          "namedImports": [
+            "NotUndefined"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/castings/required/index.ts",
@@ -4065,7 +4671,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./index",
@@ -4086,7 +4694,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/castFn",
           "kind": "named",
-          "namedImports": ["castFn"]
+          "namedImports": [
+            "castFn"
+          ]
         }
       ],
       "relativePath": "features/common/castings/symbol/index.ts",
@@ -4097,7 +4707,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/is/_default",
           "kind": "named",
-          "namedImports": ["isTypeFn"]
+          "namedImports": [
+            "isTypeFn"
+          ]
         }
       ],
       "relativePath": "features/common/castings/symbol/is.ts",
@@ -4108,7 +4720,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./const",
@@ -4129,7 +4743,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/typings/exclude/const.ts",
@@ -4140,7 +4756,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/typings/exclude/index.ts",
@@ -4151,7 +4769,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./const",
@@ -4172,7 +4792,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/typings/extract/const.ts",
@@ -4183,7 +4805,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/typings/extract/index.ts",
@@ -4194,7 +4818,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./deep",
@@ -4215,12 +4841,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["DeepPartial"]
+          "namedImports": [
+            "DeepPartial"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/typings/partial/deep.ts",
@@ -4231,7 +4861,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/typings/partial/index.ts",
@@ -4242,7 +4874,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./index",
@@ -4263,12 +4897,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["Primitive"]
+          "namedImports": [
+            "Primitive"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         }
       ],
       "relativePath": "features/common/typings/primitive/index.ts",
@@ -4279,12 +4917,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["PrimitiveObject"]
+          "namedImports": [
+            "PrimitiveObject"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         }
       ],
       "relativePath": "features/common/typings/primitive/object.ts",
@@ -4295,7 +4937,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./deep/all",
@@ -4326,7 +4970,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/typings/readonly/index.ts",
@@ -4337,7 +4983,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/typings/readonly/is.ts",
@@ -4348,7 +4996,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./deep",
@@ -4374,12 +5024,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["DeepRequired"]
+          "namedImports": [
+            "DeepRequired"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/typings/required/deep.ts",
@@ -4390,7 +5044,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/typings/required/index.ts",
@@ -4401,7 +5057,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/typings/required/is.ts",
@@ -4412,7 +5070,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./byType/all",
@@ -4443,12 +5103,17 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["Checker", "Checker2"]
+          "namedImports": [
+            "Checker",
+            "Checker2"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/functions/castings/checker/forceCast.ts",
@@ -4459,12 +5124,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["Checker"]
+          "namedImports": [
+            "Checker"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/castFn",
           "kind": "named",
-          "namedImports": ["castFn"]
+          "namedImports": [
+            "castFn"
+          ]
         }
       ],
       "relativePath": "features/functions/castings/checker/index.ts",
@@ -4475,7 +5144,9 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["Checker2"]
+          "namedImports": [
+            "Checker2"
+          ]
         }
       ],
       "relativePath": "features/functions/castings/checker/is.ts",
@@ -4486,7 +5157,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./index",
@@ -4507,7 +5180,9 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["Fn"]
+          "namedImports": [
+            "Fn"
+          ]
         }
       ],
       "relativePath": "features/functions/castings/is/index.ts",
@@ -4518,7 +5193,9 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["Fn"]
+          "namedImports": [
+            "Fn"
+          ]
         }
       ],
       "relativePath": "features/functions/castings/is/strict.ts",
@@ -4529,7 +5206,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./byType/all",
@@ -4550,12 +5229,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["Checker"]
+          "namedImports": [
+            "Checker"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         }
       ],
       "relativePath": "features/functions/typings/checker/index.ts",
@@ -4596,7 +5279,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./_all/all",
@@ -4622,7 +5307,9 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["Keys"]
+          "namedImports": [
+            "Keys"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/hasKeys/index.ts",
@@ -4633,12 +5320,17 @@
         {
           "moduleSpecifier": "../../utils/entries",
           "kind": "named",
-          "namedImports": ["checkEntries"]
+          "namedImports": [
+            "checkEntries"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["KeyTypes", "KeyTypesFrom"]
+          "namedImports": [
+            "KeyTypes",
+            "KeyTypesFrom"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/hasKeys/typings.ts",
@@ -4649,7 +5341,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./from",
@@ -4675,12 +5369,17 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["KeyTypes", "KeyTypesFrom"]
+          "namedImports": [
+            "KeyTypes",
+            "KeyTypesFrom"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/castFn",
           "kind": "named",
-          "namedImports": ["castFn"]
+          "namedImports": [
+            "castFn"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/keyTypes/from.ts",
@@ -4691,12 +5390,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["KeyTypes"]
+          "namedImports": [
+            "KeyTypes"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/castFn",
           "kind": "named",
-          "namedImports": ["castFn"]
+          "namedImports": [
+            "castFn"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/keyTypes/index.ts",
@@ -4707,12 +5410,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["KeyTypes"]
+          "namedImports": [
+            "KeyTypes"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/is/object",
           "kind": "named",
-          "namedImports": ["isPlainObject"]
+          "namedImports": [
+            "isPlainObject"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/keyTypes/is.ts",
@@ -4723,7 +5430,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./by/all",
@@ -4764,17 +5473,23 @@
         {
           "moduleSpecifier": "../../../functions/functions/partialCall",
           "kind": "named",
-          "namedImports": ["partialCall"]
+          "namedImports": [
+            "partialCall"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["PrimitiveObjectMap"]
+          "namedImports": [
+            "PrimitiveObjectMap"
+          ]
         },
         {
           "moduleSpecifier": "../../utils/omit",
           "kind": "named",
-          "namedImports": ["omit"]
+          "namedImports": [
+            "omit"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/omit/index.ts",
@@ -4785,17 +5500,24 @@
         {
           "moduleSpecifier": "../../../functions/functions/partialCall",
           "kind": "named",
-          "namedImports": ["partialCall"]
+          "namedImports": [
+            "partialCall"
+          ]
         },
         {
           "moduleSpecifier": "../../utils/omit.is",
           "kind": "named",
-          "namedImports": ["omitIs"]
+          "namedImports": [
+            "omitIs"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["Keys", "PrimitiveObjectMap"]
+          "namedImports": [
+            "Keys",
+            "PrimitiveObjectMap"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/omit/is.ts",
@@ -4806,7 +5528,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./by",
@@ -4832,17 +5556,23 @@
         {
           "moduleSpecifier": "../../../functions/functions/partialCall",
           "kind": "named",
-          "namedImports": ["partialCall"]
+          "namedImports": [
+            "partialCall"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["SubType"]
+          "namedImports": [
+            "SubType"
+          ]
         },
         {
           "moduleSpecifier": "../../utils/pick",
           "kind": "named",
-          "namedImports": ["pick"]
+          "namedImports": [
+            "pick"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/pick/by.ts",
@@ -4853,12 +5583,16 @@
         {
           "moduleSpecifier": "../../../functions/functions/partialCall",
           "kind": "named",
-          "namedImports": ["partialCall"]
+          "namedImports": [
+            "partialCall"
+          ]
         },
         {
           "moduleSpecifier": "../../utils/pick",
           "kind": "named",
-          "namedImports": ["pick"]
+          "namedImports": [
+            "pick"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/pick/index.ts",
@@ -4869,7 +5603,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./deep/all",
@@ -4915,7 +5651,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/readonly/forceCast.ts",
@@ -4936,12 +5674,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["NotReadonly"]
+          "namedImports": [
+            "NotReadonly"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/readonly/not.ts",
@@ -4952,7 +5694,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./const",
@@ -4983,7 +5727,9 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["AllowedNamesLow"]
+          "namedImports": [
+            "AllowedNamesLow"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/require/const.ts",
@@ -4999,7 +5745,9 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["AllowedNamesLow"]
+          "namedImports": [
+            "AllowedNamesLow"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/require/strict.ts",
@@ -5010,7 +5758,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./deep/all",
@@ -5051,7 +5801,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/freeze/dynamic.ts",
@@ -5062,7 +5814,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/freeze/forceCast.ts",
@@ -5073,7 +5827,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/freeze/index.ts",
@@ -5084,7 +5840,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/freeze/is.ts",
@@ -5095,12 +5853,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["NotReadonly"]
+          "namedImports": [
+            "NotReadonly"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/freeze/not.ts",
@@ -5111,12 +5873,17 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["Equals", "Keys"]
+          "namedImports": [
+            "Equals",
+            "Keys"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/hasKeys/_all.ts",
@@ -5127,7 +5894,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./_all",
@@ -5153,12 +5922,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["Keys"]
+          "namedImports": [
+            "Keys"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/hasKeys/index.ts",
@@ -5169,12 +5942,17 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["KeyTypes", "KeyTypesFrom"]
+          "namedImports": [
+            "KeyTypes",
+            "KeyTypesFrom"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/hasKeys/typings.ts",
@@ -5185,12 +5963,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["KeyTypes"]
+          "namedImports": [
+            "KeyTypes"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         },
         {
           "moduleSpecifier": "./from",
@@ -5211,12 +5993,17 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["KeyTypes", "KeyTypesFrom"]
+          "namedImports": [
+            "KeyTypes",
+            "KeyTypesFrom"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/keyTypes/from.ts",
@@ -5227,12 +6014,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["KeyTypes"]
+          "namedImports": [
+            "KeyTypes"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/keyTypes/index.ts",
@@ -5243,7 +6034,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./by/all",
@@ -5274,12 +6067,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["Keys"]
+          "namedImports": [
+            "Keys"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/omit/index.ts",
@@ -5290,12 +6087,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["Keys"]
+          "namedImports": [
+            "Keys"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/omit/is.ts",
@@ -5306,7 +6107,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./by",
@@ -5332,12 +6135,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["SubType"]
+          "namedImports": [
+            "SubType"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/pick/by.ts",
@@ -5348,7 +6155,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/pick/index.ts",
@@ -5359,7 +6168,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./deep/all",
@@ -5405,7 +6216,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/readonly/dynamic.ts",
@@ -5416,7 +6229,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/readonly/forceCast.ts",
@@ -5427,7 +6242,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/readonly/index.ts",
@@ -5438,7 +6255,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/readonly/is.ts",
@@ -5449,7 +6268,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/readonly/type.ts",
@@ -5460,7 +6281,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./const",
@@ -5491,7 +6314,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/require/const.ts",
@@ -5502,7 +6327,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/require/index.ts",
@@ -5513,7 +6340,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/require/strict.ts",
@@ -5524,7 +6353,9 @@
         {
           "moduleSpecifier": "../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./index",
@@ -5555,12 +6386,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["Letters"]
+          "namedImports": [
+            "Letters"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/castFn",
           "kind": "named",
-          "namedImports": ["castFn"]
+          "namedImports": [
+            "castFn"
+          ]
         }
       ],
       "relativePath": "features/strings/castings/letters/index.ts",
@@ -5571,12 +6406,16 @@
         {
           "moduleSpecifier": "../../constants",
           "kind": "named",
-          "namedImports": ["ENGLISH_LETTERS"]
+          "namedImports": [
+            "ENGLISH_LETTERS"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["Letters"]
+          "namedImports": [
+            "Letters"
+          ]
         }
       ],
       "relativePath": "features/strings/castings/letters/is.ts",
@@ -5587,12 +6426,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["LowerLetters"]
+          "namedImports": [
+            "LowerLetters"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/castFn",
           "kind": "named",
-          "namedImports": ["castFn"]
+          "namedImports": [
+            "castFn"
+          ]
         },
         {
           "moduleSpecifier": "./is",
@@ -5608,12 +6451,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["UpperLetters"]
+          "namedImports": [
+            "UpperLetters"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/castFn",
           "kind": "named",
-          "namedImports": ["castFn"]
+          "namedImports": [
+            "castFn"
+          ]
         },
         {
           "moduleSpecifier": "./is",
@@ -5629,12 +6476,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["Letters"]
+          "namedImports": [
+            "Letters"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         },
         {
           "moduleSpecifier": "./lower",
@@ -5655,12 +6506,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["Letters"]
+          "namedImports": [
+            "Letters"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         }
       ],
       "relativePath": "features/strings/typings/letters/index.ts",
@@ -5671,12 +6526,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["LowerLetters"]
+          "namedImports": [
+            "LowerLetters"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         }
       ],
       "relativePath": "features/strings/typings/letters/lower.ts",
@@ -5687,12 +6546,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["Letters"]
+          "namedImports": [
+            "Letters"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/strings/typings/letters/type.ts",
@@ -5703,12 +6566,16 @@
         {
           "moduleSpecifier": "../../../../globals/types",
           "kind": "named",
-          "namedImports": ["UpperLetters"]
+          "namedImports": [
+            "UpperLetters"
+          ]
         },
         {
           "moduleSpecifier": "../../../../globals/utils/typeFn",
           "kind": "named",
-          "namedImports": ["typeFn"]
+          "namedImports": [
+            "typeFn"
+          ]
         }
       ],
       "relativePath": "features/strings/typings/letters/upper.ts",
@@ -5719,7 +6586,9 @@
         {
           "moduleSpecifier": "../../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./index",
@@ -5740,7 +6609,10 @@
         {
           "moduleSpecifier": "../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["RuA", "TupleOf"]
+          "namedImports": [
+            "RuA",
+            "TupleOf"
+          ]
         },
         {
           "moduleSpecifier": "../multiply",
@@ -5756,12 +6628,17 @@
         {
           "moduleSpecifier": "../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["Permutations", "RuA"]
+          "namedImports": [
+            "Permutations",
+            "RuA"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         },
         {
           "moduleSpecifier": "./index",
@@ -5777,7 +6654,9 @@
         {
           "moduleSpecifier": "../../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./index",
@@ -5798,12 +6677,16 @@
         {
           "moduleSpecifier": "../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["PrimitiveObject"]
+          "namedImports": [
+            "PrimitiveObject"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../globals/utils/castFn",
           "kind": "named",
-          "namedImports": ["castFn"]
+          "namedImports": [
+            "castFn"
+          ]
         }
       ],
       "relativePath": "features/common/castings/primitive/object/index.ts",
@@ -5814,7 +6697,9 @@
         {
           "moduleSpecifier": "../../../../../globals/utils/is/primitive.object",
           "kind": "named",
-          "namedImports": ["isPrimitiveObject"]
+          "namedImports": [
+            "isPrimitiveObject"
+          ]
         }
       ],
       "relativePath": "features/common/castings/primitive/object/is.ts",
@@ -5825,7 +6710,9 @@
         {
           "moduleSpecifier": "../../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./index",
@@ -5846,12 +6733,16 @@
         {
           "moduleSpecifier": "../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["DeepReadonly"]
+          "namedImports": [
+            "DeepReadonly"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/castings/readonly/deep/index.ts",
@@ -5862,12 +6753,16 @@
         {
           "moduleSpecifier": "../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["DeepNotReadonly"]
+          "namedImports": [
+            "DeepNotReadonly"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/castings/readonly/deep/not.ts",
@@ -5878,7 +6773,9 @@
         {
           "moduleSpecifier": "../../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./index",
@@ -5904,12 +6801,16 @@
         {
           "moduleSpecifier": "../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["DeepReadonly"]
+          "namedImports": [
+            "DeepReadonly"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/typings/readonly/deep/index.ts",
@@ -5920,12 +6821,16 @@
         {
           "moduleSpecifier": "../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["DeepReadonly"]
+          "namedImports": [
+            "DeepReadonly"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/typings/readonly/deep/is.ts",
@@ -5936,7 +6841,9 @@
         {
           "moduleSpecifier": "../../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./index",
@@ -5957,12 +6864,16 @@
         {
           "moduleSpecifier": "../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["NotReadonly"]
+          "namedImports": [
+            "NotReadonly"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/typings/readonly/not/index.ts",
@@ -5973,12 +6884,16 @@
         {
           "moduleSpecifier": "../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["NotReadonly"]
+          "namedImports": [
+            "NotReadonly"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/typings/readonly/not/is.ts",
@@ -5989,7 +6904,9 @@
         {
           "moduleSpecifier": "../../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./cast",
@@ -6010,12 +6927,17 @@
         {
           "moduleSpecifier": "../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["Checker", "Checker2"]
+          "namedImports": [
+            "Checker",
+            "Checker2"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/functions/castings/checker/byType/cast.ts",
@@ -6026,7 +6948,9 @@
         {
           "moduleSpecifier": "../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["Checker2"]
+          "namedImports": [
+            "Checker2"
+          ]
         }
       ],
       "relativePath": "features/functions/castings/checker/byType/index.ts",
@@ -6037,7 +6961,9 @@
         {
           "moduleSpecifier": "../../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./cast",
@@ -6058,12 +6984,17 @@
         {
           "moduleSpecifier": "../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["Checker", "Checker2"]
+          "namedImports": [
+            "Checker",
+            "Checker2"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/functions/typings/checker/byType/cast.ts",
@@ -6074,12 +7005,16 @@
         {
           "moduleSpecifier": "../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["Checker2"]
+          "namedImports": [
+            "Checker2"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/functions/typings/checker/byType/index.ts",
@@ -6105,7 +7040,9 @@
         {
           "moduleSpecifier": "../../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./index",
@@ -6126,7 +7063,9 @@
         {
           "moduleSpecifier": "../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["Keys"]
+          "namedImports": [
+            "Keys"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/hasKeys/_all/index.ts",
@@ -6137,12 +7076,17 @@
         {
           "moduleSpecifier": "../../../utils/entries",
           "kind": "named",
-          "namedImports": ["checkEntries"]
+          "namedImports": [
+            "checkEntries"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["KeyTypes", "KeyTypesFrom"]
+          "namedImports": [
+            "KeyTypes",
+            "KeyTypesFrom"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/hasKeys/_all/typings.ts",
@@ -6153,7 +7097,9 @@
         {
           "moduleSpecifier": "../../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./index",
@@ -6174,17 +7120,23 @@
         {
           "moduleSpecifier": "../../../../functions/functions/partialCall",
           "kind": "named",
-          "namedImports": ["partialCall"]
+          "namedImports": [
+            "partialCall"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["SubType"]
+          "namedImports": [
+            "SubType"
+          ]
         },
         {
           "moduleSpecifier": "../../../utils/omit",
           "kind": "named",
-          "namedImports": ["omit"]
+          "namedImports": [
+            "omit"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/omit/by/index.ts",
@@ -6195,12 +7147,16 @@
         {
           "moduleSpecifier": "../../../../functions/functions/partialCall",
           "kind": "named",
-          "namedImports": ["partialCall"]
+          "namedImports": [
+            "partialCall"
+          ]
         },
         {
           "moduleSpecifier": "../../../utils/omit.is",
           "kind": "named",
-          "namedImports": ["omitIs"]
+          "namedImports": [
+            "omitIs"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/omit/by/is.ts",
@@ -6211,7 +7167,9 @@
         {
           "moduleSpecifier": "../../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./index",
@@ -6232,12 +7190,16 @@
         {
           "moduleSpecifier": "../../../../functions/functions/partialCall",
           "kind": "named",
-          "namedImports": ["partialCall"]
+          "namedImports": [
+            "partialCall"
+          ]
         },
         {
           "moduleSpecifier": "../../../utils/omit",
           "kind": "named",
-          "namedImports": ["omit"]
+          "namedImports": [
+            "omit"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/omit/const/index.ts",
@@ -6248,12 +7210,16 @@
         {
           "moduleSpecifier": "../../../../functions/functions/partialCall",
           "kind": "named",
-          "namedImports": ["partialCall"]
+          "namedImports": [
+            "partialCall"
+          ]
         },
         {
           "moduleSpecifier": "../../../utils/omit.is",
           "kind": "named",
-          "namedImports": ["omitIs"]
+          "namedImports": [
+            "omitIs"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/omit/const/is.ts",
@@ -6264,7 +7230,9 @@
         {
           "moduleSpecifier": "../../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./by/all",
@@ -6290,17 +7258,25 @@
         {
           "moduleSpecifier": "../../../../functions/functions/partialCall",
           "kind": "named",
-          "namedImports": ["partialCall"]
+          "namedImports": [
+            "partialCall"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["DeepOmit", "Keys", "PrimitiveObjectMap"]
+          "namedImports": [
+            "DeepOmit",
+            "Keys",
+            "PrimitiveObjectMap"
+          ]
         },
         {
           "moduleSpecifier": "../../../utils/omit.deep",
           "kind": "named",
-          "namedImports": ["omitDeep"]
+          "namedImports": [
+            "omitDeep"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/omit/deep/index.ts",
@@ -6311,17 +7287,24 @@
         {
           "moduleSpecifier": "../../../../functions/functions/partialCall",
           "kind": "named",
-          "namedImports": ["partialCall"]
+          "namedImports": [
+            "partialCall"
+          ]
         },
         {
           "moduleSpecifier": "../../../utils/omit.deep.is",
           "kind": "named",
-          "namedImports": ["omitDeepIs"]
+          "namedImports": [
+            "omitDeepIs"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["Keys", "PrimitiveObjectMap"]
+          "namedImports": [
+            "Keys",
+            "PrimitiveObjectMap"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/omit/deep/is.ts",
@@ -6332,7 +7315,9 @@
         {
           "moduleSpecifier": "../../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./index",
@@ -6353,12 +7338,16 @@
         {
           "moduleSpecifier": "../../../../functions/functions/partialCall",
           "kind": "named",
-          "namedImports": ["partialCall"]
+          "namedImports": [
+            "partialCall"
+          ]
         },
         {
           "moduleSpecifier": "../../../utils/omit",
           "kind": "named",
-          "namedImports": ["omit"]
+          "namedImports": [
+            "omit"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/omit/strict/index.ts",
@@ -6369,12 +7358,16 @@
         {
           "moduleSpecifier": "../../../../functions/functions/partialCall",
           "kind": "named",
-          "namedImports": ["partialCall"]
+          "namedImports": [
+            "partialCall"
+          ]
         },
         {
           "moduleSpecifier": "../../../utils/omit.is",
           "kind": "named",
-          "namedImports": ["omitIs"]
+          "namedImports": [
+            "omitIs"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/omit/strict/is.ts",
@@ -6385,7 +7378,9 @@
         {
           "moduleSpecifier": "../../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./by",
@@ -6406,12 +7401,16 @@
         {
           "moduleSpecifier": "../../../../functions/functions/partialCall",
           "kind": "named",
-          "namedImports": ["partialCall"]
+          "namedImports": [
+            "partialCall"
+          ]
         },
         {
           "moduleSpecifier": "../../../utils/pick.deep",
           "kind": "named",
-          "namedImports": ["pickDeep"]
+          "namedImports": [
+            "pickDeep"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/pick/deep/by.ts",
@@ -6422,12 +7421,16 @@
         {
           "moduleSpecifier": "../../../../functions/functions/partialCall",
           "kind": "named",
-          "namedImports": ["partialCall"]
+          "namedImports": [
+            "partialCall"
+          ]
         },
         {
           "moduleSpecifier": "../../../utils/pick.deep",
           "kind": "named",
-          "namedImports": ["pickDeep"]
+          "namedImports": [
+            "pickDeep"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/pick/deep/index.ts",
@@ -6438,7 +7441,9 @@
         {
           "moduleSpecifier": "../../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./index",
@@ -6459,12 +7464,16 @@
         {
           "moduleSpecifier": "../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["DeepReadonly"]
+          "namedImports": [
+            "DeepReadonly"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/readonly/deep/index.ts",
@@ -6475,12 +7484,16 @@
         {
           "moduleSpecifier": "../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["DeepNotReadonly"]
+          "namedImports": [
+            "DeepNotReadonly"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/readonly/deep/not.ts",
@@ -6491,7 +7504,9 @@
         {
           "moduleSpecifier": "../../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./deep",
@@ -6512,7 +7527,9 @@
         {
           "moduleSpecifier": "../../../utils/require",
           "kind": "named",
-          "namedImports": ["isRequiredDeep"]
+          "namedImports": [
+            "isRequiredDeep"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/require/is/deep.ts",
@@ -6528,7 +7545,9 @@
         {
           "moduleSpecifier": "../../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./index",
@@ -6549,12 +7568,16 @@
         {
           "moduleSpecifier": "../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["DeepReadonly"]
+          "namedImports": [
+            "DeepReadonly"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/freeze/deep/index.ts",
@@ -6565,12 +7588,16 @@
         {
           "moduleSpecifier": "../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["DeepNotReadonly"]
+          "namedImports": [
+            "DeepNotReadonly"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/freeze/deep/not.ts",
@@ -6581,7 +7608,9 @@
         {
           "moduleSpecifier": "../../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./const/all",
@@ -6607,12 +7636,16 @@
         {
           "moduleSpecifier": "../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["NotSubType"]
+          "namedImports": [
+            "NotSubType"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/omit/by/index.ts",
@@ -6623,12 +7656,16 @@
         {
           "moduleSpecifier": "../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["NotSubType"]
+          "namedImports": [
+            "NotSubType"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/omit/by/is.ts",
@@ -6639,7 +7676,9 @@
         {
           "moduleSpecifier": "../../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./index",
@@ -6660,7 +7699,9 @@
         {
           "moduleSpecifier": "../../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/omit/const/index.ts",
@@ -6671,7 +7712,9 @@
         {
           "moduleSpecifier": "../../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/omit/const/is.ts",
@@ -6682,7 +7725,9 @@
         {
           "moduleSpecifier": "../../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./by",
@@ -6703,12 +7748,16 @@
         {
           "moduleSpecifier": "../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["SubType"]
+          "namedImports": [
+            "SubType"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/pick/deep/by.ts",
@@ -6719,7 +7768,9 @@
         {
           "moduleSpecifier": "../../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/pick/deep/index.ts",
@@ -6730,7 +7781,9 @@
         {
           "moduleSpecifier": "../../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./index",
@@ -6756,12 +7809,16 @@
         {
           "moduleSpecifier": "../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["DeepReadonly"]
+          "namedImports": [
+            "DeepReadonly"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/readonly/deep/index.ts",
@@ -6772,12 +7829,16 @@
         {
           "moduleSpecifier": "../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["DeepReadonly"]
+          "namedImports": [
+            "DeepReadonly"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/readonly/deep/is.ts",
@@ -6788,7 +7849,9 @@
         {
           "moduleSpecifier": "../../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./index",
@@ -6809,12 +7872,16 @@
         {
           "moduleSpecifier": "../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["NotReadonly"]
+          "namedImports": [
+            "NotReadonly"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/readonly/not/index.ts",
@@ -6825,12 +7892,16 @@
         {
           "moduleSpecifier": "../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["NotReadonly"]
+          "namedImports": [
+            "NotReadonly"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/readonly/not/is.ts",
@@ -6841,7 +7912,9 @@
         {
           "moduleSpecifier": "../../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./deep",
@@ -6862,12 +7935,16 @@
         {
           "moduleSpecifier": "../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["DeepRequired"]
+          "namedImports": [
+            "DeepRequired"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/require/is/deep.ts",
@@ -6878,7 +7955,9 @@
         {
           "moduleSpecifier": "../../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/require/is/index.ts",
@@ -6889,7 +7968,9 @@
         {
           "moduleSpecifier": "../../../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./index",
@@ -6910,12 +7991,16 @@
         {
           "moduleSpecifier": "../../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["DeepNotReadonly"]
+          "namedImports": [
+            "DeepNotReadonly"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/typings/readonly/deep/not/index.ts",
@@ -6926,12 +8011,16 @@
         {
           "moduleSpecifier": "../../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["DeepNotReadonly"]
+          "namedImports": [
+            "DeepNotReadonly"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/common/typings/readonly/deep/not/is.ts",
@@ -6942,7 +8031,9 @@
         {
           "moduleSpecifier": "../../../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./index",
@@ -6963,17 +8054,25 @@
         {
           "moduleSpecifier": "../../../../../functions/functions/partialCall",
           "kind": "named",
-          "namedImports": ["partialCall"]
+          "namedImports": [
+            "partialCall"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["Keys", "NotSubType", "PrimitiveObjectMap"]
+          "namedImports": [
+            "Keys",
+            "NotSubType",
+            "PrimitiveObjectMap"
+          ]
         },
         {
           "moduleSpecifier": "../../../../utils/omit.deep",
           "kind": "named",
-          "namedImports": ["omitDeep"]
+          "namedImports": [
+            "omitDeep"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/omit/deep/by/index.ts",
@@ -6984,12 +8083,16 @@
         {
           "moduleSpecifier": "../../../../../functions/functions/partialCall",
           "kind": "named",
-          "namedImports": ["partialCall"]
+          "namedImports": [
+            "partialCall"
+          ]
         },
         {
           "moduleSpecifier": "../../../../utils/omit.deep.is",
           "kind": "named",
-          "namedImports": ["omitDeepIs"]
+          "namedImports": [
+            "omitDeepIs"
+          ]
         }
       ],
       "relativePath": "features/objects/castings/omit/deep/by/is.ts",
@@ -7000,7 +8103,9 @@
         {
           "moduleSpecifier": "../../../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./index",
@@ -7021,12 +8126,17 @@
         {
           "moduleSpecifier": "../../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["NotSubType", "ValuesOf"]
+          "namedImports": [
+            "NotSubType",
+            "ValuesOf"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/omit/by/const/index.ts",
@@ -7037,12 +8147,17 @@
         {
           "moduleSpecifier": "../../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["NotSubType", "ValuesOf"]
+          "namedImports": [
+            "NotSubType",
+            "ValuesOf"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/omit/by/const/is.ts",
@@ -7053,7 +8168,9 @@
         {
           "moduleSpecifier": "../../../../../../globals/utils/expandFn",
           "kind": "named",
-          "namedImports": ["expandFn"]
+          "namedImports": [
+            "expandFn"
+          ]
         },
         {
           "moduleSpecifier": "./index",
@@ -7074,12 +8191,16 @@
         {
           "moduleSpecifier": "../../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["DeepNotReadonly"]
+          "namedImports": [
+            "DeepNotReadonly"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/readonly/deep/not/index.ts",
@@ -7090,12 +8211,16 @@
         {
           "moduleSpecifier": "../../../../../../globals/types",
           "kind": "named",
-          "namedImports": ["DeepNotReadonly"]
+          "namedImports": [
+            "DeepNotReadonly"
+          ]
         },
         {
           "moduleSpecifier": "../../../../../../globals/utils/_unknown",
           "kind": "named",
-          "namedImports": ["_unknown"]
+          "namedImports": [
+            "_unknown"
+          ]
         }
       ],
       "relativePath": "features/objects/typings/readonly/deep/not/is.ts",
