@@ -17,6 +17,7 @@ import ru from './ru';
 import trueObject from './trueObject';
 import type from './type';
 import values from './values';
+import noExtra from './noExtra';
 
 export const castings = expandFn(_index, {
   trueObject,
@@ -36,4 +37,5 @@ export const castings = expandFn(_index, {
   ru,
   ra,
   primitive,
+  noExtra,
 });

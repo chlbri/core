@@ -49,7 +49,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "build": "pnpm rm:lib && pnpm run rollup && pnpm codebase",
+    "build": "pnpm rm:lib && pnpm run rollup && pnpm codebase -x \"src/**/*/test-d.ts\"",
     "ci": "pnpm run config:off && pnpm run lint && pnpm run test && pnpm run p-q",
     "ci:admin": "pnpm run rm && pnpm --prefix ./example run rm && pnpm run upgrade && pnpm --prefix ./example run upgrade && pnpm run ci",
     "clean": "pnpm run rm && pnpm run config",
@@ -116,7 +116,6 @@
     "pretty-quick": "^4.2.2",
     "rollup": "^4.52.3",
     "size-limit": "^11.2.0",
-    "tsc": "^2.0.4",
     "tslib": "^2.8.1",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3",

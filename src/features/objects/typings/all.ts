@@ -16,6 +16,7 @@ import rn from './rn';
 import ru from './ru';
 import trueObject from './trueObject';
 import values from './values';
+import noExtra from './noExtra';
 
 export const typings = typeFn<object>()({
   trueObject,
@@ -35,4 +36,5 @@ export const typings = typeFn<object>()({
   rn,
   ra,
   primitive,
+  noExtra,
 });
