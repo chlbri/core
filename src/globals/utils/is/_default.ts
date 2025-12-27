@@ -1,4 +1,4 @@
-import type { PrimitiveS, TransformO } from '#features/transform/types';
+import type { TransformS, PrimitiveS } from '#features/transform/types';
 import type { Classe } from '#types';
 
 export const isFn = <const T>(check: T) => {
@@ -8,7 +8,7 @@ export const isFn = <const T>(check: T) => {
 };
 
 export const isTypeFn = <T extends PrimitiveS | 'object'>(type: T) => {
-  return (value?: unknown): value is TransformO<T> => {
+  return (value?: unknown): value is TransformS<T> => {
     return typeof value === type;
   };
 };

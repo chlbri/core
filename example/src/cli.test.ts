@@ -8,7 +8,6 @@ describe('CLI', () => {
   afterAll(() => exec('pnpm core destroy'));
 
   const FILES = [
-    'globals.types',
     'features.arrays.types',
     'features.booleans.types',
     'features.common.types',
@@ -16,12 +15,14 @@ describe('CLI', () => {
     'features.numbers.constants',
     'features.numbers.types',
     'features.objects.types',
+    'features.objects.utils.types',
     'features.promises.types',
     'features.strings.constants',
     'features.strings.types',
     'features.transform.constants',
+    'features.transform.transform.types',
     'features.transform.types',
-    'features.objects.utils.types',
+    'globals.types',
   ];
   describe('#01 => INIT', () => {
     test('#01 => Init cmd', () => exec('pnpm core init'));
@@ -152,5 +153,5 @@ describe('CLI', () => {
     });
   });
 
-  describe.todo('#04 => Destroy');
+  // describe.todo('#04 => Destroy');
 });

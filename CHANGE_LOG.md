@@ -3,6 +3,35 @@
 <br/>
 <br/>
 
+### Version [0.1.5] --> _2025/12/27 17:32_
+
+- ✨ **feat**: Add NoExtraKeys and NoExtraKeysStrict types
+  - Introduced advanced TypeScript types for deep validation of object
+    properties
+  - Enhanced type safety with strict property checking
+  - Added support for nested object validation
+
+- 🔧 **ci**: Update upgrade workflow
+  - Updated CI/CD pipeline to use bemedev upgrade-npm-package
+  - Enhanced automated upgrade process
+
+- ✨ **feat**: Update Rollup configuration and add commit message editor
+  documentation
+  - Enhanced build configuration for better bundling
+  - Added comprehensive commit message editor documentation
+  - Improved developer documentation
+
+- 🧪 **test**: Comprehensive test coverage
+  - <u>Test coverage **_100%_**</u>
+
+<br/>
+
+### Version [0.1.4] --> _2025/09/06 19:25_
+
+-- Upgrade dependencies --
+
+<br/>
+
 ### Version [0.1.2] --> _2025/09/06 19:25_
 
 -- Upgrade dependencies --

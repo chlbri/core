@@ -1,5 +1,8 @@
 {
-  "include": ["src/**/*"],
+  "include": [
+    "src/**/*",
+    "src/features/objects/typings/noExtra.test-d.ts"
+  ],
   "compilerOptions": {
     "lib": ["dom", "esnext"],
     "importHelpers": true,

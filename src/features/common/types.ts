@@ -1,4 +1,4 @@
-import type { TransformO } from '#features/transform/types';
+import type { TransformS } from '#features/transform/types';
 import type { Fn, RecursiveArrayOf } from '#types';
 
 export type SingleOrRecursiveArrayOf<T> = T | RecursiveArrayOf<T>;
@@ -58,7 +58,7 @@ export type KeyTypesFrom<T extends KeyTypes> = {
   [K in keyof T]: T[K] extends KeyTypes
     ? KeyTypesFrom<T[K]>
     : T[K] extends TypeStrings
-      ? TransformO<T[K]>
+      ? TransformS<T[K]>
       : T[K] extends Checker2<infer R>
         ? R
         : unknown;
