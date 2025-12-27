@@ -417,4 +417,10 @@ export type NoExtraKeysStrict<T extends Schema, Schema> = NoExtraKeys<
   Schema
 >;
 
+export type StateValue = string | StateValueMap;
+
+export interface StateValueMap {
+  [key: string]: StateValue;
+}
+
 // #endregion NoExtraKeys

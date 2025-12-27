@@ -21,9 +21,9 @@ export default defineConfig({
     },
     coverage: {
       enabled: true,
-      extension: 'ts',
+      // extension: 'ts',
       reportsDirectory: '.coverage',
-      all: true,
+      // all: true,
       provider: 'v8',
     },
   },

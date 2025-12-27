@@ -1,3 +1,4 @@
 export * from './constants';
-export * from './functions';
+export * from './helpers';
+export * from './transform';
 export * from './types';
