@@ -6,6 +6,21 @@
 <details>
 <summary>
 
+## **[0.1.8] - 29/12/2025** => _11:52_
+
+</summary>
+
+- **Chore**: Bump package version to `0.1.8`
+- **Chore**: Update lockfile and auxiliary files
+- **Chore**: Update .codebase.json
+
+</details>
+
+<br/>
+
+<details>
+<summary>
+
 ## **[0.1.7] - 29/12/2025** => _11:42_
 
 </summary>

@@ -1,7 +1,7 @@
 {
   "STATS": {
     "files": 452,
-    "imports": 936,
+    "imports": 937,
     "exports": 1026
   },
   "CODEBASE_ANALYSIS": {
@@ -8627,12 +8627,18 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["Keys", "PrimitiveObject"],
+          "namedImports": ["Keys"],
+          "isTypeOnly": true
+        },
+        {
+          "moduleSpecifier": "../types",
+          "kind": "named",
+          "namedImports": ["ObjectS"],
           "isTypeOnly": true
         }
       ],
       "relativePath": "features/transform/helpers/record.ts",
-      "text": "import type { Keys, PrimitiveObject } from '../../../globals/types';\n\n/**\n * record const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst record = <const K extends Keys[], V extends PrimitiveObject>(\n  value: V,\n  ...keys: K\n) => {\n  const object = keys.reduce((acc, key) => {\n    acc[key] = value;\n    return acc;\n  }, {} as any);\n\n  return object as Record<K[number] extends never ? Keys : K[number], V>;\n};\n\nexport default record;\n\n    ",
+      "text": "import type { Keys } from '../../../globals/types';\nimport type { ObjectS } from '../types';\n\n/**\n * record const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst record = <const K extends Keys[], V extends ObjectS>(\n  value: V,\n  ...keys: K\n) => {\n  const object = keys.reduce((acc, key) => {\n    acc[key] = value;\n    return acc;\n  }, {} as any);\n\n  return object as Record<K[number] extends never ? Keys : K[number], V>;\n};\n\nexport default record;\n\n    ",
       "exports": []
     },
     "features.transform.helpers.soa": {
@@ -8710,7 +8716,7 @@
         {
           "moduleSpecifier": "../../../globals/types",
           "kind": "named",
-          "namedImports": ["Keys", "PrimitiveObjectMap"],
+          "namedImports": ["Keys"],
           "isTypeOnly": true
         },
         {
@@ -8722,12 +8728,12 @@
         {
           "moduleSpecifier": "../types",
           "kind": "named",
-          "namedImports": ["ObjectS"],
+          "namedImports": ["ObjectMapS", "ObjectS"],
           "isTypeOnly": true
         }
       ],
       "relativePath": "features/transform/helpers/union.ts",
-      "text": "import type { Keys, PrimitiveObjectMap } from '../../../globals/types';\nimport { expandFn } from '../../../globals/utils/expandFn';\nimport type { ObjectS } from '../types';\n\nconst union = <T extends [ObjectS, ObjectS, ...ObjectS[]]>(\n  ...values: T\n) => {\n  return values[0] as T[number];\n};\n\ntype Discriminated<K extends Keys> = PrimitiveObjectMap &\n  Record<K, ObjectS>;\n\n/**\n * fn const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst fn = expandFn(union, {\n  discriminated: <\n    const K extends Keys,\n    T extends [Discriminated<K>, Discriminated<K>, ...Discriminated<K>[]],\n  >(\n    _key: K,\n    ...values: T\n  ) => union(...values),\n});\n\nexport default fn;\n\n    ",
+      "text": "import type { Keys } from '../../../globals/types';\nimport { expandFn } from '../../../globals/utils/expandFn';\nimport type { ObjectMapS, ObjectS } from '../types';\n\nconst union = <T extends [ObjectS, ObjectS, ...ObjectS[]]>(\n  ...values: T\n) => {\n  return values[0] as T[number];\n};\n\ntype Discriminated<K extends Keys> = ObjectMapS & Record<K, ObjectS>;\n\n/**\n * fn const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst fn = expandFn(union, {\n  discriminated: <\n    const K extends Keys,\n    T extends [Discriminated<K>, Discriminated<K>, ...Discriminated<K>[]],\n  >(\n    _key: K,\n    ...values: T\n  ) => union(...values),\n});\n\nexport default fn;\n\n    ",
       "exports": []
     },
     "features.transform.index": {
