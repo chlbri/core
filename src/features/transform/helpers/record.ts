@@ -1,6 +1,7 @@
-import type { Keys, PrimitiveObject } from '#types';
+import type { Keys } from '#types';
+import type { ObjectS } from '../types';
 
-const record = <const K extends Keys[], V extends PrimitiveObject>(
+const record = <const K extends Keys[], V extends ObjectS>(
   value: V,
   ...keys: K
 ) => {

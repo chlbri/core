@@ -3,6 +3,23 @@
 <br/>
 <br/>
 
+<details>
+<summary>
+
+## **[0.1.6] - 29/12/2025** => _09:14_
+
+</summary>
+
+- **Fix(transform)**: Use `ObjectMapS` instead of `PrimitiveObjectMap` in
+  `union` helper to improve typing and compatibility.
+- **Refactor(ci)**: Rename `pnpm:lint` VSCode task to `pnpm:ci` and remove
+  `pnpm:test` task. _NO_CI_
+- **Chore**: Bump package version to `0.1.6`
+
+</details>
+
+<br/>
+
 ### Version [0.1.5] --> _2025/12/27 17:32_
 
 - ✨ **feat**: Add NoExtraKeys and NoExtraKeysStrict types
