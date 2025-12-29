@@ -6,6 +6,21 @@
 <details>
 <summary>
 
+## **[0.1.7] - 29/12/2025** => _11:42_
+
+</summary>
+
+- **Chore**: Bump package version to `0.1.7`
+- **Docs**: Remove placeholder example in `README.md` and tidy CHANGE_LOG
+  link
+
+</details>
+
+<br/>
+
+<details>
+<summary>
+
 ## **[0.1.6] - 29/12/2025** => _09:14_
 
 </summary>
