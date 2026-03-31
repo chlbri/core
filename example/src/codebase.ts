@@ -13,7 +13,15 @@ export interface ExportInfo {
   kind: 'default' | 'named' | 'namespace';
   text?: string;
   moduleSpecifier?: string;
-  declarationKind?: 'function' | 'class' | 'interface' | 'type' | 'variable' | 'const' | 'let' | 'enum';
+  declarationKind?:
+    | 'function'
+    | 'class'
+    | 'interface'
+    | 'type'
+    | 'variable'
+    | 'const'
+    | 'let'
+    | 'enum';
 }
 
 export interface FileAnalysis {
@@ -27,10 +35,9 @@ export interface CodebaseAnalysis {
 }
 
 export const CODEBASE_ANALYSIS: CodebaseAnalysis = {
-  'add': {
+  add: {
     relativePath: 'add.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * Adds two numbers together
  * @param a First number
@@ -71,7 +78,7 @@ export function addMany(...numbers: number[]): number {
 }
 `,
   },
-  'cli': {
+  cli: {
     relativePath: 'cli.ts',
     imports: [
       {
@@ -99,10 +106,9 @@ if (process.argv[1] && process.argv[1].endsWith('cli.ts')) {
 //# sourceMappingURL=cli.js.map
 `,
   },
-  'divide': {
+  divide: {
     relativePath: 'divide.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * Divides the first number by the second
  * @param a Dividend
@@ -153,10 +159,9 @@ export function safeDivide(
 }
 `,
   },
-  'index': {
+  index: {
     relativePath: 'index.ts',
-    imports: [
-    ],
+    imports: [],
     text: `// Export all arithmetic functions
 export * from './add';
 export * from './divide';
@@ -166,10 +171,9 @@ export * from './subtract';
 export * from './utils';
 `,
   },
-  'multiply': {
+  multiply: {
     relativePath: 'multiply.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * Multiplies two numbers together
  * @param a First number
@@ -210,10 +214,9 @@ export function multiplyMany(...numbers: number[]): number {
 }
 `,
   },
-  'power': {
+  power: {
     relativePath: 'power.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * Raises a number to the power of another number
  * @param base Base number
@@ -296,10 +299,9 @@ export function sqrt(n: number): number {
 }
 `,
   },
-  'subtract': {
+  subtract: {
     relativePath: 'subtract.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * Subtracts the second number from the first
  * @param a First number (minuend)
@@ -344,10 +346,9 @@ export function subtractMany(
 }
 `,
   },
-  'utils': {
+  utils: {
     relativePath: 'utils.ts',
-    imports: [
-    ],
+    imports: [],
     text: `/**
  * Calculates the remainder of division
  * @param a Dividend

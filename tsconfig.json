@@ -26,14 +26,12 @@
     "isolatedModules": true,
     "noEmit": true,
     "declarationMap": true,
-    "baseUrl": "./src",
     "paths": {
-      "#utils/*": ["globals/utils/*"],
-      "#scripts/*": ["scripts/*"],
-      "#features/*": ["features/*"],
-      "#codebase": ["../.codebase.json"],
-      "#types": ["globals/types"],
-      "#bemedev/*": ["src/src/.bemedev/*"]
+      "#utils/*": ["./src/globals/utils/*"],
+      "#scripts/*": ["./src/scripts/*"],
+      "#features/*": ["./src/features/*"],
+      "#codebase": ["./.codebase.json"],
+      "#types": ["./src/globals/types"]
     }
   }
 }
