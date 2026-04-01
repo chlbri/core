@@ -1,7 +1,7 @@
-import type { Keys } from '#types';
-import type { ObjectS } from '../types';
+import type { Keys } from "#types";
+import type { ObjectS } from "../types";
 
-const record = <const K extends Keys[], V extends ObjectS>(
+export const record = <const K extends Keys[], V extends ObjectS>(
   value: V,
   ...keys: K
 ) => {
@@ -10,10 +10,5 @@ const record = <const K extends Keys[], V extends ObjectS>(
     return acc;
   }, {} as any);
 
-  return object as Record<
-    K[number] extends never ? Keys : K[number],
-    V
-  >;
+  return object as Record<K[number] extends never ? Keys : K[number], V>;
 };
-
-export default record;

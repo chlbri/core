@@ -1,7 +1,5 @@
-import { ARRAY } from '../constants';
-import type { __ObjectS, ArrayCustom, Maybe } from '../types';
+import { ARRAY } from "../constants";
+import type { __ObjectS, ArrayCustom, Optional } from "../types";
 
-const array = <T extends __ObjectS | Maybe>(value: T) =>
+export const array = <T extends __ObjectS | Optional>(value: T) =>
   ({ [ARRAY]: value }) as ArrayCustom<T>;
-
-export default array;

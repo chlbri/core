@@ -1,19 +1,29 @@
+import type { AnyArray } from "#types";
 import type { ENGLISH_LETTERS } from "./constants";
+
+export type PossibleString =
+  | string
+  | number
+  | bigint
+  | boolean
+  | null
+  | undefined;
+
+export type ArrayS = AnyArray<PossibleString>;
 
 export type LowerLetters = (typeof ENGLISH_LETTERS)[number];
 export type UpperLetters = Uppercase<LowerLetters>;
 export type Letters = UpperLetters | LowerLetters;
 export type Email = `${string}@${string}.${string}`;
-export type _JoinStringHelper = string | number | boolean | bigint;
 
 export type JoinString<
-  T extends readonly string[],
-  sep extends string = " ",
+  T extends ArrayS,
+  sep extends PossibleString = " ",
 > = T extends []
   ? ""
-  : T extends [_JoinStringHelper]
+  : T extends [PossibleString]
     ? `${T[0]}`
-    : T extends [_JoinStringHelper, ...infer U extends readonly string[]]
+    : T extends [PossibleString, ...infer U extends ArrayS]
       ? `${T[0]}${sep}${JoinString<U, sep>}`
       : string;
 

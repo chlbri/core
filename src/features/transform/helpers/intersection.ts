@@ -1,4 +1,4 @@
-import type { ObjectMapS } from '../types';
+import type { ObjectMapS } from "../types";
 
 type _IntersectionCustom<T extends ObjectMapS[]> = T extends [
   infer First extends ObjectMapS,
@@ -14,7 +14,7 @@ export type IntersectionCustom<T extends ObjectMapS[]> =
       }
     : never;
 
-const intersection = <
+export const intersection = <
   T extends [ObjectMapS, ObjectMapS, ...ObjectMapS[]],
 >(
   ...values: T
@@ -27,5 +27,3 @@ const intersection = <
   }, {} as any);
   return out as IntersectionCustom<T>;
 };
-
-export default intersection;

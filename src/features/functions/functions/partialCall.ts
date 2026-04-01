@@ -1,20 +1,17 @@
-import type { Parts, Fn, PartDiff } from '../types';
-import { AnyArray } from '#types';
-import { expandFn } from '#utils/expandFn';
+import type { Parts, Fn, PartDiff } from "../types";
+import { AnyArray } from "#types";
+import { expandFn } from "#utils/expandFn";
 
 type PartialCall_F = <
   const F extends Fn,
   const T extends Parts<Parameters<F>> = Parts<Parameters<F>>,
-  const U extends PartDiff<Parameters<F>, T> = PartDiff<
-    Parameters<F>,
-    T
-  >,
+  const U extends PartDiff<Parameters<F>, T> = PartDiff<Parameters<F>, T>,
 >(
   f: F,
   ...headArgs: T
 ) => (...tailArgs: U) => ReturnType<F>;
 
-type PartialCallLegacy_F = <
+type PartialCallArray_F = <
   T extends AnyArray = AnyArray,
   U extends AnyArray = AnyArray,
   R = any,
@@ -26,16 +23,11 @@ type PartialCallLegacy_F = <
 type PartialCallBuild_F = <
   const F extends Fn,
   const T extends Parts<Parameters<F>> = Parts<Parameters<F>>,
-  const U extends PartDiff<Parameters<F>, T> = PartDiff<
-    Parameters<F>,
-    T
-  >,
+  const U extends PartDiff<Parameters<F>, T> = PartDiff<Parameters<F>, T>,
 >(
   f: F,
   ...headArgs: T
-) => <
-  const T extends Fn<[...U], ReturnType<F>> = Fn<[...U], ReturnType<F>>,
->(
+) => <const T extends Fn<[...U], ReturnType<F>> = Fn<[...U], ReturnType<F>>>(
   ...tailArgs: Parameters<T>
 ) => ReturnType<T>;
 
@@ -67,8 +59,31 @@ export const partialCall = expandFn(_partialCall, {
    * @param f The function to test
    * @param headArgs First arguments for reducing
    * @returns A new function without the ***headArgs*** provided
+   *
+   * Use this for function that have a large number of parameters use param array as the last parameter, this will allow you to partially apply the function without having to specify all the parameters in the type signature. However, it can lead to type inference issues and is less type-safe than the `typed` version. Use it when you need to partially apply a function with a variable number of parameters.
+   *
+   * Example usage:
+   * ```ts
+   * const concatenate = (separator: string, ...strings: string[]) => strings.join(separator);
+   * const commaSeparated = partialCall.paramArray(concatenate, ',');
+   * console.log(commaSeparated('Hello', 'World'));
+   * // Output: "Hello,World"
+   *
+   * ```
+   *
    */
-  legacy: __partialCall as PartialCallLegacy_F,
+  paramArray: __partialCall as PartialCallArray_F,
+
+  /**
+   *
+   * @param f The function to test
+   * @param headArgs First arguments for reducing
+   * @returns A new function without the ***headArgs*** provided
+   *
+   * @see {linkcode partialCall.paramArray}
+   * It's alias for `paramArray` version.
+   */
+  array: __partialCall as PartialCallArray_F,
 
   /**
    *
@@ -108,6 +123,7 @@ export const partialCall = expandFn(_partialCall, {
    *
    */
   build: ((f, ...headArgs) => {
-    return (...tailArgs) => f(...headArgs, ...tailArgs);
+    const head: any = headArgs ?? [];
+    return (...tailArgs) => f(...head, ...tailArgs);
   }) as PartialCallBuild_F,
 });

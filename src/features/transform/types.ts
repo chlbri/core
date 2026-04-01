@@ -1,33 +1,35 @@
-import type { AnyArray, Keys, NOmit, Ru, SoRa } from '#types';
+import type { AnyArray, Keys, NOmit, Ru, SoRa } from "#types";
 import type {
   ARRAY,
   CUSTOM,
-  MAYBE,
+  OPTIONAL,
   PARTIAL,
   PRIMITIVES,
   PRIMITIVE_OBJECTS,
-} from './constants';
+} from "./constants";
 
 export type PrimitiveS = (typeof PRIMITIVES)[number];
-type TransformPrimitiveS<T extends PrimitiveS> = T extends 'string'
+type TransformPrimitiveS<T extends PrimitiveS> = T extends "string"
   ? string
-  : T extends 'number'
+  : T extends "number"
     ? number
-    : T extends 'boolean'
-      ? boolean
-      : T extends 'null'
-        ? null
-        : T extends 'undefined'
-          ? undefined
-          : T extends 'symbol'
-            ? symbol
-            : never;
+    : T extends "void"
+      ? void
+      : T extends "boolean"
+        ? boolean
+        : T extends "null"
+          ? null
+          : T extends "undefined"
+            ? undefined
+            : T extends "symbol"
+              ? symbol
+              : never;
 
 export type Types = PrimitiveS | (typeof PRIMITIVE_OBJECTS)[number];
 
 export type TransformTypes<T extends Types> = T extends PrimitiveS
   ? TransformPrimitiveS<T>
-  : T extends 'date'
+  : T extends "date"
     ? Date
     : // eslint-disable-next-line @typescript-eslint/no-empty-object-type
       {};
@@ -42,13 +44,13 @@ export type PartialCustom = {
 
 export type __ObjectS = Types | ObjectMapS | Custom | PartialCustom;
 
-export type Maybe<
+export type Optional<
   T extends __ObjectS | ArrayCustom | __ObjectS[] = __ObjectS,
 > = {
-  [MAYBE]: T;
+  [OPTIONAL]: T;
 };
 
-export type ArrayCustom<T extends __ObjectS | Maybe = __ObjectS> = {
+export type ArrayCustom<T extends __ObjectS | Optional = __ObjectS> = {
   [ARRAY]: T;
 };
 
@@ -56,7 +58,7 @@ export type ObjectMapS = {
   [key: Keys]: SoRa<_ObjectS>;
 };
 
-type _ObjectS = __ObjectS | Maybe | ArrayCustom;
+type _ObjectS = __ObjectS | Optional | ArrayCustom;
 
 /**
  * A type that represents a primitive object, which can be a primitive value or an object
@@ -84,10 +86,8 @@ type __TransformPrimitiveObject<T> = T extends Types
       : T extends ArrayCustom<infer A>
         ? TransformS<A>[]
         : T extends PartialCustom
-          ? Partial<
-              __TransformPrimitiveObject<NOmit<T, typeof PARTIAL>>
-            >
-          : T extends Maybe<infer TMaybe>
+          ? Partial<__TransformPrimitiveObject<NOmit<T, typeof PARTIAL>>>
+          : T extends Optional<infer TMaybe>
             ? __TransformPrimitiveObject<TMaybe> | undefined
             : {
                 [K in keyof T]: __TransformPrimitiveObject<T[K]>;
@@ -100,20 +100,18 @@ type ReduceTupleU<T extends AnyArray> = T extends [
   ? [Undefiny<First>, ...ReduceTupleU<Rest>]
   : T[number] extends never
     ? []
-    : T['length'] extends 0
+    : T["length"] extends 0
       ? []
-      : number extends T['length']
+      : number extends T["length"]
         ? T
         : Undefiny<T[number]>[];
 type HasUndefined<T> = undefined extends T ? true : false;
 type UndefinyObject<T extends object> = {
-  [K in keyof T as HasUndefined<T[K]> extends true
-    ? never
-    : K]: Undefiny<T[K]>;
+  [K in keyof T as HasUndefined<T[K]> extends true ? never : K]: Undefiny<T[K]>;
 } & {
-  [K in keyof T as HasUndefined<T[K]> extends true
-    ? K
-    : never]?: Undefiny<Exclude<T[K], undefined>>;
+  [K in keyof T as HasUndefined<T[K]> extends true ? K : never]?: Undefiny<
+    Exclude<T[K], undefined>
+  >;
 } extends infer F
   ? {
       [K in keyof F]: F[K];

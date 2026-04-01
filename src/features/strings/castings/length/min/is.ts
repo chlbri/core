@@ -1,5 +1,12 @@
-const isMinLength = (min: number, value: string) => {
-  return value.length > min;
+import compare from "../compare/number/typed";
+import type { MinLength } from "#types";
+
+const isMaxLength = <N extends number, T extends string>(
+  min: N,
+  value: T,
+): value is MinLength<N, T> => {
+  const out = compare(min, value);
+  return out === 1;
 };
 
-export default isMinLength;
+export default isMaxLength;

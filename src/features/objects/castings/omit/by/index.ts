@@ -2,7 +2,7 @@ import { partialCall } from "#features/functions/functions/partialCall";
 import type { SubType } from "#types";
 import { omit } from "../../../utils/omit";
 
-const fn = partialCall.legacy(omit, "element") as <
+const fn = partialCall.paramArray(omit, "element") as <
   T extends object,
   K extends any[],
 >(

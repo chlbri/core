@@ -1,7 +1,7 @@
-import { partialCall } from '#features/functions/functions/partialCall';
-import { pick } from '../../utils/pick';
+import { partialCall } from "#features/functions/functions/partialCall";
+import { pick } from "../../utils/pick";
 
-const fn = partialCall.legacy(pick, 'key') as <
+const fn = partialCall.paramArray(pick, "key") as <
   T extends object,
   K extends any[],
 >(

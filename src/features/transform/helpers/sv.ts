@@ -1,5 +1,4 @@
-import type { StateValue } from '#types';
-import type { Custom } from '../types';
+import type { StateValue } from "#types";
+import type { Custom } from "../types";
 
-const sv = {} as Custom<StateValue>;
-export default sv;
+export const sv = {} as Custom<StateValue>;

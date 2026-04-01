@@ -2,7 +2,7 @@ import { partialCall } from "#features/functions/functions/partialCall";
 import type { Keys, NotSubType, PrimitiveObjectMap } from "#types";
 import { omitDeep } from "../../../../utils/omit.deep";
 
-const fn = partialCall.legacy(omitDeep, "element") as <
+const fn = partialCall.paramArray(omitDeep, "element") as <
   T extends PrimitiveObjectMap,
   K extends Keys[],
 >(

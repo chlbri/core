@@ -12,10 +12,10 @@ import type {
   union,
   array,
   tuple,
-} from './helpers';
-import type { ObjectS, TransformS } from './types';
+} from "./helpers";
+import type { ObjectS, TransformS } from "./types";
 
-export type Helpers = {
+type Helpers = {
   any: typeof any;
   custom: typeof custom;
   intersection: typeof intersection;

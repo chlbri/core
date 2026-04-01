@@ -1,12 +1,10 @@
-import type { __ObjectS, ArrayCustom, Maybe } from '../types';
+import type { __ObjectS, ArrayCustom, Optional } from "../types";
 
-const tuple = <
+export const tuple = <
   T extends [
-    __ObjectS | Maybe | ArrayCustom,
-    ...(__ObjectS | Maybe | ArrayCustom)[],
+    __ObjectS | Optional | ArrayCustom,
+    ...(__ObjectS | Optional | ArrayCustom)[],
   ],
 >(
   ...values: T
 ) => values;
-
-export default tuple;

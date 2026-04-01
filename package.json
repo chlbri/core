@@ -1,6 +1,6 @@
 {
   "name": "@bemedev/core",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "The core library of @bemedev, providing essential functionalities and utilities for the Bemedev ecosystem.",
   "author": {
     "email": "bri_lvi@icloud.com",
@@ -48,7 +48,7 @@
     "CONTRIBUTING.md"
   ],
   "engines": {
-    "node": ">=20"
+    "node": ">=24"
   },
   "scripts": {
     "_lint": "oxlint",
@@ -57,11 +57,10 @@
     "ci": "CI_START=$(date +%s) && pnpm run config:off && pnpm run lint && pnpm run test && pnpm run p-q && echo \"\n✅ CI takes $(($(date +%s) - CI_START))s\n\"",
     "ci:admin": "pnpm run rm && pnpm --prefix ./example run rm && pnpm run upgrade:fast && pnpm --prefix ./example run upgrade && pnpm run ci",
     "clean": "pnpm run rm && pnpm run config",
-    "codegen": "pnpm codebase -x \"src/**/*.test-d.ts\"",
+    "codegen": "pnpm codebase -x \"src/**/*.test-d.ts\" -x \"src/scripts/**/*\"",
     "config": "pnpm install",
     "config:off": "pnpm run config --offline",
     "config:vitest": "pnpm add -D @vitest/coverage-v8@3.2.4 @vitest/ui@3.2.4 vitest@3.2.4",
-    "eslint": "eslint \"{src/**/*,App}.{ts,tsx}\"",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
     "lint": "pnpm run fmt && pnpm run lint:fix",
@@ -126,7 +125,7 @@
     "oxlint": "^1.58.0",
     "prettier": "3.8.1",
     "pretty-quick": "^4.2.2",
-    "rolldown": "1.0.0-rc.12",
+    "rolldown": "1.0.0-rc.13",
     "rollup": "4.60.1",
     "size-limit": "^12.0.1",
     "tslib": "^2.8.1",
