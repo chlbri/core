@@ -16,8 +16,8 @@ cat package.json | grep '"version"'
 head -20 CHANGELOG.md | grep -E "^\#\# \*\*\[" | head -1
 ```
 
-- NB: If versions match (package.json vs last version inside CHANGELOG.md):
-  STOP !! - Documentation is already up to date.
+- NB: If versions match (package.json vs last version inside
+  CHANGELOG.md): STOP !! - Documentation is already up to date.
 
 ### Step 3: Check if version changed
 
@@ -75,7 +75,8 @@ If no significant changes: STOP.
 <br/>
 ```
 
-Order: Breaking changes → Features → Fixes → Docs → Refactor → Dependencies
+Order: Breaking changes → Features → Fixes → Docs → Refactor →
+Dependencies
 
 3. **Update README.md** only if:
    - New features need documentation

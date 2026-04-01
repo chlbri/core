@@ -1,6 +1,8 @@
 import type { PrimitiveObject } from '#types';
 
-export type FormatKey<T = any> = (key: Extract<keyof T, string>) => string;
+export type FormatKey<T = any> = (
+  key: Extract<keyof T, string>,
+) => string;
 
 /**
  * Creates a deep clone of an object or array, preserving its structure and values.

@@ -85,7 +85,9 @@ export type UnionKeys<U> = U extends Record<infer K, any> ? K : never;
 
 export type _UnionToIntersection1<U> = boolean extends U
   ? U
-  : (U extends any ? (k: U) => void : never) extends (k: infer I) => void
+  : (U extends any ? (k: U) => void : never) extends (
+        k: infer I,
+      ) => void
     ? I
     : never;
 
@@ -131,3 +133,8 @@ export type Equals<T, U> = T extends U
 export type Classe = {
   [Symbol.hasInstance]: Fn<any, boolean>;
 };
+
+export class UndefinedHelper {
+  readonly __NO_TYPE__ = '@bemedev/addons/NO_TYPE';
+  private constructor() {}
+}

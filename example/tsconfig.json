@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "esnext"],
+    "lib": [
+      "dom",
+      "esnext"
+    ],
     "importHelpers": true,
     "target": "ESNext",
     "declaration": true,
@@ -13,8 +16,9 @@
     "noUnusedParameters": true,
     "module": "ES2022",
     "moduleResolution": "Bundler",
-    "types": ["vitest/globals"],
-    "jsx": "react",
+    "types": [
+      "vitest/globals"
+    ],
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
@@ -22,8 +26,9 @@
     "noEmit": true,
     "declarationMap": true,
     "paths": {
-      "#bemedev/*": ["src/.bemedev/*"]
+      "#bemedev/*": [
+        "./src/.bemedev/*"
+      ]
     },
-    "baseUrl": "."
   }
 }

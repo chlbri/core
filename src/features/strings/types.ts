@@ -1,15 +1,9 @@
 import type { ENGLISH_LETTERS } from './constants';
 
 export type LowerLetters = (typeof ENGLISH_LETTERS)[number];
-
 export type UpperLetters = Uppercase<LowerLetters>;
-
 export type Letters = UpperLetters | LowerLetters;
-
-// export type StringLocalLitterals = Letters | Digit;
-
 export type Email = `${string}@${string}.${string}`;
-
 export type _JoinStringHelper = string | number | boolean | bigint;
 
 export type JoinString<
@@ -19,7 +13,10 @@ export type JoinString<
   ? ''
   : T extends [_JoinStringHelper]
     ? `${T[0]}`
-    : T extends [_JoinStringHelper, ...infer U extends readonly string[]]
+    : T extends [
+          _JoinStringHelper,
+          ...infer U extends readonly string[],
+        ]
       ? `${T[0]}${sep}${JoinString<U, sep>}`
       : string;
 
@@ -65,3 +62,51 @@ export type SplitStringBy<
       : [S];
 
 export type ExtractS<T> = Extract<T, string>;
+
+export type StringLength<
+  T extends string,
+  Counter extends number[] = [],
+> = T extends `${string}${infer Tail}`
+  ? StringLength<Tail, [...Counter, 0]>
+  : Counter['length'];
+
+export type StringCompare<
+  First extends number,
+  Second extends number,
+  Counter extends number[] = [],
+> = First extends Second
+  ? 0
+  : Counter['length'] extends First
+    ? -1
+    : Counter['length'] extends Second
+      ? 1
+      : StringCompare<First, Second, [...Counter, 0]>;
+
+export type ExactLength<Exact extends number, T extends string> =
+  StringCompare<StringLength<T>, Exact> extends 0 ? T : never;
+
+export type MaxLength<Max extends number, T extends string> =
+  StringCompare<StringLength<T>, Max> extends -1 ? T : never;
+
+export type MaxOrEqualLength<Max extends number, T extends string> =
+  | MaxLength<Max, T>
+  | ExactLength<Max, T>;
+
+export type MinLength<Min extends number, T extends string> =
+  StringCompare<StringLength<T>, Min> extends 1 ? T : never;
+
+export type MinOrEqualLength<Min extends number, T extends string> =
+  | MinLength<Min, T>
+  | ExactLength<Min, T>;
+
+export type InRangeExclusive<
+  Min extends number,
+  Max extends number,
+  T extends string,
+> = MinLength<Min, T> & MaxLength<Max, T>;
+
+export type InRangeInclusive<
+  Min extends number,
+  Max extends number,
+  T extends string,
+> = MinOrEqualLength<Min, T> & MaxOrEqualLength<Max, T>;

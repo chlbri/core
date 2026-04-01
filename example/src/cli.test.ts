@@ -30,7 +30,9 @@ describe('CLI', () => {
     describe('#02 => Folders initialization', () => {
       describe('#01 => json config', () => {
         test('#01 => File exists', () => {
-          const exists = existsSync(join(process.cwd(), '.bemedev.json'));
+          const exists = existsSync(
+            join(process.cwd(), '.bemedev.json'),
+          );
           expect(exists).toBe(true);
         });
 
@@ -68,9 +70,12 @@ describe('CLI', () => {
     describe('#02 => File is updated', () => {
       let obj: any;
       beforeAll(() => {
-        const json = readFileSync(join(process.cwd(), '.bemedev.json'), {
-          encoding: 'utf-8',
-        });
+        const json = readFileSync(
+          join(process.cwd(), '.bemedev.json'),
+          {
+            encoding: 'utf-8',
+          },
+        );
         obj = JSON.parse(json);
       });
 
@@ -106,9 +111,12 @@ describe('CLI', () => {
     describe('#02 => File is updated', () => {
       let obj: any;
       beforeAll(() => {
-        const json = readFileSync(join(process.cwd(), '.bemedev.json'), {
-          encoding: 'utf-8',
-        });
+        const json = readFileSync(
+          join(process.cwd(), '.bemedev.json'),
+          {
+            encoding: 'utf-8',
+          },
+        );
         obj = JSON.parse(json);
       });
 
@@ -130,9 +138,12 @@ describe('CLI', () => {
     describe('#04 => File is updated', () => {
       let obj: any;
       beforeAll(() => {
-        const json = readFileSync(join(process.cwd(), '.bemedev.json'), {
-          encoding: 'utf-8',
-        });
+        const json = readFileSync(
+          join(process.cwd(), '.bemedev.json'),
+          {
+            encoding: 'utf-8',
+          },
+        );
         obj = JSON.parse(json);
       });
 

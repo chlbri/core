@@ -152,7 +152,8 @@ export const extractExportsRecursively = (
           // Gérer les re-exports (export * from './module')
           const moduleSpecifier = declaration.getModuleSpecifier();
           if (moduleSpecifier) {
-            const targetFile = declaration.getModuleSpecifierSourceFile();
+            const targetFile =
+              declaration.getModuleSpecifierSourceFile();
             if (targetFile) {
               const recursiveExports = extractExportsRecursively(
                 project,

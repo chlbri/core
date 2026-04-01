@@ -1,24 +1,24 @@
 # Guide Chokidar - Surveillance de fichiers efficace
 
-Chokidar est une librairie JavaScript qui permet de surveiller les fichiers
-et répertoires de façon cross-platform. Utilisée par plus de 35 millions de
-projets sur GitHub, elle fournit une interface normalisée pour la
-surveillance de fichiers basée sur `fs.watch` et `fs.watchFile`.
+Chokidar est une librairie JavaScript qui permet de surveiller les
+fichiers et répertoires de façon cross-platform. Utilisée par plus de 35
+millions de projets sur GitHub, elle fournit une interface normalisée
+pour la surveillance de fichiers basée sur `fs.watch` et `fs.watchFile`.
 
 ## Pourquoi Chokidar ?
 
 ### Avantages par rapport à `fs.watch` / `fs.watchFile` natifs
 
-- **Événements proprement rapportés** : Les événements sur macOS incluent
-  les noms de fichiers, pas de doublons
-- **Événements normalisés** : `add`, `change`, `unlink` au lieu de `rename`
-  peu informatif
-- **Support des écritures atomiques** : Filtrage automatique des artefacts
-  d'éditeurs avec `atomic`
-- **Support des écritures en chunks** : Option `awaitWriteFinish` pour les
-  gros fichiers
-- **Filtrage de fichiers/répertoires** : Support des patterns, fonctions et
-  regex
+- **Événements proprement rapportés** : Les événements sur macOS
+  incluent les noms de fichiers, pas de doublons
+- **Événements normalisés** : `add`, `change`, `unlink` au lieu de
+  `rename` peu informatif
+- **Support des écritures atomiques** : Filtrage automatique des
+  artefacts d'éditeurs avec `atomic`
+- **Support des écritures en chunks** : Option `awaitWriteFinish` pour
+  les gros fichiers
+- **Filtrage de fichiers/répertoires** : Support des patterns, fonctions
+  et regex
 - **Support des liens symboliques** : Surveillance configurable des
   symlinks
 - **Surveillance récursive** : Toujours supportée contrairement à
@@ -98,7 +98,8 @@ await watcher.close().then(() => console.log('fermé'));
 - **`ready`** : Scan initial terminé, prêt pour les changements
 - **`raw`** : Événement brut (usage interne, utiliser avec précaution)
 - **`error`** : Erreur survenue
-- **`all`** : Émis pour tous les événements sauf `ready`, `raw`, et `error`
+- **`all`** : Émis pour tous les événements sauf `ready`, `raw`, et
+  `error`
 
 ### Accès aux stats de fichiers
 
@@ -347,7 +348,8 @@ export CHOKIDAR_INTERVAL=200
 
 - **Trop de fichiers surveillés** : Utiliser `ignored` pour filtrer
 - **CPU élevé** : Réduire `interval`, augmenter `binaryInterval`
-- **Retards d'événements** : Ajuster `awaitWriteFinish.stabilityThreshold`
+- **Retards d'événements** : Ajuster
+  `awaitWriteFinish.stabilityThreshold`
 - **Réseau/Docker** : Utiliser `usePolling: true`
 
 ## Exemples d'intégration
@@ -409,25 +411,25 @@ watcher.on('change', path => {
 
 ## Bonnes pratiques
 
-1. **Fermez toujours vos watchers** : Utilisez `await watcher.close()` pour
-   éviter les fuites mémoire
+1. **Fermez toujours vos watchers** : Utilisez `await watcher.close()`
+   pour éviter les fuites mémoire
 
-2. **Filtrez intelligemment** : N'surveillez que ce dont vous avez besoin
-   avec `ignored`
+2. **Filtrez intelligemment** : N'surveillez que ce dont vous avez
+   besoin avec `ignored`
 
 3. **Gérez les écritures atomiques** : Utilisez `atomic: true` pour les
    éditeurs modernes
 
-4. **Adaptez aux gros fichiers** : Configurez `awaitWriteFinish` pour les
-   fichiers volumineux
+4. **Adaptez aux gros fichiers** : Configurez `awaitWriteFinish` pour
+   les fichiers volumineux
 
 5. **Considérez le polling** : Utilisez `usePolling: true` pour Docker,
    réseau, ou VMs
 
 6. **Gérez les erreurs** : Toujours écouter l'événement `error`
 
-7. **Testez la performance** : Surveillez l'utilisation CPU/mémoire selon
-   votre cas d'usage
+7. **Testez la performance** : Surveillez l'utilisation CPU/mémoire
+   selon votre cas d'usage
 
 8. **Variables d'environnement** : Permettez la configuration via
    `CHOKIDAR_USEPOLLING` et `CHOKIDAR_INTERVAL`

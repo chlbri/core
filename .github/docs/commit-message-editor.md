@@ -1,8 +1,8 @@
 # Configuration Commit Message Editor
 
-Ce document décrit la configuration de l'extension VS Code **Commit Message
-Editor** (`adam-bender.commit-message-editor`) pour standardiser les
-messages de commit dans ce projet.
+Ce document décrit la configuration de l'extension VS Code **Commit
+Message Editor** (`adam-bender.commit-message-editor`) pour standardiser
+les messages de commit dans ce projet.
 
 ## À propos de l'extension
 
@@ -41,8 +41,8 @@ code --install-extension adam-bender.commit-message-editor
   commit
 - `Commit Message Editor: Open Settings Page` - Ouvre la page de
   configuration
-- `Commit Message Editor: Copy from SCM Input Box` - Copie depuis la boîte
-  d'entrée SCM
+- `Commit Message Editor: Copy from SCM Input Box` - Copie depuis la
+  boîte d'entrée SCM
 
 ### Ouverture de l'éditeur
 
@@ -59,11 +59,13 @@ l'éditeur de configuration intégré :
 
 1. Ouvrez la palette de commandes
 2. Exécutez `Commit Message Editor: Open Settings Page`
-3. Ou cliquez sur l'icône d'engrenage dans l'onglet Commit Message Editor
+3. Ou cliquez sur l'icône d'engrenage dans l'onglet Commit Message
+   Editor
 
 ### Configuration manuelle
 
-Vous pouvez créer un fichier de configuration JSON avec le schéma suivant :
+Vous pouvez créer un fichier de configuration JSON avec le schéma
+suivant :
 
 ```json
 {
@@ -162,7 +164,8 @@ Tableau d'objets token définissant les champs du formulaire.
 ## Configuration recommandée pour ce projet
 
 Basée sur les instructions de commit du projet (voir
-`.github/copilot-instructions.md`), voici une configuration recommandée :
+`.github/copilot-instructions.md`), voici une configuration recommandée
+:
 
 ```json
 {
@@ -281,8 +284,8 @@ Basée sur les instructions de commit du projet (voir
 1. Ouvrez l'éditeur de configuration
 2. Cliquez sur le bouton "Import"
 3. Sélectionnez votre fichier de configuration JSON
-4. Choisissez si vous voulez sauvegarder dans les paramètres utilisateur ou
-   workspace
+4. Choisissez si vous voulez sauvegarder dans les paramètres utilisateur
+   ou workspace
 
 ## Exemples de configurations
 
@@ -320,8 +323,8 @@ Basée sur les instructions de commit du projet (voir
 
 ### Configuration avec Gitmoji
 
-L'extension fournit également des configurations pré-construites incluant
-le support des Gitmoji. Vous pouvez les trouver dans les
+L'extension fournit également des configurations pré-construites
+incluant le support des Gitmoji. Vous pouvez les trouver dans les
 [exemples de configuration](https://github.com/bendera/vscode-commit-message-editor/tree/main/example-configs).
 
 ## Paramètres VS Code
@@ -330,7 +333,8 @@ L'extension ajoute les paramètres suivants dans VS Code :
 
 - `commit-message-editor.confirmAmend` : Confirmer avant de modifier un
   commit
-- `commit-message-editor.defaultView` : Vue par défaut (`text` ou `form`)
+- `commit-message-editor.defaultView` : Vue par défaut (`text` ou
+  `form`)
 - `commit-message-editor.tokens` : Configuration des tokens
 - `commit-message-editor.staticTemplate` : Template statique
 - `commit-message-editor.dynamicTemplate` : Template dynamique

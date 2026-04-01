@@ -1,4 +1,4 @@
-import { partialCall } from '#features/functions/functions/partialCall';
+import { partialCall } from '#features/functions/functions/partialCall.1';
 import { omitIs } from '#features/objects/utils/omit.is';
 
 const fn = partialCall(omitIs, 'element');

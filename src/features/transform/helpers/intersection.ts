@@ -14,7 +14,9 @@ export type IntersectionCustom<T extends ObjectMapS[]> =
       }
     : never;
 
-const intersection = <T extends [ObjectMapS, ObjectMapS, ...ObjectMapS[]]>(
+const intersection = <
+  T extends [ObjectMapS, ObjectMapS, ...ObjectMapS[]],
+>(
   ...values: T
 ) => {
   const out = values.reduce((acc, curr) => {

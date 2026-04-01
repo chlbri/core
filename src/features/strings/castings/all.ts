@@ -2,6 +2,7 @@ import { expandFn } from '#utils/expandFn';
 import { DEFAULT_DELIMITER } from '../constants';
 import add from './add';
 import contains from './contains';
+import multichar from './multichar';
 import endsWith from './endsWith';
 import getLength from './getLength';
 import includes from './includes';
@@ -10,6 +11,7 @@ import instance from './instance';
 import is from './is';
 import join from './join';
 import letters from './letters/all';
+import length from './length/all';
 import splitBy from './splitBy';
 import startsWith from './startsWith';
 import toLowerCase from './toLowerCase';
@@ -27,9 +29,11 @@ export const castings = expandFn(_index, {
   contains,
   toLowerCase,
   toUpperCase,
+  multichar,
   letters,
   add,
   join,
   splitBy,
   DEFAULT_DELIMITER,
+  length,
 });

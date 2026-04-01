@@ -2,20 +2,21 @@
 
 ## Vue d'ensemble
 
-**ts-morph** est un wrapper de l'API du compilateur TypeScript qui facilite
-la navigation et la manipulation programmatique du code TypeScript et
-JavaScript. Cette bibliothèque était anciennement connue sous le nom de
-`ts-simple-ast`.
+**ts-morph** est un wrapper de l'API du compilateur TypeScript qui
+facilite la navigation et la manipulation programmatique du code
+TypeScript et JavaScript. Cette bibliothèque était anciennement connue
+sous le nom de `ts-simple-ast`.
 
 ### Principales fonctionnalités
 
 1. **Enveloppe les objets de l'API du compilateur** pour fournir des
-   méthodes d'aide permettant d'obtenir des informations et de modifier des
-   fichiers de manière programmatique
-2. **Permet de revenir aux objets de l'API du compilateur** si nécessaire
-   (ex. `classDeclaration.compilerNode` ou `typeChecker.compilerObject`)
-3. **Toutes les modifications sont conservées en mémoire** (y compris les
-   déplacements de fichiers et de répertoires) jusqu'à ce que vous
+   méthodes d'aide permettant d'obtenir des informations et de modifier
+   des fichiers de manière programmatique
+2. **Permet de revenir aux objets de l'API du compilateur** si
+   nécessaire (ex. `classDeclaration.compilerNode` ou
+   `typeChecker.compilerObject`)
+3. **Toutes les modifications sont conservées en mémoire** (y compris
+   les déplacements de fichiers et de répertoires) jusqu'à ce que vous
    spécifiiez de sauvegarder dans le système de fichiers sous-jacent
 4. **Les modifications sont apportées au texte** et les nœuds encapsulés
    peuvent être conservés entre les manipulations
@@ -164,7 +165,8 @@ await sourceFile.moveImmediately('movedFile.ts');
 const originalInitializer = sourceFile
   .getVariableDeclarations()[0]
   .getInitializerOrThrow();
-const newInitializer = originalInitializer.replaceWithText('MyReference');
+const newInitializer =
+  originalInitializer.replaceWithText('MyReference');
 ```
 
 ### Ajout, insertion et suppression d'instructions
@@ -247,7 +249,8 @@ const firstProperty = classDec.getProperties()[0];
 - Cette bibliothèque est encore en développement actif
 - La plupart des cas d'usage communs de manipulation/génération de code
   sont implémentés
-- Tous les changements sont gardés en mémoire jusqu'à l'appel de `save()`
+- Tous les changements sont gardés en mémoire jusqu'à l'appel de
+  `save()`
 - Les nœuds encapsulés peuvent être conservés entre les manipulations
 - Version actuelle : 26.0.0 (au moment de la rédaction)
 - Licence : MIT

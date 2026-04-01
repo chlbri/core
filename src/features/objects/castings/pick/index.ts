@@ -1,7 +1,10 @@
 import { partialCall } from '#features/functions/functions/partialCall';
 import { pick } from '../../utils/pick';
 
-const fn = partialCall(pick, 'key') as <T extends object, K extends any[]>(
+const fn = partialCall.legacy(pick, 'key') as <
+  T extends object,
+  K extends any[],
+>(
   object: T,
   ...keys: K
 ) => Pick<T, K[number]>;

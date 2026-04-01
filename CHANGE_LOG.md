@@ -26,8 +26,8 @@
 </summary>
 
 - **Chore**: Bump package version to `0.1.7`
-- **Docs**: Remove placeholder example in `README.md` and tidy CHANGE_LOG
-  link
+- **Docs**: Remove placeholder example in `README.md` and tidy
+  CHANGE_LOG link
 
 </details>
 
@@ -40,10 +40,10 @@
 
 </summary>
 
-- **Fix(transform)**: Use `ObjectMapS` instead of `PrimitiveObjectMap` in
-  `union` helper to improve typing and compatibility.
-- **Refactor(ci)**: Rename `pnpm:lint` VSCode task to `pnpm:ci` and remove
-  `pnpm:test` task. _NO_CI_
+- **Fix(transform)**: Use `ObjectMapS` instead of `PrimitiveObjectMap`
+  in `union` helper to improve typing and compatibility.
+- **Refactor(ci)**: Rename `pnpm:lint` VSCode task to `pnpm:ci` and
+  remove `pnpm:test` task. _NO_CI_
 - **Chore**: Bump package version to `0.1.6`
 
 </details>
@@ -88,8 +88,8 @@
 ### Version [0.1.1] --> _2025/09/06 19:25_
 
 - ✨ **feat(arrays)**: Add permutations functionality for tuples
-  - Introduced new `permutations` module for generating all possible array
-    permutations
+  - Introduced new `permutations` module for generating all possible
+    array permutations
   - Updated type definitions and exports for arrays
   - Added comprehensive tests for permutations functionality
 

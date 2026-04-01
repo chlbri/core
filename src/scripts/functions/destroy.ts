@@ -26,7 +26,9 @@ export function destroy() {
   file = undefined;
   try {
     rmSync(jsonPath, { force: true });
-    console.log(`Configuration file ("${config.json}") has been removed.`);
+    console.log(
+      `Configuration file ("${config.json}") has been removed.`,
+    );
   } catch {
     console.error(
       `Error while removing the configuration file ("${config.json}").`,

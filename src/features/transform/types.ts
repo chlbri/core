@@ -84,7 +84,9 @@ type __TransformPrimitiveObject<T> = T extends Types
       : T extends ArrayCustom<infer A>
         ? TransformS<A>[]
         : T extends PartialCustom
-          ? Partial<__TransformPrimitiveObject<NOmit<T, typeof PARTIAL>>>
+          ? Partial<
+              __TransformPrimitiveObject<NOmit<T, typeof PARTIAL>>
+            >
           : T extends Maybe<infer TMaybe>
             ? __TransformPrimitiveObject<TMaybe> | undefined
             : {
@@ -105,13 +107,13 @@ type ReduceTupleU<T extends AnyArray> = T extends [
         : Undefiny<T[number]>[];
 type HasUndefined<T> = undefined extends T ? true : false;
 type UndefinyObject<T extends object> = {
-  [K in keyof T as HasUndefined<T[K]> extends true ? never : K]: Undefiny<
-    T[K]
-  >;
+  [K in keyof T as HasUndefined<T[K]> extends true
+    ? never
+    : K]: Undefiny<T[K]>;
 } & {
-  [K in keyof T as HasUndefined<T[K]> extends true ? K : never]?: Undefiny<
-    Exclude<T[K], undefined>
-  >;
+  [K in keyof T as HasUndefined<T[K]> extends true
+    ? K
+    : never]?: Undefiny<Exclude<T[K], undefined>>;
 } extends infer F
   ? {
       [K in keyof F]: F[K];

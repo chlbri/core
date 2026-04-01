@@ -5,7 +5,8 @@ import { _unknown } from '#utils/_unknown';
 import { expandFn } from '#utils/expandFn';
 
 const fn = expandFn(
-  <const T, N extends number>(_?: T, __?: N) => _unknown<TupleOf<T, N>>(),
+  <const T, N extends number>(_?: T, __?: N) =>
+    _unknown<TupleOf<T, N>>(),
   {
     is: <const U, N extends number>(_?: U, __?: N) => {
       const _out = <T>(_?: T) =>

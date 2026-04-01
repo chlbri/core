@@ -17,7 +17,9 @@ import {
 import type { Transform_F } from './transform.types';
 import type { inferT, ObjectS, TransformTypes, Types } from './types';
 
-const transformTypes = <T extends Types>(type: T): TransformTypes<T> => {
+const transformTypes = <T extends Types>(
+  type: T,
+): TransformTypes<T> => {
   const out: any = type === 'primitive' ? {} : undefined;
   return out;
 };
@@ -40,7 +42,9 @@ const _transform = <T extends ObjectS>(obj: T): inferT<T> => {
     const out: any = {};
     if (isCustom) return out;
 
-    const entries = Object.entries(obj).filter(([key]) => key !== PARTIAL);
+    const entries = Object.entries(obj).filter(
+      ([key]) => key !== PARTIAL,
+    );
 
     entries.forEach(([key, value]) => {
       out[key] = _transform(value);

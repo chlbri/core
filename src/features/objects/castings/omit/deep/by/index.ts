@@ -1,4 +1,4 @@
-import { partialCall } from '#features/functions/functions/partialCall';
+import { partialCall } from '#features/functions/functions/partialCall.1';
 import type { Keys, NotSubType, PrimitiveObjectMap } from '#types';
 import { omitDeep } from '../../../../utils/omit.deep';
 

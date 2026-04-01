@@ -13,7 +13,11 @@ type Discriminated<K extends Keys> = ObjectMapS & Record<K, ObjectS>;
 const fn = expandFn(union, {
   discriminated: <
     const K extends Keys,
-    T extends [Discriminated<K>, Discriminated<K>, ...Discriminated<K>[]],
+    T extends [
+      Discriminated<K>,
+      Discriminated<K>,
+      ...Discriminated<K>[],
+    ],
   >(
     _key: K,
     ...values: T
