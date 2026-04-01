@@ -1,6 +1,6 @@
 {
   "name": "@bemedev/core-examples",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Examples and demonstrations for @bemedev/core library",
   "private": true,
   "type": "module",
@@ -8,16 +8,16 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "config": "pnpm install",
+    "config:lock": "pnpm run config --frozen-lockfile",
     "config:off": "pnpm run config --offline",
+    "pretest": "pnpm run config && pnpm run rm:cli",
+    "rimraf": "pnpm dlx rimraf -rf",
     "rinit": "pnpm run rm && pnpm run config",
     "rinit:off": "pnpm run rm && pnpm run config:off",
-    "config:lock": "pnpm run config --frozen-lockfile",
-    "rm:cli": "pnpm run rimraf -- src/.bemedev .bemedev.json",
-    "test:coverage": "vitest run",
-    "rimraf": "pnpm dlx rimraf -rf",
     "rm": "pnpm run rimraf -- node_modules pnpm-lock.yaml",
-    "pretest": "pnpm run config && pnpm run rm:cli",
+    "rm:cli": "pnpm run rimraf -- src/.bemedev .bemedev.json",
     "test": "pnpm run test:coverage --no-coverage",
+    "test:coverage": "vitest run",
     "upgrade": "pnpm upgrade --latest"
   },
   "keywords": [

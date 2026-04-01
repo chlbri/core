@@ -6,6 +6,26 @@
 <details>
 <summary>
 
+## **[0.2.0] - 01/04/2026** => _00:25_
+
+</summary>
+
+- Add `identity`, `identify`, `log10`, `switchValue`, `refunction`, `partialCallO` function utilities
+- Add string `multichar` helper and complete length casting suite (`exact`, `min`, `max`, `range` with inclusive/exclusive variants)
+- Add `oxlint` and `oxfmt` configurations
+- Remove legacy `prettier`, `eslint` and `rollup` configs
+- Replace `rollup` with `rolldown` as bundler
+- Update `tsconfig` paths and reformat codebase files
+- Update dependencies
+- <u>Test coverage **_100%_**</u>
+
+</details>
+
+<br/>
+
+<details>
+<summary>
+
 ## **[0.1.8] - 29/12/2025** => _11:52_
 
 </summary>
