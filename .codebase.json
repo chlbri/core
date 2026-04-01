@@ -1,8 +1,8 @@
 {
   "STATS": {
-    "files": 496,
-    "imports": 1013,
-    "exports": 1117
+    "files": 518,
+    "imports": 1064,
+    "exports": 1153
   },
   "CODEBASE_ANALYSIS": {
     "features.arrays.castings.all": {
@@ -7906,10 +7906,160 @@
           "kind": "default",
           "default": "range",
           "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "./compare/all",
+          "kind": "default",
+          "default": "compare",
+          "isTypeOnly": false
         }
       ],
       "relativePath": "features/strings/castings/length/all.ts",
-      "text": "import exact from './exact/all';\nimport min from './min/all';\nimport max from './max/all';\nimport range from './range/all';\n\n/**\n * length const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst length = {\n  exact,\n  min,\n  max,\n  range,\n};\n\nexport default length;\n\n    ",
+      "text": "import exact from './exact/all';\nimport min from './min/all';\nimport max from './max/all';\nimport range from './range/all';\nimport compare from './compare/all';\n\n/**\n * length const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst length = {\n  compare,\n  exact,\n  min,\n  max,\n  range,\n};\n\nexport default length;\n\n    ",
+      "exports": []
+    },
+    "features.strings.castings.length.compare.all": {
+      "imports": [
+        {
+          "moduleSpecifier": "../../../../../globals/utils/expandFn",
+          "kind": "named",
+          "namedImports": ["expandFn"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "./low",
+          "kind": "default",
+          "default": "low",
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "./typed",
+          "kind": "default",
+          "default": "typed",
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "./number/all",
+          "kind": "default",
+          "default": "number",
+          "isTypeOnly": false
+        }
+      ],
+      "relativePath": "features/strings/castings/length/compare/all.ts",
+      "text": "import { expandFn } from '../../../../../globals/utils/expandFn';\nimport low from './low';\nimport typed from './typed';\nimport number from './number/all';\n\n/**\n * compareLengthAll const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst compareLengthAll = expandFn(typed, { low, number });\nexport default compareLengthAll;\n\n    ",
+      "exports": []
+    },
+    "features.strings.castings.length.compare.index": {
+      "imports": [
+        {
+          "moduleSpecifier": "./typed",
+          "kind": "default",
+          "default": "compareLength",
+          "isTypeOnly": false
+        }
+      ],
+      "relativePath": "features/strings/castings/length/compare/index.ts",
+      "text": "import compareLength from './typed';\n\nexport default compareLength;\n\n    ",
+      "exports": []
+    },
+    "features.strings.castings.length.compare.low": {
+      "imports": [],
+      "relativePath": "features/strings/castings/length/compare/low.ts",
+      "text": "/**\n * stringCompareLengthLow const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst stringCompareLengthLow = (a: string, b: string): number => {\n  if (a.length === b.length) {\n    return 0;\n  }\n\n  return a.length < b.length ? -1 : 1;\n};\n\nexport default stringCompareLengthLow;\n",
+      "exports": []
+    },
+    "features.strings.castings.length.compare.number.all": {
+      "imports": [
+        {
+          "moduleSpecifier": "../../../../../../globals/utils/expandFn",
+          "kind": "named",
+          "namedImports": ["expandFn"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "./low",
+          "kind": "default",
+          "default": "low",
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "./typed",
+          "kind": "default",
+          "default": "typed",
+          "isTypeOnly": false
+        }
+      ],
+      "relativePath": "features/strings/castings/length/compare/number/all.ts",
+      "text": "import { expandFn } from '../../../../../../globals/utils/expandFn';\nimport low from './low';\nimport typed from './typed';\n\n/**\n * compareLengthNumberAll const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst compareLengthNumberAll = expandFn(typed, { low });\nexport default compareLengthNumberAll;\n\n    ",
+      "exports": []
+    },
+    "features.strings.castings.length.compare.number.index": {
+      "imports": [
+        {
+          "moduleSpecifier": "./typed",
+          "kind": "default",
+          "default": "compareLengthNumber",
+          "isTypeOnly": false
+        }
+      ],
+      "relativePath": "features/strings/castings/length/compare/number/index.ts",
+      "text": "import compareLengthNumber from './typed';\n\nexport default compareLengthNumber;\n\n    ",
+      "exports": []
+    },
+    "features.strings.castings.length.compare.number.low": {
+      "imports": [],
+      "relativePath": "features/strings/castings/length/compare/number/low.ts",
+      "text": "/**\n * stringCompareLengthNumberLow const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst stringCompareLengthNumberLow = (\n  { length: valueLen }: string,\n  length: number,\n) => {\n  let out = 0;\n  if (valueLen === length) return out;\n  out = valueLen < length ? -1 : 1;\n  return out;\n};\n\nexport default stringCompareLengthNumberLow;\n",
+      "exports": []
+    },
+    "features.strings.castings.length.compare.number.typed": {
+      "imports": [
+        {
+          "moduleSpecifier": "../../../../../../globals/utils/_unknown",
+          "kind": "named",
+          "namedImports": ["_unknown"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "../../../../types",
+          "kind": "named",
+          "namedImports": ["StringCompare", "StringLength"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "./low",
+          "kind": "default",
+          "default": "stringCompareLengthNumberLow",
+          "isTypeOnly": false
+        }
+      ],
+      "relativePath": "features/strings/castings/length/compare/number/typed.ts",
+      "text": "import { _unknown } from '../../../../../../globals/utils/_unknown';\nimport { StringCompare, StringLength } from '../../../../types';\nimport stringCompareLengthNumberLow from './low';\n\ntype Fn1 = <N extends number, T extends string>(\n  length: N,\n  value: T,\n) => StringCompare<StringLength<T>, N>;\n\n/**\n * compareLengthNumberTyped const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst compareLengthNumberTyped: Fn1 = _unknown(\n  stringCompareLengthNumberLow,\n);\n\nexport default compareLengthNumberTyped;\n\n    ",
+      "exports": []
+    },
+    "features.strings.castings.length.compare.typed": {
+      "imports": [
+        {
+          "moduleSpecifier": "./low",
+          "kind": "default",
+          "default": "low",
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "../../../types",
+          "kind": "named",
+          "namedImports": ["StringCompareWith"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "../../../../../globals/utils/_unknown",
+          "kind": "named",
+          "namedImports": ["_unknown"],
+          "isTypeOnly": false
+        }
+      ],
+      "relativePath": "features/strings/castings/length/compare/typed.ts",
+      "text": "import low from './low';\nimport { StringCompareWith } from '../../../types';\nimport { _unknown } from '../../../../../globals/utils/_unknown';\n\ntype Fn1 = <T extends string, U extends string>(\n  a: T,\n  b: U,\n) => StringCompareWith<T, U>;\n\n/**\n * stringLengthCompareTyped const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst stringLengthCompareTyped: Fn1 = _unknown(low);\nexport default stringLengthCompareTyped;\n\n    ",
       "exports": []
     },
     "features.strings.castings.length.exact.all": {
@@ -7948,12 +8098,12 @@
         {
           "moduleSpecifier": "./strict",
           "kind": "default",
-          "default": "strictExactLength",
+          "default": "exactLength",
           "isTypeOnly": false
         }
       ],
       "relativePath": "features/strings/castings/length/exact/index.ts",
-      "text": "import strictExactLength from './strict';\n\n/**\n * exactLength const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst exactLength = strictExactLength;\nexport default exactLength;\n\n    ",
+      "text": "import exactLength from './strict';\n\nexport default exactLength;\n\n    ",
       "exports": []
     },
     "features.strings.castings.length.exact.is": {
@@ -8036,12 +8186,12 @@
         {
           "moduleSpecifier": "./strict",
           "kind": "default",
-          "default": "strictMaxLength",
+          "default": "maxLength",
           "isTypeOnly": false
         }
       ],
       "relativePath": "features/strings/castings/length/max/index.ts",
-      "text": "import strictMaxLength from './strict';\n\n/**\n * maxLength const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst maxLength = strictMaxLength;\nexport default maxLength;\n\n    ",
+      "text": "import maxLength from './strict';\n\nexport default maxLength;\n\n    ",
       "exports": []
     },
     "features.strings.castings.length.max.is": {
@@ -8099,12 +8249,12 @@
         {
           "moduleSpecifier": "./strict",
           "kind": "default",
-          "default": "strictMaxOrEqualLength",
+          "default": "maxOrEqualLength",
           "isTypeOnly": false
         }
       ],
       "relativePath": "features/strings/castings/length/max/orEqual/index.ts",
-      "text": "import strictMaxOrEqualLength from './strict';\n\n/**\n * maxOrEqualLength const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst maxOrEqualLength = strictMaxOrEqualLength;\nexport default maxOrEqualLength;\n\n    ",
+      "text": "import maxOrEqualLength from './strict';\n\nexport default maxOrEqualLength;\n\n    ",
       "exports": []
     },
     "features.strings.castings.length.max.orEqual.is": {
@@ -8206,12 +8356,12 @@
         {
           "moduleSpecifier": "./strict",
           "kind": "default",
-          "default": "strictMinLength",
+          "default": "minLength",
           "isTypeOnly": false
         }
       ],
       "relativePath": "features/strings/castings/length/min/index.ts",
-      "text": "import strictMinLength from './strict';\n\n/**\n * minLength const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst minLength = strictMinLength;\nexport default minLength;\n\n    ",
+      "text": "import minLength from './strict';\n\nexport default minLength;\n\n    ",
       "exports": []
     },
     "features.strings.castings.length.min.is": {
@@ -8269,12 +8419,12 @@
         {
           "moduleSpecifier": "./strict",
           "kind": "default",
-          "default": "strictMinOrEqualLength",
+          "default": "minOrEqualLength",
           "isTypeOnly": false
         }
       ],
       "relativePath": "features/strings/castings/length/min/orEqual/index.ts",
-      "text": "import strictMinOrEqualLength from './strict';\n\n/**\n * minOrEqualLength const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst minOrEqualLength = strictMinOrEqualLength;\nexport default minOrEqualLength;\n\n    ",
+      "text": "import minOrEqualLength from './strict';\n\nexport default minOrEqualLength;\n\n    ",
       "exports": []
     },
     "features.strings.castings.length.min.orEqual.is": {
@@ -8772,7 +8922,7 @@
         }
       ],
       "relativePath": "features/strings/types.ts",
-      "text": "import type { ENGLISH_LETTERS } from './constants';\n\n/**\n * LowerLetters type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type LowerLetters = (typeof ENGLISH_LETTERS)[number];\n/**\n * UpperLetters type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type UpperLetters = Uppercase<LowerLetters>;\n/**\n * Letters type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Letters = UpperLetters | LowerLetters;\n/**\n * Email type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Email = `${string}@${string}.${string}`;\n/**\n * _JoinStringHelper type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type _JoinStringHelper = string | number | boolean | bigint;\n\n/**\n * JoinString type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type JoinString<\n  T extends readonly string[],\n  sep extends string = ' ',\n> = T extends []\n  ? ''\n  : T extends [_JoinStringHelper]\n    ? `${T[0]}`\n    : T extends [\n          _JoinStringHelper,\n          ...infer U extends readonly string[],\n        ]\n      ? `${T[0]}${sep}${JoinString<U, sep>}`\n      : string;\n\n/**\n * AddString type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type AddString<\n  T,\n  Before extends string = '',\n  After extends string = '',\n> = `${Before}${T & string}${After}`;\n\n/**\n * StringEndWith type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type StringEndWith<\n  S extends string,\n  E extends string,\n> = S extends `${infer Prev}${E}`\n  ? { response: true; full: S; prev: Prev }\n  : { response: false; full: S; prev: S };\n\n/**\n * StringStartWith type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type StringStartWith<\n  S extends string,\n  E extends string,\n> = S extends `${E}${infer Next}`\n  ? { response: true; full: S; next: Next }\n  : { response: false; full: S; next: S };\n\n/**\n * StringContains type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type StringContains<\n  S extends string,\n  E extends string,\n> = S extends `${infer Prev}${E}${infer Next}`\n  ? { response: true; full: S; prev: Prev; next: Next }\n  : { response: false; full: S; prev: string; next: string };\n\n/**\n * Credit to {@link https://stackoverflow.com/a/70831818/11704485 | Matthieu Riegler}\n */\n/**\n * SplitStringBy type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type SplitStringBy<\n  S extends string,\n  By extends string = '.',\n> = string extends S\n  ? string[]\n  : S extends ''\n    ? []\n    : S extends `${infer T}${By}${infer U}`\n      ? [T, ...SplitStringBy<U, By>]\n      : [S];\n\n/**\n * ExtractS type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type ExtractS<T> = Extract<T, string>;\n\n/**\n * StringLength type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type StringLength<\n  T extends string,\n  Counter extends number[] = [],\n> = T extends `${string}${infer Tail}`\n  ? StringLength<Tail, [...Counter, 0]>\n  : Counter['length'];\n\n/**\n * StringCompare type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type StringCompare<\n  First extends number,\n  Second extends number,\n  Counter extends number[] = [],\n> = First extends Second\n  ? 0\n  : Counter['length'] extends First\n    ? -1\n    : Counter['length'] extends Second\n      ? 1\n      : StringCompare<First, Second, [...Counter, 0]>;\n\n/**\n * ExactLength type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type ExactLength<Exact extends number, T extends string> =\n  StringCompare<StringLength<T>, Exact> extends 0 ? T : never;\n\n/**\n * MaxLength type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type MaxLength<Max extends number, T extends string> =\n  StringCompare<StringLength<T>, Max> extends -1 ? T : never;\n\n/**\n * MaxOrEqualLength type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type MaxOrEqualLength<Max extends number, T extends string> =\n  | MaxLength<Max, T>\n  | ExactLength<Max, T>;\n\n/**\n * MinLength type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type MinLength<Min extends number, T extends string> =\n  StringCompare<StringLength<T>, Min> extends 1 ? T : never;\n\n/**\n * MinOrEqualLength type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type MinOrEqualLength<Min extends number, T extends string> =\n  | MinLength<Min, T>\n  | ExactLength<Min, T>;\n\n/**\n * InRangeExclusive type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type InRangeExclusive<\n  Min extends number,\n  Max extends number,\n  T extends string,\n> = MinLength<Min, T> & MaxLength<Max, T>;\n\n/**\n * InRangeInclusive type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type InRangeInclusive<\n  Min extends number,\n  Max extends number,\n  T extends string,\n> = MinOrEqualLength<Min, T> & MaxOrEqualLength<Max, T>;\n\n    ",
+      "text": "import type { ENGLISH_LETTERS } from './constants';\n\n/**\n * LowerLetters type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type LowerLetters = (typeof ENGLISH_LETTERS)[number];\n/**\n * UpperLetters type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type UpperLetters = Uppercase<LowerLetters>;\n/**\n * Letters type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Letters = UpperLetters | LowerLetters;\n/**\n * Email type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Email = `${string}@${string}.${string}`;\n/**\n * _JoinStringHelper type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type _JoinStringHelper = string | number | boolean | bigint;\n\n/**\n * JoinString type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type JoinString<\n  T extends readonly string[],\n  sep extends string = ' ',\n> = T extends []\n  ? ''\n  : T extends [_JoinStringHelper]\n    ? `${T[0]}`\n    : T extends [\n          _JoinStringHelper,\n          ...infer U extends readonly string[],\n        ]\n      ? `${T[0]}${sep}${JoinString<U, sep>}`\n      : string;\n\n/**\n * AddString type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type AddString<\n  T,\n  Before extends string = '',\n  After extends string = '',\n> = `${Before}${T & string}${After}`;\n\n/**\n * StringEndWith type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type StringEndWith<\n  S extends string,\n  E extends string,\n> = S extends `${infer Prev}${E}`\n  ? { response: true; full: S; prev: Prev }\n  : { response: false; full: S; prev: S };\n\n/**\n * StringStartWith type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type StringStartWith<\n  S extends string,\n  E extends string,\n> = S extends `${E}${infer Next}`\n  ? { response: true; full: S; next: Next }\n  : { response: false; full: S; next: S };\n\n/**\n * StringContains type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type StringContains<\n  S extends string,\n  E extends string,\n> = S extends `${infer Prev}${E}${infer Next}`\n  ? { response: true; full: S; prev: Prev; next: Next }\n  : { response: false; full: S; prev: string; next: string };\n\n/**\n * Credit to {@link https://stackoverflow.com/a/70831818/11704485 | Matthieu Riegler}\n */\n/**\n * SplitStringBy type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type SplitStringBy<\n  S extends string,\n  By extends string = '.',\n> = string extends S\n  ? string[]\n  : S extends ''\n    ? []\n    : S extends `${infer T}${By}${infer U}`\n      ? [T, ...SplitStringBy<U, By>]\n      : [S];\n\n/**\n * ExtractS type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type ExtractS<T> = Extract<T, string>;\n\n/**\n * StringLength type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type StringLength<\n  T extends string,\n  Counter extends number[] = [],\n> = T extends `${string}${infer Tail}`\n  ? StringLength<Tail, [...Counter, 0]>\n  : Counter['length'];\n\n/**\n * StringCompare type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type StringCompare<\n  First extends number,\n  Second extends number,\n  Counter extends number[] = [],\n> = First extends Second\n  ? 0\n  : Counter['length'] extends First\n    ? -1\n    : Counter['length'] extends Second\n      ? 1\n      : StringCompare<First, Second, [...Counter, 0]>;\n\n/**\n * StringCompareWith type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type StringCompareWith<\n  First extends string,\n  Second extends string,\n> = StringCompare<StringLength<First>, StringLength<Second>>;\n\n/**\n * ExactLength type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type ExactLength<Exact extends number, T extends string> =\n  StringCompare<StringLength<T>, Exact> extends 0 ? T : never;\n\n/**\n * MaxLength type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type MaxLength<Max extends number, T extends string> =\n  StringCompare<StringLength<T>, Max> extends -1 ? T : never;\n\n/**\n * MaxOrEqualLength type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type MaxOrEqualLength<Max extends number, T extends string> =\n  | MaxLength<Max, T>\n  | ExactLength<Max, T>;\n\n/**\n * MinLength type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type MinLength<Min extends number, T extends string> =\n  StringCompare<StringLength<T>, Min> extends 1 ? T : never;\n\n/**\n * MinOrEqualLength type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type MinOrEqualLength<Min extends number, T extends string> =\n  | MinLength<Min, T>\n  | ExactLength<Min, T>;\n\n/**\n * InRangeExclusive type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type InRangeExclusive<\n  Min extends number,\n  Max extends number,\n  T extends string,\n> = MinLength<Min, T> & MaxLength<Max, T>;\n\n/**\n * InRangeInclusive type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type InRangeInclusive<\n  Min extends number,\n  Max extends number,\n  T extends string,\n> = MinOrEqualLength<Min, T> & MaxOrEqualLength<Max, T>;\n\n    ",
       "exports": []
     },
     "features.strings.typings.add": {
@@ -10145,6 +10295,336 @@
           "moduleSpecifier": "./features"
         }
       ]
+    },
+    "scripts.cli.add": {
+      "imports": [
+        {
+          "moduleSpecifier": "cmd-ts",
+          "kind": "named",
+          "namedImports": ["command", "restPositionals"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "../functions/add",
+          "kind": "named",
+          "namedImports": ["add"],
+          "isTypeOnly": false
+        }
+      ],
+      "relativePath": "scripts/cli/add.ts",
+      "text": "import { command, restPositionals } from 'cmd-ts';\nimport { add } from '../functions/add';\n\n/**\n * add variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const add = command({\n  name: 'add',\n  args: {\n    files: restPositionals({\n      displayName: 'files',\n      description: 'Files to add to the codebase analysis',\n    }),\n  },\n  handler,\n});\n\n    ",
+      "exports": []
+    },
+    "scripts.cli.cli": {
+      "imports": [
+        {
+          "moduleSpecifier": "cmd-ts",
+          "kind": "named",
+          "namedImports": ["subcommands"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "./add",
+          "kind": "named",
+          "namedImports": ["add"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "./destroy",
+          "kind": "named",
+          "namedImports": ["destroy"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "./init",
+          "kind": "named",
+          "namedImports": ["init"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "./remove",
+          "kind": "named",
+          "namedImports": ["remove"],
+          "isTypeOnly": false
+        }
+      ],
+      "relativePath": "scripts/cli/cli.ts",
+      "text": "import { subcommands } from 'cmd-ts';\nimport { add } from './add';\nimport { destroy } from './destroy';\nimport { init } from './init';\nimport { remove } from './remove';\n\n/**\n * cli variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const cli = subcommands({\n  name: 'bemedev',\n  cmds: {\n    add,\n    init,\n    remove,\n    destroy,\n  },\n});\n\n    ",
+      "exports": []
+    },
+    "scripts.cli.destroy": {
+      "imports": [
+        {
+          "moduleSpecifier": "cmd-ts",
+          "kind": "named",
+          "namedImports": ["command"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "../functions/destroy",
+          "kind": "named",
+          "namedImports": ["destroy"],
+          "isTypeOnly": false
+        }
+      ],
+      "relativePath": "scripts/cli/destroy.ts",
+      "text": "import { command } from 'cmd-ts';\nimport { destroy } from '../functions/destroy';\n\n/**\n * destroy variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const destroy = command({\n  name: 'destroy',\n  args: {},\n  handler,\n});\n\n    ",
+      "exports": []
+    },
+    "scripts.cli.index": {
+      "imports": [
+        {
+          "moduleSpecifier": "cmd-ts",
+          "kind": "named",
+          "namedImports": ["run"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "./cli",
+          "kind": "named",
+          "namedImports": ["cli"],
+          "isTypeOnly": false
+        }
+      ],
+      "relativePath": "scripts/cli/index.ts",
+      "text": "import { run } from 'cmd-ts';\nimport { cli } from './cli';\n\nrun(cli, process.argv.slice(2));\n\n    ",
+      "exports": []
+    },
+    "scripts.cli.init": {
+      "imports": [
+        {
+          "moduleSpecifier": "../constants",
+          "kind": "named",
+          "namedImports": ["DEFAULT_ROOT", "JSON_PATH"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "cmd-ts",
+          "kind": "named",
+          "namedImports": ["command", "option", "string"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "../functions/init",
+          "kind": "named",
+          "namedImports": ["init"],
+          "isTypeOnly": false
+        }
+      ],
+      "relativePath": "scripts/cli/init.ts",
+      "text": "import { DEFAULT_ROOT, JSON_PATH } from '../constants';\nimport { command, option, string } from 'cmd-ts';\nimport { init } from '../functions/init';\n\n/**\n * init variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const init = command({\n  name: 'init',\n  args: {\n    json: option({\n      long: 'json',\n      short: 'j',\n      env: 'BEMEDEV_JSON_PATH',\n      description: 'Path to the config.json file',\n      type: string,\n      defaultValue: () => JSON_PATH,\n    }),\n    root: option({\n      long: 'root',\n      short: 'r',\n      env: 'BEMEDEV_ROOT',\n      description: 'Root directory to store the analysis files',\n      type: string,\n      defaultValue: () => DEFAULT_ROOT,\n    }),\n  },\n  handler,\n});\n\n    ",
+      "exports": []
+    },
+    "scripts.cli.remove": {
+      "imports": [
+        {
+          "moduleSpecifier": "cmd-ts",
+          "kind": "named",
+          "namedImports": ["command", "restPositionals"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "../functions/remove",
+          "kind": "named",
+          "namedImports": ["remove"],
+          "isTypeOnly": false
+        }
+      ],
+      "relativePath": "scripts/cli/remove.ts",
+      "text": "import { command, restPositionals } from 'cmd-ts';\nimport { remove } from '../functions/remove';\n\n/**\n * remove variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const remove = command({\n  name: 'remove',\n  args: {\n    files: restPositionals({\n      displayName: 'files',\n      description: 'Files to remove to the codebase analysis',\n    }),\n  },\n  handler,\n});\n\n    ",
+      "exports": []
+    },
+    "scripts.constants": {
+      "imports": [],
+      "relativePath": "scripts/constants.ts",
+      "text": "/**\n * DEFAULT_ROOT variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const DEFAULT_ROOT = '.bemedev';\n/**\n * JSON_PATH variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const JSON_PATH = '.bemedev.json';\n\n/**\n * config variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const config = {\n  json: JSON_PATH,\n  root: DEFAULT_ROOT,\n};\n",
+      "exports": []
+    },
+    "scripts.functions.add": {
+      "imports": [
+        {
+          "moduleSpecifier": "../../features/arrays/castings/toArray",
+          "kind": "default",
+          "default": "toArray",
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "@bemedev/codebase",
+          "kind": "named",
+          "namedImports": ["add"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "../helpers",
+          "kind": "named",
+          "namedImports": ["getFile"],
+          "isTypeOnly": false
+        }
+      ],
+      "relativePath": "scripts/functions/add.ts",
+      "text": "import toArray from '../../features/arrays/castings/toArray';\nimport { add } from '@bemedev/codebase';\nimport { getFile } from '../helpers';\n\n/**\n * Options type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Options = {\n  files?: string | string[];\n};\n\n/**\n * add variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const add = (options: Options = {}) => {\n  const { CODEBASE_ANALYSIS } = getFile();\n  const files = toArray(options.files);\n  console.log('Adding files:', files);\n\n  return _add(CODEBASE_ANALYSIS, ...files);\n};\n\n    ",
+      "exports": []
+    },
+    "scripts.functions.destroy": {
+      "imports": [
+        {
+          "moduleSpecifier": "../constants",
+          "kind": "named",
+          "namedImports": ["config"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "@bemedev/codebase/lib/helpers.js",
+          "kind": "named",
+          "namedImports": ["getFolderPath"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "edit-json-file",
+          "kind": "default",
+          "default": "edit",
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "edit-json-file",
+          "kind": "named",
+          "namedImports": ["JsonEditor"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "node:fs",
+          "kind": "named",
+          "namedImports": ["rmSync"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "node:path",
+          "kind": "named",
+          "namedImports": ["join"],
+          "isTypeOnly": false
+        }
+      ],
+      "relativePath": "scripts/functions/destroy.ts",
+      "text": "import { config } from '../constants';\nimport { getFolderPath } from '@bemedev/codebase/lib/helpers.js';\nimport edit from 'edit-json-file';\nimport { JsonEditor } from 'edit-json-file';\nimport { rmSync } from 'node:fs';\nimport { join } from 'node:path';\n\n/**\n * Supprime un fichier JSON ou un dossier de façon récursive.\n * @param targetPath Chemin absolu ou relatif du fichier ou dossier à supprimer\n */\n/**\n * destroy function - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport function destroy() {\n  const cwd = process.cwd();\n  const jsonPath = join(cwd, config.json);\n  let file: JsonEditor | undefined = edit(jsonPath);\n  const root = file?.get('path') as string | undefined;\n  if (root) {\n    const fullPath = getFolderPath(root);\n    try {\n      rmSync(fullPath, { recursive: true, force: true });\n      console.log(`Folder (\"${root}\") has been removed.`);\n    } catch {\n      console.error(`Error while removing the folder (\"${root}\").`);\n    }\n  }\n\n  file = undefined;\n  try {\n    rmSync(jsonPath, { force: true });\n    console.log(\n      `Configuration file (\"${config.json}\") has been removed.`,\n    );\n  } catch {\n    console.error(\n      `Error while removing the configuration file (\"${config.json}\").`,\n    );\n  }\n}\n\n    ",
+      "exports": []
+    },
+    "scripts.functions.index": {
+      "imports": [],
+      "relativePath": "scripts/functions/index.ts",
+      "text": "export * from './add';\nexport * from './destroy';\nexport * from './init';\nexport * from './remove';\n",
+      "exports": [
+        {
+          "name": "*",
+          "kind": "namespace",
+          "text": "export * from './add';",
+          "moduleSpecifier": "./add"
+        },
+        {
+          "name": "*",
+          "kind": "namespace",
+          "text": "export * from './destroy';",
+          "moduleSpecifier": "./destroy"
+        },
+        {
+          "name": "*",
+          "kind": "namespace",
+          "text": "export * from './init';",
+          "moduleSpecifier": "./init"
+        },
+        {
+          "name": "*",
+          "kind": "namespace",
+          "text": "export * from './remove';",
+          "moduleSpecifier": "./remove"
+        }
+      ]
+    },
+    "scripts.functions.init": {
+      "imports": [
+        {
+          "moduleSpecifier": "@bemedev/codebase",
+          "kind": "named",
+          "namedImports": ["init", "InitOptions"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "../constants",
+          "kind": "named",
+          "namedImports": ["config", "DEFAULT_ROOT", "JSON_PATH"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "../helpers",
+          "kind": "named",
+          "namedImports": ["getCodebase"],
+          "isTypeOnly": false
+        }
+      ],
+      "relativePath": "scripts/functions/init.ts",
+      "text": "import { init, InitOptions } from '@bemedev/codebase';\nimport { config, DEFAULT_ROOT, JSON_PATH } from '../constants';\nimport { getCodebase } from '../helpers';\n\n/**\n * init variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const init = (options: Partial<InitOptions> = {}) => {\n  const { root = DEFAULT_ROOT, json = JSON_PATH } = options;\n  const CODEBASE_ANALYSIS = getCodebase();\n  config.json = json;\n  return _init(CODEBASE_ANALYSIS, { root, json });\n};\n\n    ",
+      "exports": []
+    },
+    "scripts.functions.remove": {
+      "imports": [
+        {
+          "moduleSpecifier": "../../features/arrays/castings/toArray",
+          "kind": "default",
+          "default": "toArray",
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "@bemedev/codebase",
+          "kind": "named",
+          "namedImports": ["remove"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "../helpers",
+          "kind": "named",
+          "namedImports": ["getFile"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "./add",
+          "kind": "named",
+          "namedImports": ["Options"],
+          "isTypeOnly": true
+        }
+      ],
+      "relativePath": "scripts/functions/remove.ts",
+      "text": "import toArray from '../../features/arrays/castings/toArray';\nimport { remove } from '@bemedev/codebase';\nimport { getFile } from '../helpers';\nimport type { Options } from './add';\n\nimport toArray from '#features/arrays/castings/toArray';\nimport { remove as _remove } from '@bemedev/codebase';\n\nimport { getFile } from '../helpers';\nimport type { Options } from './add';\n\n/**\n * remove variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const remove = (options: Options = {}) => {\n  const { CODEBASE_ANALYSIS } = getFile();\n  const files = toArray(options.files);\n\n  return _remove(CODEBASE_ANALYSIS, ...files);\n};\n\n    ",
+      "exports": []
+    },
+    "scripts.helpers": {
+      "imports": [
+        {
+          "moduleSpecifier": "@bemedev/codebase",
+          "kind": "named",
+          "namedImports": ["CodeAnalysisFileSchema"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "valibot",
+          "kind": "named",
+          "namedImports": ["parse"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "../../.codebase.json",
+          "kind": "default",
+          "default": "code",
+          "isTypeOnly": false
+        }
+      ],
+      "relativePath": "scripts/helpers.ts",
+      "text": "import { CodeAnalysisFileSchema } from '@bemedev/codebase';\nimport { parse } from 'valibot';\nimport code from '../../.codebase.json';\n\n/**\n * getFile variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const getFile = () => parse(CodeAnalysisFileSchema, code);\n/**\n * getCodebase variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const getCodebase = () => getFile().CODEBASE_ANALYSIS;\n\n    ",
+      "exports": []
+    },
+    "scripts.utils": {
+      "imports": [],
+      "relativePath": "scripts/utils.ts",
+      "text": "/**\n * pathToDotNotation function - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport function pathToDotNotation(filePath: string): string {\n  return filePath\n    .replace(/\\.ts$/, '') // Enlever l'extension .ts\n    .replace(/\\//g, '.'); // Remplacer les / par des .\n}\n",
+      "exports": []
     }
   }
 }

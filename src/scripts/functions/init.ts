@@ -1,11 +1,10 @@
-import { init as _init, InitOptions } from '@bemedev/codebase';
-import { config, DEFAULT_ROOT, JSON_PATH } from '../constants';
-import { getFile } from '../helpers';
+import { init as _init, InitOptions } from "@bemedev/codebase";
+import { config, DEFAULT_ROOT, JSON_PATH } from "../constants";
+import { getCodebase } from "../helpers";
 
 export const init = (options: Partial<InitOptions> = {}) => {
   const { root = DEFAULT_ROOT, json = JSON_PATH } = options;
-  const { CODEBASE_ANALYSIS } = getFile();
+  const CODEBASE_ANALYSIS = getCodebase();
   config.json = json;
-
   return _init(CODEBASE_ANALYSIS, { root, json });
 };

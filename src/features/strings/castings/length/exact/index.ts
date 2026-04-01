@@ -1,4 +1,2 @@
-import strictExactLength from './strict';
-
-const exactLength = strictExactLength;
+import exactLength from "./strict";
 export default exactLength;

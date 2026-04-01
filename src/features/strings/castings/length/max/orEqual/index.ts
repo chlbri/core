@@ -1,4 +1,2 @@
-import strictMaxOrEqualLength from './strict';
-
-const maxOrEqualLength = strictMaxOrEqualLength;
+import maxOrEqualLength from "./strict";
 export default maxOrEqualLength;

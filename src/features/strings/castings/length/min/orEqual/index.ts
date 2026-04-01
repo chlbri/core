@@ -1,4 +1,2 @@
-import strictMinOrEqualLength from './strict';
-
-const minOrEqualLength = strictMinOrEqualLength;
+import minOrEqualLength from "./strict";
 export default minOrEqualLength;

@@ -1,4 +1,2 @@
-import strictMaxLength from './strict';
-
-const maxLength = strictMaxLength;
+import maxLength from "./strict";
 export default maxLength;

@@ -6,6 +6,23 @@
 <details>
 <summary>
 
+## **[0.3.0] - 01/04/2026** => _13:25_
+
+</summary>
+
+- Refactor `partialCall` imports: remove `.1` suffix across all castings modules
+- Replace `partialCall(...)` with `partialCall.legacy(...)` across objects and strings castings
+- Standardize module import quotes to double quotes
+- Update dependencies
+- <u>Test coverage **_100%_**</u>
+
+</details>
+
+<br/>
+
+<details>
+<summary>
+
 ## **[0.2.0] - 01/04/2026** => _00:25_
 
 </summary>

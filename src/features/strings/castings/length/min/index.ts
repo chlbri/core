@@ -1,4 +1,2 @@
-import strictMinLength from './strict';
-
-const minLength = strictMinLength;
+import minLength from "./strict";
 export default minLength;

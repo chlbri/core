@@ -1,4 +1,4 @@
-import type { ENGLISH_LETTERS } from './constants';
+import type { ENGLISH_LETTERS } from "./constants";
 
 export type LowerLetters = (typeof ENGLISH_LETTERS)[number];
 export type UpperLetters = Uppercase<LowerLetters>;
@@ -8,22 +8,19 @@ export type _JoinStringHelper = string | number | boolean | bigint;
 
 export type JoinString<
   T extends readonly string[],
-  sep extends string = ' ',
+  sep extends string = " ",
 > = T extends []
-  ? ''
+  ? ""
   : T extends [_JoinStringHelper]
     ? `${T[0]}`
-    : T extends [
-          _JoinStringHelper,
-          ...infer U extends readonly string[],
-        ]
+    : T extends [_JoinStringHelper, ...infer U extends readonly string[]]
       ? `${T[0]}${sep}${JoinString<U, sep>}`
       : string;
 
 export type AddString<
   T,
-  Before extends string = '',
-  After extends string = '',
+  Before extends string = "",
+  After extends string = "",
 > = `${Before}${T & string}${After}`;
 
 export type StringEndWith<
@@ -52,10 +49,10 @@ export type StringContains<
  */
 export type SplitStringBy<
   S extends string,
-  By extends string = '.',
+  By extends string = ".",
 > = string extends S
   ? string[]
-  : S extends ''
+  : S extends ""
     ? []
     : S extends `${infer T}${By}${infer U}`
       ? [T, ...SplitStringBy<U, By>]
@@ -68,7 +65,7 @@ export type StringLength<
   Counter extends number[] = [],
 > = T extends `${string}${infer Tail}`
   ? StringLength<Tail, [...Counter, 0]>
-  : Counter['length'];
+  : Counter["length"];
 
 export type StringCompare<
   First extends number,
@@ -76,11 +73,16 @@ export type StringCompare<
   Counter extends number[] = [],
 > = First extends Second
   ? 0
-  : Counter['length'] extends First
+  : Counter["length"] extends First
     ? -1
-    : Counter['length'] extends Second
+    : Counter["length"] extends Second
       ? 1
       : StringCompare<First, Second, [...Counter, 0]>;
+
+export type StringCompareWith<
+  First extends string,
+  Second extends string,
+> = StringCompare<StringLength<First>, StringLength<Second>>;
 
 export type ExactLength<Exact extends number, T extends string> =
   StringCompare<StringLength<T>, Exact> extends 0 ? T : never;
