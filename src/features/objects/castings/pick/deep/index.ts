@@ -1,6 +1,6 @@
-import { partialCall } from '#features/functions/functions/partialCall.1';
+import { partialCall } from '#features/functions/functions/partialCall';
 import { pickDeep } from '#features/objects/utils/pick.deep';
 
-const fn = partialCall(pickDeep, 'key');
+const fn = partialCall.legacy(pickDeep, 'key');
 
 export default fn;

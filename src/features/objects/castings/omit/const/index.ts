@@ -1,4 +1,4 @@
-import { partialCall } from '#features/functions/functions/partialCall.1';
+import { partialCall } from '#features/functions/functions/partialCall';
 import { omit } from '../../../utils/omit';
 
 const fn = partialCall(omit, 'key') as <
