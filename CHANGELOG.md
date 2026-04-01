@@ -10,8 +10,10 @@
 
 </summary>
 
-- Add `identity`, `identify`, `log10`, `switchValue`, `refunction`, `partialCallO` function utilities
-- Add string `multichar` helper and complete length casting suite (`exact`, `min`, `max`, `range` with inclusive/exclusive variants)
+- Add `identity`, `identify`, `log10`, `switchValue`, `refunction`,
+  `partialCallO` function utilities
+- Add string `multichar` helper and complete length casting suite
+  (`exact`, `min`, `max`, `range` with inclusive/exclusive variants)
 - Add `oxlint` and `oxfmt` configurations
 - Remove legacy `prettier`, `eslint` and `rollup` configs
 - Replace `rollup` with `rolldown` as bundler

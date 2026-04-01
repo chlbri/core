@@ -1,5 +1,5 @@
-import lowMinOrEqualLength from './low';
-import { MinOrEqualLength } from '../../../../types';
+import lowMinOrEqualLength from "./low";
+import { MinOrEqualLength } from "../../../../types";
 
 type StrictMinOrEqualLength_L = <Min extends number, T extends string>(
   min: Min,

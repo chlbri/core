@@ -1,7 +1,7 @@
-import { partialCall } from '#features/functions/functions/partialCall';
-import { omit } from '../../../utils/omit';
+import { partialCall } from "#features/functions/functions/partialCall";
+import { omit } from "../../../utils/omit";
 
-const fn = partialCall(omit, 'key') as <
+const fn = partialCall.legacy(omit, "key") as <
   const T extends object,
   K extends (keyof T)[],
 >(
