@@ -1,5 +1,5 @@
-import lowExclusiveRangeLength from './low';
-import { InRangeExclusive } from '../../../../types';
+import lowExclusiveRangeLength from "./low";
+import { InRangeExclusive } from "../../../../types";
 
 type StrictExclusiveRangeLength_L = <
   Min extends number,

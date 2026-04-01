@@ -1,6 +1,6 @@
-import { partialCall } from '#features/functions/functions/partialCall.1';
-import { omitDeepIs } from '#features/objects/utils/omit.deep.is';
+import { partialCall } from "#features/functions/functions/partialCall";
+import { omitDeepIs } from "#features/objects/utils/omit.deep.is";
 
-const fn = partialCall(omitDeepIs, 'element');
+const fn = partialCall.legacy(omitDeepIs, "element");
 
 export default fn;

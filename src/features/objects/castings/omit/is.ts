@@ -1,8 +1,8 @@
-import { partialCall } from '#features/functions/functions/partialCall.1';
-import { omitIs } from '#features/objects/utils/omit.is';
-import type { Keys, PrimitiveObjectMap } from '#types';
+import { partialCall } from "#features/functions/functions/partialCall";
+import { omitIs } from "#features/objects/utils/omit.is";
+import type { Keys, PrimitiveObjectMap } from "#types";
 
-const fn = partialCall(omitIs, 'key') as <K extends Keys[]>(
+const fn = partialCall.legacy(omitIs, "key") as <K extends Keys[]>(
   object: PrimitiveObjectMap,
   ...keys: K
 ) => boolean;

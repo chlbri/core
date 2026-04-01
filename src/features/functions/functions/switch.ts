@@ -9,16 +9,16 @@ const _switchValue: _SwitchValue_F = ({ condition, truthy, falsy }) => {
   return out;
 };
 
-export function switchValue<T>(params: {
+type ParamsO<T> = {
   condition?: boolean;
   truthy: T;
   falsy: T;
-}): T;
-export function switchValue<T>(
-  condition: boolean,
-  first: T,
-  second: T,
-): T;
+};
+
+type ParamsA<T> = [condition: boolean, first: T, second: T];
+
+export function switchValue<T>(params: ParamsO<T>): T;
+export function switchValue<T>(...args: ParamsA<T>): T;
 
 export function switchValue<T>(condition: any, truthy?: T, falsy?: T) {
   const check1 = typeof condition === 'boolean';
@@ -33,5 +33,9 @@ export function switchValue<T>(condition: any, truthy?: T, falsy?: T) {
     falsy: _switchValue(condition),
   });
 }
+
+switchValue.array = <T>(...params: ParamsA<T>) =>
+  switchValue(...params);
+switchValue.object = <T>(params: ParamsO<T>) => switchValue(params);
 
 export const switchV = switchValue;

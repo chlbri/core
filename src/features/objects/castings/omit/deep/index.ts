@@ -1,8 +1,8 @@
-import { partialCall } from '#features/functions/functions/partialCall.1';
-import type { DeepOmit, Keys, PrimitiveObjectMap } from '#types';
-import { omitDeep } from '../../../utils/omit.deep';
+import { partialCall } from "#features/functions/functions/partialCall";
+import type { DeepOmit, Keys, PrimitiveObjectMap } from "#types";
+import { omitDeep } from "../../../utils/omit.deep";
 
-const fn = partialCall(omitDeep, 'key') as <
+const fn = partialCall.legacy(omitDeep, "key") as <
   T extends PrimitiveObjectMap,
   K extends Keys[],
 >(

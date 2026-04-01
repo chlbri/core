@@ -1,5 +1,5 @@
-import lowMaxOrEqualLength from './low';
-import { MaxOrEqualLength } from '../../../../types';
+import lowMaxOrEqualLength from "./low";
+import { MaxOrEqualLength } from "../../../../types";
 
 type StrictMaxOrEqualLength_L = <Max extends number, T extends string>(
   max: Max,
