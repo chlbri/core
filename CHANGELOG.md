@@ -10,9 +10,12 @@
 
 </summary>
 
-- Refactor `arrays/castings/toArray` : utilisation de `expandFn` et du type `SoA`, ajout d'une variante `typed` fortement typée
-- Fix import dans `functions/types` : remplacement de l'import externe `@bemedev/vitest-extended` par le chemin local `#types`
-- Refactor `functions/types` : reformatage des types `Fn`, `_Requirify`, `Parts`, `TypeFromTimeouts` pour une meilleure lisibilité
+- Refactor `arrays/castings/toArray` : utilisation de `expandFn` et du
+  type `SoA`, ajout d'une variante `typed` fortement typée
+- Fix import dans `functions/types` : remplacement de l'import externe
+  `@bemedev/vitest-extended` par le chemin local `#types`
+- Refactor `functions/types` : reformatage des types `Fn`, `_Requirify`,
+  `Parts`, `TypeFromTimeouts` pour une meilleure lisibilité
 - <u>Test coverage **_100%_**</u>
 
 </details>
@@ -27,13 +30,19 @@
 </summary>
 
 - Remove module `transform` et ses helpers (breaking change)
-- Add types `FnBasic`, `Parts`, `PartDiff`, `TimeoutPromise`, `TypeFromTimeout`, `TypeFromTimeouts`, `CallBackError`, `CallBackResult`, `Callback`, `CbParams`, `ResultFrom` dans `functions/types`
+- Add types `FnBasic`, `Parts`, `PartDiff`, `TimeoutPromise`,
+  `TypeFromTimeout`, `TypeFromTimeouts`, `CallBackError`,
+  `CallBackResult`, `Callback`, `CbParams`, `ResultFrom` dans
+  `functions/types`
 - Add types `PrimitiveS` et `TransformPrimitiveS` dans les globals
 - Add utilities `isTypeFn` et `isInstance` dans `globals/utils/is`
 - Add constante `PRIMITIVES` dans `globals/constants`
-- Refactor `objects/castings/hasKeys` et `keyTypes` : consolidation des dossiers en fichiers uniques
-- Refactor `objects/typings/hasKeys` et `keyTypes` : consolidation des dossiers en fichiers uniques
-- Update dépendances (`typescript ^6.0.2`, `rolldown 1.0.0-rc.13`, `oxlint ^1.58.0`, etc.)
+- Refactor `objects/castings/hasKeys` et `keyTypes` : consolidation des
+  dossiers en fichiers uniques
+- Refactor `objects/typings/hasKeys` et `keyTypes` : consolidation des
+  dossiers en fichiers uniques
+- Update dépendances (`typescript ^6.0.2`, `rolldown 1.0.0-rc.13`,
+  `oxlint ^1.58.0`, etc.)
 - <u>Test coverage **_100%_**</u>
 
 </details>
