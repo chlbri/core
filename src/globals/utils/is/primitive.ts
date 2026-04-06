@@ -1,6 +1,15 @@
-import { PRIMITIVES } from '#features/transform/constants';
-import type { Primitive } from '#types';
-import { mergeIs } from './merge';
+import type { Primitive } from "#types";
+import { mergeIs } from "./merge";
+
+export const PRIMITIVES = [
+  "string",
+  "number",
+  "boolean",
+  "bigint",
+  "symbol",
+  "undefined",
+  "null",
+] as const;
 
 export const isPrimitive = (value?: unknown): value is Primitive => {
   const isType = mergeIs.type(...PRIMITIVES);

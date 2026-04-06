@@ -1,12 +1,12 @@
-import { aliasTs } from '@bemedev/vitest-alias';
-import { exclude } from '@bemedev/vitest-exclude';
-import { defineConfig } from 'vitest/config';
-import tsconfig from './tsconfig.json';
+import { aliasTs } from "@bemedev/dev-utils/vitest-alias";
+import { exclude } from "@bemedev/dev-utils/vitest-exclude";
+import { defineConfig } from "vitest/config";
+import tsconfig from "./tsconfig.json";
 
 export default defineConfig({
   plugins: [
     aliasTs(tsconfig as any),
-    exclude({ ignoreCoverageFiles: ['**/index.ts'] }),
+    exclude({ ignoreCoverageFiles: ["**/index.ts"] }),
   ],
 
   test: {
@@ -22,10 +22,10 @@ export default defineConfig({
     },
     coverage: {
       enabled: true,
-      extension: 'ts',
-      reportsDirectory: '.coverage',
+      extension: "ts",
+      reportsDirectory: ".coverage",
       all: true,
-      provider: 'v8',
+      provider: "v8",
     },
   } as any,
 });

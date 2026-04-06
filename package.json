@@ -1,6 +1,6 @@
 {
   "name": "@bemedev/core",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "The core library of @bemedev, providing essential functionalities and utilities for the Bemedev ecosystem.",
   "author": {
     "email": "bri_lvi@icloud.com",
@@ -51,7 +51,7 @@
     "node": ">=24"
   },
   "scripts": {
-    "_lint": "oxlint",
+    "_preconfig": "chmod -x \".husky/commit-msg\"",
     "build": "pnpm run rm:lib && pnpm run rolldown && pnpm run codegen",
     "build:watch": "onchange --await-write-finish 1500 -d 10000 -v \"**/*.ts\" -- pnpm run build",
     "ci": "CI_START=$(date +%s) && pnpm run config:off && pnpm run lint && pnpm run test && pnpm run p-q && echo \"\n✅ CI takes $(($(date +%s) - CI_START))s\n\"",
@@ -99,10 +99,8 @@
     }
   ],
   "devDependencies": {
-    "@bemedev/build-tests": "^0.1.2",
-    "@bemedev/dev-utils": "^0.3.2",
+    "@bemedev/dev-utils": "^0.5.2",
     "@bemedev/fsf": "^1.0.1",
-    "@bemedev/rollup-config": "^0.2.2",
     "@bemedev/vitest-alias": "^0.0.3",
     "@bemedev/vitest-exclude": "^0.1.1",
     "@bemedev/vitest-extended": "^1.5.3",
@@ -111,12 +109,12 @@
     "@rollup/plugin-json": "^6.1.0",
     "@size-limit/file": "^12.0.1",
     "@types/edit-json-file": "1.7.4",
-    "@types/node": "^25.5.0",
+    "@types/node": "^25.5.2",
     "@typescript-eslint/eslint-plugin": "8.58.0",
     "@typescript-eslint/parser": "8.58.0",
     "@vitest/coverage-v8": "^3.2.4",
     "@vitest/ui": "3.2.4",
-    "eslint": "10.1.0",
+    "eslint": "10.2.0",
     "glob": "^13.0.6",
     "globals": "17.4.0",
     "husky": "^9.1.7",
@@ -139,7 +137,8 @@
     ]
   },
   "dependencies": {
-    "@bemedev/codebase": "^0.2.0",
+    "@bemedev/codebase": "^0.3.0",
+    "@bemedev/sleep": "^0.2.2",
     "chokidar": "^5.0.0",
     "cmd-ts": "0.15.0",
     "edit-json-file": "^1.8.1",

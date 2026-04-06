@@ -6,6 +6,27 @@
 <details>
 <summary>
 
+## **[0.4.0] - 06/04/2026** => _00:00_
+
+</summary>
+
+- Remove module `transform` et ses helpers (breaking change)
+- Add types `FnBasic`, `Parts`, `PartDiff`, `TimeoutPromise`, `TypeFromTimeout`, `TypeFromTimeouts`, `CallBackError`, `CallBackResult`, `Callback`, `CbParams`, `ResultFrom` dans `functions/types`
+- Add types `PrimitiveS` et `TransformPrimitiveS` dans les globals
+- Add utilities `isTypeFn` et `isInstance` dans `globals/utils/is`
+- Add constante `PRIMITIVES` dans `globals/constants`
+- Refactor `objects/castings/hasKeys` et `keyTypes` : consolidation des dossiers en fichiers uniques
+- Refactor `objects/typings/hasKeys` et `keyTypes` : consolidation des dossiers en fichiers uniques
+- Update dépendances (`typescript ^6.0.2`, `rolldown 1.0.0-rc.13`, `oxlint ^1.58.0`, etc.)
+- <u>Test coverage **_100%_**</u>
+
+</details>
+
+<br/>
+
+<details>
+<summary>
+
 ## **[0.3.1] - 01/04/2026** => _16:13_
 
 </summary>

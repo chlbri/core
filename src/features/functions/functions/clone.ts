@@ -1,8 +1,6 @@
-import type { PrimitiveObject } from '#types';
+import type { PrimitiveObject } from "#types";
 
-export type FormatKey<T = any> = (
-  key: Extract<keyof T, string>,
-) => string;
+export type FormatKey<T = any> = (key: Extract<keyof T, string>) => string;
 
 /**
  * Creates a deep clone of an object or array, preserving its structure and values.
@@ -17,12 +15,12 @@ export type FormatKey<T = any> = (
  * Inspired by the "deep-clone" npm {@link https://www.npmjs.com/package/deep-clone|library},
  * @see the {@link https://github.com/thebearingedge/deep-clone/blob/main/src/deep-clone.ts|implementation} for more details.
  */
-export default function deepClone<I extends PrimitiveObject>(
+export function deepClone<I extends PrimitiveObject>(
   value: I,
   refs = new Map<I, I>(),
 ): I {
   const ref = refs.get(value);
-  if (typeof ref !== 'undefined') return ref;
+  if (typeof ref !== "undefined") return ref;
 
   if (Array.isArray(value)) {
     const clone: any = [];

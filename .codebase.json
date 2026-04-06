@@ -1,8 +1,8 @@
 {
   "STATS": {
-    "files": 521,
-    "imports": 1082,
-    "exports": 1134
+    "files": 489,
+    "imports": 1012,
+    "exports": 1076
   },
   "CODEBASE_ANALYSIS": {
     "features.arrays.castings.all": {
@@ -1479,8 +1479,8 @@
       "imports": [
         {
           "moduleSpecifier": "../../functions/functions/clone",
-          "kind": "default",
-          "default": "deepClone",
+          "kind": "named",
+          "namedImports": ["deepClone"],
           "isTypeOnly": false
         },
         {
@@ -1491,7 +1491,7 @@
         }
       ],
       "relativePath": "features/common/castings/clone.ts",
-      "text": "import deepClone from '../../functions/functions/clone';\nimport type { PrimitiveObject } from '../../../globals/types';\n\n/**\n * fn const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst fn = <T extends PrimitiveObject>(object: T): T => {\n  return deepClone(object);\n};\n\nexport default fn;\n\n    ",
+      "text": "import { deepClone } from '../../functions/functions/clone';\nimport type { PrimitiveObject } from '../../../globals/types';\n\n/**\n * fn const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst fn = <T extends PrimitiveObject>(object: T): T => {\n  return deepClone(object);\n};\n\nexport default fn;\n\n    ",
       "exports": []
     },
     "features.common.castings.const": {
@@ -2301,12 +2301,6 @@
     "features.common.types": {
       "imports": [
         {
-          "moduleSpecifier": "../transform/types",
-          "kind": "named",
-          "namedImports": ["TransformS"],
-          "isTypeOnly": true
-        },
-        {
           "moduleSpecifier": "../../globals/types",
           "kind": "named",
           "namedImports": ["Fn", "RecursiveArrayOf"],
@@ -2314,7 +2308,7 @@
         }
       ],
       "relativePath": "features/common/types.ts",
-      "text": "import type { TransformS } from '../transform/types';\nimport type { Fn, RecursiveArrayOf } from '../../globals/types';\n\n/**\n * SingleOrRecursiveArrayOf type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type SingleOrRecursiveArrayOf<T> = T | RecursiveArrayOf<T>;\n\n/**\n * SoRa type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type SoRa<T> = SingleOrRecursiveArrayOf<T>;\n\n/**\n * Primitive2 type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Primitive2 = string | number | boolean;\n/**\n * Primitive type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Primitive = Primitive2 | undefined | null;\n\n/**\n * SingleOrArray type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type SingleOrArray<T> = T | T[] | ReadonlyArray<T>;\n\n/**\n * SoA type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type SoA<T> = SingleOrArray<T>;\n\n/**\n * PrimitiveObjectMap type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type PrimitiveObjectMap = {\n  [key: Keys]: SoRa<_PrimitiveObject>;\n};\n\ntype _PrimitiveObject = Primitive | PrimitiveObjectMap;\n\n/**\n * A type that represents a primitive object, which can be a primitive value or an object\n *\n * @remark\n */\n/**\n * PrimitiveObject type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type PrimitiveObject = SoRa<_PrimitiveObject>;\n\n/**\n * NExtract type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type NExtract<T, U extends T> = Extract<T, U>;\n/**\n * NExclude type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type NExclude<T, U extends T> = Exclude<T, U>;\n\n/**\n * NotUndefined type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type NotUndefined<T> = Exclude<T, undefined>;\n\n/**\n * Nu type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Nu<T> = NotUndefined<T>;\n\n/**\n * Undefiny type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Undefiny<T> = T | undefined;\n\n/**\n * Un type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Un<T> = Undefiny<T>;\n\n/**\n * Cast type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Cast<A, B> = A extends B ? A : B;\n\n/**\n * Keys type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Keys = keyof any;\n\n/**\n * TypeStrings type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type TypeStrings =\n  | 'string'\n  | 'number'\n  | 'boolean'\n  | 'bigint'\n  | 'symbol'\n  | 'undefined'\n  | 'object'\n  | 'function';\n\n/**\n * KeyTypes type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type KeyTypes = {\n  [K in Keys]: TypeStrings | Checker2 | KeyTypes;\n};\n\n/**\n * KeyTypesFrom type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type KeyTypesFrom<T extends KeyTypes> = {\n  [K in keyof T]: T[K] extends KeyTypes\n    ? KeyTypesFrom<T[K]>\n    : T[K] extends TypeStrings\n      ? TransformS<T[K]>\n      : T[K] extends Checker2<infer R>\n        ? R\n        : unknown;\n};\n\n/**\n * NonN type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type NonN<T> = T extends undefined | null ? any : NonNullable<T>;\n\n/**\n * Defaulted type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Defaulted<T, U extends NonN<T>> = undefined extends T\n  ? U\n  : null extends T\n    ? U\n    : never extends T\n      ? U\n      : T;\n\n// export type Defaulted<T, U extends NonN<T>> = T extends\n//   | undefined\n//   | never\n//   | null\n//   ? U\n//   : T;\n\n/**\n * UnionKeys type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type UnionKeys<U> = U extends Record<infer K, any> ? K : never;\n\n/**\n * _UnionToIntersection1 type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type _UnionToIntersection1<U> = boolean extends U\n  ? U\n  : (U extends any ? (k: U) => void : never) extends (\n        k: infer I,\n      ) => void\n    ? I\n    : never;\n\n/**\n * _UnionToIntersection2 type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type _UnionToIntersection2<U> = {\n  [K in UnionKeys<U>]: U extends Record<K, infer T> ? T : never;\n};\n\n/**\n * UnionToIntersection type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type UnionToIntersection<U> = _UnionToIntersection2<\n  _UnionToIntersection1<U>\n>;\n\n/**\n * UnionOmit type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type UnionOmit<T, K extends Keys> = T extends any\n  ? Omit<T, K>\n  : never;\n\n/**\n * UnionNOmit type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type UnionNOmit<T, K extends keyof T> = UnionOmit<T, K>;\n\n/**\n * LastOfUnion type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type LastOfUnion<T> = (\n  (T extends any ? (x: () => T) => void : never) extends (\n    x: infer I,\n  ) => void\n    ? I\n    : never\n) extends () => infer U\n  ? U\n  : never;\n\n/**\n * UnionToTuple type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type UnionToTuple<T, A extends any[] = []> = [T] extends [never]\n  ? A\n  : UnionToTuple<Exclude<T, LastOfUnion<T>>, [LastOfUnion<T>, ...A]>;\n\n// #endregion\n\n/**\n * Checker2 type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Checker2<T = unknown> = (value: unknown) => value is T;\n// | ((value: unknown) => boolean);\n\n/**\n * Equals type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Equals<T, U> = T extends U\n  ? U extends T\n    ? true\n    : false\n  : false;\n\n/**\n * Classe type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Classe = {\n  [Symbol.hasInstance]: Fn<any, boolean>;\n};\n\n/**\n * UndefinedHelper class - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport class UndefinedHelper {\n  readonly __NO_TYPE__ = '@bemedev/addons/NO_TYPE';\n  private constructor() {}\n}\n\n    ",
+      "text": "import type { Fn, RecursiveArrayOf } from '../../globals/types';\n\n/**\n * SingleOrRecursiveArrayOf type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type SingleOrRecursiveArrayOf<T> = T | RecursiveArrayOf<T>;\n\n/**\n * SoRa type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type SoRa<T> = SingleOrRecursiveArrayOf<T>;\n\n/**\n * Primitive2 type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Primitive2 = string | number | boolean;\n/**\n * Primitive type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Primitive = Primitive2 | undefined | null;\n\n/**\n * SingleOrArray type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type SingleOrArray<T> = T | T[] | ReadonlyArray<T>;\n\n/**\n * SoA type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type SoA<T> = SingleOrArray<T>;\n\n/**\n * PrimitiveObjectMap type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type PrimitiveObjectMap = {\n  [key: Keys]: SoRa<_PrimitiveObject>;\n};\n\ntype _PrimitiveObject = Primitive | PrimitiveObjectMap;\n\n/**\n * A type that represents a primitive object, which can be a primitive value or an object\n *\n * @remark\n */\n/**\n * PrimitiveObject type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type PrimitiveObject = SoRa<_PrimitiveObject>;\n\n/**\n * NExtract type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type NExtract<T, U extends T> = Extract<T, U>;\n/**\n * NExclude type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type NExclude<T, U extends T> = Exclude<T, U>;\n\n/**\n * NotUndefined type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type NotUndefined<T> = Exclude<T, undefined>;\n\n/**\n * Nu type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Nu<T> = NotUndefined<T>;\n\n/**\n * Undefiny type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Undefiny<T> = T | undefined;\n\n/**\n * Un type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Un<T> = Undefiny<T>;\n\n/**\n * Cast type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Cast<A, B> = A extends B ? A : B;\n\n/**\n * Keys type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Keys = keyof any;\n\n/**\n * TypeStrings type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type TypeStrings =\n  | 'string'\n  | 'number'\n  | 'boolean'\n  | 'bigint'\n  | 'symbol'\n  | 'undefined'\n  | 'object'\n  | 'function';\n\n/**\n * KeyTypes type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type KeyTypes = {\n  [K in Keys]: TypeStrings | Checker2 | KeyTypes;\n};\n\n/**\n * NonN type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type NonN<T> = T extends undefined | null ? any : NonNullable<T>;\n\n/**\n * Defaulted type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Defaulted<T, U extends NonN<T>> = undefined extends T\n  ? U\n  : null extends T\n    ? U\n    : never extends T\n      ? U\n      : T;\n\n// export type Defaulted<T, U extends NonN<T>> = T extends\n//   | undefined\n//   | never\n//   | null\n//   ? U\n//   : T;\n\n/**\n * UnionKeys type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type UnionKeys<U> = U extends Record<infer K, any> ? K : never;\n\n/**\n * _UnionToIntersection1 type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type _UnionToIntersection1<U> = boolean extends U\n  ? U\n  : (U extends any ? (k: U) => void : never) extends (\n        k: infer I,\n      ) => void\n    ? I\n    : never;\n\n/**\n * _UnionToIntersection2 type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type _UnionToIntersection2<U> = {\n  [K in UnionKeys<U>]: U extends Record<K, infer T> ? T : never;\n};\n\n/**\n * UnionToIntersection type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type UnionToIntersection<U> = _UnionToIntersection2<\n  _UnionToIntersection1<U>\n>;\n\n/**\n * UnionOmit type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type UnionOmit<T, K extends Keys> = T extends any\n  ? Omit<T, K>\n  : never;\n\n/**\n * UnionNOmit type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type UnionNOmit<T, K extends keyof T> = UnionOmit<T, K>;\n\n/**\n * LastOfUnion type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type LastOfUnion<T> = (\n  (T extends any ? (x: () => T) => void : never) extends (\n    x: infer I,\n  ) => void\n    ? I\n    : never\n) extends () => infer U\n  ? U\n  : never;\n\n/**\n * UnionToTuple type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type UnionToTuple<T, A extends any[] = []> = [T] extends [never]\n  ? A\n  : UnionToTuple<Exclude<T, LastOfUnion<T>>, [LastOfUnion<T>, ...A]>;\n\n// #endregion\n\n/**\n * Checker2 type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Checker2<T = unknown> = (value: unknown) => value is T;\n// | ((value: unknown) => boolean);\n\n/**\n * Equals type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Equals<T, U> = T extends U\n  ? U extends T\n    ? true\n    : false\n  : false;\n\n/**\n * Classe type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Classe = {\n  [Symbol.hasInstance]: Fn<any, boolean>;\n};\n\n/**\n * UndefinedHelper class - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport class UndefinedHelper {\n  readonly __NO_TYPE__ = '@bemedev/addons/NO_TYPE';\n  private constructor() {}\n}\n\n    ",
       "exports": []
     },
     "features.common.typings.all": {
@@ -3580,7 +3574,7 @@
         }
       ],
       "relativePath": "features/functions/functions/clone.ts",
-      "text": "import type { PrimitiveObject } from '../../../globals/types';\n\n/**\n * FormatKey type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type FormatKey<T = any> = (\n  key: Extract<keyof T, string>,\n) => string;\n\n/**\n * Creates a deep clone of an object or array, preserving its structure and values.\n *\n *\n * @param value of type {@linkcode PrimitiveObject} The value to deep clone, which can be an object, array, or primitive.\n * @param formatKey A function to format the keys of the cloned object. If not provided, keys will remain unchanged.\n * @param refs A map to keep track of already cloned objects to handle circular references.\n * This is used to prevent infinite loops when cloning objects that reference each other.\n * @returns A deep clone of the input value, preserving the structure and values of the original object or array.\n *\n * Inspired by the \"deep-clone\" npm {@link https://www.npmjs.com/package/deep-clone|library},\n * @see the {@link https://github.com/thebearingedge/deep-clone/blob/main/src/deep-clone.ts|implementation} for more details.\n */\n/**\n * default function - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport default function deepClone<I extends PrimitiveObject>(\n  value: I,\n  refs = new Map<I, I>(),\n): I {\n  const ref = refs.get(value);\n  if (typeof ref !== 'undefined') return ref;\n\n  if (Array.isArray(value)) {\n    const clone: any = [];\n    refs.set(value, clone);\n\n    for (let i = 0; i < value.length; i++) {\n      clone[i] = deepClone(value[i], refs as any);\n    }\n\n    return clone as I;\n  }\n\n  if (!(value instanceof Object)) return value as unknown as I;\n\n  const clone: Record<string, PrimitiveObject> = {};\n  refs.set(value, clone as I);\n  const keys = Object.keys(value);\n\n  for (let i = 0; i < keys.length; i++) {\n    const key = keys[i];\n    clone[key] = deepClone((value as any)[keys[i]], refs);\n  }\n\n  if (Object.isFrozen(value)) {\n    Object.freeze(clone);\n  }\n\n  if (Object.isSealed(value)) {\n    Object.seal(clone);\n  }\n\n  return clone as I;\n}\n\n    ",
+      "text": "import type { PrimitiveObject } from '../../../globals/types';\n\n/**\n * FormatKey type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type FormatKey<T = any> = (\n  key: Extract<keyof T, string>,\n) => string;\n\n/**\n * Creates a deep clone of an object or array, preserving its structure and values.\n *\n *\n * @param value of type {@linkcode PrimitiveObject} The value to deep clone, which can be an object, array, or primitive.\n * @param formatKey A function to format the keys of the cloned object. If not provided, keys will remain unchanged.\n * @param refs A map to keep track of already cloned objects to handle circular references.\n * This is used to prevent infinite loops when cloning objects that reference each other.\n * @returns A deep clone of the input value, preserving the structure and values of the original object or array.\n *\n * Inspired by the \"deep-clone\" npm {@link https://www.npmjs.com/package/deep-clone|library},\n * @see the {@link https://github.com/thebearingedge/deep-clone/blob/main/src/deep-clone.ts|implementation} for more details.\n */\n/**\n * deepClone function - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport function deepClone<I extends PrimitiveObject>(\n  value: I,\n  refs = new Map<I, I>(),\n): I {\n  const ref = refs.get(value);\n  if (typeof ref !== 'undefined') return ref;\n\n  if (Array.isArray(value)) {\n    const clone: any = [];\n    refs.set(value, clone);\n\n    for (let i = 0; i < value.length; i++) {\n      clone[i] = deepClone(value[i], refs as any);\n    }\n\n    return clone as I;\n  }\n\n  if (!(value instanceof Object)) return value as unknown as I;\n\n  const clone: Record<string, PrimitiveObject> = {};\n  refs.set(value, clone as I);\n  const keys = Object.keys(value);\n\n  for (let i = 0; i < keys.length; i++) {\n    const key = keys[i];\n    clone[key] = deepClone((value as any)[keys[i]], refs);\n  }\n\n  if (Object.isFrozen(value)) {\n    Object.freeze(clone);\n  }\n\n  if (Object.isSealed(value)) {\n    Object.seal(clone);\n  }\n\n  return clone as I;\n}\n\n    ",
       "exports": []
     },
     "features.functions.functions.identify": {
@@ -3605,7 +3599,7 @@
     "features.functions.functions.index": {
       "imports": [],
       "relativePath": "features/functions/functions/index.ts",
-      "text": "export * from './clone';\nexport * from './partialCall';\n",
+      "text": "export * from './clone';\nexport * from './identify';\nexport * from './identity';\nexport * from './partialCall';\nexport * from './partialCallO';\nexport * from './refunction';\nexport * from './switch';\n",
       "exports": [
         {
           "name": "*",
@@ -3616,8 +3610,38 @@
         {
           "name": "*",
           "kind": "namespace",
+          "text": "export * from './identify';",
+          "moduleSpecifier": "./identify"
+        },
+        {
+          "name": "*",
+          "kind": "namespace",
+          "text": "export * from './identity';",
+          "moduleSpecifier": "./identity"
+        },
+        {
+          "name": "*",
+          "kind": "namespace",
           "text": "export * from './partialCall';",
           "moduleSpecifier": "./partialCall"
+        },
+        {
+          "name": "*",
+          "kind": "namespace",
+          "text": "export * from './partialCallO';",
+          "moduleSpecifier": "./partialCallO"
+        },
+        {
+          "name": "*",
+          "kind": "namespace",
+          "text": "export * from './refunction';",
+          "moduleSpecifier": "./refunction"
+        },
+        {
+          "name": "*",
+          "kind": "namespace",
+          "text": "export * from './switch';",
+          "moduleSpecifier": "./switch"
         }
       ]
     },
@@ -3750,7 +3774,7 @@
         }
       ],
       "relativePath": "features/functions/types.ts",
-      "text": "import { AnyArray } from '@bemedev/vitest-extended/bemedev/globals/types';\nimport { UndefinedHelper } from '../common/types';\n\n/**\n * Fn type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Fn<Args extends any[] = any[], R = any> = (\n  ...args: Args\n) => R;\n\n/**\n * FnBasic type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type FnBasic<Main extends Fn, Tr extends object> = Tr & Main;\n\n/**\n * Checker type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Checker<T = unknown> =\n  | ((value: unknown) => value is T)\n  | Fn<[unknown], boolean>;\n\n/**\n * _Requirify type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type _Requirify<T extends AnyArray> = Required<{\n  [K in keyof T]-?: undefined extends T[K]\n    ? T[K] | UndefinedHelper\n    : T[K];\n}>;\n\ntype _UndefinfyTuple<T extends AnyArray> = T extends readonly [\n  infer U,\n  ...infer Rest,\n]\n  ? unknown extends U\n    ? [U, ..._UndefinfyTuple<Rest>]\n    : UndefinedHelper extends U\n      ? [Exclude<U, UndefinedHelper>?, ..._UndefinfyTuple<Rest>]\n      : [U, ..._UndefinfyTuple<Rest>]\n  : T;\n\n/**\n * Parts type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Parts<\n  T extends AnyArray,\n  R = _Requirify<T>,\n> = R extends readonly [...infer Rest, unknown]\n  ? Parts<Rest> | Readonly<_UndefinfyTuple<R>>\n  : Readonly<T>;\n\n/**\n * Given a full readonly tuple `T1` and one of its prefixes `T2`,\n * produces the remaining ordered suffix.\n *\n * @example\n * PartDiff<readonly [1, 2, 3], readonly [1]>\n * // => readonly [2, 3]\n *\n * PartDiff<readonly [1, 2, 3], readonly []>\n * // => readonly [1, 2, 3]\n *\n * PartDiff<[1, 2, 3], [1, 2, 3]>\n * // => readonly []\n */\n/**\n * PartDiff type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type PartDiff<\n  T1 extends AnyArray,\n  T2 extends Parts<T1>,\n> = T1 extends readonly [...T2, ...infer Rest] ? Readonly<Rest> : T1;\n\n    ",
+      "text": "import { AnyArray } from '@bemedev/vitest-extended/bemedev/globals/types';\nimport { UndefinedHelper } from '../common/types';\n\n/**\n * Fn type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Fn<Args extends any[] = any[], R = any> = (\n  ...args: Args\n) => R;\n\n/**\n * FnBasic type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type FnBasic<Main extends Fn, Tr extends object> = Tr & Main;\n\n/**\n * Checker type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Checker<T = unknown> =\n  | ((value: unknown) => value is T)\n  | Fn<[unknown], boolean>;\n\n/**\n * _Requirify type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type _Requirify<T extends AnyArray> = Required<{\n  [K in keyof T]-?: undefined extends T[K]\n    ? T[K] | UndefinedHelper\n    : T[K];\n}>;\n\ntype _UndefinfyTuple<T extends AnyArray> = T extends readonly [\n  infer U,\n  ...infer Rest,\n]\n  ? unknown extends U\n    ? [U, ..._UndefinfyTuple<Rest>]\n    : UndefinedHelper extends U\n      ? [Exclude<U, UndefinedHelper>?, ..._UndefinfyTuple<Rest>]\n      : [U, ..._UndefinfyTuple<Rest>]\n  : T;\n\n/**\n * Parts type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Parts<\n  T extends AnyArray,\n  R = _Requirify<T>,\n> = R extends readonly [...infer Rest, unknown]\n  ? Parts<Rest> | Readonly<_UndefinfyTuple<R>>\n  : Readonly<T>;\n\n/**\n * Given a full readonly tuple `T1` and one of its prefixes `T2`,\n * produces the remaining ordered suffix.\n *\n * @example\n * PartDiff<readonly [1, 2, 3], readonly [1]>\n * // => readonly [2, 3]\n *\n * PartDiff<readonly [1, 2, 3], readonly []>\n * // => readonly [1, 2, 3]\n *\n * PartDiff<[1, 2, 3], [1, 2, 3]>\n * // => readonly []\n */\n/**\n * PartDiff type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type PartDiff<\n  T1 extends AnyArray,\n  T2 extends Parts<T1>,\n> = T1 extends readonly [...T2, ...infer Rest] ? Readonly<Rest> : T1;\n\n/**\n * TimeoutPromise interface - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport interface TimeoutPromise<T = any> {\n  (): Promise<T>;\n  abort: () => void;\n  id: string;\n}\n\n/**\n * TypeFromTimeout type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type TypeFromTimeout<T extends TimeoutPromise> =\n  T extends TimeoutPromise<infer U> ? U : never;\n\n/**\n * TypeFromTimeouts type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type TypeFromTimeouts<T extends TimeoutPromise[]> =\n  TypeFromTimeout<T[number]>;\n\n/**\n * CallBackError type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type CallBackError = (err: any) => void;\n\n/**\n * CallBackResult type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type CallBackResult<T = any> = (err: any, result: T) => void;\n\n/**\n * Callback type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Callback = CallBackError | CallBackResult;\n\ntype GetResult<Cb extends Callback> = Parameters<Cb>['length'] extends 2\n  ? Parameters<Cb>[1]\n  : void;\n\n/**\n * CbParams type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type CbParams = [...any[], Callback];\n\n/**\n * ResultFrom type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type ResultFrom<T> = T extends [\n  ...infer Args extends any[],\n  infer Cb extends Callback,\n]\n  ? Fn<Args, Promise<GetResult<Cb>>>\n  : never;\n\n    ",
       "exports": []
     },
     "features.functions.typings.all": {
@@ -3976,7 +4000,7 @@
     "features.index": {
       "imports": [],
       "relativePath": "features/index.ts",
-      "text": "export * as arrays from './arrays';\nexport * as booleans from './booleans';\nexport * as common from './common';\nexport * as functions from './functions';\nexport * as numbers from './numbers';\nexport * as objects from './objects';\nexport * as promises from './promises';\nexport * as strings from './strings';\nexport * as transformers from './transform';\nexport * as typescript from './typescript';\n",
+      "text": "export * as arrays from './arrays';\nexport * as booleans from './booleans';\nexport * as common from './common';\nexport * as functions from './functions';\nexport * as numbers from './numbers';\nexport * as objects from './objects';\nexport * as promises from './promises';\nexport * as strings from './strings';\nexport * as typescript from './typescript';\n",
       "exports": [
         {
           "name": "*",
@@ -4025,12 +4049,6 @@
           "kind": "namespace",
           "text": "export * as strings from './strings';",
           "moduleSpecifier": "./strings"
-        },
-        {
-          "name": "*",
-          "kind": "namespace",
-          "text": "export * as transformers from './transform';",
-          "moduleSpecifier": "./transform"
         },
         {
           "name": "*",
@@ -4482,7 +4500,7 @@
           "isTypeOnly": false
         },
         {
-          "moduleSpecifier": "./hasKeys/all",
+          "moduleSpecifier": "./hasKeys",
           "kind": "default",
           "default": "hasKeys",
           "isTypeOnly": false
@@ -4491,12 +4509,6 @@
           "moduleSpecifier": "./index",
           "kind": "default",
           "default": "_index",
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "./keyTypes/all",
-          "kind": "default",
-          "default": "keyTypes",
           "isTypeOnly": false
         },
         {
@@ -4579,7 +4591,7 @@
         }
       ],
       "relativePath": "features/objects/castings/all.ts",
-      "text": "import { expandFn } from '../../../globals/utils/expandFn';\nimport byKey from './byKey';\nimport entries from './entries';\nimport freeze from './freeze/all';\nimport hasKeys from './hasKeys/all';\nimport _index from './index';\nimport keyTypes from './keyTypes/all';\nimport keys from './keysOf';\nimport omit from './omit/all';\nimport pick from './pick/all';\nimport primitive from './primitive';\nimport ra from './ra';\nimport readonly from './readonly/all';\nimport require from './require/all';\nimport reverse from './reverse';\nimport ru from './ru';\nimport trueObject from './trueObject';\nimport type from './type';\nimport values from './values';\nimport noExtra from './noExtra';\n\n/**\n * castings variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const castings = expandFn(_index, {\n  trueObject,\n  type,\n  keys,\n  values,\n  entries,\n  byKey,\n  hasKeys,\n  keyTypes,\n  omit,\n  reverse,\n  readonly,\n  freeze,\n  require,\n  pick,\n  ru,\n  ra,\n  primitive,\n  noExtra,\n});\n\n    ",
+      "text": "import { expandFn } from '../../../globals/utils/expandFn';\nimport byKey from './byKey';\nimport entries from './entries';\nimport freeze from './freeze/all';\nimport hasKeys from './hasKeys';\nimport _index from './index';\nimport keys from './keysOf';\nimport omit from './omit/all';\nimport pick from './pick/all';\nimport primitive from './primitive';\nimport ra from './ra';\nimport readonly from './readonly/all';\nimport require from './require/all';\nimport reverse from './reverse';\nimport ru from './ru';\nimport trueObject from './trueObject';\nimport type from './type';\nimport values from './values';\nimport noExtra from './noExtra';\n\n/**\n * castings variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const castings = expandFn(_index, {\n  trueObject,\n  type,\n  keys,\n  values,\n  entries,\n  byKey,\n  hasKeys,\n  omit,\n  reverse,\n  readonly,\n  freeze,\n  require,\n  pick,\n  ru,\n  ra,\n  primitive,\n  noExtra,\n});\n\n    ",
       "exports": []
     },
     "features.objects.castings.byKey": {
@@ -4711,124 +4723,17 @@
         }
       ]
     },
-    "features.objects.castings.hasKeys._all.all": {
+    "features.objects.castings.hasKeys": {
       "imports": [
         {
-          "moduleSpecifier": "../../../../../globals/utils/expandFn",
-          "kind": "named",
-          "namedImports": ["expandFn"],
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "./index",
-          "kind": "default",
-          "default": "_index",
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "./typings",
-          "kind": "default",
-          "default": "typings",
-          "isTypeOnly": false
-        }
-      ],
-      "relativePath": "features/objects/castings/hasKeys/_all/all.ts",
-      "text": "import { expandFn } from '../../../../../globals/utils/expandFn';\nimport _index from './index';\nimport typings from './typings';\n\n/**\n * fn const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst fn = expandFn(_index, {\n  typings,\n});\n\nexport default fn;\n\n    ",
-      "exports": []
-    },
-    "features.objects.castings.hasKeys._all.index": {
-      "imports": [
-        {
-          "moduleSpecifier": "../../../../../globals/types",
+          "moduleSpecifier": "../../../globals/types",
           "kind": "named",
           "namedImports": ["Keys"],
           "isTypeOnly": true
         }
       ],
-      "relativePath": "features/objects/castings/hasKeys/_all/index.ts",
-      "text": "import type { Keys } from '../../../../../globals/types';\n\n/**\n * fn const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst fn = <K extends Keys[]>(\n  object: object,\n  ...keys: K\n): object is Record<K[number], unknown> => {\n  return (\n    Object.keys(object).every(key => keys.includes(key)) &&\n    keys.every(key => key in object)\n  );\n};\n\nexport default fn;\n\n    ",
-      "exports": []
-    },
-    "features.objects.castings.hasKeys._all.typings": {
-      "imports": [
-        {
-          "moduleSpecifier": "../../../utils/entries",
-          "kind": "named",
-          "namedImports": ["checkEntries"],
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "../../../../../globals/types",
-          "kind": "named",
-          "namedImports": ["KeyTypes", "KeyTypesFrom"],
-          "isTypeOnly": true
-        }
-      ],
-      "relativePath": "features/objects/castings/hasKeys/_all/typings.ts",
-      "text": "import { checkEntries } from '../../../utils/entries';\nimport type { KeyTypes, KeyTypesFrom } from '../../../../../globals/types';\n\n/**\n * fn const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst fn = <K extends KeyTypes>(\n  object: object,\n  keys: K,\n): object is KeyTypesFrom<K> => {\n  const check0 =\n    Object.keys(object).every(key => key in keys) &&\n    Object.keys(keys).every(key => key in object);\n\n  if (!check0) return false;\n\n  return checkEntries(keys, object);\n};\n\nexport default fn;\n\n    ",
-      "exports": []
-    },
-    "features.objects.castings.hasKeys.all": {
-      "imports": [
-        {
-          "moduleSpecifier": "../../../../globals/utils/expandFn",
-          "kind": "named",
-          "namedImports": ["expandFn"],
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "./_all/all",
-          "kind": "default",
-          "default": "all",
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "./index",
-          "kind": "default",
-          "default": "_index",
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "./typings",
-          "kind": "default",
-          "default": "typings",
-          "isTypeOnly": false
-        }
-      ],
-      "relativePath": "features/objects/castings/hasKeys/all.ts",
-      "text": "import { expandFn } from '../../../../globals/utils/expandFn';\nimport all from './_all/all';\nimport _index from './index';\nimport typings from './typings';\n\n/**\n * fn const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst fn = expandFn(_index, {\n  typings,\n  all,\n});\n\nexport default fn;\n\n    ",
-      "exports": []
-    },
-    "features.objects.castings.hasKeys.index": {
-      "imports": [
-        {
-          "moduleSpecifier": "../../../../globals/types",
-          "kind": "named",
-          "namedImports": ["Keys"],
-          "isTypeOnly": true
-        }
-      ],
-      "relativePath": "features/objects/castings/hasKeys/index.ts",
-      "text": "import type { Keys } from '../../../../globals/types';\n\n/**\n * fn const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst fn = <K extends Keys[]>(\n  object: object,\n  ...keys: K\n): object is Record<K[number], unknown> => {\n  return keys.every(key => key in object);\n};\n\nexport default fn;\n\n    ",
-      "exports": []
-    },
-    "features.objects.castings.hasKeys.typings": {
-      "imports": [
-        {
-          "moduleSpecifier": "../../utils/entries",
-          "kind": "named",
-          "namedImports": ["checkEntries"],
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "../../../../globals/types",
-          "kind": "named",
-          "namedImports": ["KeyTypes", "KeyTypesFrom"],
-          "isTypeOnly": true
-        }
-      ],
-      "relativePath": "features/objects/castings/hasKeys/typings.ts",
-      "text": "import { checkEntries } from '../../utils/entries';\nimport type { KeyTypes, KeyTypesFrom } from '../../../../globals/types';\n\n/**\n * fn const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst fn = <K extends KeyTypes>(\n  object: object,\n  keys: K,\n): object is KeyTypesFrom<K> => {\n  return checkEntries(keys, object);\n};\n\nexport default fn;\n\n    ",
+      "relativePath": "features/objects/castings/hasKeys.ts",
+      "text": "import type { Keys } from '../../../globals/types';\n\n/**\n * fn const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst fn = <K extends Keys[]>(\n  object: object,\n  ...keys: K\n): object is Record<K[number], unknown> => {\n  return keys.every(key => key in object);\n};\n\nexport default fn;\n\n    ",
       "exports": []
     },
     "features.objects.castings.index": {
@@ -4842,94 +4747,6 @@
       ],
       "relativePath": "features/objects/castings/index.ts",
       "text": "import { castFn } from '../../../globals/utils/castFn';\n\n/**\n * fn const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst fn = castFn<object>()();\n\nexport default fn;\n\n    ",
-      "exports": []
-    },
-    "features.objects.castings.keyTypes.all": {
-      "imports": [
-        {
-          "moduleSpecifier": "../../../../globals/utils/expandFn",
-          "kind": "named",
-          "namedImports": ["expandFn"],
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "./from",
-          "kind": "default",
-          "default": "from",
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "./index",
-          "kind": "default",
-          "default": "_index",
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "./is",
-          "kind": "default",
-          "default": "is",
-          "isTypeOnly": false
-        }
-      ],
-      "relativePath": "features/objects/castings/keyTypes/all.ts",
-      "text": "import { expandFn } from '../../../../globals/utils/expandFn';\nimport from from './from';\nimport _index from './index';\nimport is from './is';\n\n/**\n * fn const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst fn = expandFn(_index, {\n  from,\n  is,\n});\n\nexport default fn;\n\n    ",
-      "exports": []
-    },
-    "features.objects.castings.keyTypes.from": {
-      "imports": [
-        {
-          "moduleSpecifier": "../../../../globals/types",
-          "kind": "named",
-          "namedImports": ["KeyTypes", "KeyTypesFrom"],
-          "isTypeOnly": true
-        },
-        {
-          "moduleSpecifier": "../../../../globals/utils/castFn",
-          "kind": "named",
-          "namedImports": ["castFn"],
-          "isTypeOnly": false
-        }
-      ],
-      "relativePath": "features/objects/castings/keyTypes/from.ts",
-      "text": "import type { KeyTypes, KeyTypesFrom } from '../../../../globals/types';\nimport { castFn } from '../../../../globals/utils/castFn';\n\n/**\n * fn const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst fn = <T extends KeyTypes>(keyType: T) => {\n  return castFn<KeyTypesFrom<T>>()({\n    is: (value: unknown): value is KeyTypesFrom<T> => {\n      return typeof value === (keyType as unknown as string);\n    },\n  });\n};\n\nexport default fn;\n\n    ",
-      "exports": []
-    },
-    "features.objects.castings.keyTypes.index": {
-      "imports": [
-        {
-          "moduleSpecifier": "../../../../globals/types",
-          "kind": "named",
-          "namedImports": ["KeyTypes"],
-          "isTypeOnly": true
-        },
-        {
-          "moduleSpecifier": "../../../../globals/utils/castFn",
-          "kind": "named",
-          "namedImports": ["castFn"],
-          "isTypeOnly": false
-        }
-      ],
-      "relativePath": "features/objects/castings/keyTypes/index.ts",
-      "text": "import type { KeyTypes } from '../../../../globals/types';\nimport { castFn } from '../../../../globals/utils/castFn';\n\n/**\n * fn const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst fn = castFn<KeyTypes>()({});\n\nexport default fn;\n\n    ",
-      "exports": []
-    },
-    "features.objects.castings.keyTypes.is": {
-      "imports": [
-        {
-          "moduleSpecifier": "../../../../globals/types",
-          "kind": "named",
-          "namedImports": ["KeyTypes"],
-          "isTypeOnly": true
-        },
-        {
-          "moduleSpecifier": "../../../../globals/utils/is/object",
-          "kind": "named",
-          "namedImports": ["isPlainObject"],
-          "isTypeOnly": false
-        }
-      ],
-      "relativePath": "features/objects/castings/keyTypes/is.ts",
-      "text": "import type { KeyTypes } from '../../../../globals/types';\nimport { isPlainObject } from '../../../../globals/utils/is/object';\n\n/**\n * is const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst is = (value: unknown): value is KeyTypes => {\n  const isObject = isPlainObject(value);\n  if (!isObject) return false;\n  return (\n    typeof value === 'string' ||\n    typeof value === 'number' ||\n    typeof value === 'symbol'\n  );\n};\n\nexport default is;\n\n    ",
       "exports": []
     },
     "features.objects.castings.keysOf": {
@@ -6004,13 +5821,13 @@
           "isTypeOnly": false
         },
         {
-          "moduleSpecifier": "./hasKeys/all",
+          "moduleSpecifier": "./hasKeys",
           "kind": "default",
           "default": "hasKeys",
           "isTypeOnly": false
         },
         {
-          "moduleSpecifier": "./keyTypes/all",
+          "moduleSpecifier": "./keyTypes",
           "kind": "default",
           "default": "keyTypes",
           "isTypeOnly": false
@@ -6095,7 +5912,7 @@
         }
       ],
       "relativePath": "features/objects/typings/all.ts",
-      "text": "import { typeFn } from '../../../globals/utils/typeFn';\nimport byKey from './byKey';\nimport entries from './entries';\nimport freeze from './freeze/all';\nimport hasKeys from './hasKeys/all';\nimport keyTypes from './keyTypes/all';\nimport keys from './keysOf';\nimport omit from './omit/all';\nimport pick from './pick/all';\nimport primitive from './primitive';\nimport ra from './ra';\nimport readonly from './readonly/all';\nimport require from './require/all';\nimport reverse from './reverse';\nimport rn from './rn';\nimport ru from './ru';\nimport trueObject from './trueObject';\nimport values from './values';\nimport noExtra from './noExtra';\n\n/**\n * typings variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const typings = typeFn<object>()({\n  trueObject,\n  keys,\n  values,\n  entries,\n  byKey,\n  keyTypes,\n  hasKeys,\n  omit,\n  pick,\n  reverse,\n  readonly,\n  freeze,\n  require,\n  ru,\n  rn,\n  ra,\n  primitive,\n  noExtra,\n});\n\n    ",
+      "text": "import { typeFn } from '../../../globals/utils/typeFn';\nimport byKey from './byKey';\nimport entries from './entries';\nimport freeze from './freeze/all';\nimport hasKeys from './hasKeys';\nimport keyTypes from './keyTypes';\nimport keys from './keysOf';\nimport omit from './omit/all';\nimport pick from './pick/all';\nimport primitive from './primitive';\nimport ra from './ra';\nimport readonly from './readonly/all';\nimport require from './require/all';\nimport reverse from './reverse';\nimport rn from './rn';\nimport ru from './ru';\nimport trueObject from './trueObject';\nimport values from './values';\nimport noExtra from './noExtra';\n\n/**\n * typings variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const typings = typeFn<object>()({\n  trueObject,\n  keys,\n  values,\n  entries,\n  byKey,\n  keyTypes,\n  hasKeys,\n  omit,\n  pick,\n  reverse,\n  readonly,\n  freeze,\n  require,\n  ru,\n  rn,\n  ra,\n  primitive,\n  noExtra,\n});\n\n    ",
       "exports": []
     },
     "features.objects.typings.byKey": {
@@ -6307,161 +6124,42 @@
       "text": "import type { NotReadonly } from '../../../../globals/types';\nimport { _unknown } from '../../../../globals/utils/_unknown';\n\n/**\n * fn const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst fn = <T extends object>(_?: T) => _unknown<NotReadonly<T>>();\n\nexport default fn;\n\n    ",
       "exports": []
     },
-    "features.objects.typings.hasKeys._all": {
+    "features.objects.typings.hasKeys": {
       "imports": [
         {
-          "moduleSpecifier": "../../../../globals/types",
-          "kind": "named",
-          "namedImports": ["Equals", "Keys"],
-          "isTypeOnly": true
-        },
-        {
-          "moduleSpecifier": "../../../../globals/utils/_unknown",
-          "kind": "named",
-          "namedImports": ["_unknown"],
-          "isTypeOnly": false
-        }
-      ],
-      "relativePath": "features/objects/typings/hasKeys/_all.ts",
-      "text": "import type { Equals, Keys } from '../../../../globals/types';\nimport { _unknown } from '../../../../globals/utils/_unknown';\n\n/**\n * fn const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst fn = <T extends object, K extends Keys[]>(_?: T, ...__: K) =>\n  _unknown<Equals<K[number], keyof T>>();\n\nexport default fn;\n\n    ",
-      "exports": []
-    },
-    "features.objects.typings.hasKeys.all": {
-      "imports": [
-        {
-          "moduleSpecifier": "../../../../globals/utils/expandFn",
-          "kind": "named",
-          "namedImports": ["expandFn"],
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "./_all",
-          "kind": "default",
-          "default": "all",
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "./index",
-          "kind": "default",
-          "default": "_index",
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "./typings",
-          "kind": "default",
-          "default": "typings",
-          "isTypeOnly": false
-        }
-      ],
-      "relativePath": "features/objects/typings/hasKeys/all.ts",
-      "text": "import { expandFn } from '../../../../globals/utils/expandFn';\nimport all from './_all';\nimport _index from './index';\nimport typings from './typings';\n\n/**\n * fn const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst fn = expandFn(_index, {\n  typings,\n  all,\n});\n\nexport default fn;\n\n    ",
-      "exports": []
-    },
-    "features.objects.typings.hasKeys.index": {
-      "imports": [
-        {
-          "moduleSpecifier": "../../../../globals/types",
+          "moduleSpecifier": "../../../globals/types",
           "kind": "named",
           "namedImports": ["Keys"],
           "isTypeOnly": true
         },
         {
-          "moduleSpecifier": "../../../../globals/utils/_unknown",
+          "moduleSpecifier": "../../../globals/utils/_unknown",
           "kind": "named",
           "namedImports": ["_unknown"],
           "isTypeOnly": false
         }
       ],
-      "relativePath": "features/objects/typings/hasKeys/index.ts",
-      "text": "import type { Keys } from '../../../../globals/types';\nimport { _unknown } from '../../../../globals/utils/_unknown';\n\n/**\n * fn const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst fn = <T extends object, K extends Keys[]>(_?: T, ...__: K) =>\n  _unknown<K[number] extends keyof T ? true : false>();\n\nexport default fn;\n\n    ",
+      "relativePath": "features/objects/typings/hasKeys.ts",
+      "text": "import type { Keys } from '../../../globals/types';\nimport { _unknown } from '../../../globals/utils/_unknown';\n\n/**\n * fn const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst fn = <T extends object, K extends Keys[]>(_?: T, ...__: K) =>\n  _unknown<K[number] extends keyof T ? true : false>();\n\nexport default fn;\n\n    ",
       "exports": []
     },
-    "features.objects.typings.hasKeys.typings": {
+    "features.objects.typings.keyTypes": {
       "imports": [
         {
-          "moduleSpecifier": "../../../../globals/types",
-          "kind": "named",
-          "namedImports": ["KeyTypes", "KeyTypesFrom"],
-          "isTypeOnly": true
-        },
-        {
-          "moduleSpecifier": "../../../../globals/utils/_unknown",
-          "kind": "named",
-          "namedImports": ["_unknown"],
-          "isTypeOnly": false
-        }
-      ],
-      "relativePath": "features/objects/typings/hasKeys/typings.ts",
-      "text": "import type { KeyTypes, KeyTypesFrom } from '../../../../globals/types';\nimport { _unknown } from '../../../../globals/utils/_unknown';\n\n/**\n * fn const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst fn = <K extends KeyTypes>(_?: K) => {\n  const _out = <T extends object>(_?: T) =>\n    _unknown<T extends KeyTypesFrom<K> ? true : false>();\n\n  return _out;\n};\n\nexport default fn;\n\n    ",
-      "exports": []
-    },
-    "features.objects.typings.keyTypes.all": {
-      "imports": [
-        {
-          "moduleSpecifier": "../../../../globals/types",
+          "moduleSpecifier": "../../../globals/types",
           "kind": "named",
           "namedImports": ["KeyTypes"],
           "isTypeOnly": true
         },
         {
-          "moduleSpecifier": "../../../../globals/utils/typeFn",
-          "kind": "named",
-          "namedImports": ["typeFn"],
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "./from",
-          "kind": "default",
-          "default": "from",
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "./index",
-          "kind": "default",
-          "default": "_index",
-          "isTypeOnly": false
-        }
-      ],
-      "relativePath": "features/objects/typings/keyTypes/all.ts",
-      "text": "import type { KeyTypes } from '../../../../globals/types';\nimport { typeFn } from '../../../../globals/utils/typeFn';\nimport from from './from';\nimport _index from './index';\n\n/**\n * fn const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst fn = typeFn<KeyTypes>()({\n  is: _index,\n  from,\n});\n\nexport default fn;\n\n    ",
-      "exports": []
-    },
-    "features.objects.typings.keyTypes.from": {
-      "imports": [
-        {
-          "moduleSpecifier": "../../../../globals/types",
-          "kind": "named",
-          "namedImports": ["KeyTypes", "KeyTypesFrom"],
-          "isTypeOnly": true
-        },
-        {
-          "moduleSpecifier": "../../../../globals/utils/_unknown",
-          "kind": "named",
-          "namedImports": ["_unknown"],
-          "isTypeOnly": false
-        }
-      ],
-      "relativePath": "features/objects/typings/keyTypes/from.ts",
-      "text": "import type { KeyTypes, KeyTypesFrom } from '../../../../globals/types';\nimport { _unknown } from '../../../../globals/utils/_unknown';\n\n/**\n * fn const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst fn = <T extends KeyTypes>(_?: T) => _unknown<KeyTypesFrom<T>>();\n\nexport default fn;\n\n    ",
-      "exports": []
-    },
-    "features.objects.typings.keyTypes.index": {
-      "imports": [
-        {
-          "moduleSpecifier": "../../../../globals/types",
-          "kind": "named",
-          "namedImports": ["KeyTypes"],
-          "isTypeOnly": true
-        },
-        {
-          "moduleSpecifier": "../../../../globals/utils/typeFn",
+          "moduleSpecifier": "../../../globals/utils/typeFn",
           "kind": "named",
           "namedImports": ["typeFn"],
           "isTypeOnly": false
         }
       ],
-      "relativePath": "features/objects/typings/keyTypes/index.ts",
-      "text": "import type { KeyTypes } from '../../../../globals/types';\nimport { typeFn } from '../../../../globals/utils/typeFn';\n\n/**\n * fn const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst fn = typeFn<KeyTypes>()();\n\nexport default fn;\n\n    ",
+      "relativePath": "features/objects/typings/keyTypes.ts",
+      "text": "import type { KeyTypes } from '../../../globals/types';\nimport { typeFn } from '../../../globals/utils/typeFn';\n\n/**\n * fn const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst fn = typeFn<KeyTypes>();\n\nexport default fn;\n\n    ",
       "exports": []
     },
     "features.objects.typings.keysOf": {
@@ -9765,455 +9463,6 @@
       "text": "import { _unknown } from '../../../globals/utils/_unknown';\n\n/**\n * fn const - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nconst fn = <const T extends string>(_?: T) => _unknown<Uppercase<T>>();\n\nexport default fn;\n\n    ",
       "exports": []
     },
-    "features.transform.constants": {
-      "imports": [],
-      "relativePath": "features/transform/constants.ts",
-      "text": "/**\n * PRIMITIVES variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const PRIMITIVES = [\n  'string',\n  'number',\n  'boolean',\n  'void',\n  'bigint',\n  'symbol',\n  'undefined',\n  'null',\n] as const;\n\n/**\n * PRIMITIVE_OBJECTS variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const PRIMITIVE_OBJECTS = ['date', 'primitive'] as const;\n/**\n * OPTIONAL variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const OPTIONAL = '$$app-ts => optional$$' as const;\n/**\n * CUSTOM variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const CUSTOM = '$$app-ts => custom$$' as const;\n/**\n * PARTIAL variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const PARTIAL = '$$app-ts => partial$$' as const;\n/**\n * ARRAY variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const ARRAY = '$$app-ts => array$$' as const;\n",
-      "exports": []
-    },
-    "features.transform.helpers.any": {
-      "imports": [
-        {
-          "moduleSpecifier": "../types",
-          "kind": "named",
-          "namedImports": ["ObjectS"],
-          "isTypeOnly": true
-        }
-      ],
-      "relativePath": "features/transform/helpers/any.ts",
-      "text": "import type { ObjectS } from '../types';\n\n/**\n * any variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const any = <T extends ObjectS = ObjectS>(value?: T) =>\n  value as T;\n\n    ",
-      "exports": []
-    },
-    "features.transform.helpers.array": {
-      "imports": [
-        {
-          "moduleSpecifier": "../constants",
-          "kind": "named",
-          "namedImports": ["ARRAY"],
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "../types",
-          "kind": "named",
-          "namedImports": ["__ObjectS", "ArrayCustom", "Optional"],
-          "isTypeOnly": true
-        }
-      ],
-      "relativePath": "features/transform/helpers/array.ts",
-      "text": "import { ARRAY } from '../constants';\nimport type { __ObjectS, ArrayCustom, Optional } from '../types';\n\n/**\n * array variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const array = <T extends __ObjectS | Optional>(value: T) =>\n  ({ [ARRAY]: value }) as ArrayCustom<T>;\n\n    ",
-      "exports": []
-    },
-    "features.transform.helpers.custom": {
-      "imports": [
-        {
-          "moduleSpecifier": "../constants",
-          "kind": "named",
-          "namedImports": ["CUSTOM"],
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "../types",
-          "kind": "named",
-          "namedImports": ["Custom"],
-          "isTypeOnly": true
-        }
-      ],
-      "relativePath": "features/transform/helpers/custom.ts",
-      "text": "import { CUSTOM } from '../constants';\nimport type { Custom } from '../types';\n\n/**\n * custom variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const custom = <T = any>(value?: T) =>\n  ({\n    [CUSTOM]: value,\n  }) as Custom<T>;\n\n    ",
-      "exports": []
-    },
-    "features.transform.helpers.index": {
-      "imports": [],
-      "relativePath": "features/transform/helpers/index.ts",
-      "text": "export * from './any';\nexport * from './array';\nexport * from './custom';\nexport * from './intersection';\nexport * from './litterals';\nexport * from './optional';\nexport * from './partial';\nexport * from './record';\nexport * from './soa';\nexport * from './sora';\nexport * from './sv';\nexport * from './tuple';\nexport * from './union';\n",
-      "exports": [
-        {
-          "name": "*",
-          "kind": "namespace",
-          "text": "export * from './any';",
-          "moduleSpecifier": "./any"
-        },
-        {
-          "name": "*",
-          "kind": "namespace",
-          "text": "export * from './array';",
-          "moduleSpecifier": "./array"
-        },
-        {
-          "name": "*",
-          "kind": "namespace",
-          "text": "export * from './custom';",
-          "moduleSpecifier": "./custom"
-        },
-        {
-          "name": "*",
-          "kind": "namespace",
-          "text": "export * from './intersection';",
-          "moduleSpecifier": "./intersection"
-        },
-        {
-          "name": "*",
-          "kind": "namespace",
-          "text": "export * from './litterals';",
-          "moduleSpecifier": "./litterals"
-        },
-        {
-          "name": "*",
-          "kind": "namespace",
-          "text": "export * from './optional';",
-          "moduleSpecifier": "./optional"
-        },
-        {
-          "name": "*",
-          "kind": "namespace",
-          "text": "export * from './partial';",
-          "moduleSpecifier": "./partial"
-        },
-        {
-          "name": "*",
-          "kind": "namespace",
-          "text": "export * from './record';",
-          "moduleSpecifier": "./record"
-        },
-        {
-          "name": "*",
-          "kind": "namespace",
-          "text": "export * from './soa';",
-          "moduleSpecifier": "./soa"
-        },
-        {
-          "name": "*",
-          "kind": "namespace",
-          "text": "export * from './sora';",
-          "moduleSpecifier": "./sora"
-        },
-        {
-          "name": "*",
-          "kind": "namespace",
-          "text": "export * from './sv';",
-          "moduleSpecifier": "./sv"
-        },
-        {
-          "name": "*",
-          "kind": "namespace",
-          "text": "export * from './tuple';",
-          "moduleSpecifier": "./tuple"
-        },
-        {
-          "name": "*",
-          "kind": "namespace",
-          "text": "export * from './union';",
-          "moduleSpecifier": "./union"
-        }
-      ]
-    },
-    "features.transform.helpers.intersection": {
-      "imports": [
-        {
-          "moduleSpecifier": "../types",
-          "kind": "named",
-          "namedImports": ["ObjectMapS"],
-          "isTypeOnly": true
-        }
-      ],
-      "relativePath": "features/transform/helpers/intersection.ts",
-      "text": "import type { ObjectMapS } from '../types';\n\ntype _IntersectionCustom<T extends ObjectMapS[]> = T extends [\n  infer First extends ObjectMapS,\n  ...infer Rest extends ObjectMapS[],\n]\n  ? First & IntersectionCustom<Rest>\n  : unknown;\n\n/**\n * IntersectionCustom type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type IntersectionCustom<T extends ObjectMapS[]> =\n  _IntersectionCustom<T> extends infer R\n    ? {\n        [K in keyof R]: R[K];\n      }\n    : never;\n\n/**\n * intersection variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const intersection = <\n  T extends [ObjectMapS, ObjectMapS, ...ObjectMapS[]],\n>(\n  ...values: T\n) => {\n  const out = values.reduce((acc, curr) => {\n    Object.entries(curr).forEach(([key, value]) => {\n      acc[key] = value;\n    });\n    return acc;\n  }, {} as any);\n  return out as IntersectionCustom<T>;\n};\n\n    ",
-      "exports": []
-    },
-    "features.transform.helpers.litterals": {
-      "imports": [
-        {
-          "moduleSpecifier": "../types",
-          "kind": "named",
-          "namedImports": ["Custom"],
-          "isTypeOnly": true
-        }
-      ],
-      "relativePath": "features/transform/helpers/litterals.ts",
-      "text": "import type { Custom } from '../types';\n\n/**\n * litterals variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const litterals = <\n  const T extends (string | number | boolean)[],\n>(\n  ...values: T\n) => values[0] as unknown as Custom<T[number]>;\n\n    ",
-      "exports": []
-    },
-    "features.transform.helpers.optional": {
-      "imports": [
-        {
-          "moduleSpecifier": "../constants",
-          "kind": "named",
-          "namedImports": ["OPTIONAL"],
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "../types",
-          "kind": "named",
-          "namedImports": ["__ObjectS", "Optional"],
-          "isTypeOnly": true
-        }
-      ],
-      "relativePath": "features/transform/helpers/optional.ts",
-      "text": "import { OPTIONAL } from '../constants';\nimport type { __ObjectS, Optional } from '../types';\n\n/**\n * maybe variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const maybe = <T extends __ObjectS | __ObjectS[]>(value?: T) =>\n  ({\n    [OPTIONAL]: value,\n  }) as Optional<T>;\n\n    ",
-      "exports": []
-    },
-    "features.transform.helpers.partial": {
-      "imports": [
-        {
-          "moduleSpecifier": "../constants",
-          "kind": "named",
-          "namedImports": ["PARTIAL"],
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "../types",
-          "kind": "named",
-          "namedImports": ["ObjectS", "PartialCustom"],
-          "isTypeOnly": true
-        }
-      ],
-      "relativePath": "features/transform/helpers/partial.ts",
-      "text": "import { PARTIAL } from '../constants';\nimport type { ObjectS, PartialCustom } from '../types';\n\n/**\n * partial variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const partial = <T extends ObjectS>(\n  value: T,\n): T & PartialCustom => {\n  const entries = Object.entries(value).filter(\n    ([key]) => key !== PARTIAL,\n  );\n  const out: any = {};\n\n  entries.forEach(([key, value]) => {\n    out[key] = value;\n  });\n\n  return out;\n};\n\n    ",
-      "exports": []
-    },
-    "features.transform.helpers.record": {
-      "imports": [
-        {
-          "moduleSpecifier": "../../../globals/types",
-          "kind": "named",
-          "namedImports": ["Keys"],
-          "isTypeOnly": true
-        },
-        {
-          "moduleSpecifier": "../types",
-          "kind": "named",
-          "namedImports": ["ObjectS"],
-          "isTypeOnly": true
-        }
-      ],
-      "relativePath": "features/transform/helpers/record.ts",
-      "text": "import type { Keys } from '../../../globals/types';\nimport type { ObjectS } from '../types';\n\n/**\n * record variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const record = <const K extends Keys[], V extends ObjectS>(\n  value: V,\n  ...keys: K\n) => {\n  const object = keys.reduce((acc, key) => {\n    acc[key] = value;\n    return acc;\n  }, {} as any);\n\n  return object as Record<\n    K[number] extends never ? Keys : K[number],\n    V\n  >;\n};\n\n    ",
-      "exports": []
-    },
-    "features.transform.helpers.soa": {
-      "imports": [
-        {
-          "moduleSpecifier": "../types",
-          "kind": "named",
-          "namedImports": ["ObjectS"],
-          "isTypeOnly": true
-        },
-        {
-          "moduleSpecifier": "../../../globals/types",
-          "kind": "named",
-          "namedImports": ["SoA"],
-          "isTypeOnly": true
-        }
-      ],
-      "relativePath": "features/transform/helpers/soa.ts",
-      "text": "import type { ObjectS } from '../types';\nimport type { SoA } from '../../../globals/types';\n\n/**\n * soa variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const soa = <T extends ObjectS>(value: T) => {\n  return value as SoA<T>;\n};\n\n    ",
-      "exports": []
-    },
-    "features.transform.helpers.sora": {
-      "imports": [
-        {
-          "moduleSpecifier": "../types",
-          "kind": "named",
-          "namedImports": ["ObjectS"],
-          "isTypeOnly": true
-        },
-        {
-          "moduleSpecifier": "../../../globals/types",
-          "kind": "named",
-          "namedImports": ["SoRa"],
-          "isTypeOnly": true
-        }
-      ],
-      "relativePath": "features/transform/helpers/sora.ts",
-      "text": "import type { ObjectS } from '../types';\nimport type { SoRa } from '../../../globals/types';\n\n/**\n * sora variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const sora = <T extends ObjectS>(value: T) => {\n  return value as SoRa<T>;\n};\n\n    ",
-      "exports": []
-    },
-    "features.transform.helpers.sv": {
-      "imports": [
-        {
-          "moduleSpecifier": "../../../globals/types",
-          "kind": "named",
-          "namedImports": ["StateValue"],
-          "isTypeOnly": true
-        },
-        {
-          "moduleSpecifier": "../types",
-          "kind": "named",
-          "namedImports": ["Custom"],
-          "isTypeOnly": true
-        }
-      ],
-      "relativePath": "features/transform/helpers/sv.ts",
-      "text": "import type { StateValue } from '../../../globals/types';\nimport type { Custom } from '../types';\n\n/**\n * sv variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const sv = {} as Custom<StateValue>;\n\n    ",
-      "exports": []
-    },
-    "features.transform.helpers.tuple": {
-      "imports": [
-        {
-          "moduleSpecifier": "../types",
-          "kind": "named",
-          "namedImports": ["__ObjectS", "ArrayCustom", "Optional"],
-          "isTypeOnly": true
-        }
-      ],
-      "relativePath": "features/transform/helpers/tuple.ts",
-      "text": "import type { __ObjectS, ArrayCustom, Optional } from '../types';\n\n/**\n * tuple variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const tuple = <\n  T extends [\n    __ObjectS | Optional | ArrayCustom,\n    ...(__ObjectS | Optional | ArrayCustom)[],\n  ],\n>(\n  ...values: T\n) => values;\n\n    ",
-      "exports": []
-    },
-    "features.transform.helpers.union": {
-      "imports": [
-        {
-          "moduleSpecifier": "../../../globals/types",
-          "kind": "named",
-          "namedImports": ["Keys"],
-          "isTypeOnly": true
-        },
-        {
-          "moduleSpecifier": "../../../globals/utils/expandFn",
-          "kind": "named",
-          "namedImports": ["expandFn"],
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "../types",
-          "kind": "named",
-          "namedImports": ["ObjectMapS", "ObjectS"],
-          "isTypeOnly": true
-        }
-      ],
-      "relativePath": "features/transform/helpers/union.ts",
-      "text": "import type { Keys } from '../../../globals/types';\nimport { expandFn } from '../../../globals/utils/expandFn';\nimport type { ObjectMapS, ObjectS } from '../types';\n\nconst _union = <T extends [ObjectS, ObjectS, ...ObjectS[]]>(\n  ...values: T\n) => {\n  return values[0] as T[number];\n};\n\ntype Discriminated<K extends Keys> = ObjectMapS & Record<K, ObjectS>;\n\n/**\n * union variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const union = expandFn(_union, {\n  discriminated: <\n    const K extends Keys,\n    T extends [\n      Discriminated<K>,\n      Discriminated<K>,\n      ...Discriminated<K>[],\n    ],\n  >(\n    _key: K,\n    ...values: T\n  ) => _union(...values),\n});\n\n    ",
-      "exports": []
-    },
-    "features.transform.index": {
-      "imports": [],
-      "relativePath": "features/transform/index.ts",
-      "text": "export * from './constants';\nexport * from './transform';\nexport * from './types';\n",
-      "exports": [
-        {
-          "name": "*",
-          "kind": "namespace",
-          "text": "export * from './constants';",
-          "moduleSpecifier": "./constants"
-        },
-        {
-          "name": "*",
-          "kind": "namespace",
-          "text": "export * from './transform';",
-          "moduleSpecifier": "./transform"
-        },
-        {
-          "name": "*",
-          "kind": "namespace",
-          "text": "export * from './types';",
-          "moduleSpecifier": "./types"
-        }
-      ]
-    },
-    "features.transform.transform": {
-      "imports": [
-        {
-          "moduleSpecifier": "./constants",
-          "kind": "named",
-          "namedImports": ["CUSTOM", "OPTIONAL", "PARTIAL"],
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "./helpers",
-          "kind": "named",
-          "namedImports": [
-            "any",
-            "array",
-            "custom",
-            "intersection",
-            "litterals",
-            "maybe",
-            "partial",
-            "record",
-            "soa",
-            "sora",
-            "sv",
-            "tuple",
-            "union"
-          ],
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "./transform.types",
-          "kind": "named",
-          "namedImports": ["Transform_F"],
-          "isTypeOnly": true
-        },
-        {
-          "moduleSpecifier": "./types",
-          "kind": "named",
-          "namedImports": ["inferT", "ObjectS", "TransformTypes", "Types"],
-          "isTypeOnly": true
-        }
-      ],
-      "relativePath": "features/transform/transform.ts",
-      "text": "import { CUSTOM, OPTIONAL, PARTIAL } from './constants';\nimport { any, array, custom, intersection, litterals, maybe, partial, record, soa, sora, sv, tuple, union } from './helpers';\nimport type { Transform_F } from './transform.types';\nimport type { inferT, ObjectS, TransformTypes, Types } from './types';\n\nconst transformTypes = <T extends Types>(\n  type: T,\n): TransformTypes<T> => {\n  const out: any = type === 'primitive' ? {} : undefined;\n  return out;\n};\n\nconst _transform = <T extends ObjectS>(obj: T): inferT<T> => {\n  const _obj = obj as any;\n\n  const checkArray = Array.isArray(obj);\n  if (checkArray) {\n    return obj.map(_transform as any) as any;\n  }\n\n  const checkObject = typeof obj === 'object';\n  if (checkObject) {\n    if (OPTIONAL in _obj) {\n      return _transform(_obj[OPTIONAL]);\n    }\n\n    const isCustom = Object.keys(obj).every(key => key === CUSTOM);\n    const out: any = {};\n    if (isCustom) return out;\n\n    const entries = Object.entries(obj).filter(\n      ([key]) => key !== PARTIAL,\n    );\n\n    entries.forEach(([key, value]) => {\n      out[key] = _transform(value);\n    });\n\n    return out;\n  }\n\n  return transformTypes(_obj) as any;\n};\n\n/**\n * transform variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const transform: Transform_F = option => {\n  const objectS = option({\n    any,\n    custom,\n    intersection,\n    litterals,\n    maybe,\n    partial,\n    record,\n    soa,\n    sora,\n    sv,\n    union,\n    array,\n    tuple,\n  });\n\n  return _transform(objectS);\n};\n\n    ",
-      "exports": []
-    },
-    "features.transform.transform.types": {
-      "imports": [
-        {
-          "moduleSpecifier": "./helpers",
-          "kind": "named",
-          "namedImports": [
-            "any",
-            "custom",
-            "intersection",
-            "litterals",
-            "maybe",
-            "partial",
-            "record",
-            "soa",
-            "sora",
-            "sv",
-            "union",
-            "array",
-            "tuple"
-          ],
-          "isTypeOnly": true
-        },
-        {
-          "moduleSpecifier": "./types",
-          "kind": "named",
-          "namedImports": ["ObjectS", "TransformS"],
-          "isTypeOnly": true
-        }
-      ],
-      "relativePath": "features/transform/transform.types.ts",
-      "text": "import type { any, custom, intersection, litterals, maybe, partial, record, soa, sora, sv, union, array, tuple } from './helpers';\nimport type { ObjectS, TransformS } from './types';\n\ntype Helpers = {\n  any: typeof any;\n  custom: typeof custom;\n  intersection: typeof intersection;\n  litterals: typeof litterals;\n  maybe: typeof maybe;\n  partial: typeof partial;\n  record: typeof record;\n  soa: typeof soa;\n  sora: typeof sora;\n  sv: typeof sv;\n  union: typeof union;\n  array: typeof array;\n  tuple: typeof tuple;\n};\n\n/**\n * Transform_F type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Transform_F = <T extends ObjectS = ObjectS>(\n  option: (helpers: Helpers) => T,\n) => TransformS<T>;\n\n    ",
-      "exports": []
-    },
-    "features.transform.types": {
-      "imports": [
-        {
-          "moduleSpecifier": "../../globals/types",
-          "kind": "named",
-          "namedImports": ["AnyArray", "Keys", "NOmit", "Ru", "SoRa"],
-          "isTypeOnly": true
-        },
-        {
-          "moduleSpecifier": "./constants",
-          "kind": "named",
-          "namedImports": [
-            "ARRAY",
-            "CUSTOM",
-            "OPTIONAL",
-            "PARTIAL",
-            "PRIMITIVES",
-            "PRIMITIVE_OBJECTS"
-          ],
-          "isTypeOnly": true
-        }
-      ],
-      "relativePath": "features/transform/types.ts",
-      "text": "import type { AnyArray, Keys, NOmit, Ru, SoRa } from '../../globals/types';\nimport type { ARRAY, CUSTOM, OPTIONAL, PARTIAL, PRIMITIVES, PRIMITIVE_OBJECTS } from './constants';\n\n/**\n * PrimitiveS type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type PrimitiveS = (typeof PRIMITIVES)[number];\ntype TransformPrimitiveS<T extends PrimitiveS> = T extends 'string'\n  ? string\n  : T extends 'number'\n    ? number\n    : T extends 'void'\n      ? void\n      : T extends 'boolean'\n        ? boolean\n        : T extends 'null'\n          ? null\n          : T extends 'undefined'\n            ? undefined\n            : T extends 'symbol'\n              ? symbol\n              : never;\n\n/**\n * Types type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Types = PrimitiveS | (typeof PRIMITIVE_OBJECTS)[number];\n\n/**\n * TransformTypes type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type TransformTypes<T extends Types> = T extends PrimitiveS\n  ? TransformPrimitiveS<T>\n  : T extends 'date'\n    ? Date\n    : // eslint-disable-next-line @typescript-eslint/no-empty-object-type\n      {};\n\n/**\n * Custom type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Custom<T = any> = {\n  [CUSTOM]: T;\n};\n\n/**\n * PartialCustom type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type PartialCustom = {\n  [PARTIAL]: undefined;\n};\n\n/**\n * __ObjectS type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type __ObjectS = Types | ObjectMapS | Custom | PartialCustom;\n\n/**\n * Optional type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Optional<\n  T extends __ObjectS | ArrayCustom | __ObjectS[] = __ObjectS,\n> = {\n  [OPTIONAL]: T;\n};\n\n/**\n * ArrayCustom type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type ArrayCustom<T extends __ObjectS | Optional = __ObjectS> = {\n  [ARRAY]: T;\n};\n\n/**\n * ObjectMapS type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type ObjectMapS = {\n  [key: Keys]: SoRa<_ObjectS>;\n};\n\ntype _ObjectS = __ObjectS | Optional | ArrayCustom;\n\n/**\n * A type that represents a primitive object, which can be a primitive value or an object\n *\n * @remark\n */\n/**\n * ObjectS type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type ObjectS = _ObjectS | SoRa<_ObjectS>;\n/**\n * POS type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type POS = ObjectS;\n\ntype ReduceTuple2<T extends AnyArray<ObjectS>> = T extends [\n  infer First,\n  ...infer Rest extends AnyArray<ObjectS>,\n]\n  ? [TransformS<First>, ...ReduceTuple2<Rest>]\n  : T extends AnyArray<infer A extends ObjectS>\n    ? TransformS<A>[]\n    : [];\n\ntype __TransformPrimitiveObject<T> = T extends Types\n  ? TransformTypes<T>\n  : T extends Custom<infer TCustom>\n    ? TCustom\n    : T extends AnyArray<ObjectS>\n      ? ReduceTuple2<T>\n      : T extends ArrayCustom<infer A>\n        ? TransformS<A>[]\n        : T extends PartialCustom\n          ? Partial<\n              __TransformPrimitiveObject<NOmit<T, typeof PARTIAL>>\n            >\n          : T extends Optional<infer TMaybe>\n            ? __TransformPrimitiveObject<TMaybe> | undefined\n            : {\n                [K in keyof T]: __TransformPrimitiveObject<T[K]>;\n              };\n\ntype ReduceTupleU<T extends AnyArray> = T extends [\n  infer First,\n  ...infer Rest extends AnyArray,\n]\n  ? [Undefiny<First>, ...ReduceTupleU<Rest>]\n  : T[number] extends never\n    ? []\n    : T['length'] extends 0\n      ? []\n      : number extends T['length']\n        ? T\n        : Undefiny<T[number]>[];\ntype HasUndefined<T> = undefined extends T ? true : false;\ntype UndefinyObject<T extends object> = {\n  [K in keyof T as HasUndefined<T[K]> extends true\n    ? never\n    : K]: Undefiny<T[K]>;\n} & {\n  [K in keyof T as HasUndefined<T[K]> extends true\n    ? K\n    : never]?: Undefiny<Exclude<T[K], undefined>>;\n} extends infer F\n  ? {\n      [K in keyof F]: F[K];\n    }\n  : never;\n\ntype Undefiny<T> = T extends AnyArray\n  ? ReduceTupleU<T>\n  : T extends Ru\n    ? UndefinyObject<T>\n    : T;\n/**\n * TransformS type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type TransformS<T> = Undefiny<__TransformPrimitiveObject<T>>;\n\n/**\n * inferT type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type inferT<T extends ObjectS> = TransformS<T>;\n\n    ",
-      "exports": []
-    },
     "features.typescript.extractFromFile": {
       "imports": [
         {
@@ -10385,10 +9634,23 @@
         }
       ]
     },
-    "globals.types": {
+    "globals.constants": {
       "imports": [],
+      "relativePath": "globals/constants.ts",
+      "text": "/**\n * PRIMITIVES variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const PRIMITIVES = [\n  'string',\n  'number',\n  'boolean',\n  'bigint',\n  'symbol',\n  'undefined',\n  'null',\n] as const;\n",
+      "exports": []
+    },
+    "globals.types": {
+      "imports": [
+        {
+          "moduleSpecifier": "./constants",
+          "kind": "named",
+          "namedImports": ["PRIMITIVES"],
+          "isTypeOnly": true
+        }
+      ],
       "relativePath": "globals/types.ts",
-      "text": "export * from '../features/arrays/types';\nexport * from '../features/common/types';\nexport * from '../features/functions/types';\nexport * from '../features/numbers/types';\nexport * from '../features/objects/types';\nexport * from '../features/promises/types';\nexport * from '../features/strings/types';\n",
+      "text": "import type { PRIMITIVES } from './constants';\n\nexport * from '../features/arrays/types';\nexport * from '../features/common/types';\nexport * from '../features/functions/types';\nexport * from '../features/numbers/types';\nexport * from '../features/objects/types';\nexport * from '../features/promises/types';\nexport * from '../features/strings/types';\n\n/**\n * PrimitiveS type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type PrimitiveS = (typeof PRIMITIVES)[number];\n/**\n * TransformPrimitiveS type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type TransformPrimitiveS<T extends PrimitiveS> =\n  T extends 'string'\n    ? string\n    : T extends 'number'\n      ? number\n      : T extends 'boolean'\n        ? boolean\n        : T extends 'bigint'\n          ? bigint\n          : T extends 'null'\n            ? null\n            : T extends 'undefined'\n              ? undefined\n              : T extends 'symbol'\n                ? symbol\n                : never;\n\n    ",
       "exports": [
         {
           "name": "*",
@@ -10573,20 +9835,14 @@
     "globals.utils.is._default": {
       "imports": [
         {
-          "moduleSpecifier": "../../../features/transform/types",
-          "kind": "named",
-          "namedImports": ["TransformS", "PrimitiveS"],
-          "isTypeOnly": true
-        },
-        {
           "moduleSpecifier": "../../types",
           "kind": "named",
-          "namedImports": ["Classe"],
+          "namedImports": ["Classe", "PrimitiveS", "TransformPrimitiveS"],
           "isTypeOnly": true
         }
       ],
       "relativePath": "globals/utils/is/_default.ts",
-      "text": "import type { TransformS, PrimitiveS } from '../../../features/transform/types';\nimport type { Classe } from '../../types';\n\n/**\n * isFn variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const isFn = <const T>(check: T) => {\n  return (value?: unknown): value is T => {\n    return typeof value === check;\n  };\n};\n\n/**\n * isTypeFn variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const isTypeFn = <T extends PrimitiveS | 'object'>(type: T) => {\n  return (value?: unknown): value is TransformS<T> => {\n    return typeof value === type;\n  };\n};\n\n/**\n * isInstance variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const isInstance = <T extends Classe>(instance: T) => {\n  return (value?: unknown): value is T => {\n    return value instanceof instance;\n  };\n};\n\n    ",
+      "text": "import type { Classe, PrimitiveS, TransformPrimitiveS } from '../../types';\n\n/**\n * isFn variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const isFn = <const T>(check: T) => {\n  return (value?: unknown): value is T => {\n    return typeof value === check;\n  };\n};\n\n/**\n * isTypeFn variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const isTypeFn = <T extends PrimitiveS>(type: T) => {\n  return (value?: unknown): value is TransformPrimitiveS<T> => {\n    return typeof value === type;\n  };\n};\n\n/**\n * isInstance variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const isInstance = <T extends Classe>(instance: T) => {\n  return (value?: unknown): value is T => {\n    return value instanceof instance;\n  };\n};\n\n    ",
       "exports": []
     },
     "globals.utils.is.index": {
@@ -10673,12 +9929,6 @@
     "globals.utils.is.primitive": {
       "imports": [
         {
-          "moduleSpecifier": "../../../features/transform/constants",
-          "kind": "named",
-          "namedImports": ["PRIMITIVES"],
-          "isTypeOnly": false
-        },
-        {
           "moduleSpecifier": "../../types",
           "kind": "named",
           "namedImports": ["Primitive"],
@@ -10692,7 +9942,7 @@
         }
       ],
       "relativePath": "globals/utils/is/primitive.ts",
-      "text": "import { PRIMITIVES } from '../../../features/transform/constants';\nimport type { Primitive } from '../../types';\nimport { mergeIs } from './merge';\n\n/**\n * isPrimitive variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const isPrimitive = (value?: unknown): value is Primitive => {\n  const isType = mergeIs.type(...PRIMITIVES);\n  const isValue = mergeIs(null, undefined);\n  return isType(value) || isValue(value);\n};\n\n    ",
+      "text": "import type { Primitive } from '../../types';\nimport { mergeIs } from './merge';\n\n/**\n * PRIMITIVES variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const PRIMITIVES = [\n  'string',\n  'number',\n  'boolean',\n  'bigint',\n  'symbol',\n  'undefined',\n  'null',\n] as const;\n\n/**\n * isPrimitive variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const isPrimitive = (value?: unknown): value is Primitive => {\n  const isType = mergeIs.type(...PRIMITIVES);\n  const isValue = mergeIs(null, undefined);\n  return isType(value) || isValue(value);\n};\n\n    ",
       "exports": []
     },
     "globals.utils.typeFn": {

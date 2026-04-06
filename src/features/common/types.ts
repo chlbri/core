@@ -1,5 +1,4 @@
-import type { TransformS } from '#features/transform/types';
-import type { Fn, RecursiveArrayOf } from '#types';
+import type { Fn, RecursiveArrayOf } from "#types";
 
 export type SingleOrRecursiveArrayOf<T> = T | RecursiveArrayOf<T>;
 
@@ -41,27 +40,17 @@ export type Cast<A, B> = A extends B ? A : B;
 export type Keys = keyof any;
 
 export type TypeStrings =
-  | 'string'
-  | 'number'
-  | 'boolean'
-  | 'bigint'
-  | 'symbol'
-  | 'undefined'
-  | 'object'
-  | 'function';
+  | "string"
+  | "number"
+  | "boolean"
+  | "bigint"
+  | "symbol"
+  | "undefined"
+  | "object"
+  | "function";
 
 export type KeyTypes = {
   [K in Keys]: TypeStrings | Checker2 | KeyTypes;
-};
-
-export type KeyTypesFrom<T extends KeyTypes> = {
-  [K in keyof T]: T[K] extends KeyTypes
-    ? KeyTypesFrom<T[K]>
-    : T[K] extends TypeStrings
-      ? TransformS<T[K]>
-      : T[K] extends Checker2<infer R>
-        ? R
-        : unknown;
 };
 
 export type NonN<T> = T extends undefined | null ? any : NonNullable<T>;
@@ -85,9 +74,7 @@ export type UnionKeys<U> = U extends Record<infer K, any> ? K : never;
 
 export type _UnionToIntersection1<U> = boolean extends U
   ? U
-  : (U extends any ? (k: U) => void : never) extends (
-        k: infer I,
-      ) => void
+  : (U extends any ? (k: U) => void : never) extends (k: infer I) => void
     ? I
     : never;
 
@@ -99,16 +86,12 @@ export type UnionToIntersection<U> = _UnionToIntersection2<
   _UnionToIntersection1<U>
 >;
 
-export type UnionOmit<T, K extends Keys> = T extends any
-  ? Omit<T, K>
-  : never;
+export type UnionOmit<T, K extends Keys> = T extends any ? Omit<T, K> : never;
 
 export type UnionNOmit<T, K extends keyof T> = UnionOmit<T, K>;
 
 export type LastOfUnion<T> = (
-  (T extends any ? (x: () => T) => void : never) extends (
-    x: infer I,
-  ) => void
+  (T extends any ? (x: () => T) => void : never) extends (x: infer I) => void
     ? I
     : never
 ) extends () => infer U
@@ -124,17 +107,13 @@ export type UnionToTuple<T, A extends any[] = []> = [T] extends [never]
 export type Checker2<T = unknown> = (value: unknown) => value is T;
 // | ((value: unknown) => boolean);
 
-export type Equals<T, U> = T extends U
-  ? U extends T
-    ? true
-    : false
-  : false;
+export type Equals<T, U> = T extends U ? (U extends T ? true : false) : false;
 
 export type Classe = {
   [Symbol.hasInstance]: Fn<any, boolean>;
 };
 
 export class UndefinedHelper {
-  readonly __NO_TYPE__ = '@bemedev/addons/NO_TYPE';
+  readonly __NO_TYPE__ = "@bemedev/addons/NO_TYPE";
   private constructor() {}
 }

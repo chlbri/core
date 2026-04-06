@@ -33,9 +33,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@bemedev/vitest-alias": "^0.0.3",
-    "@bemedev/vitest-exclude": "^0.1.1",
-    "@bemedev/vitest-extended": "^1.5.3",
+    "@bemedev/dev-utils": "^0.5.2",
     "@types/shelljs": "^0.10.0",
     "core": "file:..",
     "shelljs": "^0.10.0",
