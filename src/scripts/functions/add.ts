@@ -8,7 +8,7 @@ export type Options = {
 
 export const add = (options: Options = {}) => {
   const { CODEBASE_ANALYSIS } = getFile();
-  const files = toArray(options.files);
+  const files = toArray.typed(options.files);
   console.log('Adding files:', files);
 
   return _add(CODEBASE_ANALYSIS, ...files);

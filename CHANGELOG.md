@@ -6,6 +6,20 @@
 <details>
 <summary>
 
+## **[0.4.4] - 06/04/2026** => _11:45_
+
+</summary>
+
+- Update `scripts/functions/add` et `scripts/functions/remove` : utilisation de `toArray.typed` à la place de `toArray` pour un typage strict des fichiers
+- <u>Test coverage **_100%_**</u>
+
+</details>
+
+<br/>
+
+<details>
+<summary>
+
 ## **[0.4.2] - 06/04/2026** => _11:30_
 
 </summary>

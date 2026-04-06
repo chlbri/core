@@ -6,7 +6,7 @@ import type { Options } from './add';
 
 export const remove = (options: Options = {}) => {
   const { CODEBASE_ANALYSIS } = getFile();
-  const files = toArray(options.files);
+  const files = toArray.typed(options.files);
 
   return _remove(CODEBASE_ANALYSIS, ...files);
 };
