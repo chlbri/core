@@ -6,6 +6,22 @@
 <details>
 <summary>
 
+## **[0.4.2] - 06/04/2026** => _11:30_
+
+</summary>
+
+- Refactor `arrays/castings/toArray` : utilisation de `expandFn` et du type `SoA`, ajout d'une variante `typed` fortement typée
+- Fix import dans `functions/types` : remplacement de l'import externe `@bemedev/vitest-extended` par le chemin local `#types`
+- Refactor `functions/types` : reformatage des types `Fn`, `_Requirify`, `Parts`, `TypeFromTimeouts` pour une meilleure lisibilité
+- <u>Test coverage **_100%_**</u>
+
+</details>
+
+<br/>
+
+<details>
+<summary>
+
 ## **[0.4.0] - 06/04/2026** => _00:00_
 
 </summary>

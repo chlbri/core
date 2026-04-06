@@ -1,12 +1,21 @@
-import type { ToArray } from '#types';
-import { _unknown } from '#utils/_unknown';
+import type { SoA } from '#types';
+import { expandFn } from '#utils/expandFn';
 
-const fn = <T>(value?: T) => {
+type ToArray_F = {
+  <T>(obj?: SoA<unknown>): T[];
+  typed: <T>(obj: SoA<T>) => Exclude<T, undefined>[];
+};
+
+const _toArray = (value?: unknown) => {
   if (!value) return [];
   const checkArray = Array.isArray(value);
   const out = checkArray ? value : [value];
 
-  return _unknown<ToArray<T>>(out);
+  return out;
 };
 
-export default fn;
+const toArray: ToArray_F = expandFn(_toArray, {
+  typed: _toArray,
+});
+
+export default toArray;

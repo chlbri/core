@@ -1,7 +1,9 @@
-import { AnyArray } from "@bemedev/vitest-extended/bemedev/globals/types";
-import { UndefinedHelper } from "../common/types";
+import type { AnyArray } from '#types';
+import type { UndefinedHelper } from '../common/types';
 
-export type Fn<Args extends any[] = any[], R = any> = (...args: Args) => R;
+export type Fn<Args extends any[] = any[], R = any> = (
+  ...args: Args
+) => R;
 
 export type FnBasic<Main extends Fn, Tr extends object> = Tr & Main;
 
@@ -10,7 +12,9 @@ export type Checker<T = unknown> =
   | Fn<[unknown], boolean>;
 
 export type _Requirify<T extends AnyArray> = Required<{
-  [K in keyof T]-?: undefined extends T[K] ? T[K] | UndefinedHelper : T[K];
+  [K in keyof T]-?: undefined extends T[K]
+    ? T[K] | UndefinedHelper
+    : T[K];
 }>;
 
 type _UndefinfyTuple<T extends AnyArray> = T extends readonly [
@@ -24,10 +28,10 @@ type _UndefinfyTuple<T extends AnyArray> = T extends readonly [
       : [U, ..._UndefinfyTuple<Rest>]
   : T;
 
-export type Parts<T extends AnyArray, R = _Requirify<T>> = R extends readonly [
-  ...infer Rest,
-  unknown,
-]
+export type Parts<
+  T extends AnyArray,
+  R = _Requirify<T>,
+> = R extends readonly [...infer Rest, unknown]
   ? Parts<Rest> | Readonly<_UndefinfyTuple<R>>
   : Readonly<T>;
 
@@ -59,9 +63,8 @@ export interface TimeoutPromise<T = any> {
 export type TypeFromTimeout<T extends TimeoutPromise> =
   T extends TimeoutPromise<infer U> ? U : never;
 
-export type TypeFromTimeouts<T extends TimeoutPromise[]> = TypeFromTimeout<
-  T[number]
->;
+export type TypeFromTimeouts<T extends TimeoutPromise[]> =
+  TypeFromTimeout<T[number]>;
 
 export type CallBackError = (err: any) => void;
 
@@ -69,7 +72,7 @@ export type CallBackResult<T = any> = (err: any, result: T) => void;
 
 export type Callback = CallBackError | CallBackResult;
 
-type GetResult<Cb extends Callback> = Parameters<Cb>["length"] extends 2
+type GetResult<Cb extends Callback> = Parameters<Cb>['length'] extends 2
   ? Parameters<Cb>[1]
   : void;
 
