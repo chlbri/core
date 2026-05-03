@@ -9,6 +9,6 @@ on:
 
 jobs:
   upgrade:
-    uses: chlbri/node-github-actions/.github/workflows/upgrade.yml
+    uses: chlbri/node-github-actions/.github/workflows/upgrade.yml@main
     secrets:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
