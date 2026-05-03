@@ -6,11 +6,42 @@
 <details>
 <summary>
 
+## **[0.5.0] - 03/05/2026** => _00:00_
+
+</summary>
+
+- Remove script `config:vitest` et simplification de `upgrade` /
+  `upgrade:fast` (suppression de l'appel `config:vitest`)
+- Update `vitest` : ^3.2.4 → ^4.1.5 (version majeure)
+- Update `@vitest/coverage-v8` : ^3.2.4 → ^4.1.5 (version majeure)
+- Update `@vitest/ui` : 3.2.4 → 4.1.5 (version majeure)
+- Update `ts-morph` : 27.0.2 → 28.0.0 (version majeure)
+- Update `@bemedev/dev-utils` : ^0.5.2 → ^0.6.6
+- Update `@typescript-eslint/eslint-plugin` et `parser` : 8.58.0 → 8.59.1
+- Update `eslint` : 10.2.0 → 10.3.0
+- Update `globals` : 17.4.0 → 17.6.0
+- Update `oxfmt` : ^0.43.0 → ^0.47.0
+- Update `oxlint` : ^1.58.0 → ^1.62.0
+- Update `prettier` : 3.8.1 → 3.8.3
+- Update `rolldown` : 1.0.0-rc.13 → 1.0.0-rc.18
+- Update `typescript` : ^6.0.2 → ^6.0.3
+- Update `size-limit` : ^12.0.1 → ^12.1.0
+- <u>Test coverage **_100%_**</u>
+
+</details>
+
+<br/>
+
+<details>
+<summary>
+
 ## **[0.4.4] - 06/04/2026** => _11:45_
 
 </summary>
 
-- Update `scripts/functions/add` et `scripts/functions/remove` : utilisation de `toArray.typed` à la place de `toArray` pour un typage strict des fichiers
+- Update `scripts/functions/add` et `scripts/functions/remove` :
+  utilisation de `toArray.typed` à la place de `toArray` pour un typage
+  strict des fichiers
 - <u>Test coverage **_100%_**</u>
 
 </details>

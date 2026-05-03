@@ -33,13 +33,13 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@bemedev/dev-utils": "^0.5.2",
+    "@bemedev/dev-utils": "^0.6.6",
     "@types/shelljs": "^0.10.0",
     "core": "file:..",
     "shelljs": "^0.10.0",
-    "ts-morph": "^27.0.2",
+    "ts-morph": "^28.0.0",
     "tsx": "^4.21.0",
-    "typescript": "^6.0.2",
-    "vitest": "^4.1.2"
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.5"
   }
 }
