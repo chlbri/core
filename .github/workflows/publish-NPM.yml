@@ -8,4 +8,6 @@ on:
 jobs:
   publish:
     name: Publish
-    uses: chlbri/node-github-actions/.github/workflows/publish.yml
+    uses: "chlbri/node-github-actions/.github/workflows/publish.yml"
+    secrets:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
