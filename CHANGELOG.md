@@ -17,7 +17,8 @@
 - Update `@vitest/ui` : 3.2.4 → 4.1.5 (version majeure)
 - Update `ts-morph` : 27.0.2 → 28.0.0 (version majeure)
 - Update `@bemedev/dev-utils` : ^0.5.2 → ^0.6.6
-- Update `@typescript-eslint/eslint-plugin` et `parser` : 8.58.0 → 8.59.1
+- Update `@typescript-eslint/eslint-plugin` et `parser` : 8.58.0 →
+  8.59.1
 - Update `eslint` : 10.2.0 → 10.3.0
 - Update `globals` : 17.4.0 → 17.6.0
 - Update `oxfmt` : ^0.43.0 → ^0.47.0
