@@ -1,0 +1,5 @@
+import { _unknown } from '#utils/_unknown';
+
+const fn = <const T extends string>(_?: T) => _unknown<T['length']>();
+
+export default fn;

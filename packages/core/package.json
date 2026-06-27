@@ -1,0 +1,129 @@
+{
+  "name": "@bemedev/core",
+  "version": "0.5.0",
+  "description": "The core library of @bemedev, providing essential functionalities and utilities for the Bemedev ecosystem.",
+  "author": {
+    "email": "bri_lvi@icloud.com",
+    "name": "chlbri",
+    "url": "https://bemedev.vercel.app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chlbri/core.git"
+  },
+  "bin": {
+    "core": "lib/scripts/cli/index.js"
+  },
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "module": "lib/index.js",
+  "maintainers": [
+    {
+      "email": "bri_lvi@icloud.com",
+      "name": "chlbri",
+      "url": "https://bemedev.vercel.app"
+    }
+  ],
+  "contributors": [
+    {
+      "email": "bri_lvi@icloud.com",
+      "name": "chlbri",
+      "url": "https://bemedev.vercel.app"
+    }
+  ],
+  "keywords": [
+    "core",
+    "bemedev",
+    "@bemedev",
+    "functions",
+    "utilities",
+    "typings"
+  ],
+  "files": [
+    "lib",
+    "public",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md"
+  ],
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "pnpm run rm:lib && pnpm run codegen && pnpm run rolldown && chmod +x lib/scripts/cli/index.js",
+    "build:watch": "onchange --await-write-finish 1500 -d 10000 -v \"**/*.ts\" -- pnpm run build",
+    "_ci": "pnpm run lint && pnpm run test",
+    "clean": "pnpm run rm && pnpm run config",
+    "codegen": "pnpm codebase -x \"src/**/*.test-d.ts\" -x \"src/scripts/**/*\"",
+    "config": "pnpm install",
+    "config:off": "pnpm run config --offline",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
+    "lint": "pnpm run fmt && pnpm run lint:fix",
+    "lint:fix": "oxlint --fix",
+    "lint:watch": "onchange --await-write-finish 1500 -d 10000 -v \"**/*.ts\" -- pnpm run lint",
+    "manifest": "tsx src/scripts/manifest/generate.ts",
+    "posttest": "pnpm run fmt",
+    "pretest": "pnpm run build && pnpm run size",
+    "rinit": "pnpm run rm && pnpm run config",
+    "rinit:off": "pnpm run rm && pnpm run config:off",
+    "rimraf": "pnpm dlx rimraf -rf",
+    "rm": "pnpm run rimraf -- node_modules pnpm-lock.yaml ",
+    "rm:lib": "pnpm run rimraf ./lib",
+    "rolldown": "rolldown -c",
+    "size": "size-limit",
+    "test": "pnpm run test:coverage",
+    "test:coverage": "vitest run",
+    "test:only": "pnpm run test:coverage --no-coverage",
+    "test:ui": "vitest --ui",
+    "test:watch": "vitest",
+    "upgrade": "pnpm up --latest"
+  },
+  "size-limit": [
+    {
+      "path": "lib/*.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "lib/*.cjs",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@bemedev/dev-utils": "^0.8.3",
+    "@bemedev/fsf": "^1.0.1",
+    "@bemedev/vitest-alias": "^0.0.3",
+    "@bemedev/vitest-exclude": "^0.1.1",
+    "@bemedev/vitest-extended": "^1.5.3",
+    "@rollup/plugin-json": "^6.1.0",
+    "@size-limit/file": "^12.1.0",
+    "@types/edit-json-file": "1.7.4",
+    "@types/node": "^26.0.1",
+    "@vitest/coverage-v8": "^4.1.9",
+    "@vitest/ui": "4.1.9",
+    "glob": "^13.0.6",
+    "onchange": "^7.1.0",
+    "oxfmt": "^0.56.0",
+    "oxlint": "^1.71.0",
+    "prettier": "3.9.0",
+    "pretty-quick": "^4.2.2",
+    "rolldown": "1.1.3",
+    "rollup": "4.62.2",
+    "size-limit": "^12.1.0",
+    "tslib": "^2.8.1",
+    "tsx": "4.22.4",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.9"
+  },
+  "dependencies": {
+    "@bemedev/codebase": "^1.6.0",
+    "@bemedev/sleep": "^0.2.2",
+    "cmd-ts": "0.15.0",
+    "edit-json-file": "^1.8.1",
+    "ts-morph": "28.0.0",
+    "valibot": "1.4.1"
+  }
+}

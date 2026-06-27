@@ -1,0 +1,5 @@
+import { _unknown } from '#utils/_unknown';
+
+const fn = <T>(_: T | readonly T[] | T[]) => _unknown<T>();
+
+export default fn;

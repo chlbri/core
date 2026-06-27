@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "esnext"],
+    "importHelpers": true,
+    "target": "ESNext",
+    // "module": "esnext",
+    "declaration": true,
+    "noErrorTruncation": true,
+    "sourceMap": true,
+    "outDir": "./lib",
+    "rootDir": "./src",
+    "resolveJsonModule": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "moduleResolution": "Bundler",
+    "types": ["vitest/globals", "node"],
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "declarationMap": true,
+    "paths": {
+      "#utils/*": ["./src/globals/utils/*"],
+      "#scripts/*": ["./src/scripts/*"],
+      "#features/*": ["./src/features/*"],
+      "#codebase": ["./.codebase.json"],
+      "#types": ["./src/globals/types"]
+    }
+  },
+  "exclude": ["./vitest.config.ts", "./rolldown.config.ts"]
+}
