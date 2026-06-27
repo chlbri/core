@@ -1,7 +1,7 @@
 const stringConcatNumberLow = (
   value: number,
   count: number,
-  separator = "",
+  separator = '',
 ): string => {
   const out = Array(count).fill(value).join(separator);
   return out;

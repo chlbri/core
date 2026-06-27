@@ -1,5 +1,5 @@
-import isMin from "../../min/is";
-import isMax from "../../max/is";
+import isMin from '../../min/is';
+import isMax from '../../max/is';
 
 const isExclusiveRangeLength = <
   Min extends number,

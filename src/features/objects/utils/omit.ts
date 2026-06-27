@@ -11,8 +11,7 @@ export const omit = (
   const entries = Object.entries(object);
   entries.forEach(([key, value]) => {
     const checkKey = by === 'key' && !valuesOrKeys.includes(key);
-    const checkElement =
-      by === 'element' && !valuesOrKeys.includes(value);
+    const checkElement = by === 'element' && !valuesOrKeys.includes(value);
     if (checkKey) {
       result[key] = value;
     } else if (checkElement) {

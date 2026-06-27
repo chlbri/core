@@ -34,8 +34,7 @@ export function switchValue<T>(condition: any, truthy?: T, falsy?: T) {
   });
 }
 
-switchValue.array = <T>(...params: ParamsA<T>) =>
-  switchValue(...params);
+switchValue.array = <T>(...params: ParamsA<T>) => switchValue(...params);
 switchValue.object = <T>(params: ParamsO<T>) => switchValue(params);
 
 export const switchV = switchValue;

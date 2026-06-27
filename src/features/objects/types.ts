@@ -196,9 +196,7 @@ type WithChildren<
   _withChildren extends boolean = false,
 > = _withChildren extends true ? T : Omit<T, _omit>;
 
-type DefaultK<S extends string, D extends string> = S extends ''
-  ? D
-  : S;
+type DefaultK<S extends string, D extends string> = S extends '' ? D : S;
 
 // #region type _FlatMapByKey
 export type _FlatMapByKey<

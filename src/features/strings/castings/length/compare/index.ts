@@ -1,2 +1,2 @@
-import compareLength from "./typed";
+import compareLength from './typed';
 export default compareLength;

@@ -17,6 +17,9 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "module": "lib/index.js",
+  "imports": {
+    "#codebase": "./.codebase.json"
+  },
   "maintainers": [
     {
       "email": "bri_lvi@icloud.com",
@@ -51,11 +54,13 @@
     "node": ">=24"
   },
   "scripts": {
+    "pnpm:devPreinstall": "node -e \"const fs=require('fs'); const pkg=JSON.parse(fs.readFileSync('./package.json')); const version=require('child_process').execSync('pnpm -v').toString().trim(); pkg.packageManager='pnpm@' + version; fs.writeFileSync('./package.json', JSON.stringify(pkg, null, 2) + '\\n');\"",
     "_preconfig": "chmod -x \".husky/commit-msg\"",
-    "build": "pnpm run rm:lib && pnpm run rolldown && pnpm run codegen",
+    "build": "pnpm run rm:lib && pnpm run codegen && pnpm run rolldown",
     "build:watch": "onchange --await-write-finish 1500 -d 10000 -v \"**/*.ts\" -- pnpm run build",
-    "ci": "CI_START=$(date +%s) && pnpm run config:off && pnpm run lint && pnpm run test && pnpm run p-q && echo \"\n✅ CI takes $(($(date +%s) - CI_START))s\n\"",
-    "ci:admin": "pnpm run rm && pnpm --prefix ./example run rm && pnpm run upgrade:fast && pnpm --prefix ./example run upgrade && pnpm run ci",
+    "_ci": "pnpm run config:off && pnpm run lint && pnpm run test",
+    "ci": "CI_START=$(date +%s) && pnpm run _ci && pnpm run p-q  && echo \"\n✅ CI takes $(($(date +%s) - CI_START))s\n\"",
+    "ci:admin": "CI_START=$(date +%s) && pnpm run rm && pnpm run upgrade && pnpm run _ci && echo \"\n✅ CI_ADMIN takes $(($(date +%s) - CI_START))s\n\"",
     "clean": "pnpm run rm && pnpm run config",
     "codegen": "pnpm codebase -x \"src/**/*.test-d.ts\" -x \"src/scripts/**/*\"",
     "config": "pnpm install",
@@ -74,8 +79,8 @@
     "rinit": "pnpm run rm && pnpm run config",
     "rinit:off": "pnpm run rm && pnpm run config:off",
     "rimraf": "pnpm dlx rimraf -rf",
-    "rm": "pnpx rimraf ./node_modules ./pnpm-lock.yaml",
-    "rm:lib": "pnpx rimraf ./lib",
+    "rm": "pnpm run rimraf -- node_modules pnpm-lock.yaml ",
+    "rm:lib": "pnpm run rimraf ./lib",
     "rolldown": "rolldown -c",
     "size": "size-limit",
     "test": "pnpm run test:coverage",
@@ -84,8 +89,7 @@
     "test:only": "pnpm run test:coverage --no-coverage",
     "test:ui": "vitest --ui",
     "test:watch": "vitest",
-    "upgrade": "pnpm dlx @bemedev/upgrade-npm-package",
-    "upgrade:fast": "pnpm up --latest"
+    "upgrade": "pnpm up --latest"
   },
   "size-limit": [
     {
@@ -98,7 +102,7 @@
     }
   ],
   "devDependencies": {
-    "@bemedev/dev-utils": "^0.6.6",
+    "@bemedev/dev-utils": "^0.8.3",
     "@bemedev/fsf": "^1.0.1",
     "@bemedev/vitest-alias": "^0.0.3",
     "@bemedev/vitest-exclude": "^0.1.1",
@@ -108,40 +112,36 @@
     "@rollup/plugin-json": "^6.1.0",
     "@size-limit/file": "^12.1.0",
     "@types/edit-json-file": "1.7.4",
-    "@types/node": "^25.6.0",
-    "@typescript-eslint/eslint-plugin": "8.59.1",
-    "@typescript-eslint/parser": "8.59.1",
-    "@vitest/coverage-v8": "^4.1.5",
-    "@vitest/ui": "4.1.5",
-    "eslint": "10.3.0",
+    "@types/node": "^26.0.1",
+    "@typescript-eslint/eslint-plugin": "8.62.0",
+    "@typescript-eslint/parser": "8.62.0",
+    "@vitest/coverage-v8": "^4.1.9",
+    "@vitest/ui": "4.1.9",
+    "eslint": "10.6.0",
     "glob": "^13.0.6",
-    "globals": "17.6.0",
+    "globals": "17.7.0",
     "husky": "^9.1.7",
     "onchange": "^7.1.0",
-    "oxfmt": "^0.47.0",
-    "oxlint": "^1.62.0",
-    "prettier": "3.8.3",
+    "oxfmt": "^0.56.0",
+    "oxlint": "^1.71.0",
+    "prettier": "3.9.0",
     "pretty-quick": "^4.2.2",
-    "rolldown": "1.0.0-rc.18",
-    "rollup": "4.60.2",
+    "rolldown": "1.1.3",
+    "rollup": "4.62.2",
     "size-limit": "^12.1.0",
     "tslib": "^2.8.1",
-    "tsx": "4.21.0",
+    "tsx": "4.22.4",
     "typescript": "^6.0.3",
-    "vitest": "^4.1.5"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "esbuild"
-    ]
+    "vitest": "^4.1.9"
   },
   "dependencies": {
-    "@bemedev/codebase": "^0.3.0",
+    "@bemedev/codebase": "^1.6.0",
     "@bemedev/sleep": "^0.2.2",
     "chokidar": "^5.0.0",
     "cmd-ts": "0.15.0",
     "edit-json-file": "^1.8.1",
     "ts-morph": "28.0.0",
-    "valibot": "1.3.1"
-  }
+    "valibot": "1.4.1"
+  },
+  "packageManager": "pnpm@11.8.0"
 }

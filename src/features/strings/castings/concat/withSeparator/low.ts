@@ -1,2 +1,2 @@
-import stringConcatWithSeparatorLow from "../utils";
+import stringConcatWithSeparatorLow from '../utils';
 export default stringConcatWithSeparatorLow;

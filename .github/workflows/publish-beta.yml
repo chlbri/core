@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout pnpm repo
-        uses: "chlbri/pnpmi-action@main"
+        uses: 'chlbri/pnpmi-action@main'
 
       - name: Build
         run: pnpm run build
@@ -27,8 +27,9 @@ jobs:
 
       - name: Check - updated
         if: ${{ steps.publish.outputs.type }}
-        run: echo "${{ steps.publish.outputs.name }} Version changed from
-          ${{ steps.publish.outputs.old-version }} to ${{
+        run:
+          echo "${{ steps.publish.outputs.name }} Version changed from ${{
+          steps.publish.outputs.old-version }} to ${{
           steps.publish.outputs.version }}"
 
       - name: Check - not updated

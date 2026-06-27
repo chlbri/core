@@ -1,6 +1,6 @@
-import low from "./low";
-import { StringCompareWith } from "../../../types";
-import { _unknown } from "#utils/_unknown";
+import low from './low';
+import { StringCompareWith } from '../../../types';
+import { _unknown } from '#utils/_unknown';
 
 type Fn1 = <T extends string, U extends string>(
   a: T,

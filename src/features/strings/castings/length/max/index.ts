@@ -1,2 +1,2 @@
-import maxLength from "./strict";
+import maxLength from './strict';
 export default maxLength;

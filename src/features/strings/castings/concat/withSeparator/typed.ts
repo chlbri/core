@@ -1,5 +1,5 @@
-import { ArrayS, PossibleString, JoinString } from "../../../types";
-import stringConcatWithSeparatorTyped from "../utils";
+import { ArrayS, PossibleString, JoinString } from '../../../types';
+import stringConcatWithSeparatorTyped from '../utils';
 
 type StringConcatWithSeparatorTyped_F = <
   T extends PossibleString,

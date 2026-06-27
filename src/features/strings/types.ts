@@ -1,5 +1,5 @@
-import type { AnyArray } from "#types";
-import type { ENGLISH_LETTERS } from "./constants";
+import type { AnyArray } from '#types';
+import type { ENGLISH_LETTERS } from './constants';
 
 export type PossibleString =
   | string
@@ -18,9 +18,9 @@ export type Email = `${string}@${string}.${string}`;
 
 export type JoinString<
   T extends ArrayS,
-  sep extends PossibleString = " ",
+  sep extends PossibleString = ' ',
 > = T extends []
-  ? ""
+  ? ''
   : T extends [PossibleString]
     ? `${T[0]}`
     : T extends [PossibleString, ...infer U extends ArrayS]
@@ -29,8 +29,8 @@ export type JoinString<
 
 export type AddString<
   T,
-  Before extends string = "",
-  After extends string = "",
+  Before extends string = '',
+  After extends string = '',
 > = `${Before}${T & string}${After}`;
 
 export type StringEndWith<
@@ -59,10 +59,10 @@ export type StringContains<
  */
 export type SplitStringBy<
   S extends string,
-  By extends string = ".",
+  By extends string = '.',
 > = string extends S
   ? string[]
-  : S extends ""
+  : S extends ''
     ? []
     : S extends `${infer T}${By}${infer U}`
       ? [T, ...SplitStringBy<U, By>]
@@ -75,7 +75,7 @@ export type StringLength<
   Counter extends number[] = [],
 > = T extends `${string}${infer Tail}`
   ? StringLength<Tail, [...Counter, 0]>
-  : Counter["length"];
+  : Counter['length'];
 
 export type StringCompare<
   First extends number,
@@ -83,9 +83,9 @@ export type StringCompare<
   Counter extends number[] = [],
 > = First extends Second
   ? 0
-  : Counter["length"] extends First
+  : Counter['length'] extends First
     ? -1
-    : Counter["length"] extends Second
+    : Counter['length'] extends Second
       ? 1
       : StringCompare<First, Second, [...Counter, 0]>;
 

@@ -1,5 +1,5 @@
 import { config } from '#scripts/constants';
-import { getFolderPath } from '@bemedev/codebase/lib/helpers.js';
+import { getFolderPath } from '@bemedev/codebase';
 import edit, { type JsonEditor } from 'edit-json-file';
 import { rmSync } from 'node:fs';
 import { join } from 'node:path';
@@ -26,9 +26,7 @@ export function destroy() {
   file = undefined;
   try {
     rmSync(jsonPath, { force: true });
-    console.log(
-      `Configuration file ("${config.json}") has been removed.`,
-    );
+    console.log(`Configuration file ("${config.json}") has been removed.`);
   } catch {
     console.error(
       `Error while removing the configuration file ("${config.json}").`,

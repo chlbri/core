@@ -1,5 +1,5 @@
-import compare from "../compare/number/typed";
-import type { MaxLength } from "../../../types";
+import compare from '../compare/number/typed';
+import type { MaxLength } from '../../../types';
 
 const isMaxLength = <N extends number, T extends string>(
   max: N,

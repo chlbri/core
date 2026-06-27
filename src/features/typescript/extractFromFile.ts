@@ -46,8 +46,7 @@ export const extractFromFile = (filePath: string) => {
       // Vérifier si l'initializer est un appel de fonction
       if (isCallable1) {
         // Trouver le premier appel de fonction dans la chaîne
-        const firstCallExpression =
-          findFirstCallExpression(initializer);
+        const firstCallExpression = findFirstCallExpression(initializer);
 
         const isCallable2 = Node.isCallExpression(firstCallExpression);
 

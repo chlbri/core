@@ -1,4 +1,4 @@
-import type { Classe, PrimitiveS, TransformPrimitiveS } from "#types";
+import type { Classe, PrimitiveS, TransformPrimitiveS } from '#types';
 
 export const isFn = <const T>(check: T) => {
   return (value?: unknown): value is T => {

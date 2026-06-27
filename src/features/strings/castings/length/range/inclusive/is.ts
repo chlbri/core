@@ -1,5 +1,5 @@
-import isMinOrEqual from "../../min/orEqual/is";
-import isMaxOrEqual from "../../max/orEqual/is";
+import isMinOrEqual from '../../min/orEqual/is';
+import isMaxOrEqual from '../../max/orEqual/is';
 
 const isInclusiveRangeLength = <
   Min extends number,

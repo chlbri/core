@@ -1,2 +1,2 @@
-import stringConcatWithSeparator from "./typed";
+import stringConcatWithSeparator from './typed';
 export default stringConcatWithSeparator;

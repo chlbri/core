@@ -1,9 +1,7 @@
 import type { AnyArray } from '#types';
 import type { UndefinedHelper } from '../common/types';
 
-export type Fn<Args extends any[] = any[], R = any> = (
-  ...args: Args
-) => R;
+export type Fn<Args extends any[] = any[], R = any> = (...args: Args) => R;
 
 export type FnBasic<Main extends Fn, Tr extends object> = Tr & Main;
 
@@ -12,9 +10,7 @@ export type Checker<T = unknown> =
   | Fn<[unknown], boolean>;
 
 export type _Requirify<T extends AnyArray> = Required<{
-  [K in keyof T]-?: undefined extends T[K]
-    ? T[K] | UndefinedHelper
-    : T[K];
+  [K in keyof T]-?: undefined extends T[K] ? T[K] | UndefinedHelper : T[K];
 }>;
 
 type _UndefinfyTuple<T extends AnyArray> = T extends readonly [
@@ -63,8 +59,9 @@ export interface TimeoutPromise<T = any> {
 export type TypeFromTimeout<T extends TimeoutPromise> =
   T extends TimeoutPromise<infer U> ? U : never;
 
-export type TypeFromTimeouts<T extends TimeoutPromise[]> =
-  TypeFromTimeout<T[number]>;
+export type TypeFromTimeouts<T extends TimeoutPromise[]> = TypeFromTimeout<
+  T[number]
+>;
 
 export type CallBackError = (err: any) => void;
 

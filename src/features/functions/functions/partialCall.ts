@@ -1,6 +1,6 @@
-import type { Parts, Fn, PartDiff } from "../types";
-import { AnyArray } from "#types";
-import { expandFn } from "#utils/expandFn";
+import type { Parts, Fn, PartDiff } from '../types';
+import { AnyArray } from '#types';
+import { expandFn } from '#utils/expandFn';
 
 type PartialCall_F = <
   const F extends Fn,
@@ -27,7 +27,9 @@ type PartialCallBuild_F = <
 >(
   f: F,
   ...headArgs: T
-) => <const T extends Fn<[...U], ReturnType<F>> = Fn<[...U], ReturnType<F>>>(
+) => <
+  const T extends Fn<[...U], ReturnType<F>> = Fn<[...U], ReturnType<F>>,
+>(
   ...tailArgs: Parameters<T>
 ) => ReturnType<T>;
 

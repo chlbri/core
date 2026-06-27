@@ -1,5 +1,5 @@
-import { ExactLength } from "../../../types";
-import compare from "../compare//number/typed";
+import { ExactLength } from '../../../types';
+import compare from '../compare//number/typed';
 
 const isExactLength = <N extends number, T extends string>(
   exact: N,

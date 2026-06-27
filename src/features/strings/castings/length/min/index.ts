@@ -1,2 +1,2 @@
-import minLength from "./strict";
+import minLength from './strict';
 export default minLength;

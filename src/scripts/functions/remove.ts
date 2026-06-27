@@ -3,10 +3,11 @@ import { remove as _remove } from '@bemedev/codebase';
 
 import { getFile } from '../helpers';
 import type { Options } from './add';
+import { JSON_PATH } from '#scripts/constants';
 
 export const remove = (options: Options = {}) => {
   const { CODEBASE_ANALYSIS } = getFile();
   const files = toArray.typed(options.files);
 
-  return _remove(CODEBASE_ANALYSIS, ...files);
+  return _remove(CODEBASE_ANALYSIS, JSON_PATH, ...files);
 };

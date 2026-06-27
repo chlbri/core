@@ -1,2 +1,2 @@
-import stringConcat from "./typed";
+import stringConcat from './typed';
 export default stringConcat;

@@ -1,4 +1,4 @@
-import type { PrimitiveObject } from "#types";
+import type { PrimitiveObject } from '#types';
 
 export type FormatKey<T = any> = (key: Extract<keyof T, string>) => string;
 
@@ -20,7 +20,7 @@ export function deepClone<I extends PrimitiveObject>(
   refs = new Map<I, I>(),
 ): I {
   const ref = refs.get(value);
-  if (typeof ref !== "undefined") return ref;
+  if (typeof ref !== 'undefined') return ref;
 
   if (Array.isArray(value)) {
     const clone: any = [];

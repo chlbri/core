@@ -1,2 +1,2 @@
-import maxOrEqualLength from "./strict";
+import maxOrEqualLength from './strict';
 export default maxOrEqualLength;

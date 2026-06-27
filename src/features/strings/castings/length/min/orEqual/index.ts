@@ -1,2 +1,2 @@
-import minOrEqualLength from "./strict";
+import minOrEqualLength from './strict';
 export default minOrEqualLength;

@@ -1,6 +1,7 @@
 import toArray from '#features/arrays/castings/toArray';
 import { add as _add } from '@bemedev/codebase';
 import { getFile } from '../helpers';
+import { JSON_PATH } from '#scripts/constants';
 
 export type Options = {
   files?: string | string[];
@@ -11,5 +12,5 @@ export const add = (options: Options = {}) => {
   const files = toArray.typed(options.files);
   console.log('Adding files:', files);
 
-  return _add(CODEBASE_ANALYSIS, ...files);
+  return _add(CODEBASE_ANALYSIS, JSON_PATH, ...files);
 };

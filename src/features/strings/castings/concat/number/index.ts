@@ -1,2 +1,2 @@
-import strincConcatNumber from "./typed";
+import strincConcatNumber from './typed';
 export default strincConcatNumber;

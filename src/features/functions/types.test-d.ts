@@ -1,4 +1,4 @@
-import type { Fn } from "#types";
+import type { Fn } from '#types';
 import type {
   parse,
   NumberSchema,
@@ -6,9 +6,9 @@ import type {
   BaseIssue,
   Config,
   InferIssue,
-} from "valibot";
+} from 'valibot';
 
-import { PartDiff, Parts } from "./types";
+import { PartDiff, Parts } from './types';
 
 type Bs = BaseSchema<unknown, unknown, BaseIssue<unknown>>;
 type Co<T extends Bs = Bs> = Config<InferIssue<T>>;
@@ -23,7 +23,7 @@ expectTypeOf<Pa2>().toEqualTypeOf<
   readonly [1, 2, 3] | readonly [1, 2] | readonly [1] | readonly []
 >();
 
-type Pa3 = Parts<readonly [1, 2, 3, "a", true, { a: 1 }]>;
+type Pa3 = Parts<readonly [1, 2, 3, 'a', true, { a: 1 }]>;
 expectTypeOf<Pa3>().toEqualTypeOf<
   | readonly []
   | readonly [1]
@@ -33,14 +33,14 @@ expectTypeOf<Pa3>().toEqualTypeOf<
       1,
       2,
       3,
-      "a",
+      'a',
       true,
       {
         a: 1;
       },
     ]
-  | readonly [1, 2, 3, "a"]
-  | readonly [1, 2, 3, "a", true]
+  | readonly [1, 2, 3, 'a']
+  | readonly [1, 2, 3, 'a', true]
 >();
 
 type Fn1 = Fn<[number, string, boolean], void>;

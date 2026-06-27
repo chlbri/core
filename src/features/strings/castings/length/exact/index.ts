@@ -1,2 +1,2 @@
-import exactLength from "./strict";
+import exactLength from './strict';
 export default exactLength;

@@ -17,8 +17,7 @@
 - Update `@vitest/ui` : 3.2.4 → 4.1.5 (version majeure)
 - Update `ts-morph` : 27.0.2 → 28.0.0 (version majeure)
 - Update `@bemedev/dev-utils` : ^0.5.2 → ^0.6.6
-- Update `@typescript-eslint/eslint-plugin` et `parser` : 8.58.0 →
-  8.59.1
+- Update `@typescript-eslint/eslint-plugin` et `parser` : 8.58.0 → 8.59.1
 - Update `eslint` : 10.2.0 → 10.3.0
 - Update `globals` : 17.4.0 → 17.6.0
 - Update `oxfmt` : ^0.43.0 → ^0.47.0
@@ -56,8 +55,8 @@
 
 </summary>
 
-- Refactor `arrays/castings/toArray` : utilisation de `expandFn` et du
-  type `SoA`, ajout d'une variante `typed` fortement typée
+- Refactor `arrays/castings/toArray` : utilisation de `expandFn` et du type
+  `SoA`, ajout d'une variante `typed` fortement typée
 - Fix import dans `functions/types` : remplacement de l'import externe
   `@bemedev/vitest-extended` par le chemin local `#types`
 - Refactor `functions/types` : reformatage des types `Fn`, `_Requirify`,
@@ -77,9 +76,8 @@
 
 - Remove module `transform` et ses helpers (breaking change)
 - Add types `FnBasic`, `Parts`, `PartDiff`, `TimeoutPromise`,
-  `TypeFromTimeout`, `TypeFromTimeouts`, `CallBackError`,
-  `CallBackResult`, `Callback`, `CbParams`, `ResultFrom` dans
-  `functions/types`
+  `TypeFromTimeout`, `TypeFromTimeouts`, `CallBackError`, `CallBackResult`,
+  `Callback`, `CbParams`, `ResultFrom` dans `functions/types`
 - Add types `PrimitiveS` et `TransformPrimitiveS` dans les globals
 - Add utilities `isTypeFn` et `isInstance` dans `globals/utils/is`
 - Add constante `PRIMITIVES` dans `globals/constants`
@@ -140,8 +138,8 @@
 
 - Add `identity`, `identify`, `log10`, `switchValue`, `refunction`,
   `partialCallO` function utilities
-- Add string `multichar` helper and complete length casting suite
-  (`exact`, `min`, `max`, `range` with inclusive/exclusive variants)
+- Add string `multichar` helper and complete length casting suite (`exact`,
+  `min`, `max`, `range` with inclusive/exclusive variants)
 - Add `oxlint` and `oxfmt` configurations
 - Remove legacy `prettier`, `eslint` and `rollup` configs
 - Replace `rollup` with `rolldown` as bundler
@@ -176,8 +174,8 @@
 </summary>
 
 - **Chore**: Bump package version to `0.1.7`
-- **Docs**: Remove placeholder example in `README.md` and tidy
-  CHANGE_LOG link
+- **Docs**: Remove placeholder example in `README.md` and tidy CHANGE_LOG
+  link
 
 </details>
 
@@ -190,10 +188,10 @@
 
 </summary>
 
-- **Fix(transform)**: Use `ObjectMapS` instead of `PrimitiveObjectMap`
-  in `union` helper to improve typing and compatibility.
-- **Refactor(ci)**: Rename `pnpm:lint` VSCode task to `pnpm:ci` and
-  remove `pnpm:test` task. _NO_CI_
+- **Fix(transform)**: Use `ObjectMapS` instead of `PrimitiveObjectMap` in
+  `union` helper to improve typing and compatibility.
+- **Refactor(ci)**: Rename `pnpm:lint` VSCode task to `pnpm:ci` and remove
+  `pnpm:test` task. _NO_CI_
 - **Chore**: Bump package version to `0.1.6`
 
 </details>
@@ -238,8 +236,8 @@
 ### Version [0.1.1] --> _2025/09/06 19:25_
 
 - ✨ **feat(arrays)**: Add permutations functionality for tuples
-  - Introduced new `permutations` module for generating all possible
-    array permutations
+  - Introduced new `permutations` module for generating all possible array
+    permutations
   - Updated type definitions and exports for arrays
   - Added comprehensive tests for permutations functionality
 
