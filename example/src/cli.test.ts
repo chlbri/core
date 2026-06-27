@@ -3,9 +3,7 @@ import { join } from 'node:path';
 import { exec } from 'shelljs';
 
 describe('CLI', () => {
-  const rm = () => exec('pnpm run rm:cli');
-  beforeAll(rm);
-  // afterAll(() => exec('pnpm core destroy'));
+  afterAll(() => exec('pnpm core destroy'));
 
   const FILES = [
     'features/arrays/types',
