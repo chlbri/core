@@ -63,13 +63,6 @@ export type Defaulted<T, U extends NonN<T>> = undefined extends T
       ? U
       : T;
 
-// export type Defaulted<T, U extends NonN<T>> = T extends
-//   | undefined
-//   | never
-//   | null
-//   ? U
-//   : T;
-
 export type UnionKeys<U> = U extends Record<infer K, any> ? K : never;
 
 export type _UnionToIntersection1<U> = boolean extends U

@@ -6,6 +6,30 @@
 <details>
 <summary>
 
+## **[1.0.0] - 28/06/2026** => _22:25_
+
+</summary>
+
+- Remove: Feature module exports (`./features`) from the main entrypoint (only export `#scripts/functions` and `#utils/index`)
+- Add: `lift` subcommand to the CLI and export `lift` function for codebase analysis lifting
+- Add: `softInit` subcommand to the CLI and export `softInit` function for codebase analysis
+- Add: `add`, `remove`, `destroy`, and `init` CLI subcommands and export their corresponding JS functions
+- Refactor: Reorganize feature modules into the monorepo structure
+- Refactor: Clean up commented-out types and unused declarations in feature modules
+- Refactor: CLI commands by removing `--json` option from the `init` command
+- Remove: Auto-generated codebase configuration and cleanup old layout files
+- Update: Dependency `@bemedev/codebase` to `^2.1.0`
+- Update: Dependency `valibot` to `1.4.2`
+- Update: DevDependency `prettier` to `3.9.1`
+- <u>Test coverage **_100%_**</u>
+
+</details>
+
+<br/>
+
+<details>
+<summary>
+
 ## **[0.5.0] - 03/05/2026** => _00:00_
 
 </summary>

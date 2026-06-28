@@ -1,9 +1,9 @@
 import { DEFAULT_ROOT } from '#scripts/constants';
 import { command, option, string } from 'cmd-ts';
-import { init as handler } from '../functions/init';
+import { softInit as handler } from '../functions/softInit';
 
-export const init = command({
-  name: 'init',
+export const softInit = command({
+  name: 'softInit',
   description: 'Initialize the codebase analysis',
   args: {
     root: option({

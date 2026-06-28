@@ -7,20 +7,6 @@ export type IndexesOfArray<
   ? S[number]
   : IndexesOfArray<T, [S['length'], ...S]>;
 
-// type _DivideBy<
-//   N extends number,
-//   T extends readonly any[],
-// > = T['length'] extends N
-//   ? [true]
-//   : T extends readonly [...TupleOf<T[number], N>, ...infer U]
-//     ? [true, ..._DivideBy<N, U>]
-//     : never;
-
-// export type DivideTupleLengthBy<
-//   N extends number,
-//   T extends readonly any[],
-// > = _DivideBy<N, T>['length'];
-
 type _TupleOf<
   T,
   N extends number,

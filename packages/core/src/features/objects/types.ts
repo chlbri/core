@@ -77,28 +77,6 @@ export type DeepNotReadonly<T extends object> = {
       : T[P];
 };
 
-// type TT = {
-//   readonly a: string;
-//   readonly b: {
-//     readonly c: number;
-//     readonly d: {
-//       readonly e: boolean;
-//       readonly f: {
-//         readonly g: string[];
-//       };
-//     };
-//   };
-//   readonly h: () => void;
-//   readonly i: {
-//     readonly j: {
-//       readonly k: string;
-//       readonly l: {
-//         readonly m: number;
-//       };
-//     };
-//   };
-// };
-
 export type ValuesOf<T, U = any> = Extract<T[keyof T], U>;
 export type ObjectValuesOf<T> = Exclude<
   Extract<ValuesOf<T>, object>,

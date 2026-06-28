@@ -52,7 +52,7 @@
     "test:only": "pnpm run -r test:only",
     "_ci": "pnpm install && pnpm run -r _ci",
     "ci": "CI=$(date +%s) && pnpm run _ci && echo \"\n✅ CI takes $(($(date +%s) - CI))s\n\"",
-    "ci:admin": "CI_ADMIN=$(date +%s) && pnpm run rinit && pnpm run _ci && echo \"\n✅ Admin CI takes $(($(date +%s) - CI_ADMIN))s\n\"",
+    "ci:admin": "CI_ADMIN=$(date +%s) && pnpm run rm && pnpm run up && pnpm run _ci && echo \"\n✅ Admin CI takes $(($(date +%s) - CI_ADMIN))s\n\"",
     "rm": "pnpm run rimraf -- node_modules pnpm-lock.yaml && pnpm clean lockfile",
     "up": "pnpm -r update --latest",
     "prepare": "husky"
@@ -91,7 +91,7 @@
     "tslib": "^2.8.1",
     "tsx": "^4.22.4",
     "typescript": "^6.0.3",
-    "valibot": "^1.4.1",
+    "valibot": "^1.4.2",
     "vite": "^8.1.0",
     "vitest": "^4.1.9",
     "zx": "^8.8.5"

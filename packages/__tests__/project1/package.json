@@ -4,10 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "pretest": "pnpm run rm:cli",
     "rimraf": "pnpm dlx rimraf -rf",
-    "rm:cli": "pnpm run rimraf -- src/.bemedev .bemedev.json",
-    "test": "vitest run"
+    "test": "vitest run",
+    "_ci": "pnpm run test"
   },
   "devDependencies": {
     "@bemedev/core": "workspace:^",

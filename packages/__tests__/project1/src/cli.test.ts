@@ -3,7 +3,6 @@ import { join } from 'node:path';
 import { exec } from 'shelljs';
 
 describe('CLI', () => {
-  afterAll(() => exec('pnpm core destroy'));
 
   const FILES = [
     'features/arrays/types',
@@ -148,6 +147,72 @@ describe('CLI', () => {
       test('03 => One file is removed', () => {
         const length = FILES.length + 2;
         expect(obj.files).toHaveLength(length);
+      });
+    });
+
+    test(`#05 => Lift`, () => exec(`pnpm core lift`), 60_000);
+    describe('#06 => FolderPath removed and JSONPATH changed', () => {
+      let obj: any;
+      beforeAll(() => {
+        const json = readFileSync(join(process.cwd(), '.bemedev.json'), {
+          encoding: 'utf-8',
+        });
+        obj = JSON.parse(json);
+      });
+      test('#01 => FolderPath removed', () => {
+        const folderPath = join(process.cwd(), 'src', obj.path);
+        const exists = existsSync(folderPath);
+        expect(exists).toBe(false);
+      });
+
+      test('#02 => json.files is empty', () => {
+        expect(obj.files).toHaveLength(0);
+      });
+    });
+
+    test(`#07 => softInit`, () => exec(`pnpm core softInit`), 60_000);
+
+    describe('#06 => FolderPath is recreated and JSONPATH changed', () => {
+      let obj: any;
+      beforeAll(() => {
+        const json = readFileSync(join(process.cwd(), '.bemedev.json'), {
+          encoding: 'utf-8',
+        });
+        obj = JSON.parse(json);
+      });
+
+      test('#01 => FolderPath recreated', () => {
+        const folderPath = join(process.cwd(), 'src', obj.path);
+        const exists = existsSync(folderPath);
+        expect(exists).toBe(true);
+      });
+
+      describe('#02 => paths', () => {
+        test.each(['path', 'files', 'version'])(
+          `#0%# => Has "%s" key`,
+          key => {
+            expect(obj).toHaveProperty(key);
+          },
+        );
+      });
+
+      test('#03 => json.files is rinit', () => {
+        expect(obj.files).toEqual(FILES);
+      });
+    });
+    test(`#07 => destroy`, () => exec(`pnpm core destroy`), 60_000);
+
+    describe('#08 => FolderPath and JSON_PATH are removed', () => {
+      test('#01 => FolderPath removed', () => {
+        const folderPath = join(process.cwd(), 'src', '.bemedev');
+        const exists = existsSync(folderPath);
+        expect(exists).toBe(false);
+      });
+
+      test('#02 => json.files is removed', () => {
+        const path = join(process.cwd(), '.bemedev.json');
+        const exists = existsSync(path);
+        expect(exists).toBe(false);
       });
     });
   });
