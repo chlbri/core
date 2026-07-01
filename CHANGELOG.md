@@ -6,6 +6,23 @@
 <details>
 <summary>
 
+## **[1.1.0] - 01/07/2026** => _15:56_
+
+</summary>
+
+- Update: Dependency `@bemedev/codebase` to `^2.3.0`
+- Update: DevDependency `oxfmt` to `^0.57.0`
+- Update: DevDependency `oxlint` to `^1.72.0`
+- Update: DevDependency `prettier` to `3.9.4`
+- <u>Test coverage **_100%_**</u>
+
+</details>
+
+<br/>
+
+<details>
+<summary>
+
 ## **[1.0.0] - 28/06/2026** => _22:25_
 
 </summary>

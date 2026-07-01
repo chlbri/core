@@ -51,6 +51,7 @@ describe('CLI', () => {
 
           test('#03 => Files are added', () => {
             const files = obj.files;
+            console.log('files', FILES)
             expect(files).toEqual(FILES);
           });
         });
