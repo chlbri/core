@@ -1,15 +1,16 @@
 {
   "name": "@bemedev/core",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "description": "The core library of @bemedev, providing essential functionalities and utilities for the Bemedev ecosystem.",
   "author": {
     "email": "bri_lvi@icloud.com",
     "name": "chlbri",
     "url": "https://bemedev.vercel.app"
   },
+  "homepage": "https://github.com/chlbri/core/blob/main/packages/core/README.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/chlbri/core.git"
+    "url": "https://github.com/chlbri/core"
   },
   "bin": {
     "core": "lib/scripts/cli/index.js"
@@ -114,7 +115,7 @@
     "vitest": "^4.1.9"
   },
   "dependencies": {
-    "@bemedev/codebase": "^2.6.0",
+    "@bemedev/codebase": "^2.7.0",
     "@bemedev/sleep": "^0.2.2",
     "cmd-ts": "0.15.0",
     "edit-json-file": "^1.8.1",

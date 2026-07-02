@@ -150,8 +150,8 @@ importers:
   packages/core:
     dependencies:
       '@bemedev/codebase':
-        specifier: ^2.6.0
-        version: 2.6.0(typescript@6.0.3)
+        specifier: ^2.7.0
+        version: 2.7.0(typescript@6.0.3)
       '@bemedev/sleep':
         specifier: ^0.2.2
         version: 0.2.2
@@ -264,8 +264,8 @@ packages:
     resolution: {integrity: sha512-6zABk/ECA/QYSCQ1NGiVwwbQerUCZ+TQbp64Q3AgmfNvurHH0j8TtXa1qbShXA6qqkpAj4V5W8pP6mLe1mcMqA==}
     engines: {node: '>=18'}
 
-  '@bemedev/codebase@2.6.0':
-    resolution: {integrity: sha512-29H5iFZzv6LdTx2eXUXlGReeRFyiul12vm5swqs0XbvohRS9A0M+MMbFJ7MjDgx7z/Xbb3LvaX84z+6PXcj6hQ==}
+  '@bemedev/codebase@2.7.0':
+    resolution: {integrity: sha512-+3Is56crDfUw8jI1U7FFJJuhxQAQm4xdvmb6qEiZHcjn7OO/xR6yujFxxxQZ0oWugY7ThcLISHhWeKXo/pnEIw==}
     engines: {node: '>=24'}
     hasBin: true
 
@@ -2158,7 +2158,7 @@ snapshots:
 
   '@bcoe/v8-coverage@1.0.2': {}
 
-  '@bemedev/codebase@2.6.0(typescript@6.0.3)':
+  '@bemedev/codebase@2.7.0(typescript@6.0.3)':
     dependencies:
       cmd-ts: 0.15.0
       edit-json-file: 1.8.1
