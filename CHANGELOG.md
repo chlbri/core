@@ -6,6 +6,22 @@
 <details>
 <summary>
 
+## **[1.2.0] - 02/07/2026** => _01:35_
+
+</summary>
+
+- Update: Dependency `@bemedev/codebase` to `^2.6.0`
+- Update: DevDependency `rolldown` to `1.1.4`
+- Update: DevDependency `@types/node` to `^26.1.0`
+- <u>Test coverage **_100%_**</u>
+
+</details>
+
+<br/>
+
+<details>
+<summary>
+
 ## **[1.1.0] - 01/07/2026** => _15:56_
 
 </summary>

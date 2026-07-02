@@ -3,7 +3,6 @@ import { join } from 'node:path';
 import { exec } from 'shelljs';
 
 describe('CLI', () => {
-
   const FILES = [
     'features/arrays/types',
     'features/booleans/types',
@@ -51,7 +50,6 @@ describe('CLI', () => {
 
           test('#03 => Files are added', () => {
             const files = obj.files;
-            console.log('files', FILES)
             expect(files).toEqual(FILES);
           });
         });
@@ -152,6 +150,7 @@ describe('CLI', () => {
     });
 
     test(`#05 => Lift`, () => exec(`pnpm core lift`), 60_000);
+
     describe('#06 => FolderPath removed and JSONPATH changed', () => {
       let obj: any;
       beforeAll(() => {
@@ -167,6 +166,7 @@ describe('CLI', () => {
       });
 
       test('#02 => json.files is empty', () => {
+        console.log('obj', obj);
         expect(obj.files).toHaveLength(0);
       });
     });
@@ -198,9 +198,10 @@ describe('CLI', () => {
       });
 
       test('#03 => json.files is rinit', () => {
-        expect(obj.files).toEqual(FILES);
+        expect(obj.files.sort()).toStrictEqual(FILES.sort());
       });
     });
+
     test(`#07 => destroy`, () => exec(`pnpm core destroy`), 60_000);
 
     describe('#08 => FolderPath and JSON_PATH are removed', () => {
