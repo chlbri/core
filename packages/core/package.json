@@ -1,6 +1,6 @@
 {
   "name": "@bemedev/core",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "The core library of @bemedev, providing essential functionalities and utilities for the Bemedev ecosystem.",
   "author": {
     "email": "bri_lvi@icloud.com",
@@ -42,12 +42,7 @@
     "typings"
   ],
   "files": [
-    "lib",
-    "public",
-    "README.md",
-    "LICENSE",
-    "CHANGELOG.md",
-    "CONTRIBUTING.md"
+    "lib"
   ],
   "engines": {
     "node": ">=24"
