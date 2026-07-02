@@ -1,6 +1,6 @@
 {
   "name": "@bemedev/core",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "The core library of @bemedev, providing essential functionalities and utilities for the Bemedev ecosystem.",
   "author": {
     "email": "bri_lvi@icloud.com",
@@ -115,7 +115,7 @@
     "vitest": "^4.1.9"
   },
   "dependencies": {
-    "@bemedev/codebase": "^2.7.0",
+    "@bemedev/codebase": "^2.8.0",
     "@bemedev/sleep": "^0.2.2",
     "cmd-ts": "0.15.0",
     "edit-json-file": "^1.8.1",

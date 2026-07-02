@@ -6,6 +6,20 @@
 <details>
 <summary>
 
+## **[1.5.0] - 02/07/2026** => _08:40_
+
+</summary>
+
+- Update: Dependency `@bemedev/codebase` to `^2.8.0`
+- <u>Test coverage **_100%_**</u>
+
+</details>
+
+<br/>
+
+<details>
+<summary>
+
 ## **[1.4.0] - 02/07/2026** => _02:10_
 
 </summary>
