@@ -139,10 +139,10 @@ export type PickNotBy<T, U> = {
 export type PickKeysNotBy<T, U> = keyof PickNotBy<T, U>;
 
 export type OnPropChangedMethods<T, I extends keyof T = keyof T> = T & {
-  [K in Extract<PickKeysBy<T, (...args: any) => any>, I> &
-    string as AddString<Capitalize<K>, 'on', 'Changed'>]: (
-    cb: (newValue: T[K]) => void,
-  ) => void;
+  [
+    K in Extract<PickKeysBy<T, (...args: any) => any>, I> &
+      string as AddString<Capitalize<K>, 'on', 'Changed'>
+  ]: (cb: (newValue: T[K]) => void) => void;
 };
 
 export type PartialUndefiny<T> = PickNotBy<T, undefined> &
@@ -263,11 +263,9 @@ export type SubType<Base extends object, Condition> = Pick<
 >;
 
 export type DeepSubType<Base extends object, Condition> = {
-  [K in keyof Base as K extends AllowedNames<Base, Condition>
-    ? K
-    : never]: Base[K] extends object
-    ? DeepSubType<Base[K], Condition>
-    : Base[K];
+  [
+    K in keyof Base as K extends AllowedNames<Base, Condition> ? K : never
+  ]: Base[K] extends object ? DeepSubType<Base[K], Condition> : Base[K];
 };
 
 export type NotSubType<Base extends object, Condition> = Pick<
@@ -276,11 +274,11 @@ export type NotSubType<Base extends object, Condition> = Pick<
 >;
 
 export type DeepNotSubType<Base extends object, Condition> = {
-  [K in keyof Base as K extends NotAllowedNames<Base, Condition>
-    ? K
-    : never]: Base[K] extends object
-    ? DeepNotSubType<Base[K], Condition>
-    : Base[K];
+  [
+    K in keyof Base as K extends NotAllowedNames<Base, Condition>
+      ? K
+      : never
+  ]: Base[K] extends object ? DeepNotSubType<Base[K], Condition> : Base[K];
 };
 
 export type SubTypeLow<Base extends object, Condition> = Pick<

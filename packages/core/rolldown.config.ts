@@ -6,8 +6,6 @@ export default defineConfig.bemedev({
   declarationMap: true,
   sourcemap: true,
   plugins: [
-    'alias',
-    'tsPaths',
     'circulars',
     'externals',
     {
