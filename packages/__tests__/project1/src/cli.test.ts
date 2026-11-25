@@ -1,6 +1,17 @@
 import { existsSync, readFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { exec } from 'shelljs';
+
+/**
+ * The CLI is run with `pnpm core <command>` inside this package.
+ *
+ * `process.cwd()` cannot be used: when this project runs as a workspace
+ * project of the repository root, the worker cwd is the repository root.
+ */
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
+
+const run = (command: string) => exec(`pnpm core ${command}`, { cwd: ROOT });
 
 describe('CLI', () => {
   const FILES = [
@@ -20,19 +31,19 @@ describe('CLI', () => {
   ];
 
   describe('#01 => INIT', () => {
-    test('#01 => Init cmd', () => exec('pnpm core init'));
+    test('#01 => Init cmd', () => run('init'));
 
     describe('#02 => Folders initialization', () => {
       describe('#01 => json config', () => {
         test('#01 => File exists', () => {
-          const exists = existsSync(join(process.cwd(), '.bemedev.json'));
+          const exists = existsSync(join(ROOT, '.bemedev.json'));
           expect(exists).toBe(true);
         });
 
         describe('#02 => File is valid', () => {
           let obj: any;
           beforeAll(() => {
-            const json = readFileSync(join(process.cwd(), '.bemedev.json'), {
+            const json = readFileSync(join(ROOT, '.bemedev.json'), {
               encoding: 'utf-8',
             });
             obj = JSON.parse(json);
@@ -54,12 +65,12 @@ describe('CLI', () => {
   const fileAdded = 'features/arrays/castings/freeze';
   const fileRemoved = 'features/arrays/castings/tuple';
   describe('#02 => ADD', () => {
-    test('#01 => Add cmd', () => exec(`pnpm core add "${fileAdded}"`));
+    test('#01 => Add cmd', () => run(`add "${fileAdded}"`));
 
     describe('#02 => File is updated', () => {
       let obj: any;
       beforeAll(() => {
-        const json = readFileSync(join(process.cwd(), '.bemedev.json'), {
+        const json = readFileSync(join(ROOT, '.bemedev.json'), {
           encoding: 'utf-8',
         });
         obj = JSON.parse(json);
@@ -89,13 +100,12 @@ describe('CLI', () => {
   });
 
   describe('#03 => REMOVE', () => {
-    test(`#01 => Remove cmd "${fileRemoved}"`, () =>
-      exec(`pnpm core remove "${fileRemoved}"`));
+    test(`#01 => Remove cmd "${fileRemoved}"`, () => run(`remove "${fileRemoved}"`));
 
     describe('#02 => File is updated', () => {
       let obj: any;
       beforeAll(() => {
-        const json = readFileSync(join(process.cwd(), '.bemedev.json'), {
+        const json = readFileSync(join(ROOT, '.bemedev.json'), {
           encoding: 'utf-8',
         });
         obj = JSON.parse(json);
@@ -113,13 +123,12 @@ describe('CLI', () => {
       });
     });
 
-    test(`#03 => Remove cmd "${fileAdded}"`, () =>
-      exec(`pnpm core remove "${fileAdded}"`));
+    test(`#03 => Remove cmd "${fileAdded}"`, () => run(`remove "${fileAdded}"`));
 
     describe('#04 => File is updated', () => {
       let obj: any;
       beforeAll(() => {
-        const json = readFileSync(join(process.cwd(), '.bemedev.json'), {
+        const json = readFileSync(join(ROOT, '.bemedev.json'), {
           encoding: 'utf-8',
         });
         obj = JSON.parse(json);
@@ -141,18 +150,18 @@ describe('CLI', () => {
       });
     });
 
-    test(`#05 => Lift`, () => exec(`pnpm core lift`), 60_000);
+    test(`#05 => Lift`, () => run('lift'), 60_000);
 
     describe('#06 => FolderPath removed and JSONPATH changed', () => {
       let obj: any;
       beforeAll(() => {
-        const json = readFileSync(join(process.cwd(), '.bemedev.json'), {
+        const json = readFileSync(join(ROOT, '.bemedev.json'), {
           encoding: 'utf-8',
         });
         obj = JSON.parse(json);
       });
       test('#01 => FolderPath removed', () => {
-        const folderPath = join(process.cwd(), 'src', obj.path);
+        const folderPath = join(ROOT, 'src', obj.path);
         const exists = existsSync(folderPath);
         expect(exists).toBe(false);
       });
@@ -163,19 +172,19 @@ describe('CLI', () => {
       });
     });
 
-    test(`#07 => softInit`, () => exec(`pnpm core softInit`), 60_000);
+    test(`#07 => softInit`, () => run('softInit'), 60_000);
 
     describe('#06 => FolderPath is recreated and JSONPATH changed', () => {
       let obj: any;
       beforeAll(() => {
-        const json = readFileSync(join(process.cwd(), '.bemedev.json'), {
+        const json = readFileSync(join(ROOT, '.bemedev.json'), {
           encoding: 'utf-8',
         });
         obj = JSON.parse(json);
       });
 
       test('#01 => FolderPath recreated', () => {
-        const folderPath = join(process.cwd(), 'src', obj.path);
+        const folderPath = join(ROOT, 'src', obj.path);
         const exists = existsSync(folderPath);
         expect(exists).toBe(true);
       });
@@ -191,17 +200,17 @@ describe('CLI', () => {
       });
     });
 
-    test(`#07 => destroy`, () => exec(`pnpm core destroy`), 60_000);
+    test(`#07 => destroy`, () => run('destroy'), 60_000);
 
     describe('#08 => FolderPath and JSON_PATH are removed', () => {
       test('#01 => FolderPath removed', () => {
-        const folderPath = join(process.cwd(), 'src', '.bemedev');
+        const folderPath = join(ROOT, 'src', '.bemedev');
         const exists = existsSync(folderPath);
         expect(exists).toBe(false);
       });
 
       test('#02 => json.files is removed', () => {
-        const path = join(process.cwd(), '.bemedev.json');
+        const path = join(ROOT, '.bemedev.json');
         const exists = existsSync(path);
         expect(exists).toBe(false);
       });

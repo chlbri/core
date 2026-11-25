@@ -14,7 +14,6 @@ export default defineConfig(({ mode }) => ({
   ...(mode !== 'test' && { pack: buildPack() }),
 
   resolve: { tsconfigPaths: true },
-  // Inline dev-utils: it nests its own vitest copy, breaking test collection
 
   test: {
     bail: 35,
@@ -26,6 +25,11 @@ export default defineConfig(({ mode }) => ({
     name: '@bemedev/core',
     env: { NODE_ENV: 'test' },
     typecheck: { enabled: true, ignoreSourceErrors: true },
+    /*
+     * Inline dev-utils: it imports `vitest` from its own location, which
+     * resolves to the workspace-root copy when the suite is run from the root,
+     * breaking test collection.
+     */
     server: { deps: { inline: ['@bemedev/dev-utils'] } },
   },
 

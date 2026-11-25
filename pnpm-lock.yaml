@@ -179,9 +179,6 @@ catalogs:
     '@bemedev/dev-utils':
       specifier: ^1.6.2
       version: 1.6.2
-    '@bemedev/vitest-extended':
-      specifier: ^1.5.3
-      version: 1.5.3
     '@size-limit/file':
       specifier: ^14.3.0
       version: 14.3.0
@@ -311,9 +308,6 @@ importers:
       '@bemedev/dev-utils':
         specifier: 'catalog:'
         version: 1.6.2(@types/node@26.6.7)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(@voidzero-dev/vite-plus-core@8.3.8001(@types/node@26.6.7)(typescript@6.0.3))(rolldown@1.3.3)(rollup@4.68.8)(typescript@6.0.3)(vitest@5.1.1)
-      '@bemedev/vitest-extended':
-        specifier: 'catalog:'
-        version: 1.5.3(vitest@5.1.1)
       '@types/edit-json-file':
         specifier: 'catalog:'
         version: 1.7.4
@@ -386,15 +380,6 @@ packages:
     peerDependencies:
       rolldown: ^1.3.2
       vitest: 5.1.0
-
-  '@bemedev/sleep@0.1.2':
-    resolution: {integrity: sha512-GLbDKkDqPdbO1WldnXZs6Wi1Fhk6lfz2DhCEPWSiezhRym9IMvksyaqdfQyyWvYg3OS1umKjaHOAiEF6++HiTA==}
-    engines: {node: '>=12'}
-
-  '@bemedev/vitest-extended@1.5.3':
-    resolution: {integrity: sha512-RE9gZ8gieYIvH77Ri2qZ13BDZkpcQzO1Co4FBg3bFplVVW71qRsXbDELGo8irQKC/n/cCJnzTph4G4YwLzMtdg==}
-    peerDependencies:
-      vitest: ^3.2.4
 
   '@blakeembrey/deque@1.0.5':
     resolution: {integrity: sha512-6xnwtvp9DY1EINIKdTfvfeAtCYw4OqBZJhtiqkT3ivjnEfa25VQ3TsKvaFfKm8MyGIEfE95qLe+bNEt3nB0Ylg==}
@@ -2266,13 +2251,6 @@ snapshots:
       - vite
       - vue-tsc
       - yaml
-
-  '@bemedev/sleep@0.1.2': {}
-
-  '@bemedev/vitest-extended@1.5.3(vitest@5.1.1)':
-    dependencies:
-      '@bemedev/sleep': 0.1.2
-      vitest: 5.1.1(@types/node@26.6.7)(@vitest/browser-preview@5.1.1)(@vitest/coverage-v8@5.1.1)(@vitest/ui@5.1.1)(@voidzero-dev/vite-plus-core@8.3.8001(@types/node@26.6.7)(typescript@6.0.3))
 
   '@blakeembrey/deque@1.0.5': {}
 

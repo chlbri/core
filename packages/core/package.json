@@ -81,7 +81,6 @@
   },
   "devDependencies": {
     "@bemedev/dev-utils": "catalog:",
-    "@bemedev/vitest-extended": "catalog:",
     "@types/edit-json-file": "catalog:",
     "@types/node": "catalog:",
     "@vitest/coverage-v8": "catalog:",
