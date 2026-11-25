@@ -2,11 +2,17 @@ import type { RuA, TupleOf } from '#types';
 import multiply from '../multiply';
 
 /**
- * Génère toutes les permutations possibles d'un tableau d'éléments.
- * @param arr Le tableau d'éléments à permuter.
- * @returns Un tableau contenant toutes les permutations possibles.
+ * Generates every permutation of the given elements.
  *
- * **N.B: Sort the array before using this function to prevent unexpected results.**
+ * Uses a backtracking algorithm that consumes each position once, so every
+ * returned tuple has the input length and the same elements. Duplicate values
+ * are treated as distinct positions, which is why sorting the input first is
+ * recommended for predictable output.
+ *
+ * @template T - Tuple type of the permuted values.
+ * @param arr - Elements to permute.
+ * @returns Every ordering of `arr`, typed as type {@linkcode TupleOf}
+ * `<T[number], T['length']>[]`.
  */
 const fn = <const T extends RuA>(...arr: T): TupleOf<T[number], T['length']>[] => {
   const n = arr.length;

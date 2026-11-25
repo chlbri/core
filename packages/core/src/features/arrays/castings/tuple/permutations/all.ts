@@ -2,13 +2,21 @@ import { expandFn } from '#utils/expandFn';
 import index from './index';
 import strict from './strict';
 
+/**
+ * Aggregated permutation helpers.
+ *
+ * Extends the permutation generator from `./index` through
+ * {@linkcode expandFn} with a `strict` variant that narrows results to the
+ * distinct permutations. Sort the input before use for predictable output.
+ *
+ * @see -- type {@linkcode FnBasic}
+ */
 const fn = expandFn(index, {
   /**
-   * Génère toutes les permutations possibles d'un tableau d'éléments.
-   * @param arr Le tableau d'éléments à permuter.
-   * @returns Un tableau contenant toutes les permutations possibles.
+   * Strictly typed permutation variant exposed as `strict`.
    *
-   * **N.B: Sort the array before using this function to prevent unexpected results.**
+   * Shares the runtime behaviour of the base generator and narrows the result
+   * type.
    */
   strict,
 });

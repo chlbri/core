@@ -8,6 +8,12 @@ import nullish from './nullish';
 import symbol from './symbol';
 import undefined_ from './undefined';
 
+/**
+ * Collection of runtime type guards.
+ *
+ * Groups the `defined`, `notDefined`, `notNull`, `notNullish`, `nullish`,
+ * `notUndefined`, `null`, `undefined` and `symbol` predicates.
+ */
 const fn = {
   defined,
   notDefined,

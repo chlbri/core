@@ -1,5 +1,18 @@
 import { Node, Project, SyntaxKind } from 'ts-morph';
 
+/**
+ * Converts an object-literal source string into a plain JavaScript value.
+ *
+ * The string is parsed in a throwaway ts-morph project as `const obj = ...`.
+ * Object literals become plain objects, arrays become arrays of converted
+ * elements, string and numeric literals are unwrapped, `true`, `false` and
+ * `null` map to their runtime values, and any other node (identifier or
+ * expression) is kept as its source text.
+ *
+ * @param objString - Source text of an object literal.
+ * @returns The converted value, or `null` when parsing fails or the
+ *   initializer is not an object literal.
+ */
 export const parseObject = (objString: string): any => {
   try {
     const project = new Project();
@@ -26,6 +39,13 @@ export const parseObject = (objString: string): any => {
     }
 
     // Fonction récursive pour parser l'objet
+    /**
+     * Recursively converts a ts-morph node into a plain JavaScript value.
+     *
+     * @param node - Node visited during the conversion.
+     * @returns Converted value, falling back to the node's source text for
+     *   unsupported nodes.
+     */
     const parseNode = (node: Node): any => {
       if (Node.isObjectLiteralExpression(node)) {
         const obj: any = {};

@@ -19,6 +19,16 @@ import symbol from './symbol/all';
 import _undefined from './undefined';
 import undefiny from './undefiny';
 
+/**
+ * Collection of cast helpers exposed under the `castings` namespace.
+ *
+ * Extends the base identity cast with every specialised casting helper:
+ * `partial`, `const`, `identity`, `clone`, `unknown`, `neverify`, `readonly`,
+ * `required`, `date`, `primitive`, `symbol`, `any`, `is`, `null`, `undefined`,
+ * `undefiny`, `never` and `defaulted`.
+ *
+ * @see {@linkcode expandFn}
+ */
 export const castings = expandFn(_index, {
   partial,
   const: _const,

@@ -3,9 +3,13 @@ export {};
 declare global {
   interface Number {
     /**
-     * **N.B : Call this the file "src/features/numbers/overload/percent.ts"**
+     * Percent value of the number, computed as the number divided by one
+     * hundred.
      *
-     * @returns the percent value of the number (e.g., 10.percent = 0.1)
+     * Defined in `src/features/numbers/overload/percent.ts`.
+     *
+     * @returns The percentage as a fraction, for example `10.percent` yields
+     * `0.1`.
      */
     get percent(): number;
   }

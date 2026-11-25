@@ -1,6 +1,6 @@
 {
   "name": "@bemedev/core",
-  "version": "1.6.0",
+  "version": "2.0.0",
   "description": "The core library of @bemedev, providing essential functionalities and utilities for the Bemedev ecosystem.",
   "keywords": [
     "@bemedev",

@@ -21,6 +21,22 @@ import undefiny from './undefiny';
 import union from './union';
 import unknown from './unknown';
 
+/**
+ * Aggregated type-level helpers for primitive and miscellaneous types.
+ *
+ * Extends the base `unknown` typing function from `./index` with:
+ * - `partial`, `required` and `readonly`: object modifier helpers;
+ * - `const` and `identity`: capture a value's type, literally or inferred;
+ * - `unknown`, `any`, `never`, `null`, `undefined`, `symbol`, `date`, `keys`
+ *   and `primitive`: helpers for the matching built-in types;
+ * - `neverify`: tests whether a type is `never`;
+ * - `undefiny`: widens a type with `undefined`;
+ * - `extract` and `exclude`: filter a type by candidate types;
+ * - `union`: turns the elements of a tuple into a union;
+ * - `defaulted`: selects a fallback type when the base type is nullable.
+ *
+ * @see -- type {@linkcode FnBasic}
+ */
 export const typings = expandFn(_index, {
   partial,
   const: _const,

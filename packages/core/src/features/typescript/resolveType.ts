@@ -1,5 +1,19 @@
 import { SymbolFlags, TypeFormatFlags, type SourceFile, type Type } from 'ts-morph';
 
+/**
+ * Resolves a ts-morph {@linkcode Type} to a readable textual representation.
+ *
+ * Strategies are attempted in order and the first candidate that differs from
+ * `type.getText()`, contains no `import(...)` reference and is structurally
+ * descriptive is returned: full compiler formatting, alias or imported-type
+ * resolution, the `getApparentType` view, then a forced structural expansion.
+ * When no candidate qualifies, or when the compiler throws, the type's own text
+ * is returned.
+ *
+ * @param sourceFile - Source file providing the project and type checker.
+ * @param type - Type to turn into text.
+ * @returns The resolved type text, or `type.getText()` as a fallback.
+ */
 export const resolveType = (sourceFile: SourceFile, type: Type): string => {
   const typeText = type.getText();
 

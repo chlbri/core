@@ -2,6 +2,16 @@ import type { Parts, Fn, PartDiff } from '../types';
 import { AnyArray } from '#types';
 import { expandFn } from '#utils/expandFn';
 
+/**
+ * Signature of the typed, base form of {@linkcode partialCall}.
+ *
+ * Splits the parameters of `F` into a head tuple `T` and the remaining tail
+ * tuple `U`, returning a function that accepts only the tail.
+ *
+ * @template F - Function being partially applied.
+ * @template T - Head arguments supplied eagerly.
+ * @template U - Remaining arguments accepted by the returned function.
+ */
 type PartialCall_F = <
   const F extends Fn,
   const T extends Parts<Parameters<F>> = Parts<Parameters<F>>,
@@ -11,6 +21,16 @@ type PartialCall_F = <
   ...headArgs: T
 ) => (...tailArgs: U) => ReturnType<F>;
 
+/**
+ * Signature of the array-based {@linkcode partialCall} variants.
+ *
+ * Accepts a function whose parameters are a head tuple `T` followed by a tail
+ * tuple `U`, and returns a function accepting only `U`.
+ *
+ * @template T - Head arguments supplied eagerly.
+ * @template U - Remaining arguments accepted by the returned function.
+ * @template R - Return type of the partially applied function.
+ */
 type PartialCallArray_F = <
   T extends AnyArray = AnyArray,
   U extends AnyArray = AnyArray,
@@ -20,6 +40,16 @@ type PartialCallArray_F = <
   ...headArgs: T
 ) => (...tailArgs: U) => R;
 
+/**
+ * Signature of the `build` variant of {@linkcode partialCall}.
+ *
+ * Returns a function that accepts the tail arguments and may be re-typed
+ * through a generic function parameter at call time.
+ *
+ * @template F - Function being partially applied.
+ * @template T - Head arguments supplied eagerly.
+ * @template U - Remaining arguments accepted by the returned function.
+ */
 type PartialCallBuild_F = <
   const F extends Fn,
   const T extends Parts<Parameters<F>> = Parts<Parameters<F>>,
@@ -31,6 +61,13 @@ type PartialCallBuild_F = <
   ...tailArgs: Parameters<T>
 ) => ReturnType<T>;
 
+/**
+ * Partially applies a function without type-level tracking.
+ *
+ * @param f - Function to apply.
+ * @param headArgs - Arguments supplied eagerly.
+ * @returns Function accepting the remaining arguments.
+ */
 const __partialCall = (f: Fn, ...headArgs: any[]) => {
   return (...tailArgs: any[]) => f(...headArgs, ...tailArgs);
 };
@@ -38,89 +75,82 @@ const __partialCall = (f: Fn, ...headArgs: any[]) => {
 const _partialCall: PartialCall_F = __partialCall;
 
 /**
- * @param f The function to test
- * @param headArgs First arguments for reducing
- * @returns A new function without the ***headArgs*** provided
+ * Partially applies a function by fixing its leading arguments.
  *
- * This function allows you to partially apply a function by providing some of its initial arguments (the "head" arguments). The returned function will then expect the remaining arguments (the "tail" arguments) when called. This is useful for creating new functions with some preset parameters, making it easier to reuse code and create more specific functions from general ones.
+ * The returned function expects the remaining ("tail") arguments when called.
+ * The base form is fully typed, and `expandFn` attaches the `low`,
+ * `paramArray`, `array`, `typed` and `build` variants.
+ *
+ * @see -- type {@linkcode PartialCall_F}
  */
 export const partialCall = expandFn(_partialCall, {
   /**
-   * Use with caution, as it can lead to type inference issues. It's recommended to use the `typed` version instead for better type safety.
+   * Untyped base implementation.
    *
-   * @param f The function to test
-   * @param headArgs First arguments for reducing
-   * @returns A new function without the ***headArgs*** provided
+   * Use with caution, as it can lead to type inference issues. Prefer
+   * {@linkcode partialCall.typed} for better type safety.
+   *
+   * @param f - Function to apply.
+   * @param headArgs - Arguments supplied eagerly.
+   * @returns Function accepting the remaining arguments.
    */
   low: __partialCall,
 
   /**
+   * Partially applies a function whose last parameter is a rest array.
    *
-   * @param f The function to test
-   * @param headArgs First arguments for reducing
-   * @returns A new function without the ***headArgs*** provided
+   * Unlike the typed variant, it does not enforce the exact head and tail
+   * shapes, which makes it suitable for functions with a variable number of
+   * parameters.
    *
-   * Use this for function that have a large number of parameters use param array as the last parameter, this will allow you to partially apply the function without having to specify all the parameters in the type signature. However, it can lead to type inference issues and is less type-safe than the `typed` version. Use it when you need to partially apply a function with a variable number of parameters.
-   *
-   * Example usage:
+   * @param f - Function to apply.
+   * @param headArgs - Arguments supplied eagerly.
+   * @returns Function accepting the remaining arguments.
+   * @example
    * ```ts
-   * const concatenate = (separator: string, ...strings: string[]) => strings.join(separator);
+   * const concatenate = (separator: string, ...strings: string[]) =>
+   *   strings.join(separator);
    * const commaSeparated = partialCall.paramArray(concatenate, ',');
-   * console.log(commaSeparated('Hello', 'World'));
-   * // Output: "Hello,World"
-   *
+   * commaSeparated('Hello', 'World'); // "Hello,World"
    * ```
-   *
    */
   paramArray: __partialCall as PartialCallArray_F,
 
   /**
-   *
-   * @param f The function to test
-   * @param headArgs First arguments for reducing
-   * @returns A new function without the ***headArgs*** provided
-   *
-   * @see {linkcode partialCall.paramArray}
-   * It's alias for `paramArray` version.
+   * Alias of {@linkcode partialCall.paramArray}.
    */
   array: __partialCall as PartialCallArray_F,
 
   /**
+   * Flexible, less type-safe partial application.
    *
-   * @param f The function to test
-   * @param headArgs First arguments for reducing
-   * @returns A new function without the ***headArgs*** provided
+   * Does not enforce the types of the head and tail arguments. Prefer the base
+   * call when strict typing is required.
    *
-   * This version is more flexible but less type-safe, as it doesn't enforce the types of the head and tail arguments. Use it when you need to partially apply a function without strict type constraints.
-   *
-   * Example usage:
+   * @param f - Function to apply.
+   * @param headArgs - Arguments supplied eagerly.
+   * @returns Function accepting the remaining arguments.
+   * @example
    * ```ts
    * const add = (a: number, b: number) => a + b;
    * const add5 = partialCall.typed(add, 5);
-   * console.log(add5(10)); // Output: 15
-   *
+   * add5(10); // 15
    * ```
    */
   typed: _partialCall,
 
   /**
+   * Builds a partial application that can be re-typed at call time.
    *
-   * @param f The function to test
-   * @param headArgs First arguments for reducing
-   * @returns A new function without the ***headArgs*** provided
-   *
-   * Use with caution, as it can lead to type inference issues. It's recommended to use the `typed` version instead for better type safety.
-   *
-   * This version is more flexible but less type-safe, as it doesn't enforce the types of the head and tail arguments. Use it when you need to partially apply a function without strict type constraints.
-   *
-   * Example usage:
+   * @param f - Function to apply.
+   * @param headArgs - Arguments supplied eagerly.
+   * @returns Function accepting the tail arguments.
+   * @example
    * ```ts
    * const add = (a: number, b: number) => a + b;
    * const add5 = partialCall.build(add, 5);
-   * console.log(add5(10)); // Output: 15
-   *
+   * add5(10); // 15
    * ```
-   *
    */
   build: ((f, ...headArgs) => {
     const head: any = headArgs ?? [];

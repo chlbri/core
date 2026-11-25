@@ -4,6 +4,22 @@ import { extractExportsRecursively, resolveModuleSpecifier } from './helpers';
 import { parseObject } from './parseObject';
 import { resolveType } from './resolveType';
 
+/**
+ * Extracts a structural summary of a TypeScript source file.
+ *
+ * A ts-morph `Project` is created from the repository `tsconfig.json` and the
+ * requested file is added to it. The returned object holds four collections:
+ * `exports` (computed recursively by {@linkcode extractExportsRecursively}),
+ * `imports` (module specifier resolved by {@linkcode resolveModuleSpecifier}
+ * plus the named imports), `types` (type aliases with their type parameters and
+ * raw type text) and `variables` (variable name, the first called function of
+ * its call-chain initializer, and the arguments of that call, resolved through
+ * {@linkcode resolveType} or {@linkcode parseObject} when applicable).
+ *
+ * @param filePath - Path of the TypeScript file to analyse.
+ * @returns An object holding the `exports`, `imports`, `types` and `variables`
+ *   extracted from the file.
+ */
 export const extractFromFile = (filePath: string) => {
   const project = new Project({ tsConfigFilePath: 'tsconfig.json' });
   const sourceFile = project.addSourceFileAtPath(filePath);

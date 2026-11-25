@@ -1,19 +1,27 @@
 import type { PrimitiveObject } from '#types';
 
+/**
+ * Formatting function applied to the keys of a cloned object.
+ *
+ * @template T - Object whose keys are formatted.
+ * @param key - Key to format.
+ * @returns The formatted key.
+ */
 export type FormatKey<T = any> = (key: Extract<keyof T, string>) => string;
 
 /**
- * Creates a deep clone of an object or array, preserving its structure and values.
+ * Creates a deep clone of an object or array.
  *
+ * Arrays, plain objects and nested values are copied recursively. Circular
+ * references are resolved through `refs`, and frozen or sealed inputs produce
+ * frozen or sealed clones. Primitives are returned unchanged.
  *
- * @param value of type {@linkcode PrimitiveObject} The value to deep clone, which can be an object, array, or primitive.
- * @param formatKey A function to format the keys of the cloned object. If not provided, keys will remain unchanged.
- * @param refs A map to keep track of already cloned objects to handle circular references.
- * This is used to prevent infinite loops when cloning objects that reference each other.
- * @returns A deep clone of the input value, preserving the structure and values of the original object or array.
- *
- * Inspired by the "deep-clone" npm {@link https://www.npmjs.com/package/deep-clone|library},
- * @see the {@link https://github.com/thebearingedge/deep-clone/blob/main/src/deep-clone.ts|implementation} for more details.
+ * @template I - Type of the value being cloned.
+ * @param value - Object, array or primitive to clone.
+ * @param refs - Map of already cloned values, used to preserve circular
+ * references.
+ * @returns A deep clone of `value`.
+ * @see {@link https://www.npmjs.com/package/deep-clone|deep-clone}
  */
 export function deepClone<I extends PrimitiveObject>(
   value: I,

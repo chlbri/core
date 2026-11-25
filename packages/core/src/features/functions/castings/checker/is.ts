@@ -1,10 +1,14 @@
 import type { Checker2 } from '#types';
 
 /**
- * Very low
- * Checks if value is a function with one argument
- * @param value value to check
- * @returns true if value is a function with one argument
+ * Checks whether a value is a single-argument checker function.
+ *
+ * Rejects values that are not functions, functions whose declared arity is not
+ * one, and class constructors.
+ *
+ * @template T - Type narrowed by the checker.
+ * @param value - Value to check.
+ * @returns `true` when `value` is a checker for `T`.
  */
 const is = <T = unknown>(value: unknown): value is Checker2<T> => {
   return (

@@ -6,6 +6,29 @@
 <details>
 <summary>
 
+## **[2.0.0] - 25/11/2026** => _12:32_
+
+</summary>
+
+- Docs: Add comprehensive JSDoc across the public API, utility types, casts, typings
+  and CLI helpers
+- Refactor: Migrate build, test and lint tooling to `vite-plus` with a single unified
+  configuration
+- Refactor: Replace `vitest-extended` with `@bemedev/dev-utils` helpers in the test
+  suite
+- Refactor: Remove the legacy `oxfmt`, `oxlint`, `rolldown` and `vitest`
+  configuration files
+- Update: Dependency `@types/node` to the latest version
+- Update: Documentation and skill definitions for the new release workflow
+- <u>Tests: **_28 passing_** (6 files)</u>
+
+</details>
+
+<br/>
+
+<details>
+<summary>
+
 ## **[1.5.0] - 02/07/2026** => _08:40_
 
 </summary>

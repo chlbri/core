@@ -1,6 +1,17 @@
 import { isPlainObject } from '#utils/is/object';
 import type { Picker } from './types';
 
+/**
+ * Recursively picks keys or values from an object.
+ *
+ * Nested plain objects are traversed with the same rule; a nested branch is
+ * kept only when it still holds at least one picked entry.
+ *
+ * @param by - Whether to match on keys or on values.
+ * @param object - Object to copy from.
+ * @param valuesOrKeys - Keys or values to keep.
+ * @returns New object holding only the matched entries.
+ */
 export const pickDeep = (by: Picker, object: object, ...valuesOrKeys: any[]) => {
   const result: any = {};
 

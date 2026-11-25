@@ -1,6 +1,10 @@
 /**
- * Convertit un chemin de fichier en clé dot notation comme dans .manifest.ts
- * Ex: 'features/arrays/castings/all.ts' -> 'features.arrays.castings.all'
+ * Converts a file path into the dot-notation key used in `.manifest.ts` files.
+ *
+ * Removes the trailing `.ts` extension and replaces every `/` separator with a dot.
+ *
+ * @param filePath - Path of the source file, such as `features/arrays/castings/all.ts`.
+ * @returns The dot-notation key, such as `features.arrays.castings.all`.
  */
 export function pathToDotNotation(filePath: string): string {
   return filePath

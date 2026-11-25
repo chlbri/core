@@ -1,6 +1,20 @@
 import type { Project, SourceFile } from 'ts-morph';
 import { Node } from 'ts-morph';
 
+/**
+ * Resolves a module specifier against the `paths` aliases of the project.
+ *
+ * Relative specifiers starting with `./` or `../` are returned unchanged.
+ * Absolute specifiers are matched against each `paths` pattern (with the
+ * trailing `/*` stripped) and rewritten to the first mapped target, keeping the
+ * remaining suffix. Unmatched specifiers, missing `paths`/`baseUrl` options and
+ * thrown errors all fall back to the original specifier.
+ *
+ * @param project - Project whose compiler options provide `baseUrl` and `paths`.
+ * @param moduleSpecifier - Specifier written in an import declaration.
+ * @returns The resolved path, or the original specifier when no mapping
+ *   applies.
+ */
 export const resolveModuleSpecifier = (
   project: Project,
   moduleSpecifier: string,
@@ -40,6 +54,23 @@ export const resolveModuleSpecifier = (
 };
 
 // Fonction pour extraire récursivement les exports
+/**
+ * Collects the exports of a file, following declarations into their sources.
+ *
+ * Every exported declaration is visited. A declaration defined in another file
+ * is replaced by a `recursive` entry holding that file's imports and its own
+ * recursively extracted exports, while a local declaration is summarised
+ * according to its kind: initializer text for variables, parameters and return
+ * type for functions, heritage and members for classes and interfaces, type
+ * parameters and definition for aliases, and re-exported modules for export
+ * declarations. The shared `visited` set prevents infinite recursion on cyclic
+ * re-exports.
+ *
+ * @param project - Project used to resolve module specifiers.
+ * @param sourceFile - File whose exports are extracted.
+ * @param visited - Paths already processed, used to guard against cycles.
+ * @returns Array of export descriptions.
+ */
 export const extractExportsRecursively = (
   project: Project,
   sourceFile: SourceFile,

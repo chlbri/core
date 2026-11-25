@@ -45,20 +45,20 @@ catalog:
 
   # Types
   '@types/edit-json-file': '1.7.4'
-  '@types/node': ^26.6.8
+  '@types/node': ^26.6.9
   '@types/shelljs': '^0.10.0'
 
   # Build, lint and test tooling
   '@size-limit/file': '^14.3.0'
-  '@vitest/coverage-v8': '5.1.1'
-  '@vitest/ui': '5.1.1'
+  '@vitest/coverage-v8': 5.1.1
+  '@vitest/ui': 5.1.1
   husky: '^9.1.7'
   onchange: '^7.1.0'
   size-limit: '^14.3.0'
   typescript: '7.0.2'
   vite: 'npm:@voidzero-dev/vite-plus-core@8.3.8001'
   vite-plus: '1.8.0'
-  vitest: '5.1.1'
+  vitest: 5.1.1
 
   # Source dependencies
   cmd-ts: '^0.15.0'

@@ -5,8 +5,11 @@ import { rmSync } from 'node:fs';
 import { join } from 'node:path';
 
 /**
- * Supprime un fichier JSON ou un dossier de façon récursive.
- * @param targetPath Chemin absolu ou relatif du fichier ou dossier à supprimer
+ * Deletes the codebase analysis folder and its configuration file.
+ *
+ * Reads the configured analysis folder from the JSON configuration file, removes
+ * it recursively and then removes the configuration file itself. Errors raised
+ * during each deletion are reported through `console.error` rather than thrown.
  */
 export function destroy() {
   const cwd = process.cwd();

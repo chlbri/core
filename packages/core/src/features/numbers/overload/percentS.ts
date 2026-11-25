@@ -3,9 +3,12 @@ export {};
 declare global {
   interface Number {
     /**
-     * **N.B : Call this the file "src/features/numbers/overload/percentS.ts"**
+     * Percent value of the number rendered as a string with a trailing `%`.
      *
-     * @returns the percent value of the number as a string (e.g., 10.percentS = "10%")
+     * Defined in `src/features/numbers/overload/percentS.ts`.
+     *
+     * @returns The percentage as a string, for example `10.percentS` yields
+     * `"10%"`.
      */
     get percentS(): string;
   }
