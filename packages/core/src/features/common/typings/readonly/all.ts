@@ -4,10 +4,6 @@ import _index from './index';
 import is from './is';
 import not from './not/all';
 
-const fn = expandFn(_index, {
-  deep,
-  not,
-  is,
-});
+const fn = expandFn(_index, { deep, not, is });
 
 export default fn;

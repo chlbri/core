@@ -15,9 +15,7 @@ export const omitDeepIs = (
       if (!isDeep) return false;
     } else {
       const shouldOmit =
-        by === 'element'
-          ? valuesOrKeys.includes(value)
-          : valuesOrKeys.includes(key);
+        by === 'element' ? valuesOrKeys.includes(value) : valuesOrKeys.includes(key);
       if (shouldOmit) return false;
     }
   }

@@ -10,10 +10,7 @@ expectTypeOf(log1).branded.toEqualTypeOf<
   (value?: { a: number; b: number }) => { a: number; b: number }
 >();
 
-const log2 = fn<{
-  a?: number;
-  b?: number;
-}>();
+const log2 = fn<{ a?: number; b?: number }>();
 
 expectTypeOf(log2).branded.toEqualTypeOf<
   <T extends { a?: number; b?: number }>(value?: T) => T

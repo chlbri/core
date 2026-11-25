@@ -2,9 +2,7 @@ import type { DeepRequired } from '#types';
 import { mergeIs } from '#utils/is/merge';
 import { isPlainObject } from '#utils/is/object';
 
-export const isRequiredDeep = (
-  object: unknown,
-): object is DeepRequired<any> => {
+export const isRequiredDeep = (object: unknown): object is DeepRequired<any> => {
   const isObject = isPlainObject(object);
   if (isObject) {
     for (const key in object) {

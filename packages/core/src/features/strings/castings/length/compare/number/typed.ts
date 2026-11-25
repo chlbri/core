@@ -7,8 +7,6 @@ type Fn1 = <N extends number, T extends string>(
   value: T,
 ) => StringCompare<StringLength<T>, N>;
 
-const compareLengthNumberTyped: Fn1 = _unknown(
-  stringCompareLengthNumberLow,
-);
+const compareLengthNumberTyped: Fn1 = _unknown(stringCompareLengthNumberLow);
 
 export default compareLengthNumberTyped;

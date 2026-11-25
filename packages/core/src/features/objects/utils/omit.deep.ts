@@ -13,20 +13,12 @@ const __omitDeep = (
   entries.forEach(([key, value]) => {
     const isObject = isPlainObject(value);
     if (isObject) {
-      const picked = __omitDeep(
-        by,
-        value as PrimitiveObjectMap,
-        ...valuesOrKeys,
-      );
+      const picked = __omitDeep(by, value as PrimitiveObjectMap, ...valuesOrKeys);
 
       result[key] = picked;
     } else if (by === 'key' && !valuesOrKeys.includes(key)) {
       result[key] = value;
-    } else if (
-      by === 'element' &&
-      !!value &&
-      !valuesOrKeys.includes(value)
-    ) {
+    } else if (by === 'element' && !!value && !valuesOrKeys.includes(value)) {
       result[key] = value;
     }
   });

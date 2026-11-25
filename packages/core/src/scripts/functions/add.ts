@@ -3,9 +3,7 @@ import { add as _add } from '@bemedev/codebase';
 import { getFile } from '../helpers';
 import { JSON_PATH } from '#scripts/constants';
 
-export type Options = {
-  files?: string | string[];
-};
+export type Options = { files?: string | string[] };
 
 export const add = (options: Options = {}) => {
   const { CODEBASE_ANALYSIS } = getFile();

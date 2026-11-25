@@ -7,11 +7,9 @@ export type IndexesOfArray<
   ? S[number]
   : IndexesOfArray<T, [S['length'], ...S]>;
 
-type _TupleOf<
-  T,
-  N extends number,
-  R extends unknown[] = [],
-> = R['length'] extends N ? R : _TupleOf<T, N, [...R, T]>;
+type _TupleOf<T, N extends number, R extends unknown[] = []> = R['length'] extends N
+  ? R
+  : _TupleOf<T, N, [...R, T]>;
 
 export type TupleOf<T = any, N extends number = number> = N extends N
   ? number extends N
@@ -39,10 +37,7 @@ export type _NArrayOmit<
 export type NArrayOmit<
   T extends readonly object[],
   K extends keyof T[number] = never,
-> =
-  _NArrayOmit<T, K> extends infer N extends object
-    ? UnionToTuple<N>
-    : never;
+> = _NArrayOmit<T, K> extends infer N extends object ? UnionToTuple<N> : never;
 
 export type ExtractArray<T extends AnyArray, U> = T extends readonly [
   infer A,
@@ -66,9 +61,7 @@ export type ReduceArray<T> = T extends AnyArray ? T[number] : T;
 export type ReduceArrayS<T> = T extends AnyArray ? T[0] : T;
 
 export type ReduceDeepArray<T> =
-  ReduceArray<T> extends AnyArray
-    ? ReduceDeepArray<ReduceArray<T>>
-    : ReduceArray<T>;
+  ReduceArray<T> extends AnyArray ? ReduceDeepArray<ReduceArray<T>> : ReduceArray<T>;
 
 export type ToArray<T> = T extends AnyArray ? T : AnyArray<T>;
 

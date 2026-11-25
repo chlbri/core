@@ -10,9 +10,7 @@ const strictMaxOrEqualLength: StrictMaxOrEqualLength_L = (max, _value) => {
   const { bool, value } = lowMaxOrEqualLength(max, _value);
 
   if (!bool) {
-    throw new Error(
-      `"${value}".length is not less than or equal to ${max}`,
-    );
+    throw new Error(`"${value}".length is not less than or equal to ${max}`);
   }
 
   return value as any;

@@ -43,9 +43,7 @@ export const parseObject = (objString: string): any => {
       }
 
       if (Node.isArrayLiteralExpression(node)) {
-        return node
-          .getElements()
-          .map((element: any) => parseNode(element));
+        return node.getElements().map((element: any) => parseNode(element));
       }
 
       if (Node.isStringLiteral(node) || Node.isNumericLiteral(node)) {

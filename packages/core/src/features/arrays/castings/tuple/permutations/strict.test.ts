@@ -1,5 +1,5 @@
 import { castings } from '#features/arrays/castings/all';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it } from 'vite-plus/test';
 
 describe('permutations', () => {
   it('#01 => returns all permutations of an array of 3 elements', () => {

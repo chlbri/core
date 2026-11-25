@@ -1,18 +1,16 @@
 # @bemedev/core
 
-A core utility library and CLI tool designed for orchestrating and managing
-codebase analysis using `@bemedev/codebase`.
+A core utility library and CLI tool designed for orchestrating and managing codebase
+analysis using `@bemedev/codebase`.
 
 <br/>
 
 ## Features
 
-- **Codebase Analysis Initialization**: Easily initialize codebase tracking
-  configs.
-- **Track & Untrack Files**: Add or remove files from the codebase analysis
-  registry.
-- **Lifting & Export Synchronization**: Lift your codebase exports while
-  handling nested exports and excluding exceptions.
+- **Codebase Analysis Initialization**: Easily initialize codebase tracking configs.
+- **Track & Untrack Files**: Add or remove files from the codebase analysis registry.
+- **Lifting & Export Synchronization**: Lift your codebase exports while handling
+  nested exports and excluding exceptions.
 - **CLI & JS API support**: Complete parity between the CLI interface and
   JavaScript/TypeScript programmatic API.
 
@@ -28,8 +26,8 @@ pnpm add @bemedev/core
 
 ## CLI Reference
 
-The package provides a `core` binary command (configured via `npx core` or
-directly as a script).
+The package provides a `core` binary command (configured via `npx core` or directly
+as a script).
 
 ### `init`
 
@@ -73,8 +71,7 @@ npx core lift [<exception1> <exception2> ...]
 
 ### `destroy`
 
-Clean up and completely delete the codebase analysis files and
-configuration.
+Clean up and completely delete the codebase analysis files and configuration.
 
 ```bash
 npx core destroy

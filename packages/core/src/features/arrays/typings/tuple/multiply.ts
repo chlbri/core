@@ -3,11 +3,13 @@ import { _unknown } from '#utils/_unknown';
 import { expandFn } from '#utils/expandFn';
 
 const fn = expandFn(
+  // oxlint-disable-next-line no-unused-vars
   <const T, N extends number>(_?: T, __?: N) => _unknown<TupleOf<T, N>>(),
   {
+    // oxlint-disable-next-line no-unused-vars
     is: <const U, N extends number>(_?: U, __?: N) => {
-      const _out = <T>(_?: T) =>
-        _unknown<T extends TupleOf<U, N> ? true : false>();
+      // oxlint-disable-next-line no-unused-vars
+      const _out = <T>(_?: T) => _unknown<T extends TupleOf<U, N> ? true : false>();
       return _out;
     },
   },

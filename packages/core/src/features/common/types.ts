@@ -11,9 +11,7 @@ export type SingleOrArray<T> = T | T[] | ReadonlyArray<T>;
 
 export type SoA<T> = SingleOrArray<T>;
 
-export type PrimitiveObjectMap = {
-  [key: Keys]: SoRa<_PrimitiveObject>;
-};
+export type PrimitiveObjectMap = { [key: Keys]: SoRa<_PrimitiveObject> };
 
 type _PrimitiveObject = Primitive | PrimitiveObjectMap;
 
@@ -75,20 +73,14 @@ export type _UnionToIntersection2<U> = {
   [K in UnionKeys<U>]: U extends Record<K, infer T> ? T : never;
 };
 
-export type UnionToIntersection<U> = _UnionToIntersection2<
-  _UnionToIntersection1<U>
->;
+export type UnionToIntersection<U> = _UnionToIntersection2<_UnionToIntersection1<U>>;
 
-export type UnionOmit<T, K extends Keys> = T extends any
-  ? Omit<T, K>
-  : never;
+export type UnionOmit<T, K extends Keys> = T extends any ? Omit<T, K> : never;
 
 export type UnionNOmit<T, K extends keyof T> = UnionOmit<T, K>;
 
 export type LastOfUnion<T> = (
-  (T extends any ? (x: () => T) => void : never) extends (
-    x: infer I,
-  ) => void
+  (T extends any ? (x: () => T) => void : never) extends (x: infer I) => void
     ? I
     : never
 ) extends () => infer U
@@ -104,15 +96,9 @@ export type UnionToTuple<T, A extends any[] = []> = [T] extends [never]
 export type Checker2<T = unknown> = (value: unknown) => value is T;
 // | ((value: unknown) => boolean);
 
-export type Equals<T, U> = T extends U
-  ? U extends T
-    ? true
-    : false
-  : false;
+export type Equals<T, U> = T extends U ? (U extends T ? true : false) : false;
 
-export type Classe = {
-  [Symbol.hasInstance]: Fn<any, boolean>;
-};
+export type Classe = { [Symbol.hasInstance]: Fn<any, boolean> };
 
 export class UndefinedHelper {
   readonly __NO_TYPE__ = '@bemedev/addons/NO_TYPE';

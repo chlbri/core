@@ -3,10 +3,6 @@ import typed from './typed';
 import build from './build';
 import low from './low';
 
-const stringConcatWithSeparatorAll = expandFn(typed, {
-  typed,
-  build,
-  low,
-});
+const stringConcatWithSeparatorAll = expandFn(typed, { typed, build, low });
 
 export default stringConcatWithSeparatorAll;

@@ -2,9 +2,7 @@ import type { PrimitiveObject } from '#types';
 import { isPlainObject } from './object';
 import { isPrimitive } from './primitive';
 
-export const isPrimitiveObject = (
-  object?: unknown,
-): object is PrimitiveObject => {
+export const isPrimitiveObject = (object?: unknown): object is PrimitiveObject => {
   const isObject = isPlainObject(object);
   if (isObject) {
     for (const key in object) {

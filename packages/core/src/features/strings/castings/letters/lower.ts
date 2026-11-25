@@ -4,11 +4,7 @@ import is from './is';
 
 const fn = castFn<LowerLetters>()({
   is: (value: unknown): value is LowerLetters => {
-    return (
-      typeof value === 'string' &&
-      is(value) &&
-      value === value.toLowerCase()
-    );
+    return typeof value === 'string' && is(value) && value === value.toLowerCase();
   },
 });
 

@@ -1,7 +1,7 @@
 import type { DeepNotReadonly } from '#types';
 import { _unknown } from '#utils/_unknown';
 
-const fn = <const T extends object>(_?: T) =>
-  _unknown<DeepNotReadonly<T>>();
+// oxlint-disable-next-line no-unused-vars
+const fn = <const T extends object>(_?: T) => _unknown<DeepNotReadonly<T>>();
 
 export default fn;

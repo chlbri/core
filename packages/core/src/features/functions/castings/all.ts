@@ -5,11 +5,6 @@ import forceCast from './forceCast';
 import _index from './index';
 import is from './is/all';
 
-const castings = expandFn(_index, {
-  is,
-  forceCast,
-  dynamic,
-  checker,
-});
+const castings = expandFn(_index, { is, forceCast, dynamic, checker });
 
 export default castings;

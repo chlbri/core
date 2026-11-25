@@ -1,13 +1,7 @@
 import type { AnyArray } from '#types';
 import type { ENGLISH_LETTERS } from './constants';
 
-export type PossibleString =
-  | string
-  | number
-  | bigint
-  | boolean
-  | null
-  | undefined;
+export type PossibleString = string | number | bigint | boolean | null | undefined;
 
 export type ArrayS = AnyArray<PossibleString>;
 

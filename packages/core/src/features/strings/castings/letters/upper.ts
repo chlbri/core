@@ -4,11 +4,7 @@ import is from './is';
 
 const fn = castFn<UpperLetters>()({
   is: (value: unknown): value is UpperLetters => {
-    return (
-      typeof value === 'string' &&
-      is(value) &&
-      value === value.toUpperCase()
-    );
+    return typeof value === 'string' && is(value) && value === value.toUpperCase();
   },
 });
 

@@ -26,10 +26,8 @@
 
 - Remove: Root documentation symlinks, replacing them with local files
 - Refactor: Move `LICENSE` file to local package directory
-- Update: Clean up `"files"` field in `package.json` to include only
-  `"lib"`
-- Update: Simplify `"repository"` URL and add `"homepage"` URL in
-  `package.json`
+- Update: Clean up `"files"` field in `package.json` to include only `"lib"`
+- Update: Simplify `"repository"` URL and add `"homepage"` URL in `package.json`
 - Update: Dependency `@bemedev/codebase` to `^2.7.0`
 - <u>Test coverage **_100%_**</u>
 
@@ -77,21 +75,18 @@
 
 </summary>
 
-- Remove: Feature module exports (`./features`) from the main entrypoint
-  (only export `#scripts/functions` and `#utils/index`)
-- Add: `lift` subcommand to the CLI and export `lift` function for codebase
-  analysis lifting
-- Add: `softInit` subcommand to the CLI and export `softInit` function for
-  codebase analysis
-- Add: `add`, `remove`, `destroy`, and `init` CLI subcommands and export
-  their corresponding JS functions
+- Remove: Feature module exports (`./features`) from the main entrypoint (only export
+  `#scripts/functions` and `#utils/index`)
+- Add: `lift` subcommand to the CLI and export `lift` function for codebase analysis
+  lifting
+- Add: `softInit` subcommand to the CLI and export `softInit` function for codebase
+  analysis
+- Add: `add`, `remove`, `destroy`, and `init` CLI subcommands and export their
+  corresponding JS functions
 - Refactor: Reorganize feature modules into the monorepo structure
-- Refactor: Clean up commented-out types and unused declarations in feature
-  modules
-- Refactor: CLI commands by removing `--json` option from the `init`
-  command
-- Remove: Auto-generated codebase configuration and cleanup old layout
-  files
+- Refactor: Clean up commented-out types and unused declarations in feature modules
+- Refactor: CLI commands by removing `--json` option from the `init` command
+- Remove: Auto-generated codebase configuration and cleanup old layout files
 - Update: Dependency `@bemedev/codebase` to `^2.1.0`
 - Update: Dependency `valibot` to `1.4.2`
 - Update: DevDependency `prettier` to `3.9.1`
@@ -108,8 +103,8 @@
 
 </summary>
 
-- Remove script `config:vitest` et simplification de `upgrade` /
-  `upgrade:fast` (suppression de l'appel `config:vitest`)
+- Remove script `config:vitest` et simplification de `upgrade` / `upgrade:fast`
+  (suppression de l'appel `config:vitest`)
 - Update `vitest` : ^3.2.4 → ^4.1.5 (version majeure)
 - Update `@vitest/coverage-v8` : ^3.2.4 → ^4.1.5 (version majeure)
 - Update `@vitest/ui` : 3.2.4 → 4.1.5 (version majeure)
@@ -137,9 +132,8 @@
 
 </summary>
 
-- Update `scripts/functions/add` et `scripts/functions/remove` :
-  utilisation de `toArray.typed` à la place de `toArray` pour un typage
-  strict des fichiers
+- Update `scripts/functions/add` et `scripts/functions/remove` : utilisation de
+  `toArray.typed` à la place de `toArray` pour un typage strict des fichiers
 - <u>Test coverage **_100%_**</u>
 
 </details>
@@ -153,12 +147,12 @@
 
 </summary>
 
-- Refactor `arrays/castings/toArray` : utilisation de `expandFn` et du type
-  `SoA`, ajout d'une variante `typed` fortement typée
+- Refactor `arrays/castings/toArray` : utilisation de `expandFn` et du type `SoA`,
+  ajout d'une variante `typed` fortement typée
 - Fix import dans `functions/types` : remplacement de l'import externe
   `@bemedev/vitest-extended` par le chemin local `#types`
-- Refactor `functions/types` : reformatage des types `Fn`, `_Requirify`,
-  `Parts`, `TypeFromTimeouts` pour une meilleure lisibilité
+- Refactor `functions/types` : reformatage des types `Fn`, `_Requirify`, `Parts`,
+  `TypeFromTimeouts` pour une meilleure lisibilité
 - <u>Test coverage **_100%_**</u>
 
 </details>
@@ -173,18 +167,18 @@
 </summary>
 
 - Remove module `transform` et ses helpers (breaking change)
-- Add types `FnBasic`, `Parts`, `PartDiff`, `TimeoutPromise`,
-  `TypeFromTimeout`, `TypeFromTimeouts`, `CallBackError`, `CallBackResult`,
-  `Callback`, `CbParams`, `ResultFrom` dans `functions/types`
+- Add types `FnBasic`, `Parts`, `PartDiff`, `TimeoutPromise`, `TypeFromTimeout`,
+  `TypeFromTimeouts`, `CallBackError`, `CallBackResult`, `Callback`, `CbParams`,
+  `ResultFrom` dans `functions/types`
 - Add types `PrimitiveS` et `TransformPrimitiveS` dans les globals
 - Add utilities `isTypeFn` et `isInstance` dans `globals/utils/is`
 - Add constante `PRIMITIVES` dans `globals/constants`
-- Refactor `objects/castings/hasKeys` et `keyTypes` : consolidation des
-  dossiers en fichiers uniques
-- Refactor `objects/typings/hasKeys` et `keyTypes` : consolidation des
-  dossiers en fichiers uniques
-- Update dépendances (`typescript ^6.0.2`, `rolldown 1.0.0-rc.13`,
-  `oxlint ^1.58.0`, etc.)
+- Refactor `objects/castings/hasKeys` et `keyTypes` : consolidation des dossiers en
+  fichiers uniques
+- Refactor `objects/typings/hasKeys` et `keyTypes` : consolidation des dossiers en
+  fichiers uniques
+- Update dépendances (`typescript ^6.0.2`, `rolldown 1.0.0-rc.13`, `oxlint ^1.58.0`,
+  etc.)
 - <u>Test coverage **_100%_**</u>
 
 </details>
@@ -198,10 +192,8 @@
 
 </summary>
 
-- Refactor `transform/helpers` to use named exports instead of default
-  exports
-- Update helpers index to use `export * from` pattern for cleaner
-  re-exports
+- Refactor `transform/helpers` to use named exports instead of default exports
+- Update helpers index to use `export * from` pattern for cleaner re-exports
 - <u>Test coverage **_100%_**</u>
 
 </details>
@@ -215,10 +207,9 @@
 
 </summary>
 
-- Refactor `partialCall` imports: remove `.1` suffix across all castings
-  modules
-- Replace `partialCall(...)` with `partialCall.paramArray(...)` across
-  objects and strings castings
+- Refactor `partialCall` imports: remove `.1` suffix across all castings modules
+- Replace `partialCall(...)` with `partialCall.paramArray(...)` across objects and
+  strings castings
 - Standardize module import quotes to double quotes
 - Update dependencies
 - <u>Test coverage **_100%_**</u>
@@ -234,10 +225,10 @@
 
 </summary>
 
-- Add `identity`, `identify`, `log10`, `switchValue`, `refunction`,
-  `partialCallO` function utilities
-- Add string `multichar` helper and complete length casting suite (`exact`,
-  `min`, `max`, `range` with inclusive/exclusive variants)
+- Add `identity`, `identify`, `log10`, `switchValue`, `refunction`, `partialCallO`
+  function utilities
+- Add string `multichar` helper and complete length casting suite (`exact`, `min`,
+  `max`, `range` with inclusive/exclusive variants)
 - Add `oxlint` and `oxfmt` configurations
 - Remove legacy `prettier`, `eslint` and `rollup` configs
 - Replace `rollup` with `rolldown` as bundler
@@ -272,8 +263,7 @@
 </summary>
 
 - **Chore**: Bump package version to `0.1.7`
-- **Docs**: Remove placeholder example in `README.md` and tidy CHANGE_LOG
-  link
+- **Docs**: Remove placeholder example in `README.md` and tidy CHANGE_LOG link
 
 </details>
 
@@ -286,8 +276,8 @@
 
 </summary>
 
-- **Fix(transform)**: Use `ObjectMapS` instead of `PrimitiveObjectMap` in
-  `union` helper to improve typing and compatibility.
+- **Fix(transform)**: Use `ObjectMapS` instead of `PrimitiveObjectMap` in `union`
+  helper to improve typing and compatibility.
 - **Refactor(ci)**: Rename `pnpm:lint` VSCode task to `pnpm:ci` and remove
   `pnpm:test` task. _NO_CI_
 - **Chore**: Bump package version to `0.1.6`
@@ -299,8 +289,7 @@
 ### Version [0.1.5] --> _2025/12/27 17:32_
 
 - ✨ **feat**: Add NoExtraKeys and NoExtraKeysStrict types
-  - Introduced advanced TypeScript types for deep validation of object
-    properties
+  - Introduced advanced TypeScript types for deep validation of object properties
   - Enhanced type safety with strict property checking
   - Added support for nested object validation
 

@@ -1,5 +1,6 @@
 import { _unknown } from '#utils/_unknown';
 
+// oxlint-disable-next-line no-unused-vars
 const fn = <const T, const U extends T[]>(_?: T, ...__: U) =>
   _unknown<Exclude<T, U[number]>>();
 

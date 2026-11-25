@@ -5,10 +5,5 @@ import { getCodebase } from '../helpers';
 export const init = (options: Partial<InitOptions> = {}) => {
   const { root = DEFAULT_ROOT, json = JSON_PATH } = options;
   const CODEBASE_ANALYSIS = getCodebase();
-  return _init(CODEBASE_ANALYSIS, {
-    root,
-    json,
-    bin: BIN,
-    path: PATH,
-  });
+  return _init(CODEBASE_ANALYSIS, { root, json, bin: BIN, path: PATH });
 };

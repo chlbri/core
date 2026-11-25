@@ -3,10 +3,6 @@ import is from './is';
 import low from './low';
 import strict from './strict';
 
-const exactAllLength = expandFn(strict, {
-  is,
-  low,
-  strict,
-});
+const exactAllLength = expandFn(strict, { is, low, strict });
 
 export default exactAllLength;

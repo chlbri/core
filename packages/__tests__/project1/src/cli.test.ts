@@ -32,21 +32,15 @@ describe('CLI', () => {
         describe('#02 => File is valid', () => {
           let obj: any;
           beforeAll(() => {
-            const json = readFileSync(
-              join(process.cwd(), '.bemedev.json'),
-              {
-                encoding: 'utf-8',
-              },
-            );
+            const json = readFileSync(join(process.cwd(), '.bemedev.json'), {
+              encoding: 'utf-8',
+            });
             obj = JSON.parse(json);
           });
 
-          test.each(['path', 'files', 'version'])(
-            `#0%# => Has "%s" key`,
-            key => {
-              expect(obj).toHaveProperty(key);
-            },
-          );
+          test.each(['path', 'files', 'version'])(`#0%# => Has "%s" key`, key => {
+            expect(obj).toHaveProperty(key);
+          });
 
           test('#03 => Files are added', () => {
             const files = obj.files;
@@ -84,9 +78,7 @@ describe('CLI', () => {
       });
 
       test('04 => New file added : "features/arrays/castings/tuple/index"', () => {
-        expect(obj.files).toContain(
-          'features/arrays/castings/tuple/index',
-        );
+        expect(obj.files).toContain('features/arrays/castings/tuple/index');
       });
 
       test('05 => Only 3 files are added', () => {
@@ -189,12 +181,9 @@ describe('CLI', () => {
       });
 
       describe('#02 => paths', () => {
-        test.each(['path', 'files', 'version'])(
-          `#0%# => Has "%s" key`,
-          key => {
-            expect(obj).toHaveProperty(key);
-          },
-        );
+        test.each(['path', 'files', 'version'])(`#0%# => Has "%s" key`, key => {
+          expect(obj).toHaveProperty(key);
+        });
       });
 
       test('#03 => json.files is rinit', () => {

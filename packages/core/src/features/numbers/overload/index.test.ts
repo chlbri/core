@@ -3,38 +3,22 @@ import './index';
 
 describe('NUMBERS OVERLOAD', () => {
   describe('#1 => number.percent', () => {
-    const { acceptation, success } = createTests(
-      (data: number) => data.percent,
-    );
+    const { acceptation, success } = createTests((data: number) => data.percent);
 
     describe('#1 => Acceptation', acceptation);
 
     describe(
       '#2 => Success',
       success(
-        {
-          expected: 0.1,
-          parameters: 10,
-          invite: '10.percent should return 0.1',
-        },
-        {
-          expected: 0.5,
-          parameters: 50,
-          invite: '50.percent should return 0.5',
-        },
-        {
-          expected: 1,
-          parameters: 100,
-          invite: '100.percent should return 1',
-        },
+        { expected: 0.1, parameters: 10, invite: '10.percent should return 0.1' },
+        { expected: 0.5, parameters: 50, invite: '50.percent should return 0.5' },
+        { expected: 1, parameters: 100, invite: '100.percent should return 1' },
       ),
     );
   });
 
   describe('#2 => number.percentS', () => {
-    const { acceptation, success } = createTests(
-      (data: number) => data.percentS,
-    );
+    const { acceptation, success } = createTests((data: number) => data.percentS);
 
     describe('#1 => Acceptation', acceptation);
 

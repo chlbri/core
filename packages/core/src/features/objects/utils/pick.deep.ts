@@ -1,11 +1,7 @@
 import { isPlainObject } from '#utils/is/object';
 import type { Picker } from './types';
 
-export const pickDeep = (
-  by: Picker,
-  object: object,
-  ...valuesOrKeys: any[]
-) => {
+export const pickDeep = (by: Picker, object: object, ...valuesOrKeys: any[]) => {
   const result: any = {};
 
   for (const key in object) {

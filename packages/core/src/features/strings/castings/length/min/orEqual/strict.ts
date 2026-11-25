@@ -10,9 +10,7 @@ const strictMinOrEqualLength: StrictMinOrEqualLength_L = (min, _value) => {
   const { bool, value } = lowMinOrEqualLength(min, _value);
 
   if (!bool) {
-    throw new Error(
-      `"${value}".length is not greater than or equal to ${min}`,
-    );
+    throw new Error(`"${value}".length is not greater than or equal to ${min}`);
   }
 
   return value as any;

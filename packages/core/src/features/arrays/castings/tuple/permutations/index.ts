@@ -8,9 +8,7 @@ import multiply from '../multiply';
  *
  * **N.B: Sort the array before using this function to prevent unexpected results.**
  */
-const fn = <const T extends RuA>(
-  ...arr: T
-): TupleOf<T[number], T['length']>[] => {
+const fn = <const T extends RuA>(...arr: T): TupleOf<T[number], T['length']>[] => {
   const n = arr.length;
   if (n < 1) return [];
   const res: any = [];

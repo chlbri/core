@@ -12,10 +12,7 @@ export const resolveModuleSpecifier = (
     const paths = compilerOptions.paths;
 
     // Si on a un chemin relatif simple, le retourner tel quel
-    if (
-      moduleSpecifier.startsWith('./') ||
-      moduleSpecifier.startsWith('../')
-    ) {
+    if (moduleSpecifier.startsWith('./') || moduleSpecifier.startsWith('../')) {
       return moduleSpecifier;
     }
 
@@ -59,10 +56,7 @@ export const extractExportsRecursively = (
   const exports: any[] = [];
 
   // Traiter toutes les déclarations d'export
-  for (const [
-    name,
-    declarations,
-  ] of sourceFile.getExportedDeclarations()) {
+  for (const [name, declarations] of sourceFile.getExportedDeclarations()) {
     for (const declaration of declarations) {
       const declarationSourceFile = declaration.getSourceFile();
 
@@ -82,9 +76,7 @@ export const extractExportsRecursively = (
               project,
               imp.getModuleSpecifierValue(),
             ),
-            namedImports: imp
-              .getNamedImports()
-              .map(named => named.getName()),
+            namedImports: imp.getNamedImports().map(named => named.getName()),
             defaultImport: imp.getDefaultImport()?.getText(),
             namespaceImport: imp.getNamespaceImport()?.getText(),
           }));
@@ -98,10 +90,7 @@ export const extractExportsRecursively = (
         });
       } else {
         // Traiter les différents types de déclarations
-        const declarationInfo: any = {
-          name,
-          type: declaration.getKindName(),
-        };
+        const declarationInfo: any = { name, type: declaration.getKindName() };
 
         // Traitement spécifique selon le type de déclaration
         if (Node.isVariableDeclaration(declaration)) {
@@ -113,13 +102,8 @@ export const extractExportsRecursively = (
         } else if (Node.isFunctionDeclaration(declaration)) {
           declarationInfo.parameters = declaration
             .getParameters()
-            .map(p => ({
-              name: p.getName(),
-              type: p.getTypeNode()?.getText(),
-            }));
-          declarationInfo.returnType = declaration
-            .getReturnTypeNode()
-            ?.getText();
+            .map(p => ({ name: p.getName(), type: p.getTypeNode()?.getText() }));
+          declarationInfo.returnType = declaration.getReturnTypeNode()?.getText();
         } else if (Node.isClassDeclaration(declaration)) {
           declarationInfo.extends = declaration.getExtends()?.getText();
           declarationInfo.implements = declaration
@@ -127,27 +111,17 @@ export const extractExportsRecursively = (
             .map(i => i.getText());
           declarationInfo.properties = declaration
             .getProperties()
-            .map(p => ({
-              name: p.getName(),
-              type: p.getTypeNode()?.getText(),
-            }));
+            .map(p => ({ name: p.getName(), type: p.getTypeNode()?.getText() }));
         } else if (Node.isInterfaceDeclaration(declaration)) {
-          declarationInfo.extends = declaration
-            .getExtends()
-            .map(e => e.getText());
+          declarationInfo.extends = declaration.getExtends().map(e => e.getText());
           declarationInfo.properties = declaration
             .getProperties()
-            .map(p => ({
-              name: p.getName(),
-              type: p.getTypeNode()?.getText(),
-            }));
+            .map(p => ({ name: p.getName(), type: p.getTypeNode()?.getText() }));
         } else if (Node.isTypeAliasDeclaration(declaration)) {
           declarationInfo.typeParameters = declaration
             .getTypeParameters()
             .map(tp => tp.getName());
-          declarationInfo.typeDefinition = declaration
-            .getTypeNode()
-            ?.getText();
+          declarationInfo.typeDefinition = declaration.getTypeNode()?.getText();
         } else if (Node.isExportDeclaration(declaration)) {
           // Gérer les re-exports (export * from './module')
           const moduleSpecifier = declaration.getModuleSpecifier();

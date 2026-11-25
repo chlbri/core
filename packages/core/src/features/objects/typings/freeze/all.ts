@@ -6,12 +6,6 @@ import freeze from './index';
 import is from './is';
 import not from './not';
 
-const freezeTyping = expandFn(freeze, {
-  dynamic,
-  forceCast,
-  is,
-  not,
-  deep,
-});
+const freezeTyping = expandFn(freeze, { dynamic, forceCast, is, not, deep });
 
 export default freezeTyping;

@@ -1,22 +1,12 @@
-import {
-  SymbolFlags,
-  TypeFormatFlags,
-  type SourceFile,
-  type Type,
-} from 'ts-morph';
+import { SymbolFlags, TypeFormatFlags, type SourceFile, type Type } from 'ts-morph';
 
-export const resolveType = (
-  sourceFile: SourceFile,
-  type: Type,
-): string => {
+export const resolveType = (sourceFile: SourceFile, type: Type): string => {
   const typeText = type.getText();
 
   try {
     // Accéder au compilateur TypeScript sous-jacent
     const compilerType = type.compilerType;
-    const typeChecker = sourceFile
-      .getProject()
-      .getTypeChecker().compilerObject;
+    const typeChecker = sourceFile.getProject().getTypeChecker().compilerObject;
 
     const fullyResolvedTypeText = typeChecker.typeToString(
       compilerType,
@@ -106,8 +96,7 @@ export const resolveType = (
     if (
       apparentText !== typeText &&
       !apparentText.includes('import(') &&
-      (apparentText.includes('{') ||
-        apparentText.length > typeText.length * 1.2)
+      (apparentText.includes('{') || apparentText.length > typeText.length * 1.2)
     ) {
       return apparentText;
     }
@@ -133,10 +122,7 @@ export const resolveType = (
     }
     // #endregion
   } catch (error) {
-    console.warn(
-      `Erreur lors de la résolution du type ${typeText} : `,
-      error,
-    );
+    console.warn(`Erreur lors de la résolution du type ${typeText} : `, error);
   }
 
   return typeText;

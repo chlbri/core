@@ -11,20 +11,12 @@ describe('switchValue', () => {
     success(
       {
         invite: 'Object with true condition',
-        parameters: {
-          condition: true,
-          truthy: 'yes',
-          falsy: 'no',
-        },
+        parameters: { condition: true, truthy: 'yes', falsy: 'no' },
         expected: 'yes',
       },
       {
         invite: 'Object with false condition',
-        parameters: {
-          condition: false,
-          truthy: 1,
-          falsy: 0,
-        },
+        parameters: { condition: false, truthy: 1, falsy: 0 },
         expected: 0,
       },
       {
@@ -68,20 +60,12 @@ describe('switchValue', () => {
       success(
         {
           invite: 'Object with true condition',
-          parameters: {
-            condition: true,
-            truthy: 'yes',
-            falsy: 'no',
-          },
+          parameters: { condition: true, truthy: 'yes', falsy: 'no' },
           expected: 'yes',
         },
         {
           invite: 'Object with false condition',
-          parameters: {
-            condition: false,
-            truthy: 1,
-            falsy: 0,
-          },
+          parameters: { condition: false, truthy: 1, falsy: 0 },
           expected: 0,
         },
       ),

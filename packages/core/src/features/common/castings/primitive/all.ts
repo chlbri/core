@@ -3,9 +3,6 @@ import _index from './index';
 import is from './is';
 import object from './object/all';
 
-const fn = expandFn(_index, {
-  is,
-  object,
-});
+const fn = expandFn(_index, { is, object });
 
 export default fn;

@@ -10,12 +10,5 @@ import { softInit } from './softInit';
 export const cli = subcommands({
   name: BIN,
   description: 'Core commands for Bemedev codebase management.',
-  cmds: {
-    add,
-    init,
-    remove,
-    destroy,
-    lift,
-    softInit,
-  },
+  cmds: { add, init, remove, destroy, lift, softInit },
 });

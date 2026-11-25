@@ -28,8 +28,6 @@ export function destroy() {
     rmSync(jsonPath, { force: true });
     console.log(`Configuration file ("${JSON_PATH}") has been removed.`);
   } catch {
-    console.error(
-      `Error while removing the configuration file ("${JSON_PATH}").`,
-    );
+    console.error(`Error while removing the configuration file ("${JSON_PATH}").`);
   }
 }

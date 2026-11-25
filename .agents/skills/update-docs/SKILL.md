@@ -1,20 +1,20 @@
 ---
 name: update-docs
 description:
-  Update `CHANGELOG.md` and `README.md` after a version upgrade by
-  analyzing recent git commits and comparing versions.
+  Update `CHANGELOG.md` and `README.md` after a version upgrade by analyzing recent
+  git commits and comparing versions.
 ---
 
 # Update Docs
 
-Four-step workflow to keep `CHANGELOG.md` and `README.md` in sync after a
-version bump in `package.json`.
+Four-step workflow to keep `CHANGELOG.md` and `README.md` in sync after a version
+bump in `package.json`.
 
 ## Required input
 
 Before starting, explicitly define the target package directory.
 
-- Required: `PACKAGE_DIR` (example: `packages/app` or `packages/vitest`)
+- Required: `PACKAGE_DIR` (example: `packages/core`)
 - The workflow must update docs only in that package:
   - `${PACKAGE_DIR}/CHANGELOG.md`
   - `${PACKAGE_DIR}/README.md`
@@ -51,5 +51,5 @@ Start at → [`steps/step1.md`](steps/step1.md)
 
 ## NB
 
-README and CHANGELOG should always BE in ENGLISH, NO OTHER LANGUAGE, even
-if the project is primarily in another language.
+README and CHANGELOG should always BE in ENGLISH, NO OTHER LANGUAGE, even if the
+project is primarily in another language.

@@ -24,10 +24,10 @@ type _UndefinfyTuple<T extends AnyArray> = T extends readonly [
       : [U, ..._UndefinfyTuple<Rest>]
   : T;
 
-export type Parts<
-  T extends AnyArray,
-  R = _Requirify<T>,
-> = R extends readonly [...infer Rest, unknown]
+export type Parts<T extends AnyArray, R = _Requirify<T>> = R extends readonly [
+  ...infer Rest,
+  unknown,
+]
   ? Parts<Rest> | Readonly<_UndefinfyTuple<R>>
   : Readonly<T>;
 

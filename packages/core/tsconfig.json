@@ -16,7 +16,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "moduleResolution": "Bundler",
-    "types": ["vitest/globals", "node"],
+    "types": ["vite-plus/test/globals", "node"],
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
@@ -31,5 +31,6 @@
       "#types": ["./src/globals/types"]
     }
   },
-  "exclude": ["./vitest.config.ts", "./rolldown.config.ts"]
+  "exclude": ["./vite.config.ts"],
+  "include": ["src"]
 }

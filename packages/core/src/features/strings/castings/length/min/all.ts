@@ -4,11 +4,6 @@ import low from './low';
 import strict from './strict';
 import orEqual from './orEqual/all';
 
-const minAllLength = expandFn(strict, {
-  is,
-  low,
-  strict,
-  orEqual,
-});
+const minAllLength = expandFn(strict, { is, low, strict, orEqual });
 
 export default minAllLength;

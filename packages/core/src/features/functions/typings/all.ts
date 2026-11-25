@@ -4,8 +4,4 @@ import dynamic from './dynamic';
 import forceCast from './forceCast';
 import _index from './index';
 
-export const typings = expandFn(_index, {
-  dynamic,
-  forceCast,
-  checker,
-});
+export const typings = expandFn(_index, { dynamic, forceCast, checker });

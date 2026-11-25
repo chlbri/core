@@ -65,7 +65,7 @@ export type DeepRequired<T extends object | undefined> = NotUndefined<{
       : T[P];
 }>;
 
-export type NotReadonly<T extends object> = {
+export type NotReadonly<T> = {
   -readonly [P in keyof T]: T[P];
 };
 
@@ -78,10 +78,7 @@ export type DeepNotReadonly<T extends object> = {
 };
 
 export type ValuesOf<T, U = any> = Extract<T[keyof T], U>;
-export type ObjectValuesOf<T> = Exclude<
-  Extract<ValuesOf<T>, object>,
-  Array<any>
->;
+export type ObjectValuesOf<T> = Exclude<Extract<ValuesOf<T>, object>, Array<any>>;
 
 export type ExpressO<T extends object> = {
   [K in keyof T]: T[K];
@@ -90,9 +87,7 @@ export type ExpressO<T extends object> = {
 export type DeepExpressO<T extends object> =
   ExpressO<T> extends infer P1
     ? {
-        [K in keyof P1]: P1[K] extends object
-          ? DeepExpressO<P1[K]>
-          : P1[K];
+        [K in keyof P1]: P1[K] extends object ? DeepExpressO<P1[K]> : P1[K];
       }
     : never;
 
@@ -108,17 +103,13 @@ export type RequiredLow<T extends object> = ExpressO<_RequiredLow<T>>;
 export type DeepRequiredLow<T extends object> =
   RequiredLow<T> extends infer P1
     ? {
-        [K1 in keyof P1]: Exclude<
-          P1[K1],
-          undefined
-        > extends infer P2 extends object
+        [K1 in keyof P1]: Exclude<P1[K1], undefined> extends infer P2 extends object
           ? DeepRequiredLow<P2>
           : P1[K1];
       }
     : never;
 
-export type Require<T, K extends keyof T> = NOmit<T, K> &
-  Required<Pick<T, K>>;
+export type Require<T, K extends keyof T> = NOmit<T, K> & Required<Pick<T, K>>;
 
 export type RequiredBy<T, U> = Required<PickBy<T, U>> & PickNotBy<T, U>;
 
@@ -140,8 +131,11 @@ export type PickKeysNotBy<T, U> = keyof PickNotBy<T, U>;
 
 export type OnPropChangedMethods<T, I extends keyof T = keyof T> = T & {
   [
-    K in Extract<PickKeysBy<T, (...args: any) => any>, I> &
-      string as AddString<Capitalize<K>, 'on', 'Changed'>
+    K in Extract<PickKeysBy<T, (...args: any) => any>, I> & string as AddString<
+      Capitalize<K>,
+      'on',
+      'Changed'
+    >
   ]: (cb: (newValue: T[K]) => void) => void;
 };
 
@@ -189,35 +183,26 @@ export type _FlatMapByKey<
 }
   ? K extends keyof T[_omit]
     ? T[_omit][K] extends infer TK extends object
-      ?
-          | _FlatMapByKey<
-              TK,
-              _omit,
-              _withChildren,
-              Delimiter,
-              `${Keys}${Delimiter}${K}`
-            >
-          | {
-              [key in DefaultK<Keys, Delimiter>]: WithChildren<
-                T,
-                _omit,
-                _withChildren
-              >;
-            }
-      : {
-          [key in DefaultK<Keys, Delimiter>]: WithChildren<
-            T,
+      ? | _FlatMapByKey<
+            TK,
             _omit,
-            _withChildren
-          >;
+            _withChildren,
+            Delimiter,
+            `${Keys}${Delimiter}${K}`
+          >
+        | {
+            [key in DefaultK<Keys, Delimiter>]: WithChildren<
+              T,
+              _omit,
+              _withChildren
+            >;
+          }
+      : {
+          [key in DefaultK<Keys, Delimiter>]: WithChildren<T, _omit, _withChildren>;
         }
     : never
   : {
-      [key in DefaultK<Keys, Delimiter>]: WithChildren<
-        T,
-        _omit,
-        _withChildren
-      >;
+      [key in DefaultK<Keys, Delimiter>]: WithChildren<T, _omit, _withChildren>;
     };
 
 // #region SubTypes
@@ -237,10 +222,7 @@ type NotFilterFlagsLow<Base, Condition> = {
   [Key in keyof Base]: Condition extends Base[Key] ? never : Key;
 };
 
-export type AllowedNames<Base, Condition> = FilterFlags<
-  Base,
-  Condition
->[keyof Base];
+export type AllowedNames<Base, Condition> = FilterFlags<Base, Condition>[keyof Base];
 
 export type NotAllowedNames<Base, Condition> = NotFilterFlags<
   Base,
@@ -275,9 +257,7 @@ export type NotSubType<Base extends object, Condition> = Pick<
 
 export type DeepNotSubType<Base extends object, Condition> = {
   [
-    K in keyof Base as K extends NotAllowedNames<Base, Condition>
-      ? K
-      : never
+    K in keyof Base as K extends NotAllowedNames<Base, Condition> ? K : never
   ]: Base[K] extends object ? DeepNotSubType<Base[K], Condition> : Base[K];
 };
 
@@ -388,10 +368,7 @@ export type NoExtraKeys<T, Schema> = T & {
  * type Strict = NoExtraKeysStrict<{ name: 'test'; value: 1 }, MySchema>;
  * ```
  */
-export type NoExtraKeysStrict<T extends Schema, Schema> = NoExtraKeys<
-  T,
-  Schema
->;
+export type NoExtraKeysStrict<T extends Schema, Schema> = NoExtraKeys<T, Schema>;
 
 export type StateValue = string | StateValueMap;
 

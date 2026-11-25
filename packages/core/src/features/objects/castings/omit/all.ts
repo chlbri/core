@@ -6,12 +6,6 @@ import _index from './index';
 import is from './is';
 import strict from './strict/all';
 
-const fn = expandFn(_index, {
-  strict,
-  const: _const,
-  is,
-  by,
-  deep,
-});
+const fn = expandFn(_index, { strict, const: _const, is, by, deep });
 
 export default fn;

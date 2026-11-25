@@ -29,16 +29,7 @@ expectTypeOf<Pa3>().toEqualTypeOf<
   | readonly [1]
   | readonly [1, 2]
   | readonly [1, 2, 3]
-  | readonly [
-      1,
-      2,
-      3,
-      'a',
-      true,
-      {
-        a: 1;
-      },
-    ]
+  | readonly [1, 2, 3, 'a', true, { a: 1 }]
   | readonly [1, 2, 3, 'a']
   | readonly [1, 2, 3, 'a', true]
 >();

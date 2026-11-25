@@ -1,7 +1,7 @@
 # @bemedev/core Examples
 
-Ce dossier contient des exemples d'utilisation de la librairie
-`@bemedev/core` avec des fonctions arithmétiques de base.
+Ce dossier contient des exemples d'utilisation de la librairie `@bemedev/core` avec
+des fonctions arithmétiques de base.
 
 ## Installation
 
@@ -46,5 +46,5 @@ console.log(power(2, 3)); // 8
 
 ## Configuration
 
-Le projet utilise son propre `tsconfig.json` qui étend la configuration
-principale du projet parent.
+Le projet utilise son propre `tsconfig.json` qui étend la configuration principale du
+projet parent.

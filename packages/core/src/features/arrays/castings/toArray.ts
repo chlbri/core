@@ -14,8 +14,6 @@ const _toArray = (value?: unknown) => {
   return out;
 };
 
-const toArray: ToArray_F = expandFn(_toArray, {
-  typed: _toArray,
-});
+const toArray: ToArray_F = expandFn(_toArray, { typed: _toArray });
 
 export default toArray;

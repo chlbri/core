@@ -5,8 +5,7 @@ export const pick = (by: Picker, object: object, ...keys: any[]) => {
   const entries = Object.entries(object);
 
   entries.forEach(([key, value]) => {
-    const shouldPick =
-      by === 'element' ? keys.includes(value) : keys.includes(key);
+    const shouldPick = by === 'element' ? keys.includes(value) : keys.includes(key);
 
     if (shouldPick) {
       result[key] = value;

@@ -6,12 +6,6 @@ import _index from './index';
 import is from './is';
 import not from './not';
 
-const fn = expandFn(_index, {
-  forceCast,
-  dynamic,
-  is,
-  not,
-  deep,
-});
+const fn = expandFn(_index, { forceCast, dynamic, is, not, deep });
 
 export default fn;

@@ -4,11 +4,6 @@ import low from './low';
 import withSeparator from './withSeparator/all';
 import number from './number/all';
 
-const stringConcatAll = expandFn(typed, {
-  low,
-  typed,
-  withSeparator,
-  number,
-});
+const stringConcatAll = expandFn(typed, { low, typed, withSeparator, number });
 
 export default stringConcatAll;
